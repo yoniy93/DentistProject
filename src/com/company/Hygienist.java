@@ -1,5 +1,5 @@
 package com.company;
 
 public class Hygienist extends Treatments {
-//ishai comment
+//ishai comment2
 }
