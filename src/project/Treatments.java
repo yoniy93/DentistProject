@@ -1,4 +1,4 @@
-package com.company;
+package project;
 
 public abstract class Treatments {
 

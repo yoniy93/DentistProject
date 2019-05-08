@@ -1,4 +1,4 @@
-package com.company;
+package project;
 
 public class Hygienist extends Treatments {
 //ishai comment2

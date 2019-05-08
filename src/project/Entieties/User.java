@@ -1,4 +1,4 @@
-package com.company.Entieties;
+package project.Entieties;
 
 public abstract class User extends Person {
     private String username;
