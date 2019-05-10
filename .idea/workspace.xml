@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3649734b-3b86-4b6c-a45c-1367960c8b58" name="Default Changelist" comment="שינוי שם לproject">
+    <list default="true" id="3649734b-3b86-4b6c-a45c-1367960c8b58" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -168,7 +168,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557302294757" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557480542707" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -212,7 +212,7 @@
       <workItem from="1556979554286" duration="4606000" />
       <workItem from="1557085936583" duration="497000" />
       <workItem from="1557086485130" duration="1528000" />
-      <workItem from="1557240617648" duration="4505000" />
+      <workItem from="1557240617648" duration="5122000" />
     </task>
     <task id="LOCAL-00001" summary="first">
       <created>1557086672888</created>
@@ -270,11 +270,18 @@
       <option name="project" value="LOCAL" />
       <updated>1557300026024</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="שינוי שם לproject">
+      <created>1557302300716</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1557302300716</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11136000" />
+    <option name="totallyTimeSpent" value="11753000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="941" extended-state="0" />
