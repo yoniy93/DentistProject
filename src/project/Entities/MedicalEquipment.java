@@ -6,6 +6,8 @@ public abstract class MedicalEquipment {
 
     private Date expirationDate;
     private int id;
+    private String name;
+    private int amountInStock;
 
     public Date getExpirationDate() {
         return expirationDate;
@@ -39,6 +41,5 @@ public abstract class MedicalEquipment {
         this.amountInStock = amountInStock;
     }
 
-    private String name;
-    private int amountInStock;
+
 }
