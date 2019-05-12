@@ -1,4 +1,4 @@
-package project.Entieties;
+package project.Entities;
 
 
 public abstract class User extends Person {
