@@ -6,6 +6,7 @@ public abstract class Person {
 
     private String lastName;
     private String firstName;
+    private String id;
     private int weight;
     private int height;
     private String gender;
@@ -25,6 +26,14 @@ public abstract class Person {
 
     public void setFirstName(String firstName) {
         this.firstName = firstName;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public int getWeight() {
@@ -58,8 +67,5 @@ public abstract class Person {
     public void setDateOfBirth(Date dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
     }
-
-
-
 
 }
