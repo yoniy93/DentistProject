@@ -22,7 +22,7 @@ public class UI {
         button=new JButton();
         button.setBounds(100,200,200,60);
         button.setText("click me");
-        listener=new MyListener();
+        listener=new MyListener(this);
         button.addActionListener(listener);
         frame.add(button);
 
