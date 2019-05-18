@@ -25,7 +25,7 @@ public class LoginFrame extends JFrame implements ActionListener {
 
         setTitle("Login Form");
         setVisible(true);
-        setBounds(500, 100, 370, 600);
+        setBounds(500, 100, 370, 550);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setResizable(false);
     }
@@ -74,6 +74,7 @@ public class LoginFrame extends JFrame implements ActionListener {
                 //JOptionPane.showMessageDialog(this, "Login Successful");
                 AdminFrame adminFrame = new AdminFrame();
                 setVisible(false);
+                adminFrame.setResizable(false);
             }
             else {
                 JOptionPane.showMessageDialog(this, "Invalid Username or Password");
