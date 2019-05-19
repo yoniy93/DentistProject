@@ -8,6 +8,7 @@ public class UI {
     JButton button;
     MyListener listener;
     JCheckBox checkBox;
+
     public UI (){
         frame= new JFrame();
         frame.setBounds(100,100,800,600);
