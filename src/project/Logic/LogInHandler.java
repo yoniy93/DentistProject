@@ -22,6 +22,7 @@ public class LogInHandler {
     }
 
     public boolean isPasswordCorrect (String id) {
+
         //SELECT FROM TABLE
         return id.equals("check");
     }

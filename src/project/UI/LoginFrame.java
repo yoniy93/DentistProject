@@ -1,5 +1,7 @@
 package project.UI;
 
+import project.Entities.Enum;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
