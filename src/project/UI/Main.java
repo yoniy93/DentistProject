@@ -1,6 +1,5 @@
 package project.UI;
 
-import project.Logic.CreateDB;
 import project.Logic.SQLiteJDBCDriverConnection;
 
 import javax.swing.*;
@@ -8,7 +7,7 @@ import javax.swing.*;
 public class Main {
     public static void main(String[] args)
     {
-        CreateDB.createNewDatabase();
+        //Database.createNewDatabase();
         SQLiteJDBCDriverConnection.connect();
         SwingUtilities.invokeLater(new Runnable(){
             public void run() {
