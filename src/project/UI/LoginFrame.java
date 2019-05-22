@@ -15,9 +15,8 @@ public class LoginFrame extends JFrame implements ActionListener {
     private JTextField userTextField = new JTextField();
     private JPasswordField passwordField = new JPasswordField();
     private JButton loginButton = new JButton("LOGIN");
-    private JButton resetButton = new JButton("RESET");
+    private JButton resetButton = new JButton("Clear");
     private JCheckBox showPassword = new JCheckBox("Show Password");
-
 
     LoginFrame() {
         setLayoutManager();
@@ -62,7 +61,6 @@ public class LoginFrame extends JFrame implements ActionListener {
         showPassword.addActionListener(this);
     }
 
-
     @Override
     public void actionPerformed(ActionEvent e) {
         //Coding Part of LOGIN button
@@ -74,7 +72,7 @@ public class LoginFrame extends JFrame implements ActionListener {
 
             if (userText.equalsIgnoreCase("admin") && pwdText.equalsIgnoreCase("admin")) {
                 //JOptionPane.showMessageDialog(this, "Login Successful");
-                AdminFrame adminFrame = new AdminFrame();
+                AdminFrame adminFrame = new AdminFrame(this);
                 setVisible(false);
                 adminFrame.setResizable(false);
             }
