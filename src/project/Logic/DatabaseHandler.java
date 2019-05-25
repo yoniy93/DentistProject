@@ -79,7 +79,7 @@ public class DatabaseHandler {
                         "VALUES ("+id+", "+pswd+", "+name+", "+lname+", "+email+", "+bdate+",D,"+gender+");";
                 break;
             case ADMIN:
-                sql = "INSERT INTO users(id, password, firstname, lastname, email, birthdate, userrole, gender)" +
+                sql = "INSERT INTO users(id, password, firstname, lastname, email, birthdate, userrole, gender) "+
                         "VALUES ("+id+", "+pswd+", "+name+", "+lname+", "+email+", "+bdate+", A," +gender+");";
                 break;
             case PATIENT:
