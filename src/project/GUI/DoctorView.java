@@ -1,7 +1,4 @@
 package project.GUI;
-
-import sun.jvm.hotspot.types.JBooleanField;
-
 import javax.swing.*;
 
 public class DoctorView extends JFrame{

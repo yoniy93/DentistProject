@@ -1,7 +1,5 @@
 package project.GUI;
-
 import javax.swing.*;
-import java.security.PrivateKey;
 import java.util.Vector;
 
 public class PersonalDetailsView extends JFrame{
