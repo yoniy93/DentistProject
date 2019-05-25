@@ -1,4 +1,4 @@
-package GUI;
+package project.GUI;
 import javax.swing.*;
 import java.util.Vector;
 
@@ -40,6 +40,7 @@ public class PersonalDetailsView extends JFrame{
     private Vector<Integer> dayInfoVector = new Vector();
 
     public PersonalDetailsView() {
+
         setLayout(null);
 
         generateDateInfo();

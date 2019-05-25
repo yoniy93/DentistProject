@@ -19,7 +19,6 @@ public class PersonalDetailsController {
     {
         pDetailsView.getEdit().addActionListener(e->EditAction());
 
-
     }
 
     public void EditAction()
