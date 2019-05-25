@@ -72,7 +72,6 @@ public class PersonalDetailsViewDoctor extends JFrame{
         add(editButton);
         add(cancelButton);
 
-
         add(passwordLabel);
         add(firstnameLabel);
         add(lastnameLabel);
@@ -91,7 +90,6 @@ public class PersonalDetailsViewDoctor extends JFrame{
     public JButton getEditButton() {
         return editButton;
     }
-
 
     public JPasswordField getPasswordField() {
         return passwordField;
