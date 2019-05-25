@@ -18,7 +18,7 @@ public class DatabaseHandler {
 
     public Connection connect() {
         // SQLite connection string
-        String url = DatabaseHandler.DBLocation();
+        String url = DatabaseLocation.DBLocation();
 
         Connection conn = null;
         try {
@@ -31,7 +31,7 @@ public class DatabaseHandler {
 
     public static void createNewDatabase() {
 
-        String url = DatabaseHandler.DBLocation();
+        String url = DatabaseLocation.DBLocation();
 
         try (Connection conn = DriverManager.getConnection(url)) {
             if (conn != null) {
@@ -47,7 +47,7 @@ public class DatabaseHandler {
 
     public static void createNewTables() {
         // SQLite connection string
-        String url = DatabaseHandler.DBLocation();
+        String url = DatabaseLocation.DBLocation();
 
         // SQL statement for creating a new table
         String sql = "CREATE TABLE IF NOT EXISTS users (id text PRIMARY KEY, password text NOT NULL, firstname text NOT NULL," +
