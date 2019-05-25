@@ -19,5 +19,4 @@ public class PatientModel {
         this.patient = patient;
     }
 
-
 }

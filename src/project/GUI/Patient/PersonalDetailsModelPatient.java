@@ -5,6 +5,10 @@ public class PersonalDetailsModelPatient {
 
     Patient patient;
 
+    public PersonalDetailsModelPatient(Patient patient){
+        this.patient = patient;
+    }
+
     public Patient getPatient() {
         return patient;
     }
@@ -14,10 +18,6 @@ public class PersonalDetailsModelPatient {
     }
 
     /*
-    public PersonalDetailsModelDoctor(Patient patient){
-        this.patient=patient;
-    }
-
     public void UpdatedPatient() {
         DatabaseHandler databaseHandler=new DatabaseHandler();
         databaseHandler.updatePatientDetailts(patient);
