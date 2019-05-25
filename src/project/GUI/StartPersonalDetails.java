@@ -1,9 +1,10 @@
 package project.GUI;
 
 public class StartPersonalDetails {
+
     public StartPersonalDetails(){
-        PersonalDetailsModel personalDetailsM = new PersonalDetailsModel();
-        PersonalDetailsView personalDetailsV = new PersonalDetailsView();
-        new PersonalDetailsController(personalDetailsM, personalDetailsV);
+        PersonalDetailsModelDoctor personalDetailsM = new PersonalDetailsModelDoctor();
+        PersonalDetailsViewDoctor personalDetailsV = new PersonalDetailsViewDoctor();
+        new PersonalDetailsControllerDoctor(personalDetailsM, personalDetailsV);
     }
 }
