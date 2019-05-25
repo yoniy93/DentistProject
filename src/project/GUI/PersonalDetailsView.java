@@ -1,6 +1,7 @@
 package project.GUI;
 
 import javax.swing.*;
+import java.security.PrivateKey;
 import java.util.Vector;
 
 public class PersonalDetailsView extends JFrame{
@@ -14,6 +15,9 @@ public class PersonalDetailsView extends JFrame{
     private JLabel firstname;
     private JLabel dateOfBirth;
     private JLabel yearsOfEx;
+    private JLabel genderLabel;
+    private JLabel weight;
+    private JLabel height;
 
     private JLabel email;
     private JTextField idText;
@@ -22,6 +26,9 @@ public class PersonalDetailsView extends JFrame{
     private JTextField firstnameText;
     private JTextField emailText;
     private JTextField yearsOfExText;
+    private JTextField heightText;
+    private JTextField weightText;
+
 
     private JRadioButton male;
     private JRadioButton female;
@@ -54,6 +61,9 @@ public class PersonalDetailsView extends JFrame{
         dateOfBirth= new JLabel("Date Of Birth: ");
         email=new JLabel( "Email: ");
         yearsOfEx=new JLabel("Years of experience: ");
+        genderLabel=new JLabel("Gender: ");
+        height=new JLabel("Height: ");
+        weight=new JLabel("Weight: ");
 
         idText= new JTextField();
         pswdText=new JTextField();
@@ -61,6 +71,8 @@ public class PersonalDetailsView extends JFrame{
         firstnameText=new JTextField();
         emailText=new JTextField();
         yearsOfExText= new JTextField();
+        heightText=new JTextField();
+        weightText=new JTextField();
 
         male=new JRadioButton("Male");
         female=new JRadioButton("Female");
@@ -101,6 +113,7 @@ public class PersonalDetailsView extends JFrame{
     private void addComponentsToContainer() {
         add(lastname);
         add(firstname);
+        add(genderLabel);
         add(male);
         add(female);
         add(email);
@@ -119,6 +132,10 @@ public class PersonalDetailsView extends JFrame{
         add(pswdText);
         add(yearsOfEx);
         add(yearsOfExText);
+        add(weight);
+        add(weightText);
+        add(height);
+        add(heightText);
     }
 
     private void setLocationAndSize()
