@@ -30,19 +30,7 @@ public class PersonalDetailsController {
 
     public void EditAction() {
 
-        DatabaseHandler databaseHandler=new DatabaseHandler();
-        databaseHandler.update(pDetailsView.getFirstnameTextField().getText(),);
 
-        Doctor doctor= new Doctor();
-        doctor.setFirstName(pDetailsView.getFirstnameTextField().getText());
-        doctor.setLastName(pDetailsView.getLastnameTextField().getText());
-        doctor.setEmail(pDetailsView.getEmailTextField().getText());
-        doctor.setId(pDetailsView.getIdTextField().getText());
-        doctor.setPassword(getPassword());
-        doctor.setYearsOfEx(getYearsOfExp());
-
-
-        /*NOT FINISHED*/
 
     }
 }
