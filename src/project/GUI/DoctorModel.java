@@ -6,8 +6,8 @@ public class DoctorModel
 {
     private Doctor doctor;
 
-    public DoctorModel()
+    public DoctorModel(Doctor doctor)
     {
-
+        this.doctor=doctor;
     }
 }
