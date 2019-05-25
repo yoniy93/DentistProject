@@ -223,7 +223,7 @@ public class DatabaseHandler {
         try (Connection conn = this.connect();
              Statement stmt  = conn.createStatement();
              ResultSet rs    = stmt.executeQuery(sql)) {
-            return new Doctor(id,rs.getString("firstname"),rs.getString("lastname"),rs.getString("email"),rs.getString("password"),rs.getString("gender"),rs.getDate("birthdate"),rs.getInt("yearsofexperience"));
+            return new Doctor(id,rs.getString("firstname"),rs.getString("lastname"),rs.getString("email"),rs.getString("password"),rs.getDate("birthdate"),rs.getString("gender"),rs.getInt("yearsofexperience"));
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
