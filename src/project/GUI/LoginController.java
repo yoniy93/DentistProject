@@ -33,7 +33,6 @@ public class LoginController {
     }
 
     public String getPassword(){
-
         return new String(loginV.getPasswordField().getPassword());
     }
 

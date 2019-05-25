@@ -22,7 +22,7 @@ public class PersonalDetailsView extends JFrame{
     private JTextField lastnameTextField = new JTextField();
     private JTextField firstnameTextField = new JTextField();
     private JTextField emailTextField = new JTextField();
-    private JTextField yearsOfExTextField = new JTextField();
+    private JTextField yearsOfExpTextField = new JTextField();
     private JTextField heightTextField = new JTextField();
     private JTextField weightTextField = new JTextField();
 
@@ -139,7 +139,7 @@ public class PersonalDetailsView extends JFrame{
         add(lastnameTextField);
         add(firstnameTextField);
         add(emailTextField);
-        add(yearsOfExTextField);
+        add(yearsOfExpTextField);
         add(heightTextField);
         add(weightTextField);
 
@@ -175,8 +175,8 @@ public class PersonalDetailsView extends JFrame{
         return emailTextField;
     }
 
-    public JTextField getYearsOfExTextField() {
-        return yearsOfExTextField;
+    public JTextField getYearsOfExpTextField() {
+        return yearsOfExpTextField;
     }
 
     public JTextField getHeightTextField() {
