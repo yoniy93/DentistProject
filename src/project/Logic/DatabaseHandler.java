@@ -5,6 +5,7 @@ import java.sql.*;
 
 public class DatabaseHandler {
 
+    /*
     public static String DBLocation() {
         // Yoni
         //return "jdbc:sqlite:/Users/yonatan/project/projectDB.db";
@@ -15,6 +16,7 @@ public class DatabaseHandler {
         //Amit
         //return "jdbc:sqlite:C:/Users/amit/Documents/שנה שניה סמסטר ב/הנדסת תכנה/DB/testDB.db";
     }
+    */
 
     public Connection connect() {
         // SQLite connection string
