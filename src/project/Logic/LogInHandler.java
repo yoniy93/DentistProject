@@ -8,7 +8,7 @@ import java.sql.SQLException;
 public class LogInHandler {
 
     private ResultSet resultSet;
-    LogInHandler (String id) {
+    public LogInHandler (String id){
         SelectApp select=new SelectApp();
         resultSet=select.getUserNamePasswordAndRole(id);
     }
