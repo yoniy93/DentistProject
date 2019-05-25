@@ -7,28 +7,35 @@ public class PersonalDetailsController {
     private PersonalDetailsView pDetailsView;
     private PersonalDetailsModel pDetailsModel;
 
-    public PersonalDetailsController (PersonalDetailsModel pDM , PersonalDetailsView pDV)
-    {
-        this.pDetailsModel=pDM;
-        this.pDetailsView=pDV;
+    public PersonalDetailsController (PersonalDetailsModel pDM , PersonalDetailsView pDV) {
+        pDetailsModel=pDM;
+        pDetailsView=pDV;
 
         initController();
     }
 
-    private void initController()
-    {
+    private void initController() {
         pDetailsView.getEditButton().addActionListener(e->EditAction());
 
     }
 
-    public void EditAction()
-    {
+    public String getPassword(){
+        return new String(pDetailsView.getPasswordField().getPassword());
+    }
+
+    public int getYearsOfExp(){
+       return Integer.parseInt(pDetailsView.getYearsOfExpTextField().getText());
+    }
+
+    public void EditAction() {
         Doctor doctor= new Doctor();
         doctor.setFirstName(pDetailsView.getFirstnameTextField().getText());
         doctor.setLastName(pDetailsView.getLastnameTextField().getText());
         doctor.setEmail(pDetailsView.getEmailTextField().getText());
         doctor.setId(pDetailsView.getIdTextField().getText());
-        doctor.setPassword(new String(pDetailsView.getPasswordField().getPassword()));
+        doctor.setPassword(getPassword());
+        doctor.setYearsOfEx(getYearsOfExp());
+
 
         /*NOT FINISHED*/
 
