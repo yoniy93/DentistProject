@@ -5,6 +5,7 @@ public class DoctorController {
     private DoctorModel doctorModel;
     private DoctorView doctorView;
 
+
     public DoctorController(DoctorModel doctorM,DoctorView doctorV)
     {
         this.doctorView=doctorV;
@@ -12,7 +13,6 @@ public class DoctorController {
 
         initController();
     }
-
 
 
     public void initController() {
