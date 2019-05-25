@@ -25,19 +25,19 @@ public class LoginModel {
                 case ADMIN:
                 {
                     Admin admin=databaseHandler.getAdminDetails(username);
-                    StartAdminView adminConnection=new StartAdminView(admin);
+                   new StartAdminView(admin);
                     break;
                 }
                 case DOCTOR:
                 {
                     Doctor doctor=databaseHandler.getDoctorDetails(username);
-                    StartDoctorView doctorConnection=new StartDoctorView(doctor);
+                    new StartDoctorView(doctor);
                     break;
                 }
                 case PATIENT:
                     {
                     Patient patient=databaseHandler.getPatientDetails(username);
-                    StartPatientView patientConnection=new StartPatientView(patient);
+                    new StartPatientView(patient);
                     break;
                 }
                 case ERROR: return false;
