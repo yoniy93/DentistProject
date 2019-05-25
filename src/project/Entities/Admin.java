@@ -1,4 +1,4 @@
 package project.Entities;
 
-public class Admin {
+public class Admin extends User {
 }
