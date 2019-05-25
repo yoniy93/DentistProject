@@ -13,7 +13,7 @@ public class Main {
         DatabaseHandler a = new DatabaseHandler();
         DatabaseHandler.createNewDatabase();
         DatabaseHandler.createNewTables();
-        a.insert("1","1","a","a","e",1,1,"130593", USER_TYPE.ADMIN,"M",1);
+        a.insert("1","1","a","a","e",1,1,"130593", USER_TYPE.DOCTOR,"M",1);
 
         SwingUtilities.invokeLater(new Runnable() {
             public void run() {

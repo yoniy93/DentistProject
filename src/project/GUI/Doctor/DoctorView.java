@@ -22,13 +22,11 @@ public class DoctorView extends JFrame{
         addComponentsToContainer();
 
         setTitle("WELCOME DOCTOR");
-        setBounds(500, 100, 200, 600);
+        setBounds(500, 100, 800, 600);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setResizable(false);
         setVisible(true);
     }
-
-
 
     private void setLocationAndSize() {
 
