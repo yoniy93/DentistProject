@@ -6,7 +6,6 @@ public class PersonalDetailsViewDoctor extends JFrame{
     private JButton editButton = new JButton("Edit");
     private JButton cancelButton = new JButton("Cancel");
 
-
     private JLabel passwordLabel = new JLabel("Password: ");
     private JLabel firstnameLabel = new JLabel("First Name: ");
     private JLabel lastnameLabel = new JLabel( "Last Name: ");

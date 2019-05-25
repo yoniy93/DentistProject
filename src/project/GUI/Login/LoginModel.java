@@ -27,7 +27,7 @@ public class LoginModel {
                 case ADMIN:
                 {
                     Admin admin=databaseHandler.getAdminDetails(username);
-                   new StartAdminView(admin);
+                    new StartAdminView(admin);
                     break;
                 }
                 case DOCTOR:
