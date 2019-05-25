@@ -2,11 +2,20 @@ package project.Logic;
 
 import project.Entities.USER_TYPE;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
 public class LogInHandler {
 
-    public USER_TYPE getUserType (String username) {
+    private ResultSet resultSet;
+    LogInHandler (String id){
+        SelectApp select=new SelectApp();
+        resultSet=select.getUserNamePasswordAndRole(id);
+    }
 
-        String userType="....."; // להחליך לשליפה מהDB
+    public USER_TYPE getUserType (String username) throws SQLException {
+
+        String userType=resultSet.getString("userrole");
         switch (userType) {
             case "A":
                 return USER_TYPE.ADMIN;
@@ -21,14 +30,11 @@ public class LogInHandler {
         }
     }
 
-    public boolean isPasswordCorrect (String id, String password) {
-
-        //SELECT FROM TABLE
-        return id.equals("check");
+    public boolean isPasswordCorrect (String password) throws SQLException {
+        return resultSet.getString("password").equals(password);
     }
 
-    public boolean isUserExists (String id) {
-        SelectApp temp = new SelectApp();
-        return temp.checkUserName(id);
+    public boolean isUserExists (String id) throws SQLException {
+        return resultSet.getString("id").equals(id) ;
     }
 }

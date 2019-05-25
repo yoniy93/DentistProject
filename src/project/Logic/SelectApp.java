@@ -43,26 +43,20 @@ public class SelectApp {
 
 
 
-    public boolean checkUserName (String username){
-        String sql = "SELECT id, name, capacity "
-                + "FROM warehouses WHERE id = ? ";
+    public ResultSet getUserNamePasswordAndRole (String userid){
+        String sql = "SELECT id, passqord, userrole "
+                + "FROM users WHERE id = ?";
 
         try (Connection conn = this.connect();
              PreparedStatement pstmt  = conn.prepareStatement(sql)){
 
-            // set the value
-            pstmt.setString(1,username);
+            pstmt.setString(1,userid);
 
-            //
-            ResultSet rs  = pstmt.executeQuery();
-
-            // loop through the result set
-            return rs.getString("id").equals(username);
+            return pstmt.executeQuery();
 
         } catch (SQLException e) {
             System.out.println(e.getMessage());
-            return false;
+            return null;
         }
-
     }
 }
