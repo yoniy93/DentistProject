@@ -16,17 +16,17 @@ public class LoginModel {
         {
             switch (logInHandler.getUserType(username))
             {
+                //enum USER_TYPE { ADMIN, DOCTOR, PATIENT, SECRETARY, ERROR};
                 /*
-                case ADMIN: StartAdminView; break;
-                case DOCTOR: StartDoctorView; break;
-                case PATIENT: StartPatientView; break;
-                case SECRETARY: StartSecretaryView; break;
-                case ERROR: return  false;
+                AdminFrame adminFrame = new AdminFrame();
+                loginV.getLoginFrame().setVisible(false);
+                adminFrame.setResizable(false);
                 */
             }
+
             return true;
         }
         else
-            return false;
+            return  false;
     }
 }
