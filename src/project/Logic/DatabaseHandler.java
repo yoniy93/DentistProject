@@ -1,6 +1,5 @@
 package project.Logic;
 
-import com.sun.org.apache.bcel.internal.generic.SWITCH;
 import project.Entities.*;
 
 import java.sql.*;
@@ -149,8 +148,8 @@ public class DatabaseHandler {
     }
 
     public void updatePatientDetaits(Patient p){
-        String sql= "UPDATE users SET  password="+a.getPassword()+", firstname="+a.getFirstName() +
-                ", lastname="+a.getLastName() +", email="+a.getEmail() +"WHERE id=" +a.getId()+";";
+        String sql= "UPDATE users SET  password="+p.getPassword()+", firstname="+p.getFirstName() +
+                ", lastname="+p.getLastName() +", email="+p.getEmail() +"WHERE id=" +p.getId()+";";
 
 
         try (Connection conn = this.connect();
@@ -224,7 +223,7 @@ public class DatabaseHandler {
         try (Connection conn = this.connect();
              Statement stmt  = conn.createStatement();
              ResultSet rs    = stmt.executeQuery(sql)) {
-            return new Doctor(id,rs.getString("firstname"),rs.getString("lastname"),rs.getString("email"),rs.getString("password"),);
+            //return new Doctor(id,rs.getString("firstname"),rs.getString("lastname"),rs.getString("email"),rs.getString("password"));
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
