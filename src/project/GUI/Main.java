@@ -9,9 +9,11 @@ import javax.swing.*;
 public class Main {
     public static void main(String[] args)
     {
+        DatabaseHandler a = new DatabaseHandler();
         DatabaseHandler.createNewDatabase();
         DatabaseHandler.createNewTables();
-        new DatabaseHandler().insert("1","1","a","a","e",1,1,"130593", USER_TYPE.ADMIN,"M");
+        a.insert("1","1","a","a","e",1,1,"130593", USER_TYPE.ADMIN,"M",1);
+
         SwingUtilities.invokeLater(new Runnable() {
             public void run() {
                 new StartLoginView();
