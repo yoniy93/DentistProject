@@ -13,9 +13,8 @@ public class PersonalDetailsViewDoctor extends JFrame{
     private JLabel emailLabel = new JLabel( "Email: ");
     private JLabel yearsOfExpLabel = new JLabel("Years of experience: ");
 
-
-
     private JPasswordField passwordField = new JPasswordField();
+
     private JTextField lastnameTextField = new JTextField();
     private JTextField firstnameTextField = new JTextField();
     private JTextField emailTextField = new JTextField();
@@ -25,8 +24,6 @@ public class PersonalDetailsViewDoctor extends JFrame{
     public PersonalDetailsViewDoctor() {
 
         setLayout(null);
-
-
         setLocationAndSize();
         addComponentsToFrame();
 

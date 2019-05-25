@@ -22,7 +22,7 @@ public class DoctorController {
 
     public void EditDetailsAction()
     {
-        new StartPersonalDetailsDoctor();
+        new StartPersonalDetailsDoctor(doctorModel.getDoctor());
     }
 
     public void EnterShiftAction()
