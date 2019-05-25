@@ -16,22 +16,23 @@ public class DoctorController {
 
 
     public void initController() {
-        doctorView.getEditPersonalDetails().addActionListener(e -> editDetailsAction());
-        doctorView.getEnterShifts().addActionListener(e -> enterShiftAction());
-        doctorView.getViewClinicStaffInfo().addActionListener(e -> viewInfoAction());
+        doctorView.getEditPersonalDetails().addActionListener(e -> EditDetailsAction());
+        doctorView.getEnterShifts().addActionListener(e -> EnterShiftAction());
+        doctorView.getViewClinicStaffInfo().addActionListener(e -> ViewInfoAction());
     }
 
-    public void editDetailsAction()
+    public void EditDetailsAction()
+    {
+        PersonalDetailsView editD=new PersonalDetailsView();
+
+    }
+
+    public void EnterShiftAction()
     {
 
     }
 
-    public void enterShiftAction()
-    {
-
-    }
-
-    public void viewInfoAction()
+    public void ViewInfoAction()
     {
 
     }
