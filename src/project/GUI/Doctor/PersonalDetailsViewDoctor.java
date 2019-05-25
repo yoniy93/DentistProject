@@ -1,9 +1,11 @@
 package project.GUI.Doctor;
+import project.GUI.PersonalDetailsView;
+
 import javax.swing.*;
 import java.awt.*;
-import java.util.Vector;
 
-public class PersonalDetailsViewDoctor extends JFrame{
+
+public class PersonalDetailsViewDoctor extends PersonalDetailsView{
 
     private JLabel yearsOfExpLabel = new JLabel("Years of experience: ");
     private JTextField yearsOfExpTextField = new JTextField();
