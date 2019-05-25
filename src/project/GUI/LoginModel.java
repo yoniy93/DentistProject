@@ -21,7 +21,7 @@ public class LoginModel {
                 case DOCTOR: StartDoctorView; break;
                 case PATIENT: StartPatientView; break;
                 case SECRETARY: StartSecretaryView; break;
-                case ERROR: return  false;
+                case ERROR: return false;
                 */
             }
             return true;
