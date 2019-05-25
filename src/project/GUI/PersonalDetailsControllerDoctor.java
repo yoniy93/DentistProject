@@ -1,14 +1,11 @@
 package project.GUI;
 
-import project.Entities.Doctor;
-import project.Logic.DatabaseHandler;
+public class PersonalDetailsControllerDoctor {
 
-public class PersonalDetailsController {
+    private PersonalDetailsViewDoctor pDetailsView;
+    private PersonalDetailsModelDoctor pDetailsModel;
 
-    private PersonalDetailsView pDetailsView;
-    private PersonalDetailsModel pDetailsModel;
-
-    public PersonalDetailsController (PersonalDetailsModel pDM , PersonalDetailsView pDV) {
+    public PersonalDetailsControllerDoctor(PersonalDetailsModelDoctor pDM , PersonalDetailsViewDoctor pDV) {
         pDetailsModel=pDM;
         pDetailsView=pDV;
 
