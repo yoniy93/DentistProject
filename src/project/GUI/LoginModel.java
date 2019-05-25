@@ -31,14 +31,14 @@ public class LoginModel {
                 case DOCTOR:
                 {
                     Doctor doctor=databaseHandler.getDoctorDetails(username);
-                    StartDoctorView doctorConnection=new StartDoctorView();
+                    StartDoctorView doctorConnection=new StartDoctorView(doctor);
                     break;
                 }
 
                 case PATIENT:
                     {
                     Patient patient=databaseHandler.getPatientDetails(username);
-                    StartPatientView patientConnection=new StartPatientView();
+                    StartPatientView patientConnection=new StartPatientView(patient);
                     break;
                 }
 
