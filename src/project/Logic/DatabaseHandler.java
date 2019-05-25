@@ -71,7 +71,7 @@ public class DatabaseHandler {
         switch (role){
             case SECRETARY:
                 sql = "INSERT INTO users(id, password, firstname, lastname, email, weightkg, heightcm, birthdate, userRole,gender,yearOfEx)" +
-                        "VALUES ("+id+", "+pswd+", "+name+", "+lname+", "+email+", "+wieght+", "+height+", "+bdate+",S ,"+gender+");";
+                        "VALUES ('"+id+"', '"+pswd+"', '"+name+"', '"+lname+"', '"+email+"', '"+wieght+"', '"+height+"', '"+bdate+"','S' ,'"+gender+"');";
                 break;
             case DOCTOR:
                 sql = "INSERT INTO users(id, password, firstname, lastname, email, birthdate, userRole,yearOfExperiens,gender)" +
@@ -83,7 +83,7 @@ public class DatabaseHandler {
                 break;
             case PATIENT:
                 sql = "INSERT INTO users(id, password, firstname, lastname, email, weightkg, heightcm, birthdate, userRole, gender)" +
-                        "VALUES ("+id+", "+pswd+", "+name+", "+lname+", "+email+", "+wieght+", "+height+", "+bdate+", P,"+gender +");";
+                        "VALUES ('"+id+"', '"+pswd+"', '"+name+"', '"+lname+"', '"+email+"', '"+wieght+"', '"+height+"', '"+bdate+"', 'P','"+gender +"');";
                 break;
         }
 
