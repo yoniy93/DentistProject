@@ -53,7 +53,8 @@ public class DatabaseHandler {
 
         // SQL statement for creating a new table
         String sql = "CREATE TABLE IF NOT EXISTS users (id text PRIMARY KEY, password text NOT NULL, firstname text NOT NULL," +
-                " lastname text NOT NULL, email text NOT NULL, weightkg double, heightcm integer, birthdate text NOT NULL, userrole text, yearOfExperiens integer, gender text);";
+                " lastname text NOT NULL, email text NOT NULL, weightkg double, heightcm integer, birthdate text NOT NULL, userrole text" +
+                ", yearOfExperiens integer, gender text);";
 
         try (Connection conn = DriverManager.getConnection(url);
              Statement stmt = conn.createStatement()) {
@@ -71,17 +72,23 @@ public class DatabaseHandler {
         String sql;
         switch (role){
             case SECRETARY:
-                sql = "INSERT INTO users(id, password, firstname, lastname, email, weightkg, heightcm, birthdate, userrole,gender)" +
-                        "VALUES ("+id+", "+pswd+", "+name+", "+lname+", "+email+", "+wieght+", "+height+", "+bdate+",A,"+gender+");";
+                sql = "INSERT INTO users(id, password, firstname, lastname, email, weightkg, heightcm, birthdate, userrole,gender,yearOfEx)" +
+                        "VALUES ("+id+", "+pswd+", "+name+", "+lname+", "+email+", "+wieght+", "+height+", "+bdate+",S ,"+gender+");";
+                break;
             case DOCTOR:
-                sql = "INSERT INTO users(id, password, firstname, lastname, email, weightkg, heightcm, birthdate, userrole,gender)" +
-                        "VALUES ("+id+", "+pswd+", "+name+", "+lname+", "+email+", "+wieght+", "+height+", "+bdate+",D,"+gender+");";
+                sql = "INSERT INTO users(id, password, firstname, lastname, email, birthdate, userrole,gender,yearOfEx)" +
+                        "VALUES ("+id+", "+pswd+", "+name+", "+lname+", "+email+", "+bdate+",D,"+gender+");";
+                break;
             case ADMIN:
                 sql = "INSERT INTO users(id, password, firstname, lastname, email, birthdate, userrole, gender)" +
                         "VALUES ("+id+", "+pswd+", "+name+", "+lname+", "+email+", "+bdate+", A," +gender+");";
+                break;
             case PATIENT:
                 sql = "INSERT INTO users(id, password, firstname, lastname, email, weightkg, heightcm, birthdate, userrole,gender)" +
                         "VALUES ("+id+", "+pswd+", "+name+", "+lname+", "+email+", "+wieght+", "+height+", "+bdate+",P, "+gender +");";
+                break;
+            default:
+                sql=null;
         }
 
         try (Connection conn = this.connect();
@@ -141,23 +148,34 @@ public class DatabaseHandler {
         }
     }
 //id, password, firstname, lastname, email, weightkg, heightcm, birthdate, userrole
-    public void update(User user) {
+    public void update(Admin a) {
 
-        String sql;
+        String sql= "UPDATE users SET  password="+a.getPassword()+", firstname="+a.getFirstName() +
+                ", lastname="+a.getLastName() +", email="+a.getEmail() +"WHERE id=" +a.getId()+";";
+        /*
         switch (user.getUserRole()){
             case PATIENT:
+
                 sql = "UPDATE users SET  password="+user.getPassword()+", firstname="+user.getFirstName() +
-                        ", lastname="+user.getLastName() +", email="+user.getEmail() +", wieght="+user.getWeight() +", height="+user.getHeight() +", birthdate="+user.getDateOfBirth() +"WHERE id=" +user.getId()+";";
+                        ", lastname="+user.getLastName() +", email="+user.getEmail() +", wieght="+user.getWeight() +
+                        ", height="+user.getHeight() +", birthdate="+user.getDateOfBirth() +"WHERE id=" +user.getId()+";";
+                break;
             case ADMIN:
                 sql = "UPDATE users SET  password="+user.getPassword()+", firstname="+user.getFirstName() +
                         ", lastname="+user.getLastName() +", email="+user.getEmail() +"WHERE id=" +user.getId()+";";
+                break;
             case DOCTOR:
                 sql = "UPDATE users SET  password="+user.getPassword()+", firstname="+user.getFirstName() +
-                        ", lastname="+user.getLastName() +", email="+user.getEmail() +", wieght="+ +", height="+ +", birthdate="+user.getDateOfBirth() +"WHERE id=" +user.getId()+";";
+                        ", lastname="+user.getLastName() +", email="+user.getEmail() +", wieght="+ +", height="+
+                        ", birthdate="+user.getDateOfBirth() +"WHERE id=" +user.getId()+";";
+                break;
             case SECRETARY:
-                sql = "UPDATE users SET  password="+user.getPassword()+", firstname="+user.getFirstName() +
-                        ", lastname="+user.getLastName() +", email="+user.getEmail() +", wieght="+ +", height="+ +", birthdate="+user.getDateOfBirth() +"WHERE id=" +user.getId()+";";
-        }
+                sql = "UPDATE users SET  password="+user.getPassword()+", firstname="+user.getFirstName() + ", lastname="+user.getLastName() +
+                        ", email="+user.getEmail() +", wieght="+ +", height="+ +", birthdate="+user.getDateOfBirth() +"WHERE id=" +user.getId()+";";
+                break;
+            default:
+                sql=null;
+        }*/
 
         try (Connection conn = this.connect();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
