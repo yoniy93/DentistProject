@@ -34,16 +34,13 @@ public class LoginModel {
                     StartDoctorView doctorConnection=new StartDoctorView(doctor);
                     break;
                 }
-
                 case PATIENT:
                     {
                     Patient patient=databaseHandler.getPatientDetails(username);
                     StartPatientView patientConnection=new StartPatientView(patient);
                     break;
                 }
-
                 case ERROR: return false;
-
             }
             return true;
         }
