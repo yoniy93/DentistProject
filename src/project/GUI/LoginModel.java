@@ -45,7 +45,7 @@ public class LoginModel {
                 case ERROR: return false;
 
             }
-            return false;
+            return true;
         }
         else
             return false;
