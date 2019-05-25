@@ -1,4 +1,4 @@
-package project.GUI;
+package project.GUI.Patient;
 
 public class PersonalDetailsModelPatient {
 }

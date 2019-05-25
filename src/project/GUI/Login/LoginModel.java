@@ -1,8 +1,10 @@
-package project.GUI;
+package project.GUI.Login;
 import project.Entities.Admin;
 import project.Entities.Doctor;
 import project.Entities.Patient;
-import project.Entities.USER_TYPE;
+import project.GUI.Admin.StartAdminView;
+import project.GUI.Doctor.StartDoctorView;
+import project.GUI.Patient.StartPatientView;
 import project.Logic.DatabaseHandler;
 import project.Logic.LogInHandler;
 

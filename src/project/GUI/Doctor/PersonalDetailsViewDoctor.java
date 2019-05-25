@@ -1,4 +1,4 @@
-package project.GUI;
+package project.GUI.Doctor;
 import javax.swing.*;
 import java.util.Vector;
 
