@@ -14,7 +14,6 @@ public class DoctorController {
         initController();
     }
 
-
     public void initController() {
         doctorView.getEditPersonalDetails().addActionListener(e -> EditDetailsAction());
         doctorView.getEnterShifts().addActionListener(e -> EnterShiftAction());
@@ -23,9 +22,7 @@ public class DoctorController {
 
     public void EditDetailsAction()
     {
-        PersonalDetailsView editD=new PersonalDetailsView();
-
-
+        new StartPersonalDetails();
     }
 
     public void EnterShiftAction()

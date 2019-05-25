@@ -17,19 +17,18 @@ public class PersonalDetailsController {
 
     private void initController()
     {
-        pDetailsView.getEdit().addActionListener(e->EditAction());
-
+        pDetailsView.getEditButton().addActionListener(e->EditAction());
 
     }
 
     public void EditAction()
     {
-        Doctor doctor=new Doctor();
-        doctor.setFirstName(pDetailsView.getFirstnameText().toString());
-        doctor.setLastName(pDetailsView.getLastnameText().toString());
-        doctor.setEmail(pDetailsView.getEmailText().toString());
-        doctor.setId(pDetailsView.getIdText().toString());
-        doctor.setPassword(pDetailsView.getPswdText().toString());
+        Doctor doctor= new Doctor();
+        doctor.setFirstName(pDetailsView.getFirstnameTextField().getText());
+        doctor.setLastName(pDetailsView.getLastnameTextField().getText());
+        doctor.setEmail(pDetailsView.getEmailTextField().getText());
+        doctor.setId(pDetailsView.getIdTextField().getText());
+        doctor.setPassword(new String(pDetailsView.getPasswordField().getPassword()));
 
         /*NOT FINISHED*/
 
