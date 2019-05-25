@@ -16,13 +16,11 @@ public class LoginModel {
         {
             switch (logInHandler.getUserType(username))
             {
-                /*
                 case ADMIN: StartAdminView; break;
                 case DOCTOR: StartDoctorView; break;
                 case PATIENT: StartPatientView; break;
                 case SECRETARY: StartSecretaryView; break;
                 case ERROR: return  false;
-                */
             }
             return true;
         }
