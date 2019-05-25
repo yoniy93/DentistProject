@@ -13,7 +13,7 @@ import java.sql.SQLException;
             Connection conn = null;
             try {
                 // db parameters
-                String url = "jdbc:sqlite:/Users/yonatan/project/testDB.db"; // YONI
+                String url = "jdbc:sqlite:/Users/yonatan/project/projectDB.db"; // YONI
                 // String url = "jdbc:sqlite:C:/Users/amit/Documents/שנה שניה סמסטר ב/הנדסת תכנה/DB/testDB.db"; // OFIR
 
                 //String url = "jdbc:sqlite:C:/Users/amit/Documents/שנה שניה סמסטר ב/הנדסת תכנה/DB/testDB.db"; // AMIT

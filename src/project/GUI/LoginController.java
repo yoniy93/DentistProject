@@ -38,7 +38,7 @@ public class LoginController {
     }
 
     public void loginAction() throws SQLException {
-        if(loginM.CheckLogin(getUser(), getPassword()))
+        if(!loginM.CheckLogin(getUser(), getPassword()))
         {
             JOptionPane.showMessageDialog(loginV, "Invalid Username or Password");
         }
