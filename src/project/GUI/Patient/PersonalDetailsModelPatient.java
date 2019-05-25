@@ -21,7 +21,6 @@ public class PersonalDetailsModelPatient {
     public void UpdatedPatient() {
         DatabaseHandler databaseHandler=new DatabaseHandler();
         databaseHandler.updatePatientDetailts(patient);
-
     }
     */
 }
