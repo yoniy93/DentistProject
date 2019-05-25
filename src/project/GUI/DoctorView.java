@@ -26,7 +26,7 @@ public class DoctorView extends JFrame{
         addComponentsToContainer();
 
         setTitle("WELCOME DOCTOR");
-        setBounds(500, 100, 370, 550);
+        setBounds(500, 100, 200, 600);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setResizable(false);
         setVisible(true);
@@ -50,7 +50,7 @@ public class DoctorView extends JFrame{
     }
 
 
-    public JButton getViewClinicStaffInfoviewClinicStaffInfo() {
+    public JButton getViewClinicStaffInfo() {
         return viewClinicStaffInfo;
     }
 
