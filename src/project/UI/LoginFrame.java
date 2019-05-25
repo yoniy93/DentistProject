@@ -1,6 +1,6 @@
 package project.UI;
 
-import project.Entities.Enum;
+import project.Entities.USER_TYPE;
 
 import javax.swing.*;
 import java.awt.*;

@@ -1,23 +1,23 @@
 package project.Logic;
 
-import project.Entities.Enum;
+import project.Entities.USER_TYPE;
 
 public class LogInHandler {
 
-    public Enum.USER_TYPE getUserType (String username) {
+    public USER_TYPE getUserType (String username) {
 
         String userType="check"; // להחליך לשליפה מהDB
         switch (userType){
             case "A":
-                return Enum.USER_TYPE.ADMIN;
+                return USER_TYPE.ADMIN;
             case "D":
-                return Enum.USER_TYPE.DOCTOR;
+                return USER_TYPE.DOCTOR;
             case "P":
-                return Enum.USER_TYPE.PATIENT;
+                return USER_TYPE.PATIENT;
             case "S":
-                return Enum.USER_TYPE.SECRETARY;
+                return USER_TYPE.SECRETARY;
             default:
-                return Enum.USER_TYPE.ERROR;
+                return USER_TYPE.ERROR;
         }
     }
 
