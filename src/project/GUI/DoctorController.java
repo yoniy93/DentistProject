@@ -25,6 +25,7 @@ public class DoctorController {
     {
         PersonalDetailsView editD=new PersonalDetailsView();
 
+
     }
 
     public void EnterShiftAction()
