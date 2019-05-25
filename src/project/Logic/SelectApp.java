@@ -9,7 +9,9 @@ public class SelectApp {
      */
     private Connection connect() {
         // SQLite connection string
-        String url = "jdbc:sqlite:C://sqlite/db/test.db";
+        //String url = "jdbc:sqlite:C:/Users/amit/Documents/שנה שניה סמסטר ב/הנדסת תכנה/DB/testDB.db"; // AMIT
+        String url =         "jdbc:sqlite:/Users/yonatan/project/testDB.db";; // YONI
+        //String url = "jdbc:sqlite:C:/Users/amit/Documents/שנה שניה סמסטר ב/הנדסת תכנה/DB/testDB.db"; // OFIR
         Connection conn = null;
         try {
             conn = DriverManager.getConnection(url);
@@ -18,7 +20,6 @@ public class SelectApp {
         }
         return conn;
     }
-
 
     /**
      * select all rows in the warehouses table
@@ -40,8 +41,6 @@ public class SelectApp {
             System.out.println(e.getMessage());
         }
     }
-
-
 
     public ResultSet getUserNamePasswordAndRole (String userid){
         String sql = "SELECT id, passqord, userrole "

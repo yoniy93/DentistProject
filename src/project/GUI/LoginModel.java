@@ -1,16 +1,16 @@
 package project.GUI;
-
 import project.Logic.LogInHandler;
+
+import java.sql.SQLException;
 
 public class LoginModel {
 
-    private LogInHandler logInHandler;
-
     public LoginModel() {
-        logInHandler = new LogInHandler();
     }
 
-    public boolean CheckLogin(String username, String password){
+    public boolean CheckLogin(String username, String password) throws SQLException {
+
+        LogInHandler logInHandler = new  LogInHandler(username);
 
         if(logInHandler.isUserExists(username) && logInHandler.isUserExists(password))
         {
@@ -21,7 +21,7 @@ public class LoginModel {
                 case DOCTOR: StartDoctorView; break;
                 case PATIENT: StartPatientView; break;
                 case SECRETARY: StartSecretaryView; break;
-                case ERROR: return  false;
+                case ERROR: return false;
                 */
             }
             return true;

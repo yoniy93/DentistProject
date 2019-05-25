@@ -1,6 +1,7 @@
 package project.GUI;
 
 import javax.swing.*;
+import java.sql.SQLException;
 
 public class LoginController {
 
@@ -15,7 +16,13 @@ public class LoginController {
     }
 
     public void initController() {
-        loginV.getLoginButton().addActionListener(e -> loginAction());
+        loginV.getLoginButton().addActionListener(e -> {
+            try {
+                loginAction();
+            } catch (SQLException ex) {
+                ex.printStackTrace();
+            }
+        });
         loginV.getShowPassword().addActionListener(e -> showPasswordAction());
         loginV.getClearButton().addActionListener(e -> clearAction());
     }
@@ -30,8 +37,8 @@ public class LoginController {
         return new String(loginV.getPasswordField().getPassword());
     }
 
-    public void loginAction(){
-        if(loginM.CheckLogin(getUser(), getPassword()) == false)
+    public void loginAction() throws SQLException {
+        if(loginM.CheckLogin(getUser(), getPassword()))
         {
             JOptionPane.showMessageDialog(loginV, "Invalid Username or Password");
         }
