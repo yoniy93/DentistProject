@@ -6,14 +6,12 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 public class InsertApp {
-    /**
-     * Connect to the test.db database
-     *
-     * @return the Connection object
-     */
+
     private Connection connect() {
         // SQLite connection string
-        String url = "jdbc:sqlite:C://sqlite/db/test.db";
+        //String url = "jdbc:sqlite:C:/Users/amit/Documents/שנה שניה סמסטר ב/הנדסת תכנה/DB/testDB.db"; // AMIT
+        String url =         "jdbc:sqlite:/Users/yonatan/project/testDB.db";; // YONI
+        //String url = "jdbc:sqlite:C:/Users/amit/Documents/שנה שניה סמסטר ב/הנדסת תכנה/DB/testDB.db"; // OFIR
         Connection conn = null;
         try {
             conn = DriverManager.getConnection(url);
@@ -23,12 +21,6 @@ public class InsertApp {
         return conn;
     }
 
-    /**
-     * Insert a new row into the warehouses table
-     *
-     * @param name
-     * @param capacity
-     */
     public void insert(String name, double capacity) {
         String sql = "INSERT INTO warehouses(name,capacity) VALUES(?,?)";
 

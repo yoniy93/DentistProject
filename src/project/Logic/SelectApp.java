@@ -19,7 +19,6 @@ public class SelectApp {
         return conn;
     }
 
-
     /**
      * select all rows in the warehouses table
      */
@@ -40,8 +39,6 @@ public class SelectApp {
             System.out.println(e.getMessage());
         }
     }
-
-
 
     public ResultSet getUserNamePasswordAndRole (String userid){
         String sql = "SELECT id, passqord, userrole "
