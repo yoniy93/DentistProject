@@ -3,6 +3,16 @@ import java.sql.*;
 
 public class Database {
 
+    public static Database database=null;
+
+    static Database getDatabase()
+    {
+        if(database==null)
+        {
+           database=new Database();
+        }
+        return database;
+    }
 
     public static void createNewDatabase() {
 
