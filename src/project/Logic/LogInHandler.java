@@ -27,8 +27,8 @@ public class LogInHandler {
         return id.equals("check");
     }
 
-    public boolean isUserExists (String password) {
+    public boolean isUserExists (String id) {
         //SELECT FROM TABLE
-        return password.equals("check");
+        return id.equals("check");
     }
 }
