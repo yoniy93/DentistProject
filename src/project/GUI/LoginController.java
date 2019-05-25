@@ -16,7 +16,13 @@ public class LoginController {
     }
 
     public void initController() {
-        loginV.getLoginButton().addActionListener(e -> loginAction());
+        loginV.getLoginButton().addActionListener(e -> {
+            try {
+                loginAction();
+            } catch (SQLException ex) {
+                ex.printStackTrace();
+            }
+        });
         loginV.getShowPassword().addActionListener(e -> showPasswordAction());
         loginV.getClearButton().addActionListener(e -> clearAction());
     }
