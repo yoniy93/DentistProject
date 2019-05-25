@@ -7,7 +7,6 @@ public class DoctorView extends JFrame{
     private JButton enterShifts;
     private JButton editPersonalDetails;
 
-
     public DoctorView()
     {
         viewClinicStaffInfo = new JButton("View clinic staff info");

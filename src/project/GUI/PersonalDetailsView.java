@@ -1,121 +1,52 @@
-package project.GUI;
+package GUI;
 import javax.swing.*;
 import java.util.Vector;
 
 public class PersonalDetailsView extends JFrame{
 
-    private JButton edit;
-    private JButton cancel;
+    private JButton editButton = new JButton("Edit");
+    private JButton cancelButton = new JButton("Cancel");
 
-    private JLabel id;
-    private JLabel pswd;
-    private JLabel lastname;
-    private JLabel firstname;
-    private JLabel dateOfBirth;
-    private JLabel yearsOfEx;
-    private JLabel genderLabel;
-    private JLabel weight;
-    private JLabel height;
-    private JLabel email;
+    private JLabel idLabel = new JLabel("ID: ");
+    private JLabel passwordLabel = new JLabel("Password: ");
+    private JLabel firstnameLabel = new JLabel("First Name: ");
+    private JLabel lastnameLabel = new JLabel( "Last Name: ");
+    private JLabel dateOfBirthLabel = new JLabel("Date Of Birth: ");
+    private JLabel emailLabel = new JLabel( "Email: ");
+    private JLabel yearsOfExpLabel = new JLabel("Years of experience: ");
+    private JLabel genderLabel = new JLabel("Gender: ");
+    private JLabel heightLabel = new JLabel("Height: ");
+    private JLabel weightLabel = new JLabel("Weight: ");
 
-    private JTextField idText;
-    private JTextField pswdText;
-    private JTextField lastnameText;
-    private JTextField firstnameText;
-    private JTextField emailText;
+    private JTextField idTextField = new JTextField();
+    private JTextField passwordTextField = new JTextField();
+    private JTextField lastnameTextField = new JTextField();
+    private JTextField firstnameTextField = new JTextField();
+    private JTextField emailTextField = new JTextField();
+    private JTextField yearsOfExTextField = new JTextField();
+    private JTextField heightTextField = new JTextField();
+    private JTextField weightTextField = new JTextField();
 
-    public JTextField getIdText() {
-        return idText;
-    }
+    private JRadioButton maleRadioButton = new JRadioButton("Male");
+    private JRadioButton femaleRadioButton = new JRadioButton("Female");
+    private ButtonGroup genderButtonGroup = new ButtonGroup();
 
-    public JTextField getPswdText() {
-        return pswdText;
-    }
+    private JComboBox monthComboBox = new JComboBox();
+    private JComboBox dayComboBox = new JComboBox();
+    private JComboBox yearComboBox = new JComboBox();
 
-    public JTextField getLastnameText() {
-        return lastnameText;
-    }
+    private Vector<Integer> yearInfoVector = new Vector();
+    private Vector<Integer> monthInfoVector = new Vector();
+    private Vector<Integer> dayInfoVector = new Vector();
 
-    public JTextField getFirstnameText() {
-        return firstnameText;
-    }
-
-    public JTextField getEmailText() {
-        return emailText;
-    }
-
-    public JTextField getYearsOfExText() {
-        return yearsOfExText;
-    }
-
-    public JTextField getHeightText() {
-        return heightText;
-    }
-
-    public JTextField getWeightText() {
-        return weightText;
-    }
-
-    private JTextField yearsOfExText;
-    private JTextField heightText;
-    private JTextField weightText;
-
-
-    private JRadioButton male;
-    private JRadioButton female;
-    private ButtonGroup gender;
-
-    private Vector<Integer> yearInfo;
-    private Vector<Integer> monthInfo;
-    private Vector<Integer>dayInfo;
-    private JComboBox year;
-    private JComboBox month;
-    private JComboBox day;
-
-    public PersonalDetailsView()
-    {
-        GenerateDateInfo();
-        addComponentsToContainer();
-        setLocationAndSize();
-
-        edit=new JButton();
-        cancel=new JButton();
-
-        yearInfo=new Vector<>();
-        monthInfo=new Vector<>();
-        dayInfo=new Vector<>();
-
-        id=new JLabel("ID: ");
-        pswd=new JLabel("Password: ");
-        firstname=new JLabel("First Name: ");
-        lastname =new JLabel( "Last Name: ");
-        dateOfBirth= new JLabel("Date Of Birth: ");
-        email=new JLabel( "Email: ");
-        yearsOfEx=new JLabel("Years of experience: ");
-        genderLabel=new JLabel("Gender: ");
-        height=new JLabel("Height: ");
-        weight=new JLabel("Weight: ");
-
-        idText= new JTextField();
-        pswdText=new JTextField();
-        lastnameText=new JTextField();
-        firstnameText=new JTextField();
-        emailText=new JTextField();
-        yearsOfExText= new JTextField();
-        heightText=new JTextField();
-        weightText=new JTextField();
-
-        male=new JRadioButton("Male");
-        female=new JRadioButton("Female");
-        gender=new ButtonGroup();
-        gender.add(male);
-        gender.add(female);
-
-        month=new JComboBox();
-        day=new JComboBox();
-        year=new JComboBox();
+    public PersonalDetailsView() {
         setLayout(null);
 
+        generateDateInfo();
+        configDateComboBox();
+        addRadioButtonsToGroup();
+        setLocationAndSize();
+        addComponentsToFrame();
 
         setTitle("Edit Personal Details ");
         setBounds(300, 100, 800, 600);
@@ -124,60 +55,99 @@ public class PersonalDetailsView extends JFrame{
         setVisible(true);
     }
 
-    private void GenerateDateInfo( )
-    {
-        for (int i=0;i<31;i++)
+    private void generateDateInfo( ) {
+        for (int i=1; i<=31; i++)
         {
-            this.dayInfo.set(i,i+1);
+            dayInfoVector.add(i);
         }
-        for(int i=0;i<12;i++)
+        for(int i=1; i<=12; i++)
         {
-            this.monthInfo.set(i,i+1);
+            monthInfoVector.add(i);
         }
-        int startYear=2019;
-        for(int i=0;i<100;i++)
+
+        int startYear = 2019;
+        for(int i=0; i<100; i++)
         {
-            this.yearInfo.set(i,startYear--);
+            yearInfoVector.add(startYear--);
         }
     }
 
-    private void addComponentsToContainer() {
-        add(lastname);
-        add(firstname);
+    private void configDateComboBox(){
+        dayComboBox = new JComboBox(dayInfoVector);
+        monthComboBox = new JComboBox(monthInfoVector);
+        yearComboBox = new JComboBox(yearInfoVector);
+    }
+
+    private void addRadioButtonsToGroup(){
+        genderButtonGroup.add(maleRadioButton);
+        genderButtonGroup.add(femaleRadioButton);
+    }
+
+    private void setLocationAndSize() {
+        //  right, down, width, height
+        editButton.setBounds(50, 500, 100, 30);
+
+        cancelButton.setBounds(170, 500, 100, 30);
+
+
+
+        /*
+
+        idLabel.setBounds(50, 150, 100, 30);
+        passwordLabel.setBounds(50, 150, 100, 30);
+        firstnameLabel.setBounds(50, 150, 100, 30);
+        lastnameLabel.setBounds(50, 150, 100, 30);
+        dateOfBirthLabel.setBounds(50, 150, 100, 30);
+        emailLabel.setBounds(50, 150, 100, 30);
+        yearsOfExpLabel.setBounds(50, 150, 100, 30);
+        genderLabel.setBounds(50, 150, 100, 30);
+        heightLabel.setBounds(50, 150, 100, 30);
+        weightLabel.setBounds(50, 150, 100, 30);
+        idTextField.setBounds(50, 150, 100, 30);
+        passwordTextField.setBounds(50, 150, 100, 30);
+        lastnameTextField.setBounds(50, 150, 100, 30);
+        firstnameTextField.setBounds(50, 150, 100, 30);
+        emailTextField.setBounds(50, 150, 100, 30);
+        yearsOfExTextField.setBounds(50, 150, 100, 30);
+        heightTextField.setBounds(50, 150, 100, 30);
+        weightTextField.setBounds(50, 150, 100, 30);
+        maleRadioButton.setBounds(50, 150, 100, 30);
+        femaleRadioButton.setBounds(50, 150, 100, 30);
+        monthComboBox.setBounds(50, 150, 100, 30);
+        dayComboBox.setBounds(50, 150, 100, 30);
+        yearComboBox.setBounds(50, 150, 100, 30);
+        */
+    }
+
+    private void addComponentsToFrame(){
+        add(editButton);
+        add(cancelButton);
+
+        add(idLabel);
+        add(passwordLabel);
+        add(firstnameLabel);
+        add(lastnameLabel);
+        add(dateOfBirthLabel);
+        add(emailLabel);
+        add(yearsOfExpLabel);
         add(genderLabel);
-        add(male);
-        add(female);
-        add(email);
-        add(dateOfBirth);
-        add(month);
-        add(day);
-        add(year);
-        add(edit);
-        add(cancel);
-        add(id);
-        add(idText);
-        add(lastnameText);
-        add(firstnameText);
-        add(emailText);
-        add(pswd);
-        add(pswdText);
-        add(yearsOfEx);
-        add(yearsOfExText);
-        add(weight);
-        add(weightText);
-        add(height);
-        add(heightText);
+        add(heightLabel);
+        add(weightLabel);
+
+        add(idTextField);
+        add(passwordTextField);
+        add(lastnameTextField);
+        add(firstnameTextField);
+        add(emailTextField);
+        add(yearsOfExTextField);
+        add(heightTextField);
+        add(weightTextField);
+
+        add(maleRadioButton);
+        add(femaleRadioButton);
+
+        add(monthComboBox);
+        add(dayComboBox);
+        add(yearComboBox);
     }
-
-    private void setLocationAndSize()
-    {
-
-
-    }
-
-    public JButton getEdit()
-    {
-        return edit;
-    }
-
 }
