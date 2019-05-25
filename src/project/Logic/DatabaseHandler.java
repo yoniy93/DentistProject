@@ -1,10 +1,7 @@
 package project.Logic;
 
 import com.sun.org.apache.bcel.internal.generic.SWITCH;
-import project.Entities.Admin;
-import project.Entities.Doctor;
-import project.Entities.USER_TYPE;
-import project.Entities.User;
+import project.Entities.*;
 
 import java.sql.*;
 
@@ -130,19 +127,15 @@ public class DatabaseHandler {
             return USER_TYPE.ERROR;
         }
     }
+//id, password, firstname, lastname, email, weightkg, heightcm, birthdate, userrole
+    public void update(User user) {
 
-    public void update(int id, String name, double capacity) {
-        String sql = "UPDATE warehouses SET name = ? , "
-                + "capacity = ? "
-                + "WHERE id = ?";
+        String sql = "UPDATE users SET  password="+user.getPassword()+", firstname="+user.getFirstName() +
+                ", lastname="+user.getLastName() +", email="+user.getEmail() +", wieght="+ +", height="+ +", birthdate="+user.getDateOfBirth() +"WHERE id=" +user.getId()+";";
+
 
         try (Connection conn = this.connect();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
-
-            // set the corresponding param
-            pstmt.setString(1, name);
-            pstmt.setDouble(2, capacity);
-            pstmt.setInt(3, id);
             // update
             pstmt.executeUpdate();
         } catch (SQLException e) {
@@ -156,22 +149,22 @@ public class DatabaseHandler {
              Statement stmt  = conn.createStatement();
              ResultSet rs    = stmt.executeQuery(sql)){
 
-            // loop through the result set
-
             switch (type){
                 case ADMIN:
                     return new Admin();
                 case DOCTOR:
                     return new Doctor();
+                case SECRETARY:
+                    return new Secretary();
+                case PATIENT:
+                    return new Patient();
                 case ERROR:
+                    return null;
             }
         } catch (SQLException e) {
             System.out.println(e.getMessage());
-            return null;
         }
         return null;
     }
-
-
 
 }

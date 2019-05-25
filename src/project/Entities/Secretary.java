@@ -1,6 +1,6 @@
 package project.Entities;
 
-public class Secretary {
+public class Secretary extends User {
 
 
 }
