@@ -16,7 +16,6 @@ public class LoginModel {
         {
             switch (logInHandler.getUserType(username))
             {
-                //enum USER_TYPE { ADMIN, DOCTOR, PATIENT, SECRETARY, ERROR};
                 /*
                 AdminFrame adminFrame = new AdminFrame();
                 loginV.getLoginFrame().setVisible(false);
