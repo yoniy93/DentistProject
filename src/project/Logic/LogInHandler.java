@@ -4,7 +4,6 @@ import project.Entities.USER_TYPE;
 
 public class LogInHandler {
 
-
     public USER_TYPE getUserType (String username)  {
         return new DatabaseHandler().getTypeOfUser(username);
     }
