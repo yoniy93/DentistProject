@@ -17,15 +17,16 @@ public class LoginModel {
             switch (logInHandler.getUserType(username))
             {
                 /*
-                AdminFrame adminFrame = new AdminFrame();
-                loginV.getLoginFrame().setVisible(false);
-                adminFrame.setResizable(false);
+                case ADMIN: StartAdminView; break;
+                case DOCTOR: StartDoctorView; break;
+                case PATIENT: StartPatientView; break;
+                case SECRETARY: StartSecretaryView; break;
+                case ERROR: return  false;
                 */
             }
-
             return true;
         }
         else
-            return  false;
+            return false;
     }
 }
