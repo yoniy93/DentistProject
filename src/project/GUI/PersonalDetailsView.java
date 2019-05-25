@@ -15,13 +15,14 @@ public class PersonalDetailsView extends JFrame {
     private JTextField lastnameTextField = new JTextField();
     private JTextField firstnameTextField = new JTextField();
     private JTextField emailTextField = new JTextField();
-    private JTextField passwordTextField  = new JTextField();
+    private JPasswordField passwordField  = new JPasswordField();
 
     public PersonalDetailsView() {
         setLayout(null);
         setLocationAndSize();
         addComponentsToFrame();
 
+        setTitle("Edit Personal Details");
         setBounds(300, 100, 400, 500);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setResizable(false);
@@ -50,7 +51,7 @@ public class PersonalDetailsView extends JFrame {
         firstnameTextField.setBounds(170, 40, 150, 30);
         lastnameTextField.setBounds(170, 80, 150, 30);
         emailTextField.setBounds(170, 120, 150, 30);
-        passwordTextField.setBounds(170, 160, 150, 30);
+        passwordField.setBounds(170, 160, 150, 30);
     }
     private void addComponentsToFrame(){
         add(editButton);
@@ -64,6 +65,30 @@ public class PersonalDetailsView extends JFrame {
         add(lastnameTextField);
         add(firstnameTextField);
         add(emailTextField);
-        add(passwordTextField);
+        add(passwordField);
+    }
+
+    public JButton getEditButton() {
+        return editButton;
+    }
+
+    public JButton getCancelButton() {
+        return cancelButton;
+    }
+
+    public JTextField getLastnameTextField() {
+        return lastnameTextField;
+    }
+
+    public JTextField getFirstnameTextField() {
+        return firstnameTextField;
+    }
+
+    public JTextField getEmailTextField() {
+        return emailTextField;
+    }
+
+    public JPasswordField getPasswordField() {
+        return passwordField;
     }
 }

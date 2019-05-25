@@ -11,12 +11,9 @@ public class PersonalDetailsViewPatient extends PersonalDetailsView {
     private JTextField heightTextField = new JTextField();
     private JTextField weightTextFiled = new JTextField();
 
-
     public PersonalDetailsViewPatient() {
         setLocationAndSize();
         addComponentsToFrame();
-
-        setTitle("Edit Personal Details ");
     }
 
     private void setLocationAndSize() {
@@ -30,7 +27,6 @@ public class PersonalDetailsViewPatient extends PersonalDetailsView {
         weightTextFiled.setBounds(170, 240, 150, 30);
     }
     private void addComponentsToFrame() {
-
         add(heightLabel);
         add(weightLabel);
 
@@ -38,4 +34,11 @@ public class PersonalDetailsViewPatient extends PersonalDetailsView {
         add(weightTextFiled);
     }
 
+    public JTextField getHeightTextField() {
+        return heightTextField;
+    }
+
+    public JTextField getWeightTextFiled() {
+        return weightTextFiled;
+    }
 }
