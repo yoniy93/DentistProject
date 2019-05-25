@@ -1,16 +1,31 @@
 package project.GUI;
 
+import project.Logic.LogInHandler;
+
 public class LoginModel {
 
-    public LoginModel() {
+    private LogInHandler logInHandler;
 
+    public LoginModel() {
+        logInHandler = new LogInHandler();
     }
 
     public boolean CheckLogin(String username, String password){
 
-        // Connect DB
-        // Check User & Password
+        if(logInHandler.isUserExists(username) && logInHandler.isUserExists(password))
+        {
+            switch (logInHandler.getUserType(username))
+            {
+                /*
+                AdminFrame adminFrame = new AdminFrame();
+                loginV.getLoginFrame().setVisible(false);
+                adminFrame.setResizable(false);
+                */
+            }
 
-        return false;
+            return true;
+        }
+        else
+            return  false;
     }
 }

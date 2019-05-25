@@ -31,15 +31,10 @@ public class LoginController {
     }
 
     public void loginAction(){
-        if(loginM.CheckLogin(getUser(), getPassword()))
+        if(loginM.CheckLogin(getUser(), getPassword()) == false)
         {
-            /*
-            AdminFrame adminFrame = new AdminFrame();
-            loginV.getLoginFrame().setVisible(false);
-            adminFrame.setResizable(false);
-            */
+            JOptionPane.showMessageDialog(loginV.getLoginFrame(), "Invalid Username or Password");
         }
-        else JOptionPane.showMessageDialog(loginV.getLoginFrame(), "Invalid Username or Password");
     }
 
     public void clearAction(){
