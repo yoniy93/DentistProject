@@ -2,7 +2,7 @@ package project.GUI;
 
 public class LoginModel {
 
-    public LoginModel(){
+    public LoginModel() {
 
     }
 

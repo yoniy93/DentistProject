@@ -6,8 +6,8 @@ public class LogInHandler {
 
     public USER_TYPE getUserType (String username) {
 
-        String userType="check"; // להחליך לשליפה מהDB
-        switch (userType){
+        String userType="....."; // להחליך לשליפה מהDB
+        switch (userType) {
             case "A":
                 return USER_TYPE.ADMIN;
             case "D":
@@ -21,7 +21,7 @@ public class LogInHandler {
         }
     }
 
-    public boolean isPasswordCorrect (String id) {
+    public boolean isPasswordCorrect (String id, String password) {
 
         //SELECT FROM TABLE
         return id.equals("check");
