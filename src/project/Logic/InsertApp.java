@@ -22,7 +22,9 @@ public class InsertApp {
     }
 
     public void insert(String name, double capacity) {
-        String sql = "INSERT INTO warehouses(name,capacity) VALUES(?,?)";
+
+        String sql = "INSERT INTO users(id, password, firstname, lastname, email, weightkg, heightcm, birthday, userrole)"+
+                "VALUES'302208178', 'Yoni123', 'Yonatan', 'Yardeni', 'yoniy93@gmail.com', 92.3, 181, date(13/5/1993), 'P')";
 
         try (Connection conn = this.connect();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
@@ -34,8 +36,6 @@ public class InsertApp {
         }
     }
 
-    /**
-     * @param args the command line arguments
-     */
+
 
 }
