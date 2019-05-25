@@ -16,13 +16,46 @@ public class PersonalDetailsView extends JFrame{
     private JLabel genderLabel;
     private JLabel weight;
     private JLabel height;
-
     private JLabel email;
+
     private JTextField idText;
     private JTextField pswdText;
     private JTextField lastnameText;
     private JTextField firstnameText;
     private JTextField emailText;
+
+    public JTextField getIdText() {
+        return idText;
+    }
+
+    public JTextField getPswdText() {
+        return pswdText;
+    }
+
+    public JTextField getLastnameText() {
+        return lastnameText;
+    }
+
+    public JTextField getFirstnameText() {
+        return firstnameText;
+    }
+
+    public JTextField getEmailText() {
+        return emailText;
+    }
+
+    public JTextField getYearsOfExText() {
+        return yearsOfExText;
+    }
+
+    public JTextField getHeightText() {
+        return heightText;
+    }
+
+    public JTextField getWeightText() {
+        return weightText;
+    }
+
     private JTextField yearsOfExText;
     private JTextField heightText;
     private JTextField weightText;
@@ -48,9 +81,9 @@ public class PersonalDetailsView extends JFrame{
         edit=new JButton();
         cancel=new JButton();
 
-        yearInfo=new Vector<Integer>();
-        monthInfo=new Vector<Integer>();
-        dayInfo=new Vector<Integer>();
+        yearInfo=new Vector<>();
+        monthInfo=new Vector<>();
+        dayInfo=new Vector<>();
 
         id=new JLabel("ID: ");
         pswd=new JLabel("Password: ");
@@ -140,6 +173,11 @@ public class PersonalDetailsView extends JFrame{
     {
 
 
+    }
+
+    public JButton getEdit()
+    {
+        return edit;
     }
 
 }

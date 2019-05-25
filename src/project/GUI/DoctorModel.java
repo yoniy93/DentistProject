@@ -1,4 +1,13 @@
 package project.GUI;
+import project.Entities.Doctor;
 
-public class DoctorModel {
+
+public class DoctorModel
+{
+    private Doctor doctor;
+
+    public DoctorModel()
+    {
+        doctor=new Doctor();
+    }
 }
