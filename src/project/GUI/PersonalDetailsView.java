@@ -3,7 +3,6 @@ import javax.swing.*;
 import java.util.Vector;
 
 public class PersonalDetailsView extends JFrame{
-
     private JButton editButton = new JButton("Edit");
     private JButton cancelButton = new JButton("Cancel");
 
@@ -19,7 +18,7 @@ public class PersonalDetailsView extends JFrame{
     private JLabel weightLabel = new JLabel("Weight: ");
 
     private JTextField idTextField = new JTextField();
-    private JTextField passwordTextField = new JTextField();
+    private JPasswordField passwordField = new JPasswordField();
     private JTextField lastnameTextField = new JTextField();
     private JTextField firstnameTextField = new JTextField();
     private JTextField emailTextField = new JTextField();
@@ -136,7 +135,7 @@ public class PersonalDetailsView extends JFrame{
         add(weightLabel);
 
         add(idTextField);
-        add(passwordTextField);
+        add(passwordField);
         add(lastnameTextField);
         add(firstnameTextField);
         add(emailTextField);
@@ -150,5 +149,41 @@ public class PersonalDetailsView extends JFrame{
         add(monthComboBox);
         add(dayComboBox);
         add(yearComboBox);
+    }
+
+    public JButton getEditButton() {
+        return editButton;
+    }
+
+    public JTextField getIdTextField() {
+        return idTextField;
+    }
+
+    public JPasswordField getPasswordField() {
+        return passwordField;
+    }
+
+    public JTextField getLastnameTextField() {
+        return lastnameTextField;
+    }
+
+    public JTextField getFirstnameTextField() {
+        return firstnameTextField;
+    }
+
+    public JTextField getEmailTextField() {
+        return emailTextField;
+    }
+
+    public JTextField getYearsOfExTextField() {
+        return yearsOfExTextField;
+    }
+
+    public JTextField getHeightTextField() {
+        return heightTextField;
+    }
+
+    public JTextField getWeightTextField() {
+        return weightTextField;
     }
 }
