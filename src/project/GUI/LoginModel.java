@@ -10,9 +10,9 @@ public class LoginModel {
 
     public boolean CheckLogin(String username, String password) throws SQLException {
 
-        LogInHandler logInHandler = new  LogInHandler(username);
+        LogInHandler logInHandler = new  LogInHandler();
 
-        if(logInHandler.isUserExists(username) && logInHandler.isUserExists(password))
+        if(logInHandler.isUserExists(username) && logInHandler.isPasswordCorrect(username,password))
         {
             switch (logInHandler.getUserType(username))
             {
