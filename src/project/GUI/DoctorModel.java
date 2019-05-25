@@ -8,6 +8,6 @@ public class DoctorModel
 
     public DoctorModel()
     {
-        doctor=new Doctor();
+
     }
 }
