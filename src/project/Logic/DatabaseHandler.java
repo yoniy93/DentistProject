@@ -1,7 +1,6 @@
 package project.Logic;
 
 import project.Entities.*;
-
 import java.sql.*;
 
 public class DatabaseHandler {
@@ -52,7 +51,7 @@ public class DatabaseHandler {
 
         // SQL statement for creating a new table
         String sql = "CREATE TABLE IF NOT EXISTS users (id text PRIMARY KEY, password text NOT NULL, firstname text NOT NULL," +
-                " lastname text NOT NULL, email text NOT NULL, weightkg double, heightcm integer, birthdate text NOT NULL, userrole text" +
+                " lastname text NOT NULL, email text NOT NULL, weightkg double, heightcm integer, birthdate text NOT NULL, userRole text" +
                 ", yearOfExperiens integer, gender text);";
 
         try (Connection conn = DriverManager.getConnection(url);
@@ -66,32 +65,30 @@ public class DatabaseHandler {
         }
     }
 
-    public void insert (String id, String pswd, String name, String lname, String email, double wieght, int height, String bdate, USER_TYPE role, String gender) {
+    public void insert (String id, String pswd, String name, String lname, String email, double wieght, int height, String bdate, USER_TYPE role, String gender,int yearofEx) {
 
-        String sql;
+        String sql = null;
         switch (role){
             case SECRETARY:
-                sql = "INSERT INTO users(id, password, firstname, lastname, email, weightkg, heightcm, birthdate, userrole,gender,yearOfEx)" +
+                sql = "INSERT INTO users(id, password, firstname, lastname, email, weightkg, heightcm, birthdate, userRole,gender,yearOfEx)" +
                         "VALUES ("+id+", "+pswd+", "+name+", "+lname+", "+email+", "+wieght+", "+height+", "+bdate+",S ,"+gender+");";
                 break;
             case DOCTOR:
-                sql = "INSERT INTO users(id, password, firstname, lastname, email, birthdate, userrole,gender,yearOfEx)" +
-                        "VALUES ("+id+", "+pswd+", "+name+", "+lname+", "+email+", "+bdate+",D,"+gender+");";
+                sql = "INSERT INTO users(id, password, firstname, lastname, email, birthdate, userRole,yearOfExperiens,gender)" +
+                        "VALUES ('"+id+"', '"+pswd+"', '"+name+"', '"+lname+"', '"+email+"', '"+bdate+"','D','"+yearofEx+"', '"+gender+"');";
                 break;
             case ADMIN:
-                sql = "INSERT INTO users(id, password, firstname, lastname, email, birthdate, userrole, gender) "+
-                        "VALUES ("+id+", "+pswd+", "+name+", "+lname+", "+email+", "+bdate+", A," +gender+");";
+                sql = "INSERT INTO users (id, password, firstname, lastname, email, birthdate, userRole, gender)"+
+                        " VALUES ('"+id+"', '"+pswd+"', '"+name+"', '"+lname+"', '"+email+"', '"+bdate+"', 'A','" +gender+"');";
                 break;
             case PATIENT:
-                sql = "INSERT INTO users(id, password, firstname, lastname, email, weightkg, heightcm, birthdate, userrole,gender)" +
-                        "VALUES ("+id+", "+pswd+", "+name+", "+lname+", "+email+", "+wieght+", "+height+", "+bdate+",P, "+gender +");";
+                sql = "INSERT INTO users(id, password, firstname, lastname, email, weightkg, heightcm, birthdate, userRole, gender)" +
+                        "VALUES ("+id+", "+pswd+", "+name+", "+lname+", "+email+", "+wieght+", "+height+", "+bdate+", P,"+gender +");";
                 break;
-            default:
-                sql=null;
         }
 
         try (Connection conn = this.connect();
-             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+                PreparedStatement pstmt = conn.prepareStatement(sql)) {
              pstmt.executeUpdate();
         } catch (SQLException e) {
             System.out.println(e.getMessage());
@@ -126,7 +123,7 @@ public class DatabaseHandler {
         String sql = "SELECT id FROM users WHERE id ="+userid;
         try (Connection conn = this.connect();
              PreparedStatement pstmt  = conn.prepareStatement(sql)) {
-            String userType = pstmt.executeQuery().getString("userrole");
+            String userType = pstmt.executeQuery().getString("userRole");
             switch (userType) {
                 case "A":
                     return USER_TYPE.ADMIN;
