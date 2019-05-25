@@ -92,8 +92,7 @@ public class DatabaseHandler {
 
         try (Connection conn = this.connect();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
-
-            pstmt.executeUpdate();
+             pstmt.executeUpdate();
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }

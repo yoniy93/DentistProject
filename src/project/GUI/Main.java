@@ -12,7 +12,7 @@ public class Main {
 
         DatabaseHandler.createNewDatabase();
         DatabaseHandler.createNewTables();
-        new DatabaseHandler().insert("1","1","a","a","e",1,1,"13:05:93", USER_TYPE.ADMIN,"M");
+        new DatabaseHandler().insert("1","1","a","a","e",1,1,"130593", USER_TYPE.ADMIN,"M");
         SwingUtilities.invokeLater(new Runnable() {
             public void run() {
                 new StartLoginView();
