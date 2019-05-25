@@ -17,7 +17,7 @@ public class Database {
     public static void createNewDatabase() {
 
         //String url = "jdbc:sqlite:C:/Users/amit/Documents/שנה שניה סמסטר ב/הנדסת תכנה/DB/testDB.db"; // AMIT
-        String url =         "jdbc:sqlite:/Users/yonatan/project/projectDB.db";; // YONI
+        String url = "jdbc:sqlite:/Users/yonatan/project/projectDB.db";; // YONI
         //String url = "jdbc:sqlite:C:\Downloads\First Degree\IntelliJ\DentistProject\DentistDB.db" // OFIR
 
 

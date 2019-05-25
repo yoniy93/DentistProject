@@ -1,8 +1,6 @@
 package project.Logic;
 
 import project.Entities.USER_TYPE;
-
-import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class LogInHandler {
