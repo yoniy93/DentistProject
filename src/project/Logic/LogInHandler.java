@@ -28,7 +28,7 @@ public class LogInHandler {
     }
 
     public boolean isUserExists (String id) {
-        //SELECT FROM TABLE
-        return id.equals("check");
+        SelectApp temp = new SelectApp();
+        return temp.checkUserName(id);
     }
 }

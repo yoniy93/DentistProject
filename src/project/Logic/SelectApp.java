@@ -23,7 +23,7 @@ public class SelectApp {
     /**
      * select all rows in the warehouses table
      */
-    public void selectAll(){
+    public void selectAll() {
         String sql = "SELECT id, name, capacity FROM warehouses";
 
         try (Connection conn = this.connect();
@@ -41,31 +41,28 @@ public class SelectApp {
         }
     }
 
-    /**
-     * Get the warehouse whose capacity greater than a specified capacity
-     * @param capacity
-     */
 
-    public void getCapacityGreaterThan(double capacity){
+
+    public boolean checkUserName (String username){
         String sql = "SELECT id, name, capacity "
-                + "FROM warehouses WHERE capacity > ?";
+                + "FROM warehouses WHERE id = ? ";
 
         try (Connection conn = this.connect();
              PreparedStatement pstmt  = conn.prepareStatement(sql)){
 
             // set the value
-            pstmt.setDouble(1,capacity);
+            pstmt.setString(1,username);
+
             //
             ResultSet rs  = pstmt.executeQuery();
 
             // loop through the result set
-            while (rs.next()) {
-                System.out.println(rs.getInt("id") +  "\t" +
-                        rs.getString("name") + "\t" +
-                        rs.getDouble("capacity"));
-            }
+            return rs.getString("id").equals(username);
+
         } catch (SQLException e) {
             System.out.println(e.getMessage());
+            return false;
         }
+
     }
 }
