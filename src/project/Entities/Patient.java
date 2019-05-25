@@ -6,7 +6,7 @@ public class Patient extends User {
     private int height;
     private USER_TYPE userRole;
 
-    public Patient(String id , String firstname,String lastname, String gender, String email,String pSW, Date dateOfBirth , int height, int weight)
+    public Patient(String id, String firstname, String lastname, String gender, String email, String pSW, Date dateOfBirth)
     {
         this.setUserRole(USER_TYPE.DOCTOR);
         this.setLastName(lastname);

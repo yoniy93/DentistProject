@@ -67,7 +67,7 @@ public class DatabaseHandler {
         }
     }
 
-    public void insert(String id, String pswd, String name, String lname, String email, double wieght, int height, String bdate, USER_TYPE role, String gender) {
+    public void insert (String id, String pswd, String name, String lname, String email, double wieght, int height, String bdate, USER_TYPE role, String gender) {
 
         String sql;
         switch (role){
@@ -147,8 +147,41 @@ public class DatabaseHandler {
             return USER_TYPE.ERROR;
         }
     }
+
+    public void updatePatientDetaits(Patient p){
+        String sql= "UPDATE users SET  password="+a.getPassword()+", firstname="+a.getFirstName() +
+                ", lastname="+a.getLastName() +", email="+a.getEmail() +"WHERE id=" +a.getId()+";";
+
+
+        try (Connection conn = this.connect();
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            // update
+            pstmt.executeUpdate();
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+
+    }
+//  id, password, firstname, lastname, email, birthdate, userrole,gender,yearOfEx
+    public void updateDoctorDetaits(Doctor d){
+        String sql= "UPDATE users SET  password="+d.getPassword()+", firstname="+d.getFirstName() +
+                ", lastname="+d.getLastName() +", email="+d.getEmail() +", birthdate="+ d.getDateOfBirth()+
+                ", birthdate="+d.getDateOfBirth() +"WHERE id=" +d.getId()+";";
+
+
+        try (Connection conn = this.connect();
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            // update
+            pstmt.executeUpdate();
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+
+    }
+
+
 //id, password, firstname, lastname, email, weightkg, heightcm, birthdate, userrole
-    public void update(Admin a) {
+    public void updateAdmin(Admin a) {
 
         String sql= "UPDATE users SET  password="+a.getPassword()+", firstname="+a.getFirstName() +
                 ", lastname="+a.getLastName() +", email="+a.getEmail() +"WHERE id=" +a.getId()+";";
@@ -186,24 +219,36 @@ public class DatabaseHandler {
         }
     }
 
-    public User getDoctorDetails (String id, USER_TYPE type) {
+    public Doctor getDoctorDetails (String id) {
         String sql = "SELECT * FROM users WHERE id="+id;
         try (Connection conn = this.connect();
              Statement stmt  = conn.createStatement();
-             ResultSet rs    = stmt.executeQuery(sql)){
+             ResultSet rs    = stmt.executeQuery(sql)) {
+            return new Doctor(id,rs.getString("firstname"),rs.getString("lastname"),rs.getString("email"),rs.getString("password"),);
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        return null;
+    }
 
-            switch (type){
-                case ADMIN:
-                    return new Admin(id,rs.getString("firstname"),rs.getString("lastname"), rs.getString("email"), rs.getString("password"),rs.getString("gender") ,rs.getDate("birthdate"));
-                case DOCTOR:
-                    return new Doctor(id,rs.getString("firstname"),rs.getString("lastname"),rs.getString("email"),rs.getString("password"),);
-                case SECRETARY:
-                    return new Secretary();
-                case PATIENT:
-                    return new Patient();
-                case ERROR:
-                    return null;
-            }
+    public Admin getAdminDetails (String id) {
+        String sql = "SELECT * FROM users WHERE id="+id;
+        try (Connection conn = this.connect();
+             Statement stmt  = conn.createStatement();
+             ResultSet rs    = stmt.executeQuery(sql)) {
+             return new Admin(id,rs.getString("firstname"),rs.getString("lastname"), rs.getString("email"), rs.getString("password"),rs.getString("gender") ,rs.getDate("birthdate"));
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        return null;
+    }
+
+    public Patient getPatientDetails (String id) {
+        String sql = "SELECT * FROM users WHERE id="+id;
+        try (Connection conn = this.connect();
+             Statement stmt  = conn.createStatement();
+             ResultSet rs    = stmt.executeQuery(sql)) {
+            return new Patient(id,rs.getString("firstname"),rs.getString("lastname"), rs.getString("email"), rs.getString("password"),rs.getString("gender") ,rs.getDate("birthdate"));
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
