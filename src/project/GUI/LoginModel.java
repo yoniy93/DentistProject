@@ -1,16 +1,16 @@
 package project.GUI;
-
 import project.Logic.LogInHandler;
+
+import java.sql.SQLException;
 
 public class LoginModel {
 
-    private LogInHandler logInHandler;
-
     public LoginModel() {
-        logInHandler = new LogInHandler();
     }
 
-    public boolean CheckLogin(String username, String password){
+    public boolean CheckLogin(String username, String password) throws SQLException {
+
+        LogInHandler logInHandler = new  LogInHandler(username);
 
         if(logInHandler.isUserExists(username) && logInHandler.isUserExists(password))
         {
