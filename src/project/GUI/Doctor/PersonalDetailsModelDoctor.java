@@ -19,8 +19,7 @@ public class PersonalDetailsModelDoctor {
         this.doctor=doctor;
     }
 
-    public void UpdatedDoctor()
-    {
+    public void UpdatedDoctor() {
         DatabaseHandler databaseHandler=new DatabaseHandler();
         databaseHandler.updateDoctorDetailts(doctor);
 
