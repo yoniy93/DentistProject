@@ -1,4 +1,9 @@
 package project.GUI;
+import project.Entities.Admin;
+import project.Entities.Doctor;
+import project.Entities.Patient;
+import project.Entities.USER_TYPE;
+import project.Logic.DatabaseHandler;
 import project.Logic.LogInHandler;
 
 import java.sql.SQLException;
@@ -10,6 +15,7 @@ public class LoginModel {
 
     public boolean CheckLogin(String username, String password) throws SQLException {
 
+        DatabaseHandler databaseHandler=new DatabaseHandler();
         LogInHandler logInHandler = new  LogInHandler();
 
         if(logInHandler.isUserExists(username) && logInHandler.isPasswordCorrect(username,password))
@@ -18,19 +24,26 @@ public class LoginModel {
             {
                 case ADMIN:
                 {
-                    StartAdminView adminConnection=new StartAdminView();
+                    Admin admin=databaseHandler.getAdminDetails(username);
+                    StartAdminView adminConnection=new StartAdminView(admin);
                     break;
                 }
                 case DOCTOR:
                 {
+                    Doctor doctor=databaseHandler.getDoctorDetails(username);
                     StartDoctorView doctorConnection=new StartDoctorView();
                     break;
                 }
-                /*
-                case PATIENT: StartPatientView; break;
-                case SECRETARY: StartSecretaryView; break;
+
+                case PATIENT:
+                    {
+                    Patient patient=databaseHandler.getPatientDetails(username);
+                    StartPatientView patientConnection=new StartPatientView();
+                    break;
+                }
+
                 case ERROR: return false;
-                */
+
             }
             return false;
         }

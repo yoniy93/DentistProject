@@ -13,8 +13,7 @@ public abstract class User extends Person {
     public void setUserRole(USER_TYPE userRole) {
         this.userRole = userRole;
     }
-
-
+    
     public String getPassword() {
         return password;
     }

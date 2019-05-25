@@ -1,6 +1,7 @@
 package project.GUI;
 
 import project.Entities.Doctor;
+import project.Logic.DatabaseHandler;
 
 public class PersonalDetailsController {
 
@@ -28,6 +29,10 @@ public class PersonalDetailsController {
     }
 
     public void EditAction() {
+
+        DatabaseHandler databaseHandler=new DatabaseHandler();
+        databaseHandler.update(pDetailsView.getFirstnameTextField().getText(),);
+
         Doctor doctor= new Doctor();
         doctor.setFirstName(pDetailsView.getFirstnameTextField().getText());
         doctor.setLastName(pDetailsView.getLastnameTextField().getText());
