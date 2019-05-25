@@ -28,6 +28,7 @@ public class PersonalDetailsControllerDoctor {
     public void EditAction() {
 
 
+         pDetailsModel.UpdatedDoctor();
 
     }
 }

@@ -161,7 +161,7 @@ public class DatabaseHandler {
 
     }
 //  id, password, firstname, lastname, email, birthdate, userrole,gender,yearOfEx
-    public void updateDoctorDetaits(Doctor d){
+    public void updateDoctorDetailts(Doctor d){
         String sql= "UPDATE users SET  password="+d.getPassword()+", firstname="+d.getFirstName() +
                 ", lastname="+d.getLastName() +", email="+d.getEmail() +", birthdate="+ d.getDateOfBirth()+
                 ", birthdate="+d.getDateOfBirth() +"WHERE id=" +d.getId()+";";
