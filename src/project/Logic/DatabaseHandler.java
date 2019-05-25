@@ -120,7 +120,7 @@ public class DatabaseHandler {
     }
 
     public USER_TYPE getTypeOfUser (String userid){
-        String sql = "SELECT id FROM users WHERE id ="+userid;
+        String sql = "SELECT userRole FROM users WHERE id ="+userid;
         try (Connection conn = this.connect();
              PreparedStatement pstmt  = conn.prepareStatement(sql)) {
             String userType = pstmt.executeQuery().getString("userRole");
