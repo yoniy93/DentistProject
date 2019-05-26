@@ -73,8 +73,6 @@ public class DBHandler {
             // add a popup window with the error
         }
     }
-
-
     protected void connectAndExecute(String sql){
         try (Connection conn = this.connect();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
@@ -83,8 +81,6 @@ public class DBHandler {
             System.out.println(e.getMessage());
         }
     }
-
-
 
     public void deleteFromUsers(String id) {
         String sql="DELETE FROM users WHERE id="+id;
