@@ -38,11 +38,11 @@ public class DBHandler {
     }
 
     public static void createNewTables() {
+
         String url,sql,sql1,sql2,sql3,sql4,sql5,sql6;
-        // SQLite connection string
+
         url = DatabaseLocation.DBLocation();
 
-        // SQL statement for creating a new table
         sql = "CREATE TABLE IF NOT EXISTS users (id text PRIMARY KEY, password text NOT NULL, firstname text NOT NULL," +
                 "lastname text NOT NULL, email text NOT NULL, weight double, height integer, birthdate date NOT NULL, userRole text," +
                 "yearOfExperiens integer, gender text);";
@@ -50,7 +50,8 @@ public class DBHandler {
         sql1 ="CREATE TABLE IF NOT EXISTS medical_equipment (id integer PRIMARY KEY NOT NULL, treatmentname text NOT NULL,"+
                 " expiredate date NOT NULL, quantity integer NOT NULL);";
 
-        sql2="CREATE TABLE IF NOT EXISTS treatments ( id integer PRIMARY KEY NOT NULL, treatmentname text NOT NULL, durationmin integer NOT NULL);";
+        sql2="CREATE TABLE IF NOT EXISTS treatments ( id integer PRIMARY KEY NOT NULL, treatmentname text NOT NULL,"+
+                " durationmin integer NOT NULL);";
 
         sql3="CREATE TABLE IF NOT EXISTS appointments (treatmentID integer PRIMARY KEY NOT NULL, appointmentDATE date NOT NULL,"+
                 " appointmentTIME time NOT NULL,clientID text NOT NULL, doctorID text NOT NULL);";
