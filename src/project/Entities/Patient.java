@@ -4,7 +4,6 @@ public class Patient extends User {
 
     private int weight;
     private int height;
-    private USER_TYPE userRole;
 
     public Patient(String id, String firstname, String lastname, String gender, String email, String pswd, Date dateOfBirth, int weight, int height)
     {
@@ -16,8 +15,8 @@ public class Patient extends User {
         this.setGender(gender);
         this.setId(id);
         this.setPassword(pswd);
-        this.weight=weight;
-        this.height=height;
+        this.setHeight(weight);
+        this.setHeight(height);
 
     }
 

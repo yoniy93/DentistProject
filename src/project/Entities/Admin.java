@@ -15,5 +15,4 @@ public class Admin extends User {
         this.setId(id);
         this.setPassword(pswd);
     }
-
 }

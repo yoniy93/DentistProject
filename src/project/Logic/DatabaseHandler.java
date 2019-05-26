@@ -212,4 +212,11 @@ public class DatabaseHandler {
         return null;
     }
 
+    public void deleteFromUsers(String id){
+        String sql="DELETE FROM users WHERE id="+id;
+        connectAndExecute(sql);
+    }
+
+
+
 }

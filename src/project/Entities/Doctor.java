@@ -15,7 +15,7 @@ public class Doctor extends User{
             this.setGender(gender);
             this.setId(id);
             this.setPassword(pSW);
-            this.yearsOfEx=numYears;
+            this.setYearsOfEx(numYears);
     }
 
     public int getYearsOfEx() {
