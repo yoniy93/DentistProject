@@ -4,7 +4,7 @@ import java.util.*;
 
 public class Admin extends User {
 
-    public Admin(String id ,String firstname,String lastname, String email,String pSW,  String gender, Date dateOfBirth )
+    public Admin(String id ,String firstname,String lastname, String email,String pswd,  String gender, Date dateOfBirth )
     {
         this.setUserRole(USER_TYPE.ADMIN);
         this.setLastName(lastname);
@@ -13,7 +13,7 @@ public class Admin extends User {
         this.setEmail(email);
         this.setGender(gender);
         this.setId(id);
-        this.setPassword(pSW);
+        this.setPassword(pswd);
     }
 
 }
