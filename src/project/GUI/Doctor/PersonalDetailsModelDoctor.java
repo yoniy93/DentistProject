@@ -2,6 +2,7 @@ package project.GUI.Doctor;
 
 import project.Entities.Doctor;
 import project.Logic.DatabaseHandler;
+import project.Logic.DatabaseUpdates;
 
 
 public class PersonalDetailsModelDoctor {
@@ -20,8 +21,8 @@ public class PersonalDetailsModelDoctor {
     }
 
     public void UpdatedDoctor() {
-        DatabaseHandler databaseHandler=new DatabaseHandler();
-        databaseHandler.updateDoctorDetailts(doctor);
+        DatabaseUpdates databaseUpdates=new DatabaseUpdates();
+        databaseUpdates.updateDoctorDetailts(doctor);
 
     }
 }

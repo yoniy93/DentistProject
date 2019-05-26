@@ -6,6 +6,7 @@ import project.GUI.Admin.StartAdminView;
 import project.GUI.Doctor.StartDoctorView;
 import project.GUI.Patient.StartPatientView;
 import project.Logic.DatabaseHandler;
+import project.Logic.DatabaseQuerys;
 import project.Logic.LogInHandler;
 
 import java.sql.SQLException;
@@ -17,7 +18,7 @@ public class LoginModel {
 
     public boolean CheckLogin(String username, String password) throws SQLException {
 
-        DatabaseHandler databaseHandler=new DatabaseHandler();
+        DatabaseQuerys databaseQuerys=new DatabaseQuerys();
         LogInHandler logInHandler = new  LogInHandler();
 
         if(logInHandler.isUserExists(username) && logInHandler.isPasswordCorrect(username,password))
@@ -26,19 +27,19 @@ public class LoginModel {
             {
                 case ADMIN:
                 {
-                    Admin admin=databaseHandler.getAdminDetails(username);
+                    Admin admin=databaseQuerys.getAdminDetails(username);
                     new StartAdminView(admin);
                     break;
                 }
                 case DOCTOR:
                 {
-                    Doctor doctor=databaseHandler.getDoctorDetails(username);
+                    Doctor doctor=databaseQuerys.getDoctorDetails(username);
                     new StartDoctorView(doctor);
                     break;
                 }
                 case PATIENT:
                     {
-                    Patient patient=databaseHandler.getPatientDetails(username);
+                    Patient patient=databaseQuerys.getPatientDetails(username);
                     new StartPatientView(patient);
                     break;
                 }
