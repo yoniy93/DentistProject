@@ -43,7 +43,7 @@ public class DatabaseHandler {
 
         // SQL statement for creating a new table
         String sql = "CREATE TABLE IF NOT EXISTS users (id text PRIMARY KEY, password text NOT NULL, firstname text NOT NULL," +
-                " lastname text NOT NULL, email text NOT NULL, weightkg double, heightcm integer, birthdate date NOT NULL, userRole text" +
+                " lastname text NOT NULL, email text NOT NULL, weight double, height integer, birthdate date NOT NULL, userRole text" +
                 ", yearOfExperiens integer, gender text);";
 
         String sql1 ="CREATE TABLE IF NOT EXISTS medical_equipment (id integer PRIMARY KEY NOT NULL, treatmentname text NOT NULL, expiredate date NOT NULL, quantity integer NOT NULL);";
@@ -63,7 +63,7 @@ public class DatabaseHandler {
         }
     }
     public void insertMedicalEquipment(int id,String name, String expiredate,int quantity){
-        String sql="INSERT INTO treatments(id, treatmentname, durationmin) VALUES ('"+id+"', '"+name+"', '"+expiredate+"', '"+quantity+"');";
+        String sql="INSERT INTO medical_equipment(id, treatmentname, expiredate, quantity) VALUES ('"+id+"', '"+name+"', '"+expiredate+"', '"+quantity+"');";
         connectAndExecute(sql);
     }
 
@@ -89,7 +89,7 @@ public class DatabaseHandler {
     }
 
     public void insertForPatient (String id, String pswd, String name, String lname, String email, double wieght, int height, String bdate, String gender) {
-        String sql="INSERT INTO users(id, password, firstname, lastname, email, weightkg, heightcm, birthdate, userRole, gender)" +
+        String sql="INSERT INTO users(id, password, firstname, lastname, email, weight, height, birthdate, userRole, gender)" +
                 "VALUES ('"+id+"', '"+pswd+"', '"+name+"', '"+lname+"', '"+email+"', '"+wieght+"', '"+height+"', '"+bdate+"', 'P','"+gender +"');";
         connectAndExecute(sql);
     }
@@ -99,36 +99,6 @@ public class DatabaseHandler {
                 "VALUES ('"+id+"', '"+pswd+"', '"+name+"', '"+lname+"', '"+email+"', '"+bdate+"','D','"+yearofEx+"', '"+gender+"');";
         connectAndExecute(sql);
     }
-
-//    public void insert (String id, String pswd, String name, String lname, String email, double wieght, int height, String bdate, USER_TYPE role, String gender,int yearofEx) {
-//
-//        String sql = null;
-//        switch (role){
-//            case SECRETARY:
-//                sql = "INSERT INTO users(id, password, firstname, lastname, email, weightkg, heightcm, birthdate, userRole,gender,yearOfEx)" +
-//                        "VALUES ('"+id+"', '"+pswd+"', '"+name+"', '"+lname+"', '"+email+"', '"+wieght+"', '"+height+"', '"+bdate+"','S' ,'"+gender+"');";
-//                break;
-//            case DOCTOR:
-//                sql = "INSERT INTO users(id, password, firstname, lastname, email, birthdate, userRole,yearOfExperiens,gender)" +
-//                        "VALUES ('"+id+"', '"+pswd+"', '"+name+"', '"+lname+"', '"+email+"', '"+bdate+"','D','"+yearofEx+"', '"+gender+"');";
-//                break;
-//            case ADMIN:
-//                sql = "INSERT INTO users (id, password, firstname, lastname, email, birthdate, userRole, gender)"+
-//                        " VALUES ('"+id+"', '"+pswd+"', '"+name+"', '"+lname+"', '"+email+"', '"+bdate+"', 'A','" +gender+"');";
-//                break;
-//            case PATIENT:
-//                sql = "INSERT INTO users(id, password, firstname, lastname, email, weightkg, heightcm, birthdate, userRole, gender)" +
-//                        "VALUES ('"+id+"', '"+pswd+"', '"+name+"', '"+lname+"', '"+email+"', '"+wieght+"', '"+height+"', '"+bdate+"', 'P','"+gender +"');";
-//                break;
-//        }
-//
-//        try (Connection conn = this.connect();
-//                PreparedStatement pstmt = conn.prepareStatement(sql)) {
-//             pstmt.executeUpdate();
-//        } catch (SQLException e) {
-//            System.out.println(e.getMessage());
-//        }
-//    }
 
     public boolean isUserExists (String userid){
         String sql = "SELECT id FROM users WHERE id ="+userid;
@@ -182,43 +152,21 @@ public class DatabaseHandler {
         String sql= "UPDATE users SET  password="+p.getPassword()+", firstname="+p.getFirstName() +
                 ", lastname="+p.getLastName() +", email="+p.getEmail() +"WHERE id=" +p.getId()+";";
         connectAndExecute(sql);
-//        try (Connection conn = this.connect();
-//             PreparedStatement pstmt = conn.prepareStatement(sql)) {
-//            // update
-//            pstmt.executeUpdate();
-//        } catch (SQLException e) {
-//            System.out.println(e.getMessage());
-//        }
-
     }
-//  id, password, firstname, lastname, email, birthdate, userrole,gender,yearOfEx
+
     public void updateDoctorDetailts(Doctor d){
         String sql= "UPDATE users SET  password="+d.getPassword()+", firstname="+d.getFirstName() +
                 ", lastname="+d.getLastName() +", email="+d.getEmail() +", birthdate="+ d.getDateOfBirth()+
                 ", birthdate="+d.getDateOfBirth() +"WHERE id=" +d.getId()+";";
         connectAndExecute(sql);
-//        try (Connection conn = this.connect();
-//             PreparedStatement pstmt = conn.prepareStatement(sql)) {
-//            // update
-//            pstmt.executeUpdate();
-//        } catch (SQLException e) {
-//            System.out.println(e.getMessage());
-//        }
+
     }
 
-//id, password, firstname, lastname, email, weightkg, heightcm, birthdate, userrole
     public void updateAdmin(Admin a) {
 
         String sql= "UPDATE users SET  password="+a.getPassword()+", firstname="+a.getFirstName() +
                 ", lastname="+a.getLastName() +", email="+a.getEmail() +"WHERE id=" +a.getId()+";";
         connectAndExecute(sql);
-//        try (Connection conn = this.connect();
-//             PreparedStatement pstmt = conn.prepareStatement(sql)) {
-//            // update
-//            pstmt.executeUpdate();
-//        } catch (SQLException e) {
-//            System.out.println(e.getMessage());
-//        }
     }
 
     public Doctor getDoctorDetails (String id) {
@@ -229,7 +177,7 @@ public class DatabaseHandler {
             SimpleDateFormat format=new SimpleDateFormat("dd-MM-yyyy");
             Date date=format.parse(rs.getString("birthdate"));
 
-            return new Doctor(id,rs.getString("firstname"),rs.getString("lastname"),rs.getString("email"),rs.getString("password"),date,rs.getString("gender"),rs.getInt("yearsofexperience"));
+            return new Doctor(id,rs.getString("firstname"),rs.getString("lastname"),rs.getString("email"),rs.getString("password"),date,rs.getString("gender"),rs.getInt("yearOfExperiens"));
         } catch (SQLException | ParseException e) {
             System.out.println(e.getMessage());
         }
