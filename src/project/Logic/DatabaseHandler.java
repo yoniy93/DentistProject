@@ -173,6 +173,11 @@ public class DatabaseHandler {
         }
     }
 
+    public void updateEquipmentsQuantity(MedicalEquipment m){
+        String sql= "UPDATE medical_equipment SET  quantity="+m.getAmountInStock()+"WHERE id=" +m.getId()+";";
+        connectAndExecute(sql);
+    }
+
     public void updatePatientDetaits(Patient p){
         String sql= "UPDATE users SET  password="+p.getPassword()+", firstname="+p.getFirstName() +
                 ", lastname="+p.getLastName() +", email="+p.getEmail() +"WHERE id=" +p.getId()+";";
@@ -184,11 +189,9 @@ public class DatabaseHandler {
                 ", lastname="+d.getLastName() +", email="+d.getEmail() +", birthdate="+ d.getDateOfBirth()+
                 ", birthdate="+d.getDateOfBirth() +"WHERE id=" +d.getId()+";";
         connectAndExecute(sql);
-
     }
 
     public void updateAdmin(Admin a) {
-
         String sql= "UPDATE users SET  password="+a.getPassword()+", firstname="+a.getFirstName() +
                 ", lastname="+a.getLastName() +", email="+a.getEmail() +"WHERE id=" +a.getId()+";";
         connectAndExecute(sql);
@@ -201,7 +204,6 @@ public class DatabaseHandler {
              ResultSet rs    = stmt.executeQuery(sql)) {
             SimpleDateFormat format=new SimpleDateFormat("dd-MM-yyyy");
             Date date=format.parse(rs.getString("birthdate"));
-
             return new Doctor(id,rs.getString("firstname"),rs.getString("lastname"),rs.getString("email"),rs.getString("password"),date,rs.getString("gender"),rs.getInt("yearOfExperiens"));
         } catch (SQLException | ParseException e) {
             System.out.println(e.getMessage());
@@ -237,9 +239,13 @@ public class DatabaseHandler {
         return null;
     }
 
+
+
     public void deleteFromUsers(String id) {
         String sql="DELETE FROM users WHERE id="+id;
         connectAndExecute(sql);
     }
+
+
 
 }
