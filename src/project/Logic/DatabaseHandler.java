@@ -38,17 +38,25 @@ public class DatabaseHandler {
     }
 
     public static void createNewTables() {
+        String url,sql,sql1,sql2,sql3,sql4,sql5,sql6;
         // SQLite connection string
-        String url = DatabaseLocation.DBLocation();
+        url = DatabaseLocation.DBLocation();
 
         // SQL statement for creating a new table
-        String sql = "CREATE TABLE IF NOT EXISTS users (id text PRIMARY KEY, password text NOT NULL, firstname text NOT NULL," +
-                " lastname text NOT NULL, email text NOT NULL, weight double, height integer, birthdate date NOT NULL, userRole text" +
-                ", yearOfExperiens integer, gender text);";
+        sql = "CREATE TABLE IF NOT EXISTS users (id text PRIMARY KEY, password text NOT NULL, firstname text NOT NULL," +
+                "lastname text NOT NULL, email text NOT NULL, weight double, height integer, birthdate date NOT NULL, userRole text," +
+                "yearOfExperiens integer, gender text);";
 
-        String sql1 ="CREATE TABLE IF NOT EXISTS medical_equipment (id integer PRIMARY KEY NOT NULL, treatmentname text NOT NULL, expiredate date NOT NULL, quantity integer NOT NULL);";
+        sql1 ="CREATE TABLE IF NOT EXISTS medical_equipment (id integer PRIMARY KEY NOT NULL, treatmentname text NOT NULL,"+
+                " expiredate date NOT NULL, quantity integer NOT NULL);";
 
-        String sql2="CREATE TABLE IF NOT EXISTS treatments ( id integer PRIMARY KEY NOT NULL, treatmentname text NOT NULL, durationmin integer NOT NULL);";
+        sql2="CREATE TABLE IF NOT EXISTS treatments ( id integer PRIMARY KEY NOT NULL, treatmentname text NOT NULL, durationmin integer NOT NULL);";
+
+        sql3="CREATE TABLE IF NOT EXISTS appointments (treatmentID integer PRIMARY KEY NOT NULL, appointmentDATE date NOT NULL,"+
+                " appointmentTIME time NOT NULL,clientID text NOT NULL, doctorID text NOT NULL);";
+
+        sql4="CREATE TABLE IF NOT EXISTS mediciens (medicineid integer NOT NULL PRIMARY KEY,expiredate date NOT NULL," +
+                "quantity integer NOT NULL,medicinename text NOT NULL);";
 
         try (Connection conn = DriverManager.getConnection(url);
              Statement stmt = conn.createStatement()) {
@@ -56,6 +64,9 @@ public class DatabaseHandler {
             stmt.execute(sql);
             stmt.execute(sql1);
             stmt.execute(sql2);
+            stmt.execute(sql3);
+            stmt.execute(sql4);
+
 
         } catch (SQLException e) {
             System.out.println(e.getMessage());
@@ -63,13 +74,27 @@ public class DatabaseHandler {
         }
     }
     public void insertMedicalEquipment(int id,String name, String expiredate,int quantity){
-        String sql="INSERT INTO medical_equipment(id, treatmentname, expiredate, quantity) VALUES ('"+id+"', '"+name+"', '"+expiredate+"', '"+quantity+"');";
+        String sql="INSERT INTO medical_equipment(id, treatmentname, expiredate, quantity)"+
+                " VALUES ('"+id+"', '"+name+"', '"+expiredate+"', '"+quantity+"');";
         connectAndExecute(sql);
     }
 
 
     public void insertTreatment(int id,String name, int duration){
-        String sql="INSERT INTO treatments(id, treatmentname, durationmin) VALUES ('"+id+"', '"+name+"', '"+duration+"');";
+        String sql="INSERT INTO treatments(id, treatmentname, durationmin)"+"" +
+                " VALUES ('"+id+"', '"+name+"', '"+duration+"');";
+        connectAndExecute(sql);
+    }
+
+    public void insertAppointments(int appointmentid,String date, String time, String clientid, String doctorid){
+        String sql="INSERT INTO appointments(treatmentID, appointmentDATE, appointmentTIME,clientID,doctorID)"+
+                " VALUES ('"+appointmentid+"', '"+date+"', '"+time+"', '"+clientid+"', '"+doctorid+"');";
+        connectAndExecute(sql);
+    }
+
+    public void insertMedicines(int medicineid,String expiredate, int quantity, String name){
+        String sql="INSERT INTO mediciens(medicineid, expiredate, quantity,medicinename)"+
+                " VALUES ('"+medicineid+"', '"+expiredate+"', '"+quantity+"', '"+name+"');";
         connectAndExecute(sql);
     }
 
@@ -212,11 +237,9 @@ public class DatabaseHandler {
         return null;
     }
 
-    public void deleteFromUsers(String id){
+    public void deleteFromUsers(String id) {
         String sql="DELETE FROM users WHERE id="+id;
         connectAndExecute(sql);
     }
-
-
 
 }
