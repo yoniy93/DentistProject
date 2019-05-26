@@ -4,7 +4,6 @@ import project.GUI.PersonalDetailsView;
 import javax.swing.*;
 import java.awt.*;
 
-
 public class PersonalDetailsViewDoctor extends PersonalDetailsView{
 
     private JLabel yearsOfExpLabel = new JLabel("Years of experience: ");
