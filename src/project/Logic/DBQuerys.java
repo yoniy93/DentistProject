@@ -10,7 +10,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class DatabaseQuerys extends DatabaseHandler {
+public class DBQuerys extends DBHandler {
 
     public Doctor getDoctorDetails (String id) {
         String sql = "SELECT * FROM users WHERE id="+id;

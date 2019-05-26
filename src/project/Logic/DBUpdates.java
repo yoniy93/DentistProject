@@ -5,7 +5,7 @@ import project.Entities.Doctor;
 import project.Entities.MedicalEquipment;
 import project.Entities.Patient;
 
-public class DatabaseUpdates extends DatabaseHandler{
+public class DBUpdates extends DBHandler {
 
     public void updateEquipmentsQuantity(MedicalEquipment m){
         String sql= "UPDATE medical_equipment SET  quantity="+m.getAmountInStock()+"WHERE id=" +m.getId()+";";

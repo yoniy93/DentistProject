@@ -19,7 +19,7 @@ public class PersonalDetailsModelPatient {
 
     /*
     public void UpdatedPatient() {
-        DatabaseHandler databaseHandler=new DatabaseHandler();
+        DBHandler databaseHandler=new DBHandler();
         databaseHandler.updatePatientDetailts(patient);
     }
     */

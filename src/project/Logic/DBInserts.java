@@ -1,6 +1,6 @@
 package project.Logic;
 
-public class DatabaseInserts extends DatabaseHandler {
+public class DBInserts extends DBHandler {
 
     public void insertMedicalEquipment(int id,String name, String expiredate,int quantity){
         String sql="INSERT INTO medical_equipment(id, treatmentname, expiredate, quantity)"+

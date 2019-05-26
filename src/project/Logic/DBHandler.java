@@ -6,7 +6,7 @@ import java.text.SimpleDateFormat;
 import java.text.ParseException;
 import java.util.Date;
 
-public class DatabaseHandler {
+public class DBHandler {
 
     public Connection connect() {
         // SQLite connection string

@@ -5,8 +5,7 @@ import project.Entities.Patient;
 import project.GUI.Admin.StartAdminView;
 import project.GUI.Doctor.StartDoctorView;
 import project.GUI.Patient.StartPatientView;
-import project.Logic.DatabaseHandler;
-import project.Logic.DatabaseQuerys;
+import project.Logic.DBQuerys;
 import project.Logic.LogInHandler;
 
 import java.sql.SQLException;
@@ -18,7 +17,7 @@ public class LoginModel {
 
     public boolean CheckLogin(String username, String password) throws SQLException {
 
-        DatabaseQuerys databaseQuerys=new DatabaseQuerys();
+        DBQuerys databaseQuerys=new DBQuerys();
         LogInHandler logInHandler = new  LogInHandler();
 
         if(logInHandler.isUserExists(username) && logInHandler.isPasswordCorrect(username,password))

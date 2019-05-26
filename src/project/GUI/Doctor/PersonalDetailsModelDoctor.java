@@ -1,8 +1,7 @@
 package project.GUI.Doctor;
 
 import project.Entities.Doctor;
-import project.Logic.DatabaseHandler;
-import project.Logic.DatabaseUpdates;
+import project.Logic.DBUpdates;
 
 
 public class PersonalDetailsModelDoctor {
@@ -21,7 +20,7 @@ public class PersonalDetailsModelDoctor {
     }
 
     public void UpdatedDoctor() {
-        DatabaseUpdates databaseUpdates=new DatabaseUpdates();
+        DBUpdates databaseUpdates=new DBUpdates();
         databaseUpdates.updateDoctorDetailts(doctor);
 
     }
