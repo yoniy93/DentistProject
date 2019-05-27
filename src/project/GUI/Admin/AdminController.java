@@ -11,10 +11,10 @@ public class AdminController {
         AdminModel adminModel=adminM;
         AdminView adminView=adminV;
 
-        initController();
+        addViewActionListeners();
     }
 
-    private void initController ()
+    private void addViewActionListeners ()
     {
         adminView.getRegisterNewUser().addActionListener(e->registerAction());
         adminView.getUnRegisterNewUser().addActionListener(e->unregisterAction());

@@ -9,10 +9,10 @@ public class PatientController {
     {
         patientView = patientV;
         patientModel = patientM;
-        initController();
+        addViewActionListeners();
     }
 
-    public void initController() {
+    public void addViewActionListeners() {
         patientView.getEditPersonalDetails().addActionListener(e -> EditDetailsAction());
     }
 

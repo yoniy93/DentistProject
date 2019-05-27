@@ -4,7 +4,6 @@ import javax.swing.*;
 
 public class LoginView extends JFrame {
 
-    //private JFrame loginFrame = new JFrame();
     private JLabel userLabel = new JLabel("USERNAME:");
     private JLabel passwordLabel = new JLabel("PASSWORD:");
     private JTextField userTextField = new JTextField();

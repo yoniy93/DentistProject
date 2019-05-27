@@ -11,10 +11,10 @@ public class DoctorController {
         this.doctorView=doctorV;
         this.doctorModel=doctorM;
 
-        initController();
+        addViewActionListeners();
     }
 
-    public void initController() {
+    public void addViewActionListeners() {
         doctorView.getEditPersonalDetails().addActionListener(e -> EditDetailsAction());
         doctorView.getEnterShifts().addActionListener(e -> EnterShiftAction());
         doctorView.getViewClinicStaffInfo().addActionListener(e -> ViewInfoAction());
