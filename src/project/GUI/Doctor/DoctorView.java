@@ -1,59 +1,46 @@
 package project.GUI.Doctor;
+import project.GUI.PersonView;
+
 import javax.swing.*;
 
-public class DoctorView extends JFrame{
+public class DoctorView extends PersonView {
 
-    private JButton viewClinicStaffInfo ;
     private JButton enterShifts;
-    private JButton editPersonalDetails;
+
 
     public DoctorView()
     {
-        viewClinicStaffInfo = new JButton("View clinic staff info");
         enterShifts= new JButton("Manage your Shift");
-        editPersonalDetails=new JButton("Edit personal details");
-        generateLoginFrame();
+        generateLoginFrameDoctor();
     }
 
 
-    private void generateLoginFrame() {
-        setLayout(null);
-        setLocationAndSize();
-        addComponentsToContainer();
+    private void generateLoginFrameDoctor() {
+
+        setEnterShifts();
+        addEnterShiftsToContainer();
 
         setTitle("WELCOME DOCTOR");
-        setBounds(500, 100, 800, 600);
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setResizable(false);
-        setVisible(true);
     }
 
-    private void setLocationAndSize() {
+    private void setEnterShifts() {
 
-        viewClinicStaffInfo.setBounds(150, 150, 150, 30);
-        enterShifts.setBounds(150, 220, 150, 30);
-        editPersonalDetails.setBounds(150, 250, 150, 30);
+
+        enterShifts.setBounds(150, 290, 150, 30);
+
 
     }
 
-    private void addComponentsToContainer() {
-        add(viewClinicStaffInfo);
+    private void addEnterShiftsToContainer() {
         add(enterShifts);
-        add(editPersonalDetails);
-
     }
 
 
-    public JButton getViewClinicStaffInfo() {
-        return viewClinicStaffInfo;
-    }
+
 
     public JButton getEnterShifts() {
         return enterShifts;
     }
 
-    public JButton getEditPersonalDetails() {
-        return editPersonalDetails;
-    }
 }
 

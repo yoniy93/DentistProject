@@ -6,7 +6,8 @@ import java.awt.*;
 
 public class PersonalDetailsViewDoctor extends PersonalDetailsView{
 
-    private JLabel yearsOfExpLabel = new JLabel("Years of experience: ");
+
+    private JLabel yearsOfExpLabel = new JLabel("Years of experience:  ");
     private JTextField yearsOfExpTextField = new JTextField();
 
 

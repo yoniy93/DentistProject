@@ -1,10 +1,15 @@
 package project.GUI;
 
+import project.Entities.Person;
+
 import javax.swing.*;
 
 public class PersonView extends JFrame {
 
+
+    private JButton viewClinicStaffInfo =new JButton("View Clinic Staff Information: ");
     private JButton editPersonalDetails = new JButton("Edit personal details");
+
 
     public PersonView(){
         setLayout(null);
@@ -18,13 +23,19 @@ public class PersonView extends JFrame {
     }
 
     private void setLocationAndSize() {
-        editPersonalDetails.setBounds(150, 250, 150, 30);
+
+        editPersonalDetails.setBounds(150, 290, 150, 30);
+        viewClinicStaffInfo.setBounds(150,360,150,30);
 
     }
-
     private void addComponentsToContainer() {
         add(editPersonalDetails);
+        add(viewClinicStaffInfo);
     }
+
+
+    public JButton getViewClinicStaffInfo() { return viewClinicStaffInfo; }
+
 
     public JButton getEditPersonalDetails() {
         return editPersonalDetails;

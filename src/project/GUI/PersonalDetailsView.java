@@ -4,6 +4,8 @@ import java.awt.Font;
 import javax.swing.*;
 
 public class PersonalDetailsView extends JFrame {
+
+
     private JButton editButton = new JButton("Edit");
     private JButton cancelButton = new JButton("Cancel");
 
