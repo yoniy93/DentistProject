@@ -5,7 +5,7 @@ import project.Logic.DBUpdates;
 
 
 public class PersonalDetailsModelDoctor {
-    Doctor doctor;
+    private Doctor doctor;
 
     public Doctor getDoctor() {
         return doctor;

@@ -3,6 +3,7 @@ package project.GUI.Admin;
 
 
 public class AdminController {
+
     private AdminModel adminModel;
     private AdminView adminView;
 
@@ -23,6 +24,7 @@ public class AdminController {
 
     private void registerAction()
     {
+        StartRegisterView register=new StartRegisterView(adminModel.getAdmin());
 
     }
 
