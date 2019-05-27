@@ -22,13 +22,13 @@ public class PersonView extends JFrame {
         setVisible(true);
     }
 
-    private void setLocationAndSize() {
+    protected void setLocationAndSize() {
 
         editPersonalDetails.setBounds(150, 290, 150, 30);
         viewClinicStaffInfo.setBounds(150,360,150,30);
 
     }
-    private void addComponentsToContainer() {
+    protected void addComponentsToContainer() {
         add(editPersonalDetails);
         add(viewClinicStaffInfo);
     }

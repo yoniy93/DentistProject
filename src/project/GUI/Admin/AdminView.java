@@ -24,10 +24,18 @@ public class AdminView extends PersonView {
 
     private void generateLoginFrameAdmin() {
 
+        setLayout(null);
+        setLocationAndSize();
         setAdmin();
         addAdminToContainer();
+        addComponentsToContainer();
 
         setTitle("WELCOME ADMIN");
+        setBounds(500, 100, 800, 600);
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setResizable(false);
+        setVisible(true);
+
 
     }
 

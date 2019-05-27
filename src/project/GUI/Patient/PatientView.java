@@ -11,7 +11,5 @@ public class PatientView extends PersonView {
     {
         setTitle("WELCOME PATIENT");
     }
-    private void addComponentsToContainer() {
 
-    }
 }

@@ -5,22 +5,28 @@ import javax.swing.*;
 
 public class DoctorView extends PersonView {
 
-    private JButton enterShifts;
+    private JButton enterShifts= new JButton("Manage your Shift");;
 
 
     public DoctorView()
     {
-        enterShifts= new JButton("Manage your Shift");
+
         generateLoginFrameDoctor();
     }
 
 
     private void generateLoginFrameDoctor() {
-
+        setLayout(null);
+        this.setLocationAndSize();
         setEnterShifts();
+        this.addComponentsToContainer();
         addEnterShiftsToContainer();
 
         setTitle("WELCOME DOCTOR");
+        setBounds(500, 100, 800, 600);
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setResizable(false);
+        setVisible(true);
     }
 
     private void setEnterShifts() {
