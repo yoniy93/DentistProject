@@ -12,10 +12,10 @@ public class LoginController {
         this.loginM = loginM;
         this.loginV = loginV;
 
-        initController();
+        addViewActionListeners();
     }
 
-    public void initController() {
+    public void addViewActionListeners() {
         loginV.getLoginButton().addActionListener(e -> {
             try {
                 loginAction();
