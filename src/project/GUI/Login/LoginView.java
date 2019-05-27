@@ -73,34 +73,3 @@ public class LoginView extends JFrame {
         return showPassword;
     }
 }
-
-
-
-/*
-    private void addActionEvent() {
-        loginButton.addActionListener(this);
-        resetButton.addActionListener(this);
-        showPassword.addActionListener(this);
-    }
-
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        //Coding Part of LOGIN button
-        if (e.getSource() == loginButton) {
-            String userText;
-            String pwdText;
-            userText = userTextField.getText();
-            pwdText =  new String(passwordField.getPassword());
-
-            if (userText.equalsIgnoreCase("admin") && pwdText.equalsIgnoreCase("admin")) {
-
-                AdminFrame adminFrame = new AdminFrame(this);
-                this.dispose();
-                setVisible(false);
-                adminFrame.setResizable(false);
-            }
-            else {
-                JOptionPane.showMessageDialog(this, "Invalid Username or Password");
-            }
-        }
-*/
