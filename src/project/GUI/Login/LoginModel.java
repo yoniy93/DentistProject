@@ -37,7 +37,7 @@ public class LoginModel {
                     break;
                 }
                 case PATIENT:
-                    {
+                {
                     Patient patient=databaseQuerys.getPatientDetails(username);
                     new StartPatientView(patient);
                     break;
