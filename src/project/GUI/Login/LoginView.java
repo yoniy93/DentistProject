@@ -20,7 +20,7 @@ public class LoginView extends JFrame {
     private void generateLoginFrame() {
         setLayoutManager();
         setLocationAndSize();
-        addComponentsToContainer();
+        addComponentsToFrame();
 
         setTitle("Login Form");
         setBounds(500, 100, 370, 550);
@@ -43,7 +43,7 @@ public class LoginView extends JFrame {
         clearButton.setBounds(200, 300, 100, 30);
     }
 
-    private void addComponentsToContainer() {
+    private void addComponentsToFrame() {
         add(userLabel);
         add(passwordLabel);
         add(userTextField);
