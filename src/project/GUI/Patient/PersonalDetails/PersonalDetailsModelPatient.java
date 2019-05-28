@@ -1,4 +1,4 @@
-package project.GUI.Patient.PersonalDeatails;
+package project.GUI.Patient.PersonalDetails;
 import project.Entities.Patient;
 import project.Logic.DBUpdates;
 
@@ -20,7 +20,7 @@ public class PersonalDetailsModelPatient {
 
     public void UpdatedPatient() {
         DBUpdates databaseUpdates = new DBUpdates();
-        databaseUpdates.updatePatientDetaits(patient);
+        databaseUpdates.updatePatientDetails(patient);
     }
 
 }

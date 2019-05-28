@@ -12,13 +12,13 @@ public class DBUpdates extends DBHandler {
         connectAndExecute(sql);
     }
 
-    public void updatePatientDetaits(Patient p){
+    public void updatePatientDetails(Patient p){
         String sql= "UPDATE users SET  password="+p.getPassword()+", firstname="+p.getFirstName() +
                 ", lastname="+p.getLastName() +", email="+p.getEmail() +"WHERE id=" +p.getId()+";";
         connectAndExecute(sql);
     }
 
-    public void updateDoctorDetailts(Doctor d){
+    public void updateDoctorDetails(Doctor d){
         String sql= "UPDATE users SET  password="+d.getPassword()+", firstname="+d.getFirstName() +
                 ", lastname="+d.getLastName() +", email="+d.getEmail() +", birthdate="+ d.getDateOfBirth()+
                 ", birthdate="+d.getDateOfBirth() +"WHERE id=" +d.getId()+";";

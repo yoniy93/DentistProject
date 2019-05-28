@@ -1,8 +1,5 @@
-package project.GUI.Patient.PersonalDeatails;
+package project.GUI.Patient.PersonalDetails;
 import project.Entities.Patient;
-import project.GUI.Patient.PersonalDeatails.PersonalDetailsControllerPatient;
-import project.GUI.Patient.PersonalDeatails.PersonalDetailsModelPatient;
-import project.GUI.Patient.PersonalDeatails.PersonalDetailsViewPatient;
 
 public class StartPersonalDetailsPatient {
     public StartPersonalDetailsPatient(Patient patient){

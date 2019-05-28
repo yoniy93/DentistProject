@@ -1,6 +1,6 @@
 package project.GUI.Patient;
 
-import project.GUI.Patient.PersonalDeatails.StartPersonalDetailsPatient;
+import project.GUI.Patient.PersonalDetails.StartPersonalDetailsPatient;
 import project.GUI.Patient.Treatments.StartTreatmentsPricesView;
 
 public class PatientController {

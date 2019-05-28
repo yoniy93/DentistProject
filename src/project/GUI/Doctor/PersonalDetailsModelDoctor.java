@@ -21,7 +21,7 @@ public class PersonalDetailsModelDoctor {
 
     public void UpdatedDoctor() {
         DBUpdates databaseUpdates=new DBUpdates();
-        databaseUpdates.updateDoctorDetailts(doctor);
+        databaseUpdates.updateDoctorDetails(doctor);
 
     }
 }

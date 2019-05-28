@@ -1,4 +1,4 @@
-package project.GUI.Patient.PersonalDeatails;
+package project.GUI.Patient.PersonalDetails;
 
 public class PersonalDetailsControllerPatient {
 
