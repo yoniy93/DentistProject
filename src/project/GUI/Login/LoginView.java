@@ -17,7 +17,7 @@ public class LoginView extends JFrame {
     }
 
     private void generateLoginFrame() {
-        setLayoutManager();
+        setLayout(null);
         setLocationAndSize();
         addComponentsToFrame();
 
@@ -26,10 +26,6 @@ public class LoginView extends JFrame {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setResizable(false);
         setVisible(true);
-    }
-
-    private void setLayoutManager() {
-        setLayout(null);
     }
 
     private void setLocationAndSize() {
