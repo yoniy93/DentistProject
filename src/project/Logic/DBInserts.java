@@ -8,9 +8,9 @@ public class DBInserts extends DBHandler {
         connectAndExecute(sql);
     }
 
-    public void insertTreatment(int id,String name, int duration){
-        String sql="INSERT INTO treatments(id, treatmentname, durationmin)"+"" +
-                " VALUES ('"+id+"', '"+name+"', '"+duration+"');";
+    public void insertTreatment(int id,String name, int duration, double price){
+        String sql="INSERT INTO treatments(id, treatmentname, durationmin, privce)"+"" +
+                " VALUES ('"+id+"', '"+name+"', '"+duration+"', '"+price+"');";
         connectAndExecute(sql);
     }
 

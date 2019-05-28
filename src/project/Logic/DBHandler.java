@@ -51,7 +51,7 @@ public class DBHandler {
                 " expiredate date NOT NULL, quantity integer NOT NULL);";
 
         sql2="CREATE TABLE IF NOT EXISTS treatments ( id integer PRIMARY KEY NOT NULL, treatmentname text NOT NULL,"+
-                " durationmin integer NOT NULL);";
+                " durationmin integer NOT NULL, price double NOT NULL);";
 
         sql3="CREATE TABLE IF NOT EXISTS appointments (treatmentID integer PRIMARY KEY NOT NULL, appointmentDATE date NOT NULL,"+
                 " appointmentTIME time NOT NULL,clientID text NOT NULL, doctorID text NOT NULL);";

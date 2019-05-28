@@ -1,14 +1,12 @@
 package project.Logic;
 
-import project.Entities.Admin;
-import project.Entities.Doctor;
-import project.Entities.Patient;
-import project.Entities.USER_TYPE;
+import project.Entities.*;
 
 import java.sql.*;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Vector;
 
 public class DBQuerys extends DBHandler {
 
@@ -19,7 +17,10 @@ public class DBQuerys extends DBHandler {
              ResultSet rs    = stmt.executeQuery(sql)) {
             SimpleDateFormat format=new SimpleDateFormat("dd-MM-yyyy");
             Date date=format.parse(rs.getString("birthdate"));
-            return new Doctor(id,rs.getString("firstname"),rs.getString("lastname"),rs.getString("email"),rs.getString("password"),date,rs.getString("gender"),rs.getInt("yearOfExperiens"));
+            return new Doctor(id,rs.getString("firstname"),
+                    rs.getString("lastname"),rs.getString("email"),
+                    rs.getString("password"),date,rs.getString("gender"),
+                    rs.getInt("yearOfExperiens"));
         } catch (SQLException | ParseException e) {
             System.out.println(e.getMessage());
         }
@@ -33,7 +34,11 @@ public class DBQuerys extends DBHandler {
              ResultSet rs    = stmt.executeQuery(sql)) {
             SimpleDateFormat format=new SimpleDateFormat("dd-MM-yyyy");
             Date date=format.parse(rs.getString("birthdate"));
-            return new Admin(id,rs.getString("firstname"),rs.getString("lastname"), rs.getString("email"), rs.getString("password"),rs.getString("gender") ,date);
+            return new Admin(id,rs.getString("firstname"),
+                    rs.getString("lastname"),
+                    rs.getString("email"),
+                    rs.getString("password"),
+                    rs.getString("gender") ,date);
         } catch (SQLException | ParseException e) {
             System.out.println(e.getMessage());
         }
@@ -47,7 +52,10 @@ public class DBQuerys extends DBHandler {
              ResultSet rs    = stmt.executeQuery(sql)) {
             SimpleDateFormat format=new SimpleDateFormat("dd-MM-yyyy");
             Date date=format.parse(rs.getString("birthdate"));
-            return new Patient(id,rs.getString("firstname"),rs.getString("lastname"), rs.getString("email"), rs.getString("password"),rs.getString("gender") ,date,rs.getInt("weight"),rs.getInt("height"));
+            return new Patient(id,rs.getString("firstname"),
+                    rs.getString("lastname"), rs.getString("email"),
+                    rs.getString("password"),rs.getString("gender") ,
+                    date,rs.getInt("weight"),rs.getInt("height"));
         } catch (SQLException | ParseException e) {
             System.out.println(e.getMessage());
         }
@@ -100,5 +108,24 @@ public class DBQuerys extends DBHandler {
             System.out.println(e.getMessage());
             return USER_TYPE.ERROR;
         }
+    }
+
+    public Vector<Treatments> getTreatments (){
+        Vector<Treatments> treatments=new Vector<>(1);
+        String sql="SELECT * FROM treatments;";
+        try (Connection conn = this.connect();
+             PreparedStatement pstmt  = conn.prepareStatement(sql)) {
+            ResultSet resultSet=pstmt.executeQuery();
+            while (resultSet.next()){
+                treatments.add(new Treatments(resultSet.getString("id"),
+                        resultSet.getString("treatmentname"),
+                        resultSet.getInt("dutationmin"),
+                        resultSet.getInt("price")));
+            }
+            return treatments;
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        return null;
     }
 }
