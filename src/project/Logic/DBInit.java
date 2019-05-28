@@ -1,11 +1,15 @@
 package project.Logic;
 
+import org.w3c.dom.Text;
+
 import java.io.File;
 
 public class DBInit {
 
     private static boolean isDBExists() {
-        File file=new File(DBLocation.DBLocation());
+        String s=DBLocation.DBLocation();
+        String location = s.substring(s.lastIndexOf(':') + 1).trim();
+        File file=new File(location);
         return file.exists();
     }
 
@@ -16,9 +20,9 @@ public class DBInit {
 
     private static void insertInitialData(){
         DBInserts dbInserts=new DBInserts();
-        dbInserts.insertForAdmin("A", "1", "Admin", "Admin", "email", "01-01-2000", "male");
-        dbInserts.insertForDoctor("D", "123", "check", "check", "check", "13-05-1993", "male", 3);
-        dbInserts.insertForPatient("P", "123", "check", "check", "check", 60.5, 178, "13-05-1993", "female");
+        dbInserts.insertForAdmin("1", "1", "Admin", "Admin", "email", "01-01-2000", "male");
+        dbInserts.insertForDoctor("2", "1", "check", "check", "check", "13-05-1993", "male", 3);
+        dbInserts.insertForPatient("3", "1", "check", "check", "check", 60.5, 178, "13-05-1993", "female");
         dbInserts.insertTreatment(1, "שיננית", 30, 70.5);
         dbInserts.insertTreatment(2, "סתימה", 60, 99);
         dbInserts.insertTreatment(3, "גשר", 90, 150);
