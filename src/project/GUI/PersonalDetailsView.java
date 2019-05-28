@@ -30,7 +30,7 @@ public class PersonalDetailsView extends JFrame {
         setVisible(true);
     }
 
-    private void setLocationAndSize() {
+    private void setLocationAndSize(){
         editButton.setFont(new Font("Tahoma", Font.BOLD, 14));
         editButton.setBounds(80, 400, 100, 30);
 
@@ -54,6 +54,7 @@ public class PersonalDetailsView extends JFrame {
         emailTextField.setBounds(170, 120, 150, 30);
         passwordField.setBounds(170, 160, 150, 30);
     }
+
     private void addComponentsToFrame(){
         add(editButton);
         add(cancelButton);

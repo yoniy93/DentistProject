@@ -26,6 +26,7 @@ public class PersonalDetailsViewPatient extends PersonalDetailsView {
         heightTextField.setBounds(170, 200, 150, 30);
         weightTextFiled.setBounds(170, 240, 150, 30);
     }
+
     private void addComponentsToFrame() {
         add(heightLabel);
         add(weightLabel);
