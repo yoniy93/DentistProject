@@ -10,8 +10,7 @@ public class PersonalDetailsControllerPatient {
         pDetailsView=pPV;
 
         SetTextFieldsCurrentValues();
-
-        initController();
+        addViewActionListeners();
     }
 
     private void SetTextFieldsCurrentValues() {
@@ -22,7 +21,7 @@ public class PersonalDetailsControllerPatient {
         pDetailsView.getWeightTextFiled().setText(Integer.toString(pDetailsModel.patient.getWeight()));
     }
 
-    private void initController() {
+    private void addViewActionListeners() {
         pDetailsView.getEditButton().addActionListener(e->EditAction());
 
     }
