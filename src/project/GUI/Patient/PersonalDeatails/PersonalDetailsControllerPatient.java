@@ -9,11 +9,17 @@ public class PersonalDetailsControllerPatient {
         pDetailsModel=pPM;
         pDetailsView=pPV;
 
-        pDetailsView.getFirstnameTextField().setText(pPM.patient.getFirstName());
-        pDetailsView.getLastnameTextField().setText(pPM.patient.getLastName());
-        pDetailsView.getEmailTextField().setText(pPM.patient.getEmail());
+        SetTextFieldsCurrentValues();
 
         initController();
+    }
+
+    private void SetTextFieldsCurrentValues() {
+        pDetailsView.getFirstnameTextField().setText(pDetailsModel.patient.getFirstName());
+        pDetailsView.getLastnameTextField().setText(pDetailsModel.patient.getLastName());
+        pDetailsView.getEmailTextField().setText(pDetailsModel.patient.getEmail());
+        pDetailsView.getHeightTextField().setText(Integer.toString(pDetailsModel.patient.getHeight()));
+        pDetailsView.getWeightTextFiled().setText(Integer.toString(pDetailsModel.patient.getWeight()));
     }
 
     private void initController() {
