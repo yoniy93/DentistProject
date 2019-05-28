@@ -29,18 +29,15 @@ public class AdminController extends PersonController {
         new StartRegisterView();
     }
 
-    private void unregisterAction()
-    {
+    private void unregisterAction() {
 
     }
 
-    private void editPersonalDeatailsAction()
-    {
+    private void editPersonalDeatailsAction() {
 
     }
 
-    private void viewClinicInfoAction()
-    {
+    private void viewClinicInfoAction() {
 
     }
 }
