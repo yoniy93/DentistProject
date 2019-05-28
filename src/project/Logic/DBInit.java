@@ -22,7 +22,7 @@ public class DBInit {
         dbInserts.insertTreatment(1, "שיננית", 30, 70.5);
         dbInserts.insertTreatment(2, "סתימה", 60, 99);
         dbInserts.insertTreatment(3, "גשר", 90, 150);
-        dbInserts.insertTreatment(4, "שיננית", 60, 69.9);
+        dbInserts.insertTreatment(4, "הלבנה", 60, 69.9);
         dbInserts.insertMedicalEquipment(11, "מזלג", "12-12-2020", 4);
     }
 
