@@ -1,16 +1,12 @@
 package project.Logic;
 
-import project.Entities.*;
 import java.sql.*;
-import java.text.SimpleDateFormat;
-import java.text.ParseException;
-import java.util.Date;
 
 public class DBHandler {
 
     public Connection connect() {
         // SQLite connection string
-        String url = DatabaseLocation.DBLocation();
+        String url = DBLocation.DBLocation();
 
         Connection conn = null;
         try {
@@ -23,7 +19,7 @@ public class DBHandler {
 
     public static void createNewDatabase() {
 
-        String url = DatabaseLocation.DBLocation();
+        String url = DBLocation.DBLocation();
 
         try (Connection conn = DriverManager.getConnection(url)) {
             if (conn != null) {
@@ -41,7 +37,7 @@ public class DBHandler {
 
         String url,sql,sql1,sql2,sql3,sql4,sql5,sql6;
 
-        url = DatabaseLocation.DBLocation();
+        url = DBLocation.DBLocation();
 
         sql = "CREATE TABLE IF NOT EXISTS users (id text PRIMARY KEY, password text NOT NULL, firstname text NOT NULL," +
                 "lastname text NOT NULL, email text NOT NULL, weight double, height integer, birthdate date NOT NULL, userRole text," +

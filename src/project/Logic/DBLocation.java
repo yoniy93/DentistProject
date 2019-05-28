@@ -1,6 +1,6 @@
 package project.Logic;
 
-public class DatabaseLocation {
+public class DBLocation {
 
     public static String DBLocation() {
         // Yoni
