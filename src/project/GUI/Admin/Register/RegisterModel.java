@@ -7,10 +7,5 @@ public class RegisterModel {
 
     DBInserts dbInserts=new DBInserts();
 
-    public RegisterModel() {
-
-    }
-
-
 
 }
