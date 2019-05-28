@@ -119,7 +119,7 @@ public class DBQuerys extends DBHandler {
             while (resultSet.next()){
                 treatments.add(new Treatments(resultSet.getString("id"),
                         resultSet.getString("treatmentname"),
-                        resultSet.getInt("dutationmin"),
+                        resultSet.getInt("durationmin"),
                         resultSet.getInt("price")));
             }
             return treatments;
