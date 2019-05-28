@@ -14,23 +14,23 @@ public class DoctorController {
         addViewActionListeners();
     }
 
-    public void addViewActionListeners() {
+    private void addViewActionListeners() {
         doctorView.getEditPersonalDetails().addActionListener(e -> EditDetailsAction());
         doctorView.getEnterShifts().addActionListener(e -> EnterShiftAction());
         doctorView.getViewClinicStaffInfo().addActionListener(e -> ViewInfoAction());
     }
 
-    public void EditDetailsAction()
+    private void EditDetailsAction()
     {
         new StartPersonalDetailsDoctor(doctorModel.getDoctor());
     }
 
-    public void EnterShiftAction()
+    private void EnterShiftAction()
     {
 
     }
 
-    public void ViewInfoAction()
+    private void ViewInfoAction()
     {
 
     }

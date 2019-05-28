@@ -3,7 +3,7 @@ package project.Logic;
 public class DBInserts extends DBHandler {
 
     public void insertInitialData(){
-        this.insertForAdmin("1", "1", "אדמין", "Admin", "email", "01-01-2000", "זכר");
+        insertForAdmin("1", "1", "אדמין", "Admin", "email", "01-01-2000", "זכר");
         this.insertForDoctor("2", "1", "עמית", "אפללו", "amit@gmail.com", "13-05-1993", "נקבה", 3);
         insertForPatient("3", "1", "יונתן", "ירדני", "yoni@gmail.com", 60.5, 178, "13-05-1993", "זכר");
         insertTreatment(2, "סתימה", 60, 99);

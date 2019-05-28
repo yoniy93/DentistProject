@@ -10,10 +10,10 @@ public class RegisterController {
         this.registerModel=registerModel;
         this.registerView=registerView;
 
-        addViewActionListeners();
+       // initController();
     }
 
-    private void addViewActionListeners()
+    private void initController()
     {
 
     }

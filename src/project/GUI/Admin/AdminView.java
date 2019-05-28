@@ -8,7 +8,7 @@ import javax.swing.*;
 public class AdminView extends PersonView {
 
 
-    private JButton registerNewUser = new JButton("Register new user: ");;
+    private JButton registerNewUser = new JButton("Register new user: ");
     private JButton unRegisterNewUser= new JButton("Unregister exciting user: ");
 
 

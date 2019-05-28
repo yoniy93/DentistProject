@@ -13,8 +13,6 @@ public class AdminModel {
         this.admin = admin;
     }
 
-
-
     public AdminModel(Admin admin){
         this.admin = admin;
     }

@@ -60,18 +60,19 @@ public class RegisterView extends JFrame
 
     private void setDateOfBirth()
     {
-        for(int i=0;i<30; i++)
+        for(int i=0;i<32; i++)
         {
-            day.set(i,i+1);
+            day.insertElementAt(i+1,i);
         }
         for(int i=0;i<12; i++)
         {
-            month.set(i,i+1);
+            month.insertElementAt(i+1,i);
         }
-        int max=1920;
-        for (int i=2019; i<=1920; i--)
+        int max=2019;
+        for (int i=0; i<=100; i++)
         {
-            year.set(i,i);
+            year.insertElementAt(max--,i);
+
         }
     }
 

@@ -9,24 +9,23 @@ public class AdminController {
     private AdminView adminView;
 
     public AdminController(AdminModel adminM, AdminView adminV) {
-        AdminModel adminModel=adminM;
-        AdminView adminView=adminV;
+         this.adminModel=adminM;
+        this.adminView=adminV;
 
-        addViewActionListeners();
+        initController();
     }
 
-    private void addViewActionListeners ()
+    private void initController ()
     {
         adminView.getRegisterNewUser().addActionListener(e->registerAction());
-        adminView.getUnRegisterNewUser().addActionListener(e->unregisterAction());
+//        adminView.getUnRegisterNewUser().addActionListener(e->unregisterAction());
         adminView.getEditPersonalDetails().addActionListener(e->editPersonalDeatailsAction());
-        adminView.getViewClinicStaffInfo().addActionListener(e->viewClinicInfoAction());
+  //      adminView.getViewClinicStaffInfo().addActionListener(e->viewClinicInfoAction());
     }
 
     private void registerAction()
     {
-        StartRegisterView register=new StartRegisterView();
-
+        new StartRegisterView();
     }
 
     private void unregisterAction()
