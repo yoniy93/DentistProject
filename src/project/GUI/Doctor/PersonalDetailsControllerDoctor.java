@@ -2,31 +2,31 @@ package project.GUI.Doctor;
 
 public class PersonalDetailsControllerDoctor {
 
-    private PersonalDetailsViewDoctor pDetailsView;
-    private PersonalDetailsModelDoctor pDetailsModel;
+    private PersonalDetailsViewDoctor personalDetailsView;
+    private PersonalDetailsModelDoctor personalDetailsModel;
 
     public PersonalDetailsControllerDoctor(PersonalDetailsModelDoctor pDM , PersonalDetailsViewDoctor pDV) {
-        pDetailsModel=pDM;
-        pDetailsView=pDV;
+        personalDetailsModel =pDM;
+        personalDetailsView =pDV;
 
         addViewActionListeners();
     }
 
     private void addViewActionListeners() {
-        pDetailsView.getEditButton().addActionListener(e->EditAction());
+        personalDetailsView.getEditButton().addActionListener(e->EditAction());
 
     }
 
     public String getPassword(){
-        return new String(pDetailsView.getPasswordField().getPassword());
+        return new String(personalDetailsView.getPasswordField().getPassword());
     }
 
     public int getYearsOfExp(){
-       return Integer.parseInt(pDetailsView.getYearsOfExpTextField().getText());
+       return Integer.parseInt(personalDetailsView.getYearsOfExpTextField().getText());
     }
 
     public void EditAction() {
-         pDetailsModel.UpdatedDoctor();
+         personalDetailsModel.UpdatedDoctor();
 
     }
 }
