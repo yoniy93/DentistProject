@@ -1,4 +1,5 @@
 package project.GUI.Patient.PersonalDetails;
+
 import project.Entities.Patient;
 import project.Logic.DBUpdates;
 
@@ -22,5 +23,4 @@ public class PersonalDetailsModelPatient {
         DBUpdates databaseUpdates = new DBUpdates();
         databaseUpdates.updatePatientDetails(patient);
     }
-
 }

@@ -3,8 +3,8 @@ package project.GUI.Doctor;
 import project.Entities.Doctor;
 import project.Logic.DBUpdates;
 
-
 public class PersonalDetailsModelDoctor {
+
     private Doctor doctor;
 
     public PersonalDetailsModelDoctor(Doctor doctor){
@@ -22,6 +22,5 @@ public class PersonalDetailsModelDoctor {
     public void UpdatedDoctor() {
         DBUpdates databaseUpdates=new DBUpdates();
         databaseUpdates.updateDoctorDetails(doctor);
-
     }
 }
