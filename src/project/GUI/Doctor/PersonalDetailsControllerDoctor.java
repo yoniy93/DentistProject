@@ -34,7 +34,7 @@ public class PersonalDetailsControllerDoctor {
     }
 
     public void EditAction() {
-         pDetailsModel.UpdatedDoctor();
+         pDetailsModel.UpdateDoctor();
 
     }
 }

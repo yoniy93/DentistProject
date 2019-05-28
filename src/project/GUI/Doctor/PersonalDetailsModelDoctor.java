@@ -19,7 +19,7 @@ public class PersonalDetailsModelDoctor {
         this.doctor = doctor;
     }
 
-    public void UpdatedDoctor() {
+    public void UpdateDoctor() {
         DBUpdates databaseUpdates=new DBUpdates();
         databaseUpdates.updateDoctorDetails(doctor);
     }

@@ -30,8 +30,7 @@ public class PersonalDetailsControllerPatient {
         return new String(pDetailsView.getPasswordField().getPassword());
     }
 
-
     public void EditAction() {
-
+        pDetailsModel.UpdatePatient();
     }
 }
