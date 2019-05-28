@@ -10,12 +10,6 @@ public class DoctorView extends PersonView {
 
     public DoctorView()
     {
-
-        generateLoginFrameDoctor();
-    }
-
-
-    private void generateLoginFrameDoctor() {
         setLayout(null);
         this.setLocationAndSize();
         setEnterShifts();
@@ -28,6 +22,9 @@ public class DoctorView extends PersonView {
         setResizable(false);
         setVisible(true);
     }
+
+
+
 
     private void setEnterShifts() {
 

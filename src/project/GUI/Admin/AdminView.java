@@ -8,21 +8,12 @@ import javax.swing.*;
 public class AdminView extends PersonView {
 
 
-    private JButton registerNewUser ;
-    private JButton unRegisterNewUser;
+    private JButton registerNewUser = new JButton("Register new user: ");;
+    private JButton unRegisterNewUser= new JButton("Unregister exciting user: ");
 
 
     public AdminView()
     {
-
-        registerNewUser= new JButton("Register new user: ");
-        unRegisterNewUser= new JButton("Unregister exciting user: ");
-
-        generateLoginFrameAdmin();
-    }
-
-
-    private void generateLoginFrameAdmin() {
 
         setLayout(null);
         setLocationAndSize();
@@ -36,8 +27,8 @@ public class AdminView extends PersonView {
         setResizable(false);
         setVisible(true);
 
-
     }
+
 
     private void setAdmin() {
 
