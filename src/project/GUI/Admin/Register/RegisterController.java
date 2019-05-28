@@ -22,7 +22,7 @@ public class RegisterController {
 
     private void addUserAction() {
      if(   checkNotNullFields()) {
-         String bDay = registerView.getDayBox().toString() + registerView.getMonthBox().toString() + registerView.getYearBox().toString();
+         String bDay = registerView.getDayBox().toString() +"-"+ registerView.getMonthBox().toString() +"-"+ registerView.getYearBox().toString();
          if (registerView.getPatient().isSelected()) {
              registerModel.dbInserts.insertForPatient
                      (registerView.getIdTextFiled().getText(), registerView.getPasswordField().toString(),
@@ -36,6 +36,7 @@ public class RegisterController {
                              registerView.getEmailTextField().getText(), bDay, checkGender(), Integer.parseInt(registerView.getYearsOfExTextField().getText()));
          }
      }
+
         registerView.setVisible(false);
         new StartAdminView(registerModel.admin);
     }
