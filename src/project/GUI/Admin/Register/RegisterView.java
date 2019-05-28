@@ -52,7 +52,7 @@ public class RegisterView extends JFrame
 
 
         setTitle("Register New User");
-        setBounds(300, 100, 400, 500);
+        setBounds(300, 100, 800, 800);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setResizable(false);
         setVisible(true);
@@ -107,19 +107,19 @@ public class RegisterView extends JFrame
         passwordField.setBounds(170, 200, 150, 30);
 
 
-        male.setBounds(200,240,150,50);
-        female.setBounds(230,240,150,50);
+        male.setBounds(120,240,150,50);
+        female.setBounds(200,240,150,50);
 
         patient.setBounds(200,300,150,50);
-        doctor.setBounds(230,300,150,50);
+        doctor.setBounds(280,300,150,50);
 
-        yearBox.setBounds(100,360,150,50);
-        monthBox.setBounds(140,360,150,50);
-        dayBox.setBounds(180,360,150,50);
+        yearBox.setBounds(150,360,150,20);
+        monthBox.setBounds(300,360,150,20);
+        dayBox.setBounds(450,360,150,20);
 
-        weightTextField.setBounds(170,360,150,50);
-        heightTextField.setBounds(170,390,150,50);
-        yearsOfExTextField.setBounds(170,420,150,50);
+        weightTextField.setBounds(170,410,150,25);
+        heightTextField.setBounds(170,450,150,25);
+        yearsOfExTextField.setBounds(200,490,150,25);
     }
 
     private void addComponentsToFrame()
@@ -147,6 +147,9 @@ public class RegisterView extends JFrame
         add(weightTextField);
         add(height);
         add(heightTextField);
+        add(yearBox);
+        add(dayBox);
+        add(monthBox);
 
     }
 
