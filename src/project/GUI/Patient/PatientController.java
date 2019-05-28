@@ -1,12 +1,10 @@
 package project.GUI.Patient;
 
-import project.GUI.Login.StartLoginView;
+import project.GUI.PersonController;
 import project.GUI.Patient.PersonalDetails.StartPersonalDetailsPatient;
 import project.GUI.Patient.Treatments.StartTreatmentsPricesView;
 
-import javax.swing.*;
-
-public class PatientController {
+public class PatientController extends PersonController{
 
     private PatientModel patientModel;
     private PatientView patientView;
@@ -19,7 +17,7 @@ public class PatientController {
     }
 
     public void addViewActionListeners() {
-        patientView.getLogoutButton().addActionListener(e -> logoutAction());
+        patientView.getLogoutButton().addActionListener(e -> logoutAction(patientView));
         patientView.getEditPersonalDetails().addActionListener(e -> editDetailsAction());
         patientView.getViewTreatments().addActionListener(e->viewTreatmentsAction());
     }
@@ -30,14 +28,4 @@ public class PatientController {
     }
 
     public void viewTreatmentsAction() { new StartTreatmentsPricesView(); }
-
-    private void logoutAction() {
-        patientView.dispose();
-
-        SwingUtilities.invokeLater(new Runnable() {
-            public void run() {
-                new StartLoginView();
-            }
-        });
-    }
 }
