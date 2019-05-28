@@ -16,13 +16,14 @@ public class TreatmentsPricesView extends JFrame {
 
     public TreatmentsPricesView()
     {
+        setTreatmentsVector();
         setLayout(null);
         setLocationAndSize();
         addComponentsToFrame();
-        setTreatmentsVector();
+
 
         setTitle("Search Your Treatment: ");
-        setBounds(300, 100, 400, 500);
+        setBounds(300, 100, 600, 600);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setResizable(false);
         setVisible(true);
@@ -30,7 +31,7 @@ public class TreatmentsPricesView extends JFrame {
 
     private void setLocationAndSize()
     {
-        treatmentList.setBounds(170, 200, 200, 30);
+        treatmentList.setBounds(300, 200, 200, 30);
         treatmentPrices.setBounds(250, 200, 200 , 30);
     }
 
@@ -38,6 +39,7 @@ public class TreatmentsPricesView extends JFrame {
     {
         add(treatmentList);
         add(treatmentPrices);
+
     }
 
     public void setTreatmentsVector()
@@ -57,13 +59,7 @@ public class TreatmentsPricesView extends JFrame {
 
     public void setTreatmentPrices(String price)
     {
-        int size=treatmentsVector.size();
-        treatmentPrices=new JLabel(((String) price));
-
+        treatmentPrices.setText((String)price);
     }
-
-   /* public void setTreatmentList(Vector<Treatments> treatmentList) {
-      this.treatmentList=new JComboBox(treatmentList);
-    }*/
 
 }
