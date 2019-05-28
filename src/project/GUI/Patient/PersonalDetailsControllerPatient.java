@@ -9,10 +9,10 @@ public class PersonalDetailsControllerPatient {
         pDetailsModel=pPM;
         pDetailsView=pPV;
 
-        addViewActionListeners();
+        initController();
     }
 
-    private void addViewActionListeners() {
+    private void initController() {
         pDetailsView.getEditButton().addActionListener(e->EditAction());
 
     }

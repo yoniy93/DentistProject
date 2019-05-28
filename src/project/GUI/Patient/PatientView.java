@@ -6,6 +6,7 @@ import javax.swing.*;
 public class PatientView extends PersonView {
 
     private JButton setAnAppointment=new JButton("Set An Appointment ");
+    private JButton viewTreatments=new JButton("View Treatments");
 
     public PatientView()
     {
@@ -25,15 +26,20 @@ public class PatientView extends PersonView {
     void addPatientToContainer()
     {
         add(setAnAppointment);
+        add(viewTreatments);
 
     }
     void setPatient()
     {
         setAnAppointment.setBounds(150, 220, 150, 30);
+        viewTreatments.setBounds(150,430,150,30);
     }
     public JButton getSetAnAppointment() {
         return setAnAppointment;
     }
 
+    public JButton getViewTreatments() {
+        return viewTreatments;
+    }
 
 }
