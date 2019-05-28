@@ -1,10 +1,6 @@
 package project.GUI.Doctor;
-
-import project.GUI.Login.StartLoginView;
-
-import javax.swing.*;
-
-public class DoctorController {
+import project.GUI.PersonController;
+public class DoctorController extends PersonController {
 
     private DoctorModel doctorModel;
     private DoctorView doctorView;
@@ -12,27 +8,17 @@ public class DoctorController {
 
     public DoctorController(DoctorModel doctorM,DoctorView doctorV)
     {
-        this.doctorView=doctorV;
-        this.doctorModel=doctorM;
+        doctorView = doctorV;
+        doctorModel = doctorM;
 
         addViewActionListeners();
     }
 
     private void addViewActionListeners() {
-        doctorView.getLogoutButton().addActionListener(e -> logoutAction());
+        doctorView.getLogoutButton().addActionListener(e -> logoutAction(doctorView));
         doctorView.getEditPersonalDetails().addActionListener(e -> EditDetailsAction());
         doctorView.getEnterShifts().addActionListener(e -> EnterShiftAction());
         doctorView.getViewClinicStaffInfo().addActionListener(e -> ViewInfoAction());
-    }
-
-    private void logoutAction() {
-        doctorView.dispose();
-
-        SwingUtilities.invokeLater(new Runnable() {
-            public void run() {
-                new StartLoginView();
-            }
-        });
     }
 
     private void EditDetailsAction()

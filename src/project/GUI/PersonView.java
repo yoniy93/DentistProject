@@ -10,7 +10,7 @@ public class PersonView extends JFrame {
     private JButton editPersonalDetails = new JButton("Edit personal details");
     private JButton viewClinicStaffInfo = new JButton("View Clinic Staff Information: ");
 
-    public PersonView(){
+    protected PersonView(){
         setLayout(null);
         setLocationAndSize();
         addComponentsToFrame();
