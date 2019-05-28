@@ -26,19 +26,19 @@ public class LoginModel {
             {
                 case ADMIN:
                 {
-                    Admin admin=databaseQuerys.getAdminDetails(username);
+                    Admin admin = databaseQuerys.getAdminDetails(username);
                     new StartAdminView(admin);
                     break;
                 }
                 case DOCTOR:
                 {
-                    Doctor doctor=databaseQuerys.getDoctorDetails(username);
+                    Doctor doctor = databaseQuerys.getDoctorDetails(username);
                     new StartDoctorView(doctor);
                     break;
                 }
                 case PATIENT:
                 {
-                    Patient patient=databaseQuerys.getPatientDetails(username);
+                    Patient patient = databaseQuerys.getPatientDetails(username);
                     new StartPatientView(patient);
                     break;
                 }

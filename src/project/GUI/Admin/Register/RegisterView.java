@@ -5,7 +5,6 @@ import java.util.Vector;
 
 public class RegisterView extends JFrame
 {
-
     private JButton addUser=new JButton("Submit");
     private JLabel role= new JLabel( "What is the user's role? ");
     private JLabel firstNameLabel = new JLabel("First Name: ");
