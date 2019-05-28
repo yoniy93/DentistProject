@@ -1,4 +1,4 @@
-package project.GUI.Admin;
+package project.GUI.Admin.Register;
 
 public class RegisterController {
 

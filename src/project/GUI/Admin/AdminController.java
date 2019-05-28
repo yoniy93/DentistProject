@@ -1,6 +1,7 @@
 package project.GUI.Admin;
 
 
+import project.GUI.Admin.Register.StartRegisterView;
 
 public class AdminController {
 
