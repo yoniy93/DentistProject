@@ -1,9 +1,7 @@
-package project.GUI.Patient;
+package project.GUI.Patient.Treatments;
 
 import project.Entities.Treatments;
 import project.Logic.DBQuerys;
-
-import java.util.Vector;
 
 public class TreatmentsPricesController
 {

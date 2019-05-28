@@ -1,4 +1,4 @@
-package project.GUI.Patient;
+package project.GUI.Patient.Treatments;
 
 import project.Logic.DBQuerys;
 

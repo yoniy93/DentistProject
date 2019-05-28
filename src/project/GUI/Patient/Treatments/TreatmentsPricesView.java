@@ -1,4 +1,4 @@
-package project.GUI.Patient;
+package project.GUI.Patient.Treatments;
 
 import project.Entities.Treatments;
 import project.Logic.DBQuerys;
@@ -8,10 +8,10 @@ import java.util.Vector;
 
 public class TreatmentsPricesView extends JFrame {
 
-
-
     private DBQuerys dbQuerys=new DBQuerys();
-    private JComboBox treatmentList=new JComboBox(dbQuerys.getTreatments());
+    private Vector<Treatments> treatmentsVector=dbQuerys.getTreatments();
+    private String [] treatmentsName=new String[treatmentsVector.size()];
+    private JComboBox treatmentList=new JComboBox(treatmentsName);
     private JLabel treatmentPrices= new JLabel(" ");
 
     public TreatmentsPricesView()
@@ -19,6 +19,7 @@ public class TreatmentsPricesView extends JFrame {
         setLayout(null);
         setLocationAndSize();
         addComponentsToFrame();
+        setTreatmentsVector();
 
         setTitle("Search Your Treatment: ");
         setBounds(300, 100, 400, 500);
@@ -39,6 +40,13 @@ public class TreatmentsPricesView extends JFrame {
         add(treatmentPrices);
     }
 
+    public void setTreatmentsVector()
+    {
+        for(int i=0;i<treatmentsVector.size();i++)
+        {
+            treatmentsName[i]=(treatmentsVector.get(i).getName());
+        }
+    }
     public JComboBox getTreatmentList() {
         return treatmentList;
     }
@@ -49,7 +57,9 @@ public class TreatmentsPricesView extends JFrame {
 
     public void setTreatmentPrices(String price)
     {
+        int size=treatmentsVector.size();
         treatmentPrices=new JLabel(((String) price));
+
     }
 
    /* public void setTreatmentList(Vector<Treatments> treatmentList) {

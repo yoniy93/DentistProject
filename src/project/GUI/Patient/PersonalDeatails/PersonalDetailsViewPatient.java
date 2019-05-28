@@ -1,4 +1,4 @@
-package project.GUI.Patient;
+package project.GUI.Patient.PersonalDeatails;
 import project.GUI.PersonalDetailsView;
 import javax.swing .*;
 import java.awt.*;

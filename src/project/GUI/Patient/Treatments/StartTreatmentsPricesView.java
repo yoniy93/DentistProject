@@ -1,4 +1,5 @@
-package project.GUI.Patient;
+package project.GUI.Patient.Treatments;
+
 
 public class StartTreatmentsPricesView
 {

@@ -1,4 +1,4 @@
-package project.GUI.Patient;
+package project.GUI.Patient.PersonalDeatails;
 import project.Entities.Patient;
 
 public class PersonalDetailsModelPatient {
