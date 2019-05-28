@@ -1,15 +1,18 @@
 package project.GUI.Patient;
 
+import project.Entities.Treatments;
 import project.Logic.DBQuerys;
 
 import javax.swing.*;
+import java.util.Vector;
 
 public class TreatmentsPricesView extends JFrame {
 
 
-    private DBQuerys dbQuerys=new DBQuerys();
+
+   private DBQuerys dbQuerys=new DBQuerys();
     private JComboBox treatmentList=new JComboBox(dbQuerys.getTreatments());
-    private JTextField treatmentPrices= new JTextField();
+    private JLabel treatmentPrices= new JLabel(" ");
 
     public TreatmentsPricesView()
     {
@@ -40,9 +43,17 @@ public class TreatmentsPricesView extends JFrame {
         return treatmentList;
     }
 
-    public JTextField getTreatmentPrices() {
+    public JLabel getTreatmentPrices() {
         return treatmentPrices;
     }
 
+    public void setTreatmentPrices(String price)
+    {
+        treatmentPrices=new JLabel(((String) price));
+    }
+
+   /* public void setTreatmentList(Vector<Treatments> treatmentList) {
+      this.treatmentList=new JComboBox(treatmentList);
+    }*/
 
 }
