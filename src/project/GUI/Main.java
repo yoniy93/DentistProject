@@ -29,7 +29,7 @@ public class Main {
             dbInserts.insertForAdmin("1234567","1234567","Admin","Admin","mail","13-05-1993","male");
             dbInserts.insertForDoctor("302208178","12345","Yoni","Yardeni","yoniy93@gmail.com","13-05-1993","male",3);
             dbInserts.insertForPatient("123","123","check","check","check",60.5,178,"13-05-1993","male");
-            dbInserts.insertTreatment(1,"שיננית",50);
+            dbInserts.insertTreatment(1,"שיננית",50, 100);
             dbInserts.insertMedicalEquipment(11,"מזלג", "12-12-2020",4);
 
     }

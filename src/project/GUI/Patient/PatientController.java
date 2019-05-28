@@ -13,12 +13,14 @@ public class PatientController {
     }
 
     public void addViewActionListeners() {
-        patientView.getEditPersonalDetails().addActionListener(e -> EditDetailsAction());
+        patientView.getEditPersonalDetails().addActionListener(e -> editDetailsAction());
+        patientView.getViewTreatments().addActionListener(e->viewTreatmentsAction());
     }
 
-    public void EditDetailsAction()
+    public void editDetailsAction()
     {
         new StartPersonalDetailsPatient(patientModel.getPatient());
     }
 
+    public void viewTreatmentsAction() { new StartTreatmentsPricesView(); }
 }
