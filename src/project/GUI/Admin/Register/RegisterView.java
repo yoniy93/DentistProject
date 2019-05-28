@@ -17,16 +17,16 @@ public class RegisterView extends JFrame
     private JLabel weight=new JLabel("Weight: ");
     private JLabel yearOfEx=new JLabel("Years Of Experience: ");
 
-    private Vector year= new Vector<>(100);
-    private Vector month= new Vector<>(12);
-    private Vector day= new Vector<>(31);
+    private Vector<Integer> yearVector = new Vector<Integer>();
+    private Vector<Integer> monthVector = new Vector<Integer>();
+    private Vector<Integer> dayVector = new Vector<Integer>();
 
-    private JComboBox yearBox = new JComboBox(year);
-    private JComboBox monthBox= new JComboBox(month);
-    private JComboBox dayBox=new JComboBox(day);
+    private JComboBox yearBox;
+    private JComboBox monthBox;
+    private JComboBox dayBox;
 
-    private JRadioButton doctor= new JRadioButton("Doctor");
-    private JRadioButton patient=new JRadioButton("Patient");
+    private JRadioButton doctor = new JRadioButton("Doctor");
+    private JRadioButton patient =new JRadioButton("Patient");
     private ButtonGroup roleGroup = new ButtonGroup();
 
     private JRadioButton male= new JRadioButton("Male");
@@ -46,34 +46,39 @@ public class RegisterView extends JFrame
     public RegisterView() {
 
         setDateOfBirth();
+        configDateComboBox();
         setLayout(null);
         setLocationAndSize();
         addComponentsToFrame();
 
 
         setTitle("Register New User");
-        setBounds(300, 100, 800, 800);
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setBounds(300, 100, 800, 600);
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setResizable(false);
         setVisible(true);
     }
 
-    private void setDateOfBirth()
-    {
-        for(int i=0;i<32; i++)
+    private void setDateOfBirth() {
+        for(int i=1; i<=31; i++)
         {
-            day.insertElementAt(i+1,i);
+            dayVector.add(i);
         }
-        for(int i=0;i<12; i++)
+        for(int i=1; i<=12; i++)
         {
-            month.insertElementAt(i+1,i);
+            monthVector.add(i);
         }
-        int max=2019;
+        int maxYear=2019;
         for (int i=0; i<=100; i++)
         {
-            year.insertElementAt(max--,i);
-
+            yearVector.add(maxYear--);
         }
+    }
+
+    private void configDateComboBox(){
+        dayBox = new JComboBox(dayVector);
+        monthBox = new JComboBox(monthVector);
+        yearBox = new JComboBox(yearVector);
     }
 
     private void setLocationAndSize()
@@ -108,7 +113,9 @@ public class RegisterView extends JFrame
 
 
         male.setBounds(120,240,150,50);
+        male.setVisible(true);
         female.setBounds(200,240,150,50);
+        female.setVisible(true);
 
         patient.setBounds(200,300,150,50);
         doctor.setBounds(280,300,150,50);
