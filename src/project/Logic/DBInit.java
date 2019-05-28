@@ -12,16 +12,16 @@ public class DBInit {
             return false;
     }
 
-    private static void createTablesInDB(){
+    private static void createTablesInDB() {
         DBHandler.createNewDatabase();
         DBHandler.createNewTables();
     }
 
     private static void insertInitialData(){
         DBInserts dbInserts=new DBInserts();
-        dbInserts.insertForAdmin("1234567", "1234567", "Admin", "Admin", "mail", "13-05-1993", "male");
-        dbInserts.insertForDoctor("302208178", "12345", "Yoni", "Yardeni", "yoniy93@gmail.com", "13-05-1993", "male", 3);
-        dbInserts.insertForPatient("123", "123", "check", "check", "check", 60.5, 178, "13-05-1993", "male");
+        dbInserts.insertForAdmin("A", "1", "Admin", "Admin", "email", "01-01-2000", "male");
+        dbInserts.insertForDoctor("D", "123", "check", "check", "check", "13-05-1993", "male", 3);
+        dbInserts.insertForPatient("P", "123", "check", "check", "check", 60.5, 178, "13-05-1993", "female");
         dbInserts.insertTreatment(1, "שיננית", 30, 70.5);
         dbInserts.insertTreatment(2, "סתימה", 60, 99);
         dbInserts.insertTreatment(3, "גשר", 90, 150);
