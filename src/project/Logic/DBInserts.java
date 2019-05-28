@@ -2,16 +2,14 @@ package project.Logic;
 
 public class DBInserts extends DBHandler {
 
-    public static void insertInitialData(){
-        DBInserts dbInserts=new DBInserts();
-        dbInserts.insertForAdmin("1", "1", "Admin", "Admin", "email", "01-01-2000", "male");
-        dbInserts.insertForDoctor("2", "1", "check", "check", "check", "13-05-1993", "male", 3);
-        dbInserts.insertForPatient("3", "1", "check", "check", "check", 60.5, 178, "13-05-1993", "female");
-        dbInserts.insertTreatment(1, "שיננית", 30, 70.5);
-        dbInserts.insertTreatment(2, "סתימה", 60, 99);
-        dbInserts.insertTreatment(3, "גשר", 90, 150);
-        dbInserts.insertTreatment(4, "הלבנה", 60, 69.9);
-        dbInserts.insertMedicalEquipment(11, "מזלג", "12-12-2020", 4);
+    public void insertInitialData(){
+        this.insertForAdmin("1", "1", "Admin", "Admin", "email", "01-01-2000", "male");
+        insertForDoctor("2", "1", "check", "check", "check", "13-05-1993", "male", 3);
+        insertForPatient("3", "1", "check", "check", "check", 60.5, 178, "13-05-1993", "female");
+        insertTreatment(2, "סתימה", 60, 99);
+        insertTreatment(3, "גשר", 90, 150);
+        insertTreatment(4, "הלבנה", 60, 69.9);
+        insertMedicalEquipment(11, "מזלג", "12-12-2020", 4);
     }
 
     public void insertMedicalEquipment(int id,String name, String expiredate,int quantity){

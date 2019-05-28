@@ -1,7 +1,5 @@
 package project.Logic;
 
-import org.w3c.dom.Text;
-
 import java.io.File;
 
 public class DBInit {
@@ -18,16 +16,14 @@ public class DBInit {
         DBHandler.createNewTables();
     }
 
-
-
     public static void loadDatabaseWithInitialData(){
 
         boolean isDBexists=isDBExists();
         createTablesInDB();
 //        String newstring = new SimpleDateFormat("dd-MM-yyyy").format(date);
         if (!isDBexists) {
-            DBInserts.insertInitialData();
+            DBInserts db=new DBInserts();
+            db.insertInitialData();
         }
-
     }
 }
