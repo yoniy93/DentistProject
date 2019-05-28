@@ -1,9 +1,10 @@
 package project.GUI.Patient.PersonalDeatails;
 import project.Entities.Patient;
+import project.Logic.DBUpdates;
 
 public class PersonalDetailsModelPatient {
 
-    Patient patient;
+    private Patient patient;
 
     public PersonalDetailsModelPatient(Patient patient){
         this.patient = patient;
@@ -17,10 +18,9 @@ public class PersonalDetailsModelPatient {
         this.patient = patient;
     }
 
-    /*
     public void UpdatedPatient() {
-        DBHandler databaseHandler=new DBHandler();
-        databaseHandler.updatePatientDetailts(patient);
+        DBUpdates databaseUpdates = new DBUpdates();
+        databaseUpdates.updatePatientDetaits(patient);
     }
-    */
+
 }

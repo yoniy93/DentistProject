@@ -2,31 +2,40 @@ package project.GUI.Doctor;
 
 public class PersonalDetailsControllerDoctor {
 
-    private PersonalDetailsViewDoctor personalDetailsView;
-    private PersonalDetailsModelDoctor personalDetailsModel;
+    private PersonalDetailsViewDoctor pDetailsView;
+    private PersonalDetailsModelDoctor pDetailsModel;
 
     public PersonalDetailsControllerDoctor(PersonalDetailsModelDoctor pDM , PersonalDetailsViewDoctor pDV) {
-        personalDetailsModel =pDM;
-        personalDetailsView =pDV;
+        pDetailsModel =pDM;
+        pDetailsView =pDV;
 
+        SetTextFieldsCurrentValues();
         addViewActionListeners();
     }
 
+    private void SetTextFieldsCurrentValues() {
+        pDetailsView.getFirstnameTextField().setText(pDetailsModel.patient.getFirstName());
+        pDetailsView.getLastnameTextField().setText(pDetailsModel.patient.getLastName());
+        pDetailsView.getEmailTextField().setText(pDetailsModel.patient.getEmail());
+        pDetailsView.getYearsOfExpTextField().setText(Integer.toString(pDetailsModel.d.getHeight()));
+
+    }
+
     private void addViewActionListeners() {
-        personalDetailsView.getEditButton().addActionListener(e->EditAction());
+        pDetailsView.getEditButton().addActionListener(e->EditAction());
 
     }
 
     public String getPassword(){
-        return new String(personalDetailsView.getPasswordField().getPassword());
+        return new String(pDetailsView.getPasswordField().getPassword());
     }
 
     public int getYearsOfExp(){
-       return Integer.parseInt(personalDetailsView.getYearsOfExpTextField().getText());
+       return Integer.parseInt(pDetailsView.getYearsOfExpTextField().getText());
     }
 
     public void EditAction() {
-         personalDetailsModel.UpdatedDoctor();
+         pDetailsModel.UpdatedDoctor();
 
     }
 }

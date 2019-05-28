@@ -14,11 +14,11 @@ public class PersonalDetailsControllerPatient {
     }
 
     private void SetTextFieldsCurrentValues() {
-        pDetailsView.getFirstnameTextField().setText(pDetailsModel.patient.getFirstName());
-        pDetailsView.getLastnameTextField().setText(pDetailsModel.patient.getLastName());
-        pDetailsView.getEmailTextField().setText(pDetailsModel.patient.getEmail());
-        pDetailsView.getHeightTextField().setText(Integer.toString(pDetailsModel.patient.getHeight()));
-        pDetailsView.getWeightTextFiled().setText(Integer.toString(pDetailsModel.patient.getWeight()));
+        pDetailsView.getFirstnameTextField().setText(pDetailsModel.getPatient().getFirstName());
+        pDetailsView.getLastnameTextField().setText(pDetailsModel.getPatient().getLastName());
+        pDetailsView.getEmailTextField().setText(pDetailsModel.getPatient().getEmail());
+        pDetailsView.getHeightTextField().setText(Integer.toString(pDetailsModel.getPatient().getHeight()));
+        pDetailsView.getWeightTextFiled().setText(Integer.toString(pDetailsModel.getPatient().getWeight()));
     }
 
     private void addViewActionListeners() {
