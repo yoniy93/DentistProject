@@ -2,6 +2,8 @@ package project.GUI.Admin;
 
 
 import project.GUI.Admin.Register.StartRegisterView;
+import project.Logic.DBInserts;
+import project.Logic.DBQuerys;
 
 public class AdminController {
 

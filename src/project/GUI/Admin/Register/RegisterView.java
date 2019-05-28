@@ -5,6 +5,8 @@ import java.util.Vector;
 
 public class RegisterView extends JFrame
 {
+
+    private JButton addUser=new JButton("Submit");
     private JLabel role= new JLabel( "What is the user's role? ");
     private JLabel firstNameLabel = new JLabel("First Name: ");
     private JLabel lastNameLabel = new JLabel( "Last Name: ");
@@ -16,17 +18,20 @@ public class RegisterView extends JFrame
     private JLabel height=new JLabel("Height: ");
     private JLabel weight=new JLabel("Weight: ");
     private JLabel yearOfEx=new JLabel("Years Of Experience: ");
+    private JLabel yearLabel=new JLabel("Year: ");
+    private JLabel monthLabel=new JLabel("Month: ");
+    private JLabel dayLabel=new JLabel("Day: ");
 
-    private Vector<Integer> yearVector = new Vector<Integer>();
-    private Vector<Integer> monthVector = new Vector<Integer>();
-    private Vector<Integer> dayVector = new Vector<Integer>();
+    private Vector year= new Vector<>(100);
+    private Vector month= new Vector<>(12);
+    private Vector day= new Vector<>(31);
 
-    private JComboBox yearBox;
-    private JComboBox monthBox;
-    private JComboBox dayBox;
+    private JComboBox yearBox = new JComboBox(year);
+    private JComboBox monthBox= new JComboBox(month);
+    private JComboBox dayBox=new JComboBox(day);
 
-    private JRadioButton doctor = new JRadioButton("Doctor");
-    private JRadioButton patient =new JRadioButton("Patient");
+    private JRadioButton doctor= new JRadioButton("Doctor");
+    private JRadioButton patient=new JRadioButton("Patient");
     private ButtonGroup roleGroup = new ButtonGroup();
 
     private JRadioButton male= new JRadioButton("Male");
@@ -46,39 +51,35 @@ public class RegisterView extends JFrame
     public RegisterView() {
 
         setDateOfBirth();
-        configDateComboBox();
         setLayout(null);
         setLocationAndSize();
         addComponentsToFrame();
 
 
         setTitle("Register New User");
-        setBounds(300, 100, 800, 600);
-        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+        setBounds(300, 100, 800, 800);
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
         setResizable(false);
         setVisible(true);
     }
 
-    private void setDateOfBirth() {
-        for(int i=1; i<=31; i++)
+    private void setDateOfBirth()
+    {
+
+        for(int i=0;i<32; i++)
         {
-            dayVector.add(i);
+            day.insertElementAt(i+1,i);
         }
-        for(int i=1; i<=12; i++)
+        for(int i=0;i<12; i++)
         {
-            monthVector.add(i);
+            month.insertElementAt(i+1,i);
         }
-        int maxYear=2019;
+        int max=2019;
         for (int i=0; i<=100; i++)
         {
-            yearVector.add(maxYear--);
-        }
-    }
+            year.insertElementAt(max--,i);
 
-    private void configDateComboBox(){
-        dayBox = new JComboBox(dayVector);
-        monthBox = new JComboBox(monthVector);
-        yearBox = new JComboBox(yearVector);
+        }
     }
 
     private void setLocationAndSize()
@@ -100,7 +101,7 @@ public class RegisterView extends JFrame
 
         gender.setBounds(60,240,150,50);
         role.setBounds(60,300,150,50);
-        dateOfBirth.setBounds(60,360,150,50);
+        dateOfBirth.setBounds(60,360,100,50);
         weight.setBounds(60,400,150,50);
         height.setBounds(60,440,150,50);
         yearOfEx.setBounds(60,480,150,50);
@@ -113,30 +114,42 @@ public class RegisterView extends JFrame
 
 
         male.setBounds(120,240,150,50);
-        male.setVisible(true);
         female.setBounds(200,240,150,50);
-        female.setVisible(true);
+
 
         patient.setBounds(200,300,150,50);
         doctor.setBounds(280,300,150,50);
 
-        yearBox.setBounds(150,360,150,20);
-        monthBox.setBounds(300,360,150,20);
-        dayBox.setBounds(450,360,150,20);
+        yearLabel.setBounds(150,380,40,20);
+        yearBox.setBounds(200,380,120,20);
+        monthLabel.setBounds(330, 380,60,20);
+        monthBox.setBounds(400,380,120,20);
+        dayLabel.setBounds(530,380,40,20);
+        dayBox.setBounds(580,380,120,20);
 
         weightTextField.setBounds(170,410,150,25);
         heightTextField.setBounds(170,450,150,25);
         yearsOfExTextField.setBounds(200,490,150,25);
+
+        addUser.setBounds(300,600,150,30);
     }
 
     private void addComponentsToFrame()
     {
+        add(addUser);
+        add(dayLabel);
+        add(yearLabel);
+        add(monthLabel);
         add(role);
+        roleGroup.add(patient);
+        roleGroup.add(doctor);
         add(firstNameLabel);
         add(lastNameLabel);
         add(emailLabel);
         add(passwordLabel);
         add(gender);
+        genderGroup.add(male);
+        genderGroup.add(female);
         add(doctor);
         add(patient);
         add(male);
@@ -155,8 +168,11 @@ public class RegisterView extends JFrame
         add(height);
         add(heightTextField);
         add(yearBox);
+        yearBox.setSelectedIndex(0);
         add(dayBox);
+        dayBox.setSelectedIndex(0);
         add(monthBox);
+        monthBox.setSelectedIndex(0);
 
     }
 
@@ -252,5 +268,9 @@ public class RegisterView extends JFrame
     public JTextField getYearsOfExTextField() {
         return yearsOfExTextField;
     }
+
+    public JButton getAddUser() { return addUser; }
+
 }
+
 
