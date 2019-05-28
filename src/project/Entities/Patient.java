@@ -2,22 +2,21 @@ package project.Entities;
 import java.util.*;
 public class Patient extends User {
 
-    private int weight;
     private int height;
+    private int weight;
 
-    public Patient(String id, String pswd, String firstname, String lastname, String email, int weight, int height, Date dateOfBirth, String gender )
+    public Patient(String id, String password, String firstname, String lastname, String email, int weight, int height, Date dateOfBirth, String gender )
     {
         this.setUserRole(USER_TYPE.PATIENT);
-        this.setLastName(lastname);
-        this.setFirstName(firstname);
-        this.setDateOfBirth(dateOfBirth);
-        this.setEmail(email);
-        this.setGender(gender);
         this.setId(id);
-        this.setPassword(pswd);
-        this.setHeight(weight);
+        this.setPassword(password);
+        this.setFirstName(firstname);
+        this.setLastName(lastname);
+        this.setEmail(email);
+        this.setWeight(weight);
         this.setHeight(height);
-
+        this.setDateOfBirth(dateOfBirth);
+        this.setGender(gender);
     }
 
     public int getWeight() {
