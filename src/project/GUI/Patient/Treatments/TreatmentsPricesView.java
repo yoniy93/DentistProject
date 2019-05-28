@@ -10,13 +10,14 @@ public class TreatmentsPricesView extends JFrame {
 
     private DBQuerys dbQuerys=new DBQuerys();
     private Vector<Treatments> treatmentsVector=dbQuerys.getTreatments();
-    private String [] treatmentsName=new String[treatmentsVector.size()];
-    private JComboBox treatmentList=new JComboBox(treatmentsName);
+    private String [] treatmentsName;
+    private JComboBox treatmentList;
     private JLabel treatmentPrices= new JLabel(" ");
 
     public TreatmentsPricesView()
     {
-        setTreatmentsVector();
+        setTreatmentsName();
+        treatmentList=new JComboBox(treatmentsName);
         setLayout(null);
         setLocationAndSize();
         addComponentsToFrame();
@@ -42,8 +43,9 @@ public class TreatmentsPricesView extends JFrame {
 
     }
 
-    public void setTreatmentsVector()
+    public void setTreatmentsName()
     {
+        treatmentsName=new String[treatmentsVector.size()];
         for(int i=0;i<treatmentsVector.size();i++)
         {
             treatmentsName[i]=(treatmentsVector.get(i).getName());
