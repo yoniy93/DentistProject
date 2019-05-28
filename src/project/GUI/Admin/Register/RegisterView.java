@@ -58,7 +58,7 @@ public class RegisterView extends JFrame
 
         setTitle("Register New User");
         setBounds(300, 100, 800, 800);
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setResizable(false);
         setVisible(true);
     }
