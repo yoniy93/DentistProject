@@ -10,7 +10,7 @@ public class TreatmentsPricesView extends JFrame {
 
 
 
-   private DBQuerys dbQuerys=new DBQuerys();
+    private DBQuerys dbQuerys=new DBQuerys();
     private JComboBox treatmentList=new JComboBox(dbQuerys.getTreatments());
     private JLabel treatmentPrices= new JLabel(" ");
 
