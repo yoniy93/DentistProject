@@ -1,7 +1,5 @@
 package project.GUI;
 
-import project.Entities.Person;
-
 import javax.swing.*;
 
 public class PersonView extends JFrame {
