@@ -10,23 +10,6 @@ import java.util.Vector;
 
 public class DBQuerys extends DBHandler {
 
-    public Doctor getDoctorDetails (String id) {
-        String sql = "SELECT * FROM users WHERE id="+id;
-        try (Connection conn = this.connect();
-             Statement stmt  = conn.createStatement();
-             ResultSet rs    = stmt.executeQuery(sql)) {
-            SimpleDateFormat format=new SimpleDateFormat("dd-MM-yyyy");
-            Date date=format.parse(rs.getString("birthdate"));
-            return new Doctor(id,rs.getString("firstname"),
-                    rs.getString("lastname"),rs.getString("email"),
-                    rs.getString("password"),date,rs.getString("gender"),
-                    rs.getInt("yearOfExperiens"));
-        } catch (SQLException | ParseException e) {
-            System.out.println(e.getMessage());
-        }
-        return null;
-    }
-
     public Admin getAdminDetails (String id) {
         String sql = "SELECT * FROM users WHERE id="+id;
         try (Connection conn = this.connect();
@@ -45,17 +28,42 @@ public class DBQuerys extends DBHandler {
         return null;
     }
 
-    public Patient getPatientDetails (String id) {
+    public Doctor getDoctorDetails (String id) {
         String sql = "SELECT * FROM users WHERE id="+id;
         try (Connection conn = this.connect();
              Statement stmt  = conn.createStatement();
              ResultSet rs    = stmt.executeQuery(sql)) {
             SimpleDateFormat format=new SimpleDateFormat("dd-MM-yyyy");
             Date date=format.parse(rs.getString("birthdate"));
-            return new Patient(id,rs.getString("password"),
+            return new Doctor(id,rs.getString("password"),
                     rs.getString("firstname"), rs.getString("lastname"),
-                    rs.getString("email"),rs.getInt("weight"),
-                    rs.getInt("height"), date, rs.getString("gender"));
+                    rs.getString("email"), date,
+                    rs.getInt("yearOfExperiens"), rs.getString("gender"));
+        } catch (SQLException | ParseException e) {
+            System.out.println(e.getMessage());
+        }
+        return null;
+    }
+
+    public Patient getPatientDetails (String id) {
+        String sql = "SELECT * FROM users WHERE id="+id;
+        try (Connection conn = this.connect();
+             Statement stmt  = conn.createStatement();
+             ResultSet rs    = stmt.executeQuery(sql)) {
+
+            SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy");
+            Date date = format.parse(rs.getString("birthdate"));
+
+            return new Patient(
+                    id,
+                    rs.getString("password"),
+                    rs.getString("firstname"),
+                    rs.getString("lastname"),
+                    rs.getString("email"),
+                    rs.getInt("weight"),
+                    rs.getInt("height"),
+                    date,
+                    rs.getString("gender"));
         } catch (SQLException | ParseException e) {
             System.out.println(e.getMessage());
         }
