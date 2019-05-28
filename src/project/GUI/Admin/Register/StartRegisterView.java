@@ -7,8 +7,8 @@ import project.GUI.Admin.Register.RegisterView;
 
 public class StartRegisterView {
 
-        public StartRegisterView(){
-            RegisterModel registerModel = new RegisterModel();
+        public StartRegisterView(Admin admin){
+            RegisterModel registerModel = new RegisterModel( admin);
             RegisterView registerView = new RegisterView();
             new RegisterController(registerModel, registerView);
         }

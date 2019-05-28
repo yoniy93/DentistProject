@@ -26,7 +26,7 @@ public class AdminController extends PersonController {
 
     private void registerAction()
     {
-        new StartRegisterView();
+        new StartRegisterView(adminModel.getAdmin());
     }
 
     private void unregisterAction() {
