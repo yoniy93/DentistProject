@@ -25,12 +25,8 @@ public class PersonalDetailsControllerDoctor {
 
     }
 
-    public String getPassword(){
+    private String getPassword(){
         return new String(pDetailsView.getPasswordField().getPassword());
-    }
-
-    public int getYearsOfExp(){
-       return Integer.parseInt(pDetailsView.getYearsOfExpTextField().getText());
     }
 
     public void EditAction() {

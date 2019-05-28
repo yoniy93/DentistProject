@@ -26,7 +26,7 @@ public class PersonalDetailsControllerPatient {
 
     }
 
-    public String getPassword(){
+    private String getPassword(){
         return new String(pDetailsView.getPasswordField().getPassword());
     }
 
