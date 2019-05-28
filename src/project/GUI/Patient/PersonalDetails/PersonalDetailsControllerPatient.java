@@ -23,7 +23,7 @@ public class PersonalDetailsControllerPatient {
 
     private void addViewActionListeners() {
         pDetailsView.getEditButton().addActionListener(e->EditAction());
-
+        pDetailsView.getCancelButton().addActionListener(e-> CancelAction());
     }
 
     private String getPassword(){
@@ -32,5 +32,9 @@ public class PersonalDetailsControllerPatient {
 
     public void EditAction() {
         pDetailsModel.UpdatePatient();
+    }
+
+    public void CancelAction() {
+        pDetailsView.dispose();
     }
 }

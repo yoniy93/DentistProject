@@ -22,7 +22,7 @@ public class PersonalDetailsControllerDoctor {
 
     private void addViewActionListeners() {
         pDetailsView.getEditButton().addActionListener(e->EditAction());
-
+        pDetailsView.getCancelButton().addActionListener(e-> CancelAction());
     }
 
     private String getPassword(){
@@ -31,9 +31,9 @@ public class PersonalDetailsControllerDoctor {
 
     public void EditAction() {
          pDetailsModel.UpdateDoctor();
+    }
 
+    public void CancelAction() {
+        pDetailsView.dispose();
     }
 }
-
-
-
