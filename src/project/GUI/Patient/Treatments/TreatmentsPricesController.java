@@ -23,8 +23,8 @@ public class TreatmentsPricesController
 
     private void treatmentListAction()
     {
-
-       Treatments treatmentSelected= ((Treatments) treatmentsPricesView.getTreatmentList().getSelectedItem());
+        int i=treatmentsPricesView.getTreatmentList().getSelectedIndex();
+       Treatments treatmentSelected=treatmentsPricesView.getTreatmentsVector().get(i);
        double price= ( treatmentSelected.getPrice());
        treatmentsPricesView.setTreatmentPrices(Double.toString(price));
 

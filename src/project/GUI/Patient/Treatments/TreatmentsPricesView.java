@@ -63,5 +63,7 @@ public class TreatmentsPricesView extends JFrame {
     {
         treatmentPrices.setText((String)price);
     }
-
+    public Vector<Treatments> getTreatmentsVector() {
+        return treatmentsVector;
+    }
 }
