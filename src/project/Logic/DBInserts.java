@@ -3,10 +3,10 @@ package project.Logic;
 public class DBInserts extends DBHandler {
 
     public void insertInitialData(){
-        insertForAdmin("1", "1", "אדמין", "Admin", "offirgan@gmail.com", "01-01-2000", "זכר");
+        insertForAdmin("1", "1", "אדמין", "Admin", "admin@gmail.com", "01-01-2000", "זכר");
         insertForDoctor("2", "1", "עמית", "אפללו", "amit@gmail.com", "13-05-1993", "נקבה", 3);
         insertForPatient("3", "1", "יונתן", "ירדני", "yoni@gmail.com", 60.5, 178, "13-05-1993", "זכר");
-        insertForPatient("id", "password", "Fname", "Lname", "Email", 60.5, 178, "04-09-1992", "Male");
+        insertForPatient("4", "1", "אופיר", "גן", "offirgan@gmail.com", 56.5, 170, "04-09-1992", "Male");
         insertTreatment(2, "סתימה", 60, 99);
         insertTreatment(3, "גשר", 90, 150);
         insertTreatment(4, "הלבנה", 60, 69.9);
