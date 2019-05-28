@@ -25,7 +25,7 @@ public class AdminController {
 
     private void registerAction()
     {
-        StartRegisterView register=new StartRegisterView(adminModel.getAdmin());
+        StartRegisterView register=new StartRegisterView();
 
     }
 
