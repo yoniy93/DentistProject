@@ -6,10 +6,7 @@ public class DBInit {
 
     private static boolean isDBExists() {
         File file=new File(DBLocation.DBLocation());
-        if (file.exists())
-            return true;
-        else
-            return false;
+        return file.exists();
     }
 
     private static void createTablesInDB() {
