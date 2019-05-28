@@ -97,8 +97,8 @@ public class RegisterView extends JFrame
         passwordLabel.setFont(new Font("Tahoma", Font.BOLD, 14));
         passwordLabel.setBounds(60, 200, 100, 30);
 
-        gender.setBounds(60,240,150,50);
-        role.setBounds(60,300,150,50);
+        gender.setBounds(60,240,70,50);
+        role.setBounds(60,300,120,50);
         dateOfBirth.setBounds(60,360,100,50);
         weight.setBounds(60,400,150,50);
         height.setBounds(60,440,150,50);
@@ -111,12 +111,12 @@ public class RegisterView extends JFrame
         passwordField.setBounds(170, 200, 150, 30);
 
 
-        male.setBounds(120,240,150,50);
-        female.setBounds(200,240,150,50);
+        male.setBounds(120,240,70,50);
+        female.setBounds(200,240,70,50);
 
 
-        patient.setBounds(200,300,150,50);
-        doctor.setBounds(280,300,150,50);
+        patient.setBounds(200,300,70,50);
+        doctor.setBounds(280,300,70,50);
 
         yearLabel.setBounds(150,380,40,20);
         yearBox.setBounds(200,380,120,20);
