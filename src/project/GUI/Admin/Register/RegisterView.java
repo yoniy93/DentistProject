@@ -197,4 +197,49 @@ public class RegisterView extends JFrame
     public void setPasswordField(JPasswordField passwordField) {
         this.passwordField = passwordField;
     }
+
+    public JComboBox getYearBox() {
+        return yearBox;
+    }
+
+    public JComboBox getMonthBox() {
+        return monthBox;
+    }
+
+    public JComboBox getDayBox() {
+        return dayBox;
+    }
+
+    public JRadioButton getDoctor() {
+        return doctor;
+    }
+
+    public JRadioButton getPatient() {
+        return patient;
+    }
+
+    public JRadioButton getMale() {
+        return male;
+    }
+
+    public JRadioButton getFemale() {
+        return female;
+    }
+
+    public JTextField getIdTextFiled() {
+        return idTextFiled;
+    }
+
+    public JTextField getHeightTextField() {
+        return heightTextField;
+    }
+
+    public JTextField getWeightTextField() {
+        return weightTextField;
+    }
+
+    public JTextField getYearsOfExTextField() {
+        return yearsOfExTextField;
+    }
 }
+
