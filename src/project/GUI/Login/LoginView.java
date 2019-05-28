@@ -1,6 +1,7 @@
 package project.GUI.Login;
 
 import javax.swing.*;
+import java.awt.*;
 
 public class LoginView extends JFrame {
 
@@ -30,7 +31,10 @@ public class LoginView extends JFrame {
 
     private void setLocationAndSize() {
         userLabel.setBounds(50, 150, 100, 30);
+        userLabel.setFont(new Font("Tahoma", Font.BOLD, 14));
         passwordLabel.setBounds(50, 220, 100, 30);
+        passwordLabel.setFont(new Font("Tahoma", Font.BOLD, 14));
+
         userTextField.setBounds(150, 150, 150, 30);
         passwordField.setBounds(150, 220, 150, 30);
         showPassword.setBounds(150, 250, 150, 30);

@@ -26,7 +26,7 @@ public class PersonalDetailsView extends JFrame {
 
         setTitle("Edit Personal Details");
         setBounds(300, 100, 400, 500);
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setResizable(false);
         setVisible(true);
     }
