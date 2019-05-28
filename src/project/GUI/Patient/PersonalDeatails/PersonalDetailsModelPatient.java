@@ -5,10 +5,6 @@ public class PersonalDetailsModelPatient {
 
     Patient patient;
 
-    public void SetModelPerson(){
-
-    }
-
     public PersonalDetailsModelPatient(Patient patient){
         this.patient = patient;
     }

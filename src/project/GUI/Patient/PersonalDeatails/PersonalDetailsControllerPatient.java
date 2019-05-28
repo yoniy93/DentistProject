@@ -9,6 +9,10 @@ public class PersonalDetailsControllerPatient {
         pDetailsModel=pPM;
         pDetailsView=pPV;
 
+        pDetailsView.getFirstnameTextField().setText(pPM.patient.getFirstName());
+        pDetailsView.getLastnameTextField().setText(pPM.patient.getLastName());
+        pDetailsView.getEmailTextField().setText(pPM.patient.getEmail());
+
         initController();
     }
 

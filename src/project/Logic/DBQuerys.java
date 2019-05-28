@@ -52,10 +52,10 @@ public class DBQuerys extends DBHandler {
              ResultSet rs    = stmt.executeQuery(sql)) {
             SimpleDateFormat format=new SimpleDateFormat("dd-MM-yyyy");
             Date date=format.parse(rs.getString("birthdate"));
-            return new Patient(id,rs.getString("firstname"),
-                    rs.getString("lastname"), rs.getString("email"),
-                    rs.getString("password"),rs.getString("gender") ,
-                    date,rs.getInt("weight"),rs.getInt("height"));
+            return new Patient(id,rs.getString("password"),
+                    rs.getString("firstname"), rs.getString("lastname"),
+                    rs.getString("email"),rs.getInt("weight"),
+                    rs.getInt("height"), date, rs.getString("gender"));
         } catch (SQLException | ParseException e) {
             System.out.println(e.getMessage());
         }
