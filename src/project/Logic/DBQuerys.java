@@ -15,13 +15,13 @@ public class DBQuerys extends DBHandler {
         try (Connection conn = this.connect();
              Statement stmt  = conn.createStatement();
              ResultSet rs    = stmt.executeQuery(sql)) {
+
             SimpleDateFormat format=new SimpleDateFormat("dd-MM-yyyy");
             Date date=format.parse(rs.getString("birthdate"));
-            return new Admin(id,rs.getString("firstname"),
-                    rs.getString("lastname"),
-                    rs.getString("email"),
-                    rs.getString("password"),
-                    rs.getString("gender") ,date);
+
+            return new Admin(id,rs.getString("password"),
+                    rs.getString("firstname"), rs.getString("lastname"),
+                    rs.getString("email"), date, rs.getString("gender"));
         } catch (SQLException | ParseException e) {
             System.out.println(e.getMessage());
         }
