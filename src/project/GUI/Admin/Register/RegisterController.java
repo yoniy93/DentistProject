@@ -39,61 +39,67 @@ public class RegisterController {
 
 
     private void addUserAction() {
-     if(   checkNotNullFields()) {
+     if (checkNotNullFields()) {
          //String bDay = registerView.getDayBox().toString() +"-"+ registerView.getMonthBox().toString() +"-"+ registerView.getYearBox().toString();
          if (registerView.getPatient().isSelected()) {
              registerModel.dbInserts.insertForPatient
                      (registerView.getIdTextFiled().getText(), getPassword(),
                              registerView.getFirstnameTextField().getText(), registerView.getLastnameTextField().getText(),
                              registerView.getEmailTextField().getText(), Double.parseDouble(registerView.getWeightTextField().getText()),
-                             Integer.parseInt(registerView.getHeightTextField().getText()), getDateStr(), convertGenderToString());
+                             Integer.parseInt(registerView.getHeightTextField().getText()), getDate(), convertGenderToString());
          } else if (registerView.getDoctor().isSelected()) {
              registerModel.dbInserts.insertForDoctor
                      (registerView.getIdTextFiled().getText(), getPassword(),
                              registerView.getFirstnameTextField().getText(), registerView.getLastnameTextField().getText(),
-                             registerView.getEmailTextField().getText(), getDateStr(), convertGenderToString(), Integer.parseInt(registerView.getYearsOfExTextField().getText()));
+                             registerView.getEmailTextField().getText(), getDate(), convertGenderToString(), Integer.parseInt(registerView.getYearsOfExTextField().getText()));
          }
-         new ExceptionWindow(registerView,"New User Created");
+         new ExceptionWindow(registerView,"New use created successfully");
          registerView.dispose();
      }
      else
-        new ExceptionWindow(registerView,"Error. Check all fields again");
+        new ExceptionWindow(registerView,"Error: please fill all fields");
     }
 
     private boolean checkNotNullFields() {
-
-        if ( registerView.getIdTextFiled().getText().equals("")||
-                getPassword().equals("")||
-                registerView.getFirstnameTextField().getText().equals("") ||
-                registerView.getLastnameTextField().getText().equals("")||
-                registerView.getEmailTextField().getText().equals("")|| getDateStr().equals("") ||
+        if ( registerView.getIdTextFiled().getText().equals("") || getPassword().equals("") || registerView.getFirstnameTextField().getText().equals("") ||
+                registerView.getLastnameTextField().getText().equals("")|| registerView.getEmailTextField().getText().equals("")|| getDate().equals("") ||
                 (!registerView.getPatient().isSelected() && !registerView.getDoctor().isSelected()) ||
-                (!registerView.getFemale().isSelected() && !registerView.getMale().isSelected()) )
+                (!registerView.getFemale().isSelected() && !registerView.getMale().isSelected()) ) {
             return false;
-        return true;
+        }
+        else {
+            if (registerView.getDoctor().isSelected())
+                return registerView.getYearsOfExTextField().getText().equals("");
+            else
+                return !registerView.getWeightTextField().getText().equals("") && !registerView.getHeightTextField().getText().equals("");
+        }
     }
 
-    private String getPassword(){
+    private String getPassword() {
         return new String(registerView.getPasswordField().getPassword());
     }
 
-    private String getDateStr(){
+    private String getDate() {
+        int day = (Integer)registerView.getDayBox().getSelectedItem();
+        int month = (Integer)registerView.getMonthBox().getSelectedItem();
+        int year =(Integer)registerView.getYearBox().getSelectedItem();
 
-        int dayInt = (Integer)registerView.getDayBox().getSelectedItem();
-        int monthInt = (Integer)registerView.getMonthBox().getSelectedItem();
-
-        String dayStr = Integer.toString(dayInt);
-        String monthStr = Integer.toString(monthInt);
-        String yearStr =  Integer.toString ((Integer)registerView.getYearBox().getSelectedItem());
-
-        if(dayInt < 10)
-            dayStr = "0" + dayStr;
-
-        if (monthInt < 10)
-            monthStr = "0" + monthStr;
-
-        return dayStr + "-" + monthStr + "-" + yearStr;
+        return convertDateToString(day,month,year);
     }
+
+    private String convertDateToString (int day, int month, int year) {
+        String dayString=Integer.toString(day);
+        String monthString=Integer.toString(month);
+
+        if (day<10)
+            dayString="0"+dayString;
+        if (month<10)
+            monthString="0"+monthString;
+
+        return dayString+"-"+monthString+"-"+year;
+
+    }
+
 
     private String convertGenderToString() {
         String genderSelection;
