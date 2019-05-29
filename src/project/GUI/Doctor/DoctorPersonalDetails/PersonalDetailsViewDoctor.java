@@ -6,7 +6,6 @@ import java.awt.*;
 
 public class PersonalDetailsViewDoctor extends PersonalDetailsView{
 
-
     private JLabel yearsOfExpLabel = new JLabel("Years of experience:  ");
     private JTextField yearsOfExpTextField = new JTextField();
 
@@ -19,7 +18,6 @@ public class PersonalDetailsViewDoctor extends PersonalDetailsView{
     private void setLocationAndSize() {
         yearsOfExpLabel.setFont(new Font("Tahoma", Font.BOLD, 14));
         yearsOfExpLabel.setBounds(60, 200, 100, 30);
-
         yearsOfExpTextField.setBounds(170, 200, 150, 30);
     }
 

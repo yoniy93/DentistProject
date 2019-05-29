@@ -5,7 +5,7 @@ import java.io.File;
 public class DBInit {
 
     private static boolean isDBExists() {
-        String s=DBLocation.DBLocation();
+        String s=DBLocation.getPath();
         String location = s.substring(s.lastIndexOf(':') + 1).trim();
         File file=new File(location);
         return file.exists();
