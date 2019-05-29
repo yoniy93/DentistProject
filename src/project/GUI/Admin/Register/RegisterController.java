@@ -57,12 +57,21 @@ public class RegisterController {
     }
 
     private String getDateStr(){
-        
-        String dayStr = Integer.toString((Integer)registerView.getDayBox().getSelectedItem());
-        String monthStr = Integer.toString((Integer)registerView.getMonthBox().getSelectedItem());
-        String yearStr = Integer.toString ((Integer)registerView.getYearBox().getSelectedItem());
 
-       return dayStr + "-" + monthStr + "-" + yearStr;
+        int dayInt = (Integer)registerView.getDayBox().getSelectedItem();
+        int monthInt = (Integer)registerView.getMonthBox().getSelectedItem();
+
+        String dayStr = Integer.toString(dayInt);
+        String monthStr = Integer.toString(monthInt);
+        String yearStr =  Integer.toString ((Integer)registerView.getYearBox().getSelectedItem());
+
+        if(dayInt < 10)
+            dayStr = "0" + dayStr;
+
+        if (monthInt < 10)
+            monthStr = "0" + monthStr;
+
+        return dayStr + "-" + monthStr + "-" + yearStr;
     }
 
     private String checkGender() {
