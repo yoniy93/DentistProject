@@ -1,6 +1,7 @@
-package project.GUI.Doctor;
+package project.GUI.Doctor.DoctorPersonalDetails;
 
 import project.Entities.Doctor;
+
 
 public class StartPersonalDetailsDoctor {
 

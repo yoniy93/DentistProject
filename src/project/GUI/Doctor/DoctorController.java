@@ -1,4 +1,5 @@
 package project.GUI.Doctor;
+import project.GUI.Doctor.DoctorPersonalDetails.StartPersonalDetailsDoctor;
 import project.GUI.PersonController;
 public class DoctorController extends PersonController {
 

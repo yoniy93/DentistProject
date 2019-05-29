@@ -1,4 +1,6 @@
-package project.GUI.Doctor;
+package project.GUI.Doctor.DoctorPersonalDetails;
+
+import project.Entities.Doctor;
 
 public class PersonalDetailsControllerDoctor {
 
@@ -31,7 +33,13 @@ public class PersonalDetailsControllerDoctor {
     }
 
     public void EditAction() {
-         pDetailsModel.UpdateDoctor();
+        Doctor doctor=pDetailsModel.getDoctor();
+        doctor.setFirstName(pDetailsView.getFirstnameTextField().getText());
+        doctor.setLastName(pDetailsView.getLastnameTextField().getText());
+        doctor.setEmail(pDetailsView.getEmailTextField().getText());
+        doctor.setPassword(pDetailsView.getPasswordField().toString());
+        doctor.setYearsOfEx(Integer.parseInt(pDetailsView.getYearsOfExpTextField().getText()));
+        pDetailsModel.UpdateDoctor(doctor);
     }
 
     public void CancelAction() {

@@ -1,5 +1,6 @@
 package project.GUI.Admin.AdminPersonalDetails;
 
+import project.Entities.Admin;
 import project.GUI.PersonalDetailsView;
 
 public class AdminPersonalDetailsController
@@ -12,16 +13,33 @@ public class AdminPersonalDetailsController
         this.adminPersonalDetailsModel=adminPersonalDetailsModel;
         this.personalDetailsView=personalDetailsView;
 
+        SetTextFieldsCurrentValues();
         initController();
     }
 
     private void initController()
     {
         personalDetailsView.getEditButton().addActionListener(e->editButtonAction());
+        personalDetailsView.getCancelButton().addActionListener(e-> cancelAction());
     }
-
+    private void SetTextFieldsCurrentValues() {
+        personalDetailsView.getFirstnameTextField().setText(adminPersonalDetailsModel.getAdmin().getFirstName());
+        personalDetailsView.getLastnameTextField().setText(adminPersonalDetailsModel.getAdmin().getLastName());
+        personalDetailsView.getEmailTextField().setText(adminPersonalDetailsModel.getAdmin().getEmail());
+        personalDetailsView.getPasswordField().setText(adminPersonalDetailsModel.getAdmin().getPassword());
+    }
     private void editButtonAction()
     {
+        Admin admin=adminPersonalDetailsModel.getAdmin();
+        admin.setFirstName(personalDetailsView.getFirstnameTextField().getText());
+        admin.setLastName(personalDetailsView.getLastnameTextField().getText());
+        admin.setEmail(personalDetailsView.getEmailTextField().getText());
+        admin.setPassword(personalDetailsView.getPasswordField().toString());
+        adminPersonalDetailsModel.UpdateAdmin(admin);
+    }
 
+    private void  cancelAction()
+    {
+        personalDetailsView.dispose();
     }
 }

@@ -1,4 +1,4 @@
-package project.GUI.Doctor;
+package project.GUI.Doctor.DoctorPersonalDetails;
 import project.GUI.PersonalDetailsView;
 
 import javax.swing.*;

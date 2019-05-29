@@ -1,4 +1,4 @@
-package project.GUI.Doctor;
+package project.GUI.Doctor.DoctorPersonalDetails;
 
 import project.Entities.Doctor;
 import project.Logic.DBUpdates;
@@ -19,8 +19,8 @@ public class PersonalDetailsModelDoctor {
         this.doctor = doctor;
     }
 
-    public void UpdateDoctor() {
+    public void UpdateDoctor(Doctor d) {
         DBUpdates databaseUpdates=new DBUpdates();
-        databaseUpdates.updateDoctorDetails(doctor);
+        databaseUpdates.updateDoctorDetails(d);
     }
 }
