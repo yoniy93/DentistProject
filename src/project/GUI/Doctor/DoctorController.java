@@ -1,4 +1,5 @@
 package project.GUI.Doctor;
+import project.GUI.Clinic.StartClinicInfo;
 import project.GUI.Doctor.DoctorPersonalDetails.StartPersonalDetailsDoctor;
 import project.GUI.PersonController;
 public class DoctorController extends PersonController {
@@ -20,6 +21,11 @@ public class DoctorController extends PersonController {
         doctorView.getEditPersonalDetails().addActionListener(e -> EditDetailsAction());
         doctorView.getEnterShifts().addActionListener(e -> EnterShiftAction());
         doctorView.getViewClinicStaffInfo().addActionListener(e -> ViewInfoAction());
+        doctorView.getViewClinicDetails().addActionListener(e->viewClinicInfo());
+    }
+
+    private void viewClinicInfo() {
+        new StartClinicInfo();
     }
 
     private void EditDetailsAction()

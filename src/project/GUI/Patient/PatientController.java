@@ -17,22 +17,22 @@ public class PatientController extends PersonController{
         addViewActionListeners();
     }
 
-    public void addViewActionListeners() {
+    private void addViewActionListeners() {
         patientView.getLogoutButton().addActionListener(e -> logoutAction(patientView));
         patientView.getEditPersonalDetails().addActionListener(e -> editDetailsAction());
         patientView.getViewTreatments().addActionListener(e->viewTreatmentsAction());
         patientView.getViewClinicDetails().addActionListener(e->viewClinicInfo());
     }
 
-    public void viewClinicInfo() {
+    private void viewClinicInfo() {
         new StartClinicInfo();
     }
 
-    public void editDetailsAction() {
+    private void editDetailsAction() {
         new StartPersonalDetailsPatient(patientModel.getPatient());
     }
 
-    public void viewTreatmentsAction() {
+    private void viewTreatmentsAction() {
         new StartTreatmentsPricesView();
     }
 

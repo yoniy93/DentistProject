@@ -41,7 +41,6 @@ public class AdminController extends PersonController {
     }
 
     private void editPersonalDeatailsAction() {
-
         new StartPersonalDetailsAdmin(adminModel.getAdmin());
     }
 
