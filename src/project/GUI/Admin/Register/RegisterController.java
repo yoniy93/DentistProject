@@ -1,5 +1,7 @@
 package project.GUI.Admin.Register;
 
+import project.GUI.ExceptionWindow;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -52,10 +54,11 @@ public class RegisterController {
                              registerView.getFirstnameTextField().getText(), registerView.getLastnameTextField().getText(),
                              registerView.getEmailTextField().getText(), getDateStr(), checkGender(), Integer.parseInt(registerView.getYearsOfExTextField().getText()));
          }
-         JOptionPane.showMessageDialog(registerView, "New User Created");
+         new ExceptionWindow(registerView,"New User Created");
+         registerView.dispose();
      }
-
-        registerView.dispose();
+     else
+        new ExceptionWindow(registerView,"Error. Check all fields again");
     }
 
     private boolean checkNotNullFields() {
