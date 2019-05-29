@@ -1,6 +1,8 @@
 package project.GUI.Admin.Register;
 import project.GUI.Admin.StartAdminView;
 
+import javax.swing.*;
+
 
 public class RegisterController {
 
@@ -37,7 +39,7 @@ public class RegisterController {
          }
      }
 
-        registerView.setVisible(false);
+        registerView.dispose();
         new StartAdminView(registerModel.admin);
     }
      private boolean checkNotNullFields()
@@ -47,10 +49,12 @@ public class RegisterController {
                  registerView.getEmailTextField().getText().equals("")|| registerView.getDayBox().toString().equals("") ||registerView.getMonthBox().toString().equals("")||
                  registerView.getYearBox().toString().equals("") || checkGender().equals("") )
          {
+             JOptionPane.showMessageDialog(registerView,"One or more of the values worng !");
             return false;
          }
          return true;
      }
+
     private String checkGender() {
         String genderSelection;
         if (registerView.getMale().isSelected())
