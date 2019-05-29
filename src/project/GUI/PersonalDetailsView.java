@@ -5,7 +5,7 @@ import javax.swing.*;
 
 public class PersonalDetailsView extends JFrame {
 
-    private JButton editButton = new JButton("Edit");
+    private JButton editButton = new JButton("Apply");
     private CancleButton cancelButton = new CancleButton();
     private JLabel firstnameLabel = new JLabel("First Name: ");
     private JLabel lastnameLabel = new JLabel( "Last Name: ");
@@ -30,7 +30,7 @@ public class PersonalDetailsView extends JFrame {
     }
 
     private void setLocationAndSize(){
-        editButton.setFont(new Font("Tahoma", Font.BOLD, 14));
+        editButton.setFont(new Font("Tahoma", Font.PLAIN , 14));
         editButton.setBounds(80, 400, 100, 30);
 
         cancelButton.setLocation(220,400,100,30);
