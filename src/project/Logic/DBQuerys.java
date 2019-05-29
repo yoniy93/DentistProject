@@ -117,6 +117,29 @@ public class DBQuerys extends DBHandler {
         }
     }
 
+    public Vector<Doctor> getDoctors () {
+        Vector<Doctor> doctors = new Vector<>(1);
+        String sql ="SELECT * FROM users WHERE userRols='D';";
+        try (Connection conn = this.connect();
+             PreparedStatement pstmt  = conn.prepareStatement(sql)) {
+            ResultSet resultSet=pstmt.executeQuery();
+            while (resultSet.next()){
+                doctors.add(new Doctor(resultSet.getString("id"),
+                        resultSet.getString("password"),
+                        resultSet.getString("firstname"),
+                        resultSet.getString("lastname"),
+                        resultSet.getString("email"),
+                        resultSet.getDate("dateOfBirth"),
+                        resultSet.getInt("yearsOfExp"),
+                        resultSet.getString("gender")));
+            }
+            return doctors;
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        return null;
+    }
+
     public Vector<Treatments> getTreatments (){
         Vector<Treatments> treatments=new Vector<>(1);
         String sql="SELECT * FROM treatments;";

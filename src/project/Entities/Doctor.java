@@ -8,7 +8,6 @@ public class Doctor extends User{
     public Doctor(String id, String password, String firstname, String lastname, String email, Date dateOfBirth, int yearsOfExp, String gender)
     {
         this.setUserRole(USER_TYPE.DOCTOR);
-
         this.setId(id);
         this.setPassword(password);
         this.setFirstName(firstname);
@@ -18,6 +17,7 @@ public class Doctor extends User{
         this.setYearsOfEx(yearsOfExp);
         this.setGender(gender);
     }
+
 
     public int getYearsOfEx() {
         return yearsOfExp;
