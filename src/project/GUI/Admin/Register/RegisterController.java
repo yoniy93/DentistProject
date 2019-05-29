@@ -45,8 +45,7 @@ public class RegisterController {
     private boolean checkNotNullFields() {
         if (registerView.getIdTextFiled().getText().equals("")|| getPassword().equals("")||
                 registerView.getFirstnameTextField().getText().equals("")||registerView.getLastnameTextField().getText().equals("")||
-                registerView.getEmailTextField().getText().equals("")|| registerView.getDayBox().toString().equals("") ||registerView.getMonthBox().toString().equals("")||
-                registerView.getYearBox().toString().equals("") || checkGender().equals("") )
+                registerView.getEmailTextField().getText().equals("")|| getDateStr().equals("") || checkGender().equals("") )
         {
             JOptionPane.showMessageDialog(registerView,"One or more of the values worng !");return false;
         }
@@ -57,18 +56,13 @@ public class RegisterController {
         return new String(registerView.getPasswordField().getPassword());
     }
 
-    private String getBDate(){
+    private String getDateStr(){
+        
+       String dayStr = Integer.toString((Integer)registerView.getDayBox().getSelectedItem());
+       String monthStr = Integer.toString((Integer)registerView.getMonthBox().getSelectedItem());
+       String yearStr = Integer.toString ((Integer)registerView.getYearBox().getSelectedItem());
 
-        int dayIndex = registerView.getDayBox().getSelectedIndex();
-        int monthIndex = registerView.getDayBox().getSelectedIndex();
-        int yearIndex = registerView.getDayBox().getSelectedIndex();
-
-       // String dayStr = Integer.toString((Integer)registerView.getDayVector().get(dayIndex));
-        //String monthStr = Integer.toString((Integer)registerView.getMonthVector().get(monthIndex));
-       // String yearStr = Integer.toString ((Integer)registerView.getYearVector().get(yearIndex));
-
-        return "aaa";
-        //return dayStr + "-" + monthStr + "-" + yearStr;
+       return dayStr + "-" + monthStr + "-" + yearStr;
     }
 
     private String checkGender() {

@@ -1,55 +1,53 @@
 package project.GUI.Admin.Register;
 import javax.swing.*;
 import java.awt.*;
-import java.util.ArrayList;
 import java.util.Vector;
 
 public class RegisterView extends JFrame
 {
-    private JButton addUser=new JButton("Submit");
-    private JLabel role= new JLabel( "What is the user's role?");
+    private JButton addUserButton = new JButton("Submit");
+    private JLabel roleLabel = new JLabel( "What is the user's role?");
     private JLabel firstNameLabel = new JLabel("First Name: ");
     private JLabel lastNameLabel = new JLabel( "Last Name: ");
     private JLabel emailLabel = new JLabel( "Email: ");
     private JLabel passwordLabel = new JLabel("Password: ");
-    private JLabel gender= new JLabel("Gender: ");
-    private JLabel id = new JLabel("Id: " );
-    private JLabel dateOfBirth= new JLabel("Date Of Birth: ");
-    private JLabel height=new JLabel("Height: ");
-    private JLabel weight=new JLabel("Weight: ");
-    private JLabel yearOfEx=new JLabel("Years Of Experience: ");
-    private JLabel yearLabel=new JLabel("Year: ");
-    private JLabel monthLabel=new JLabel("Month: ");
-    private JLabel dayLabel=new JLabel("Day: ");
+    private JLabel genderLabel= new JLabel("Gender: ");
+    private JLabel idLabel = new JLabel("Id: " );
+    private JLabel dateOfBirthLabel = new JLabel("Date Of Birth: ");
+    private JLabel heightLabel = new JLabel("Height: ");
+    private JLabel weightLabel = new JLabel("Weight: ");
+    private JLabel yearOfExpLabel = new JLabel("Years Of Experience: ");
+    private JLabel yearLabel = new JLabel("Year: ");
+    private JLabel monthLabel = new JLabel("Month: ");
+    private JLabel dayLabel = new JLabel("Day: ");
 
-    private Vector  year= new Vector(100);
-    private Vector month= new Vector(12) ;
-    private Vector day= new Vector (31);
+    private Vector yearVector = new Vector(100);
+    private Vector monthVector = new Vector(12) ;
+    private Vector dayVector = new Vector (31);
 
-    private JComboBox yearBox = new JComboBox(year);
-    private JComboBox monthBox= new JComboBox(month);
-    private JComboBox dayBox =new JComboBox(day);
+    private JComboBox yearBox = new JComboBox(yearVector);
+    private JComboBox monthBox = new JComboBox(monthVector);
+    private JComboBox dayBox = new JComboBox(dayVector);
 
-    private JRadioButton doctor= new JRadioButton("Doctor");
-    private JRadioButton patient=new JRadioButton("Patient");
+    private JRadioButton doctorRButton = new JRadioButton("Doctor");
+    private JRadioButton patientRButton = new JRadioButton("Patient");
     private ButtonGroup roleGroup = new ButtonGroup();
 
-    private JRadioButton male= new JRadioButton("Male");
-    private JRadioButton female=new JRadioButton("Female");
+    private JRadioButton maleRButton = new JRadioButton("Male");
+    private JRadioButton femaleRButton = new JRadioButton("Female");
     private ButtonGroup genderGroup = new ButtonGroup();
 
     private JTextField lastnameTextField = new JTextField();
     private JTextField firstnameTextField = new JTextField();
     private JTextField emailTextField = new JTextField();
     private JPasswordField passwordField  = new JPasswordField();
-    private JTextField idTextFiled= new JTextField();
-    private JTextField heightTextField=new JTextField("לא שדה חובה");
-    private JTextField weightTextField=new JTextField("לא שדה חובה");
-    private JTextField yearsOfExTextField=new JTextField("לא שדה חובה");
+    private JTextField idTextFiled = new JTextField();
+    private JTextField heightTextField = new JTextField("לא שדה חובה");
+    private JTextField weightTextField = new JTextField("לא שדה חובה");
+    private JTextField yearsOfExTextField = new JTextField("לא שדה חובה");
 
 
     public RegisterView() {
-
         setDateOfBirth();
         setLayout(null);
         setLocationAndSize();
@@ -62,22 +60,19 @@ public class RegisterView extends JFrame
         setVisible(true);
     }
 
-    private void setDateOfBirth()
-    {
-
+    private void setDateOfBirth() {
         for(int i=0;i<32; i++)
         {
-            day.insertElementAt(i+1,i);
+            dayVector.insertElementAt(i+1,i);
         }
         for(int i=0;i<12; i++)
         {
-            month.insertElementAt(i+1,i);
+            monthVector.insertElementAt(i+1,i);
         }
         int max=2019;
         for (int i=0; i<=100; i++)
         {
-            year.insertElementAt(max--,i);
-
+            yearVector.insertElementAt(max--,i);
         }
     }
 
@@ -89,8 +84,8 @@ public class RegisterView extends JFrame
         lastNameLabel.setFont(new Font("Tahoma", Font.BOLD, 14));
         lastNameLabel.setBounds(60, 80, 100, 30);
 
-        id.setFont(new Font("Tahoma", Font.BOLD, 14));
-        id.setBounds(60,120,100,30);
+        idLabel.setFont(new Font("Tahoma", Font.BOLD, 14));
+        idLabel.setBounds(60,120,100,30);
 
         emailLabel.setFont(new Font("Tahoma", Font.BOLD, 14));
         emailLabel.setBounds(60, 160, 100, 30);
@@ -98,12 +93,12 @@ public class RegisterView extends JFrame
         passwordLabel.setFont(new Font("Tahoma", Font.BOLD, 14));
         passwordLabel.setBounds(60, 200, 100, 30);
 
-        gender.setBounds(60,240,70,50);
-        role.setBounds(60,300,140,50);
-        dateOfBirth.setBounds(60,360,100,50);
-        weight.setBounds(60,400,150,50);
-        height.setBounds(60,440,150,50);
-        yearOfEx.setBounds(60,480,150,50);
+        genderLabel.setBounds(60,240,70,50);
+        roleLabel.setBounds(60,300,140,50);
+        dateOfBirthLabel.setBounds(60,360,100,50);
+        weightLabel.setBounds(60,400,150,50);
+        heightLabel.setBounds(60,440,150,50);
+        yearOfExpLabel.setBounds(60,480,150,50);
 
         firstnameTextField.setBounds(170, 40, 150, 30);
         lastnameTextField.setBounds(170, 80, 150, 30);
@@ -111,13 +106,11 @@ public class RegisterView extends JFrame
         emailTextField.setBounds(170, 160, 150, 30);
         passwordField.setBounds(170, 200, 150, 30);
 
+        maleRButton.setBounds(120,240,60,50);
+        femaleRButton.setBounds(190,240,70,50);
 
-        male.setBounds(120,240,60,50);
-        female.setBounds(190,240,70,50);
-
-
-        patient.setBounds(210,300,70,50);
-        doctor.setBounds(290,300,70,50);
+        patientRButton.setBounds(210,300,70,50);
+        doctorRButton.setBounds(290,300,70,50);
 
         yearLabel.setBounds(150,380,40,20);
         yearBox.setBounds(200,380,120,20);
@@ -130,41 +123,44 @@ public class RegisterView extends JFrame
         heightTextField.setBounds(170,450,150,25);
         yearsOfExTextField.setBounds(200,490,150,25);
 
-        addUser.setBounds(300,600,150,30);
+        addUserButton.setBounds(300,600,150,30);
     }
 
     private void addComponentsToFrame()
     {
-        add(addUser);
+        add(addUserButton);
         add(dayLabel);
         add(yearLabel);
         add(monthLabel);
-        add(role);
-        roleGroup.add(patient);
-        roleGroup.add(doctor);
         add(firstNameLabel);
         add(lastNameLabel);
         add(emailLabel);
         add(passwordLabel);
-        add(gender);
-        genderGroup.add(male);
-        genderGroup.add(female);
-        add(doctor);
-        add(patient);
-        add(male);
-        add(female);
+
+        add(genderLabel);
+        genderGroup.add(maleRButton);
+        genderGroup.add(femaleRButton);
+        add(maleRButton);
+        add(femaleRButton);
+
+        add(roleLabel);
+        roleGroup.add(patientRButton);
+        roleGroup.add(doctorRButton);
+        add(doctorRButton);
+        add(patientRButton);
+
         add(lastnameTextField);
         add(firstnameTextField);
         add(emailTextField);
         add(passwordField);
-        add(id);
+        add(idLabel);
         add(idTextFiled);
-        add(dateOfBirth);
-        add(yearOfEx);
+        add(dateOfBirthLabel);
+        add(yearOfExpLabel);
         add(yearsOfExTextField);
-        add(weight);
+        add(weightLabel);
         add(weightTextField);
-        add(height);
+        add(heightLabel);
         add(heightTextField);
         add(yearBox);
         yearBox.setSelectedIndex(0);
@@ -172,7 +168,6 @@ public class RegisterView extends JFrame
         dayBox.setSelectedIndex(0);
         add(monthBox);
         monthBox.setSelectedIndex(0);
-
     }
 
 
@@ -237,19 +232,19 @@ public class RegisterView extends JFrame
     }
 
     public JRadioButton getDoctor() {
-        return doctor;
+        return doctorRButton;
     }
 
     public JRadioButton getPatient() {
-        return patient;
+        return patientRButton;
     }
 
     public JRadioButton getMale() {
-        return male;
+        return maleRButton;
     }
 
     public JRadioButton getFemale() {
-        return female;
+        return femaleRButton;
     }
 
     public JTextField getIdTextFiled() {
@@ -268,7 +263,7 @@ public class RegisterView extends JFrame
         return yearsOfExTextField;
     }
 
-    public JButton getAddUser() { return addUser; }
+    public JButton getAddUser() { return addUserButton; }
 
 }
 
