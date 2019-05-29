@@ -22,7 +22,7 @@ public class AdminController extends PersonController {
     {
         adminView.getLogoutButton().addActionListener(e -> logoutAction(adminView));
         adminView.getRegisterNewUser().addActionListener(e->registerAction());
-         adminView.getUnRegisterNewUser().addActionListener(e->unregisterAction());
+        adminView.getUnRegisterNewUser().addActionListener(e->unregisterAction());
         adminView.getEditPersonalDetails().addActionListener(e->editPersonalDeatailsAction());
   //      adminView.getViewClinicStaffInfo().addActionListener(e->viewClinicInfoAction());
     }

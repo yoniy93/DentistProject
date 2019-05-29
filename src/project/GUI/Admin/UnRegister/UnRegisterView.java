@@ -5,10 +5,10 @@ import java.awt.*;
 
 public class UnRegisterView extends JFrame
 {
-    private JButton submit=new JButton("SUBMIT");
-    private JTextField idTextField=new JTextField();
-    private JLabel idLabel=new JLabel("Enter id of user :");
-    private JButton cancel=new JButton("Cancel");
+    private JButton submit = new JButton("SUBMIT");
+    private JTextField idTextField = new JTextField();
+    private JLabel idLabel = new JLabel("Enter id of user :");
+    private JButton cancel = new JButton("Cancel");
 
     public UnRegisterView()
     {
