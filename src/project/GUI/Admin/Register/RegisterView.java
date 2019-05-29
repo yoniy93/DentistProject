@@ -21,7 +21,7 @@ public class RegisterView extends JFrame
     private JLabel monthLabel=new JLabel("Month: ");
     private JLabel dayLabel=new JLabel("Day: ");
 
-    private Vector year= new Vector<>(100);
+    private Vector  year= new Vector<>(100);
     private Vector month= new Vector<>(12);
     private Vector day= new Vector<>(31);
 
