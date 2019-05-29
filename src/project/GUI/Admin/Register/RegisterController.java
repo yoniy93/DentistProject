@@ -66,7 +66,6 @@ public class RegisterController {
                 registerView.getFirstnameTextField().getText().equals("")||registerView.getLastnameTextField().getText().equals("")||
                 registerView.getEmailTextField().getText().equals("")|| getDateStr().equals("") || checkGender().equals("") )
         {
-            JOptionPane.showMessageDialog(registerView,"One or more of the values worng !");
             return false;
         }
         return true;
