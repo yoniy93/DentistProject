@@ -3,8 +3,6 @@ package project.GUI.Clinic;
 import project.GUI.CancleButton;
 
 import javax.swing.*;
-import javax.swing.border.Border;
-import javax.swing.plaf.BorderUIResource;
 import java.awt.*;
 
 public class ClinicInfoView extends JFrame {
@@ -29,20 +27,27 @@ public class ClinicInfoView extends JFrame {
     }
 
     private void setLocationAndSize(){
-        clinicNameLabler.setFont(new Font("Tahoma", Font.BOLD , 25));
-        clinicNameLabler.setBounds(250, 100, 100, 30);
+        clinicNameLabler.setFont(new Font("Tahoma", Font.BOLD , 10));
+        clinicNameLabler.setBounds(250, 50, 100, 100);
 
-        openningHoursLable.setFont(new Font("Tahoma", Font.BOLD, 16));
-        openningHoursLable.setBounds(400,200,70,20);
+        openningHoursLable.setFont(new Font("Tahoma", Font.BOLD, 10));
+        openningHoursLable.setBounds(250,100,70,20);
+
+        phoneNumberLable.setFont(new Font("Tahoma", Font.BOLD, 10));
+        phoneNumberLable.setBounds(200,100, 70,20);
+
+        addressLabel.setFont(new Font("Tahoma",Font.BOLD,10));
+        addressLabel.setBounds(200,250,70,10);
+
         cancleButton.setLocation(220,400,100,30);
-
-
     }
 
     private void addComponentsToFrame(){
 
         add(clinicNameLabler);
         add(cancleButton);
+        add(addressLabel);
+        add(phoneNumberLable);
 
 
     }

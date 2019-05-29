@@ -4,6 +4,7 @@ import project.GUI.Admin.AdminPersonalDetails.StartPersonalDetailsAdmin;
 import project.GUI.Admin.Register.StartRegisterView;
 import project.GUI.Admin.UnRegister.StartUnRegister;
 import project.GUI.Clinic.ClinicInfoView;
+import project.GUI.Clinic.StartClinicInfo;
 import project.GUI.PersonController;
 import project.GUI.PersonalDetailsView;
 
@@ -26,7 +27,7 @@ public class AdminController extends PersonController {
         adminView.getUnRegisterNewUser().addActionListener(e->unregisterAction());
         adminView.getEditPersonalDetails().addActionListener(e->editPersonalDeatailsAction());
   //      adminView.getViewClinicStaffInfo().addActionListener(e->viewClinicInfoAction());
-  //      adminView.
+        adminView.getViewClinicDetails().addActionListener(e->viewClinicInfoAction());
     }
 
     private void registerAction()
@@ -45,6 +46,6 @@ public class AdminController extends PersonController {
     }
 
     private void viewClinicInfoAction() {
-
+        new StartClinicInfo();
     }
 }

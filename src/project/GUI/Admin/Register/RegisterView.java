@@ -7,7 +7,7 @@ import java.util.Vector;
 
 public class RegisterView extends JFrame
 {
-    CancleButton cancleButton = new CancleButton();
+    private CancleButton cancleButton = new CancleButton();
     private JButton addUserButton = new JButton("Submit");
     private JLabel roleLabel = new JLabel( "What is the user's role?");
     private JLabel firstNameLabel = new JLabel("First Name: ");
@@ -289,6 +289,10 @@ public class RegisterView extends JFrame
 
     public JButton getAddUser() {
         return addUserButton;
+    }
+
+    public CancleButton getCancleButton() {
+        return cancleButton;
     }
 
 }

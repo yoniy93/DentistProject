@@ -19,7 +19,7 @@ public class UnRegisterController
     private void addViewActionListeners()
     {
         unRegisterView.getSubmit().addActionListener(e-> submitAction());
-        unRegisterView.getCancel().addActionListener(e->cancelAction());
+        unRegisterView.getCancel().addActionListener(e->unRegisterView.dispose());
     }
 
     private void submitAction()
@@ -28,8 +28,5 @@ public class UnRegisterController
         dbHandler.deleteFromUsers(unRegisterView.getIdTextField().getText());
         JOptionPane.showMessageDialog(unRegisterView, "User Has Been Deleted");
     }
-    private void cancelAction()
-    {
-        unRegisterView.dispose();
-    }
+
 }

@@ -19,8 +19,8 @@ public class RegisterController {
     private void addViewActionListeners() {
         registerView.getAddUser().addActionListener(e -> addUserAction());
         registerView.getDoctor().addActionListener(e-> setVisibleTextFieldForDoctor());
-        registerView.getPatient().addActionListener(e->setVisibleTextFieldForPatient());
-        registerView.cancleButton.addActionListener(e->registerView.dispose());
+        registerView.getPatient().addActionListener(e-> setVisibleTextFieldForPatient());
+        registerView.getCancleButton().addActionListener(e-> registerView.dispose());
     }
 
     private void setVisibleTextFieldForDoctor(){
