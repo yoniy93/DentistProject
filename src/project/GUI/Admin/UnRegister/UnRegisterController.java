@@ -3,6 +3,8 @@ package project.GUI.Admin.UnRegister;
 import project.Logic.DBHandler;
 import project.Logic.DBQuerys;
 
+import javax.swing.*;
+
 public class UnRegisterController
 {
     UnRegisterModel unRegisterModel;
@@ -25,6 +27,7 @@ public class UnRegisterController
     {
         DBHandler dbHandler=new DBHandler();
         dbHandler.deleteFromUsers(unRegisterView.getIdTextField().getText());
+        JOptionPane.showMessageDialog(unRegisterView, "User Has Been Deleted");
     }
     private void cancelAction()
     {
