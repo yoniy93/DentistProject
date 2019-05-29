@@ -6,8 +6,7 @@ import javax.swing.*;
 public class PersonalDetailsView extends JFrame {
 
     private JButton editButton = new JButton("Edit");
-    private JButton cancelButton = new JButton("Cancel");
-
+    private CancleButton cancelButton = new CancleButton();
     private JLabel firstnameLabel = new JLabel("First Name: ");
     private JLabel lastnameLabel = new JLabel( "Last Name: ");
     private JLabel emailLabel = new JLabel( "Email: ");
@@ -34,8 +33,7 @@ public class PersonalDetailsView extends JFrame {
         editButton.setFont(new Font("Tahoma", Font.BOLD, 14));
         editButton.setBounds(80, 400, 100, 30);
 
-        cancelButton.setFont(new Font("Tahoma", Font.BOLD, 14));
-        cancelButton.setBounds(220, 400, 100, 30);
+        cancelButton.setLocation(220,400,100,30);
 
         firstnameLabel.setFont(new Font("Tahoma", Font.BOLD, 14));
         firstnameLabel.setBounds(60, 40, 100, 30);
@@ -74,7 +72,7 @@ public class PersonalDetailsView extends JFrame {
         return editButton;
     }
 
-    public JButton getCancelButton() {
+    public CancleButton getCancelButton() {
         return cancelButton;
     }
 

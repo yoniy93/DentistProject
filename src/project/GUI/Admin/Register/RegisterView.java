@@ -141,8 +141,8 @@ public class RegisterView extends JFrame
         heightTextField.setBounds(170,450,150,25);
         yearsOfExTextField.setBounds(200,490,150,25);
 
-        addUserButton.setBounds(300,600,150,30);
-        cancleButton.setLocation(600,600,150,30);
+        addUserButton.setBounds(200,600,150,30);
+        cancleButton.setLocation(400,600,150,30);
 
     }
 
