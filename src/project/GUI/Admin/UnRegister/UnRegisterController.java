@@ -1,7 +1,6 @@
 package project.GUI.Admin.UnRegister;
 
 import project.Logic.DBHandler;
-import project.Logic.DBQuerys;
 
 import javax.swing.*;
 
