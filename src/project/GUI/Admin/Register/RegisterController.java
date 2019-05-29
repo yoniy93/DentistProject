@@ -52,8 +52,9 @@ public class RegisterController {
                              registerView.getFirstnameTextField().getText(), registerView.getLastnameTextField().getText(),
                              registerView.getEmailTextField().getText(), getDateStr(), checkGender(), Integer.parseInt(registerView.getYearsOfExTextField().getText()));
          }
+         JOptionPane.showMessageDialog(registerView, "New User Created");
      }
-        JOptionPane.showMessageDialog(registerView, "New User Created");
+
         registerView.dispose();
     }
 
