@@ -5,7 +5,7 @@ import java.awt.*;
 
 public class LoginView extends JFrame {
 
-    private JLabel userLabel = new JLabel("USERNAME:");
+    private JLabel userLabel = new JLabel("ID:");
     private JLabel passwordLabel = new JLabel("PASSWORD:");
     private JTextField userTextField = new JTextField();
     private JPasswordField passwordField = new JPasswordField();
