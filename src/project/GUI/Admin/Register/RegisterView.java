@@ -55,7 +55,6 @@ public class RegisterView extends JFrame
         setLayout(null);
         setLocationAndSize();
         addComponentsToFrame();
-        hidePatientWeightAndHeightButtoms();
         hideDoctorYearsOfExperiensButtoms();
         setTitle("Register New User");
         setBounds(300, 20, 800, 700);
@@ -170,6 +169,7 @@ public class RegisterView extends JFrame
         roleGroup.add(doctorRButton);
         add(doctorRButton);
         add(patientRButton);
+        patientRButton.setSelected(true);
 
         add(lastnameTextField);
         add(firstnameTextField);

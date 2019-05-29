@@ -3,6 +3,7 @@ package project.GUI.Admin;
 import project.GUI.Admin.AdminPersonalDetails.StartPersonalDetailsAdmin;
 import project.GUI.Admin.Register.StartRegisterView;
 import project.GUI.Admin.UnRegister.StartUnRegister;
+import project.GUI.Clinic.ClinicInfoView;
 import project.GUI.PersonController;
 import project.GUI.PersonalDetailsView;
 
@@ -25,6 +26,7 @@ public class AdminController extends PersonController {
         adminView.getUnRegisterNewUser().addActionListener(e->unregisterAction());
         adminView.getEditPersonalDetails().addActionListener(e->editPersonalDeatailsAction());
   //      adminView.getViewClinicStaffInfo().addActionListener(e->viewClinicInfoAction());
+  //      adminView.
     }
 
     private void registerAction()

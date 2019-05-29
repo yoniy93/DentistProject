@@ -1,4 +1,4 @@
-package project.GUI.ClinicStaffInfo;
+package project.GUI.Clinic;
 
 import javax.swing.*;
 
