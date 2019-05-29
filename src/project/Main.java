@@ -1,4 +1,4 @@
-package project.GUI;
+package project;
 
 import project.GUI.Login.StartLoginView;
 import project.Database.DBInitializer;

@@ -6,7 +6,6 @@ import java.sql.*;
 public class DBInitializer {
 
     public Connection connect() {
-        // SQLite connection string
         String url = DBLocation.getPath();
 
         Connection conn = null;
@@ -81,17 +80,15 @@ public class DBInitializer {
 
         try (Connection conn = DriverManager.getConnection(url);
              Statement stmt = conn.createStatement()) {
-            // create a new table
+
             stmt.execute(sql);
             stmt.execute(sql1);
             stmt.execute(sql2);
             stmt.execute(sql3);
             stmt.execute(sql4);
 
-
         } catch (SQLException e) {
             System.out.println(e.getMessage());
-            // add a popup window with the error
         }
     }
     protected void connectAndExecute(String sql){
