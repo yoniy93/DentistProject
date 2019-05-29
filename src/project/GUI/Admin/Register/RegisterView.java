@@ -27,7 +27,7 @@ public class RegisterView extends JFrame
 
     private JComboBox yearBox = new JComboBox(year);
     private JComboBox monthBox= new JComboBox(month);
-    private JComboBox dayBox=new JComboBox(day);
+    private JComboBox dayBox =new JComboBox(day);
 
     private JRadioButton doctor= new JRadioButton("Doctor");
     private JRadioButton patient=new JRadioButton("Patient");
