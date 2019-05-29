@@ -39,8 +39,7 @@ public class RegisterController {
 
 
     private void addUserAction() {
-     if (checkNotNullFields()) {
-         //String bDay = registerView.getDayBox().toString() +"-"+ registerView.getMonthBox().toString() +"-"+ registerView.getYearBox().toString();
+     if (isAllFieldsFilled()) {
          if (registerView.getPatient().isSelected()) {
              registerModel.dbInserts.insertForPatient
                      (registerView.getIdTextFiled().getText(), getPassword(),
@@ -60,7 +59,7 @@ public class RegisterController {
         new ExceptionWindow(registerView,"Error: please fill all fields");
     }
 
-    private boolean checkNotNullFields() {
+    private boolean isAllFieldsFilled() {
         if ( registerView.getIdTextFiled().getText().equals("") || getPassword().equals("") || registerView.getFirstnameTextField().getText().equals("") ||
                 registerView.getLastnameTextField().getText().equals("")|| registerView.getEmailTextField().getText().equals("")|| getDate().equals("") ||
                 (!registerView.getPatient().isSelected() && !registerView.getDoctor().isSelected()) ||
@@ -83,21 +82,17 @@ public class RegisterController {
         int day = (Integer)registerView.getDayBox().getSelectedItem();
         int month = (Integer)registerView.getMonthBox().getSelectedItem();
         int year =(Integer)registerView.getYearBox().getSelectedItem();
-
         return convertDateToString(day,month,year);
     }
 
     private String convertDateToString (int day, int month, int year) {
         String dayString=Integer.toString(day);
         String monthString=Integer.toString(month);
-
         if (day<10)
             dayString="0"+dayString;
         if (month<10)
             monthString="0"+monthString;
-
         return dayString+"-"+monthString+"-"+year;
-
     }
 
 
