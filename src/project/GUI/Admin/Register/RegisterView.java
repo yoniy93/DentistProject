@@ -1,6 +1,7 @@
 package project.GUI.Admin.Register;
 import javax.swing.*;
 import java.awt.*;
+import java.util.ArrayList;
 import java.util.Vector;
 
 public class RegisterView extends JFrame
@@ -21,9 +22,9 @@ public class RegisterView extends JFrame
     private JLabel monthLabel=new JLabel("Month: ");
     private JLabel dayLabel=new JLabel("Day: ");
 
-    private Vector  year= new Vector<>(100);
-    private Vector month= new Vector<>(12);
-    private Vector day= new Vector<>(31);
+    private Vector  year= new Vector(100);
+    private Vector month= new Vector(12) ;
+    private Vector day= new Vector (31);
 
     private JComboBox yearBox = new JComboBox(year);
     private JComboBox monthBox= new JComboBox(month);
