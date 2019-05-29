@@ -40,9 +40,9 @@ public class RegisterController {
      }
         registerView.dispose();
     }
-     private boolean checkNotNullFields()
-     {
-         if (registerView.getIdTextFiled().getText().equals("")|| registerView.getPasswordField().toString().equals("")||
+
+     private boolean checkNotNullFields() {
+         if (registerView.getIdTextFiled().getText().equals("")|| getPassword().equals("")||
                  registerView.getFirstnameTextField().getText().equals("")||registerView.getLastnameTextField().getText().equals("")||
                  registerView.getEmailTextField().getText().equals("")|| registerView.getDayBox().toString().equals("") ||registerView.getMonthBox().toString().equals("")||
                  registerView.getYearBox().toString().equals("") || checkGender().equals("") )
@@ -52,6 +52,10 @@ public class RegisterController {
          }
          return true;
      }
+
+    private String getPassword(){
+        return new String(registerView.getPasswordField().getPassword());
+    }
 
     private String checkGender() {
         String genderSelection;
