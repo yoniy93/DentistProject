@@ -2,13 +2,13 @@ package project.GUI;
 
 import javax.swing.*;
 
-public class PersonView extends JFrame {
+public abstract class PersonView extends JFrame {
 
     private JButton logoutButton = new JButton("Logout");
     private JButton editPersonalDetails = new JButton("Edit personal details");
     private JButton viewClinicStaffInfo = new JButton("View Clinic Staff Information: ");
 
-    protected PersonView(){
+    public PersonView(){
         setLayout(null);
         setLocationAndSize();
         addComponentsToFrame();
