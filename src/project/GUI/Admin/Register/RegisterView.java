@@ -1,10 +1,13 @@
 package project.GUI.Admin.Register;
+import project.GUI.CancleButton;
+
 import javax.swing.*;
 import java.awt.*;
 import java.util.Vector;
 
 public class RegisterView extends JFrame
 {
+    CancleButton cancleButton = new CancleButton();
     private JButton addUserButton = new JButton("Submit");
     private JLabel roleLabel = new JLabel( "What is the user's role?");
     private JLabel firstNameLabel = new JLabel("First Name: ");
@@ -90,6 +93,7 @@ public class RegisterView extends JFrame
 
     }
 
+
     private void setLocationAndSize()
     {
         firstNameLabel.setFont(new Font("Tahoma", Font.BOLD, 14));
@@ -138,6 +142,8 @@ public class RegisterView extends JFrame
         yearsOfExTextField.setBounds(200,490,150,25);
 
         addUserButton.setBounds(300,600,150,30);
+        cancleButton.setLocation(600,600,150,30);
+
     }
 
 
@@ -184,6 +190,8 @@ public class RegisterView extends JFrame
         dayBox.setSelectedIndex(0);
         add(monthBox);
         monthBox.setSelectedIndex(0);
+
+        add(cancleButton);
     }
 
 
