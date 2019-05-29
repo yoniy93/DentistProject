@@ -14,10 +14,10 @@ public class AdminPersonalDetailsController
         this.personalDetailsView=personalDetailsView;
 
         SetTextFieldsCurrentValues();
-        initController();
+        addViewActionListeners();
     }
 
-    private void initController()
+    private void addViewActionListeners()
     {
         personalDetailsView.getEditButton().addActionListener(e->editButtonAction());
         personalDetailsView.getCancelButton().addActionListener(e-> cancelAction());

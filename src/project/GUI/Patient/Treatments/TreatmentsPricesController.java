@@ -13,9 +13,9 @@ public class TreatmentsPricesController
         this.treatmentsPricesModel=treatmentsPricesModel;
         this.treatmentsPricesView=treatmentsPricesView;
 
-        initController();
+        addViewActionListeners();
     }
-    private void initController()
+    private void addViewActionListeners()
     {
         treatmentsPricesView.getTreatmentList().addActionListener(e->treatmentListAction());
 

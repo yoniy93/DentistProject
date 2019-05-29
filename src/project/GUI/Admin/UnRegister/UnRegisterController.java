@@ -13,10 +13,10 @@ public class UnRegisterController
         this.unRegisterModel=unRegisterModel;
         this.unRegisterView=unRegisterView;
 
-        initController();
+        addViewActionListeners();
     }
 
-    private void initController()
+    private void addViewActionListeners()
     {
         unRegisterView.getSubmit().addActionListener(e-> submitAction());
         unRegisterView.getCancel().addActionListener(e->cancelAction());
