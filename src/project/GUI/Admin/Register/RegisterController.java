@@ -2,7 +2,6 @@ package project.GUI.Admin.Register;
 
 import project.GUI.ExceptionWindow;
 
-import javax.swing.*;
 import java.awt.*;
 
 public class RegisterController {
@@ -47,12 +46,12 @@ public class RegisterController {
                      (registerView.getIdTextFiled().getText(), getPassword(),
                              registerView.getFirstnameTextField().getText(), registerView.getLastnameTextField().getText(),
                              registerView.getEmailTextField().getText(), Double.parseDouble(registerView.getWeightTextField().getText()),
-                             Integer.parseInt(registerView.getHeightTextField().getText()), getDateStr(), checkGender());
-         } else {
+                             Integer.parseInt(registerView.getHeightTextField().getText()), getDateStr(), convertGenderToString());
+         } else if (registerView.getDoctor().isSelected()) {
              registerModel.dbInserts.insertForDoctor
                      (registerView.getIdTextFiled().getText(), getPassword(),
                              registerView.getFirstnameTextField().getText(), registerView.getLastnameTextField().getText(),
-                             registerView.getEmailTextField().getText(), getDateStr(), checkGender(), Integer.parseInt(registerView.getYearsOfExTextField().getText()));
+                             registerView.getEmailTextField().getText(), getDateStr(), convertGenderToString(), Integer.parseInt(registerView.getYearsOfExTextField().getText()));
          }
          new ExceptionWindow(registerView,"New User Created");
          registerView.dispose();
@@ -62,12 +61,15 @@ public class RegisterController {
     }
 
     private boolean checkNotNullFields() {
-        if (registerView.getIdTextFiled().getText().equals("")|| getPassword().equals("")||
-                registerView.getFirstnameTextField().getText().equals("")||registerView.getLastnameTextField().getText().equals("")||
-                registerView.getEmailTextField().getText().equals("")|| getDateStr().equals("") || checkGender().equals("") )
-        {
+
+        if ( registerView.getIdTextFiled().getText().equals("")||
+                getPassword().equals("")||
+                registerView.getFirstnameTextField().getText().equals("") ||
+                registerView.getLastnameTextField().getText().equals("")||
+                registerView.getEmailTextField().getText().equals("")|| getDateStr().equals("") ||
+                (!registerView.getPatient().isSelected() && !registerView.getDoctor().isSelected()) ||
+                (!registerView.getFemale().isSelected() && !registerView.getMale().isSelected()) )
             return false;
-        }
         return true;
     }
 
@@ -93,7 +95,7 @@ public class RegisterController {
         return dayStr + "-" + monthStr + "-" + yearStr;
     }
 
-    private String checkGender() {
+    private String convertGenderToString() {
         String genderSelection;
         if (registerView.getMale().isSelected())
             genderSelection = "Male";
