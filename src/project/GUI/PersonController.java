@@ -3,13 +3,9 @@ package project.GUI;
 import project.GUI.Login.StartLoginView;
 import javax.swing.*;
 
-public class PersonController {
+public abstract class PersonController {
 
-    protected PersonController(){
-
-    }
-
-    protected void logoutAction(PersonView personView) {
+      protected void logoutAction(PersonView personView) {
         personView.dispose();
 
         SwingUtilities.invokeLater(new Runnable() {
