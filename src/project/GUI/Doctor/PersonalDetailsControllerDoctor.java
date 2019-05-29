@@ -17,6 +17,7 @@ public class PersonalDetailsControllerDoctor {
         pDetailsView.getFirstnameTextField().setText(pDetailsModel.getDoctor().getFirstName());
         pDetailsView.getLastnameTextField().setText(pDetailsModel.getDoctor().getLastName());
         pDetailsView.getEmailTextField().setText(pDetailsModel.getDoctor().getEmail());
+        pDetailsView.getPasswordField().setText(pDetailsModel.getDoctor().getPassword());
         pDetailsView.getYearsOfExpTextField().setText(Integer.toString(pDetailsModel.getDoctor().getYearsOfEx()));
     }
 

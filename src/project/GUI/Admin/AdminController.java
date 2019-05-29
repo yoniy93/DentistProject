@@ -1,7 +1,9 @@
 package project.GUI.Admin;
 
+import project.GUI.Admin.AdminPersonalDetails.StartPersonalDetailsAdmin;
 import project.GUI.Admin.Register.StartRegisterView;
 import project.GUI.PersonController;
+import project.GUI.PersonalDetailsView;
 
 public class AdminController extends PersonController {
 
@@ -35,6 +37,7 @@ public class AdminController extends PersonController {
 
     private void editPersonalDeatailsAction() {
 
+        new StartPersonalDetailsAdmin(adminModel.getAdmin());
     }
 
     private void viewClinicInfoAction() {
