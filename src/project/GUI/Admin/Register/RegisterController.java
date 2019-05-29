@@ -1,6 +1,7 @@
 package project.GUI.Admin.Register;
 
 import javax.swing.*;
+import java.awt.*;
 
 public class RegisterController {
 
@@ -15,9 +16,25 @@ public class RegisterController {
     }
 
     private void addViewActionListeners() {
-
         registerView.getAddUser().addActionListener(e -> addUserAction());
+        registerView.getDoctor().addActionListener(e-> setVisibleTextFieldForDoctor());
+        registerView.getPatient().addActionListener(e->setVisibleTextFieldForPatient());
     }
+
+    private void setVisibleTextFieldForDoctor(){
+        registerView.getYearsOfExTextField().setBackground(Color.WHITE);
+        registerView.getYearsOfExTextField().setEditable(true);
+        registerView.hidePatientWeightAndHeightButtoms();
+    }
+
+    private void setVisibleTextFieldForPatient(){
+        registerView.getWeightTextField().setEditable(true);
+        registerView.getWeightTextField().setBackground(Color.WHITE);
+        registerView.getHeightTextField().setEditable(true);
+        registerView.getHeightTextField().setBackground(Color.WHITE);
+        registerView.hideDoctorYearsOfExperiensButtoms();
+    }
+
 
     private void addUserAction() {
      if(   checkNotNullFields()) {
@@ -44,7 +61,8 @@ public class RegisterController {
                 registerView.getFirstnameTextField().getText().equals("")||registerView.getLastnameTextField().getText().equals("")||
                 registerView.getEmailTextField().getText().equals("")|| getDateStr().equals("") || checkGender().equals("") )
         {
-            JOptionPane.showMessageDialog(registerView,"One or more of the values worng !");return false;
+            JOptionPane.showMessageDialog(registerView,"One or more of the values worng !");
+            return false;
         }
         return true;
     }

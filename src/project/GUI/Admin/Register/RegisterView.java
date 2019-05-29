@@ -42,9 +42,9 @@ public class RegisterView extends JFrame
     private JTextField emailTextField = new JTextField();
     private JPasswordField passwordField  = new JPasswordField();
     private JTextField idTextFiled = new JTextField();
-    private JTextField heightTextField = new JTextField("לא שדה חובה");
-    private JTextField weightTextField = new JTextField("לא שדה חובה");
-    private JTextField yearsOfExTextField = new JTextField("לא שדה חובה");
+    private JTextField heightTextField = new JTextField();
+    private JTextField weightTextField = new JTextField();
+    private JTextField yearsOfExTextField = new JTextField();
 
 
     public RegisterView() {
@@ -52,7 +52,8 @@ public class RegisterView extends JFrame
         setLayout(null);
         setLocationAndSize();
         addComponentsToFrame();
-
+        hidePatientWeightAndHeightButtoms();
+        hideDoctorYearsOfExperiensButtoms();
         setTitle("Register New User");
         setBounds(300, 20, 800, 700);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
@@ -74,6 +75,19 @@ public class RegisterView extends JFrame
         {
             yearVector.insertElementAt(max--,i);
         }
+    }
+
+    public void hidePatientWeightAndHeightButtoms(){
+        heightTextField.setEditable(false);
+        heightTextField.setBackground(Color.lightGray);
+        weightTextField.setEditable(false);
+        weightTextField.setBackground(Color.lightGray);
+    }
+
+    public void hideDoctorYearsOfExperiensButtoms(){
+        yearsOfExTextField.setEditable(false);
+        yearsOfExTextField.setBackground(Color.lightGray);
+
     }
 
     private void setLocationAndSize()
@@ -125,6 +139,8 @@ public class RegisterView extends JFrame
 
         addUserButton.setBounds(300,600,150,30);
     }
+
+
 
     private void addComponentsToFrame()
     {
@@ -263,7 +279,9 @@ public class RegisterView extends JFrame
         return yearsOfExTextField;
     }
 
-    public JButton getAddUser() { return addUserButton; }
+    public JButton getAddUser() {
+        return addUserButton;
+    }
 
 }
 
