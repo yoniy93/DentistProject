@@ -25,18 +25,18 @@ public class RegisterController {
 
     private void addUserAction() {
      if(   checkNotNullFields()) {
-         String bDay = registerView.getDayBox().toString() +"-"+ registerView.getMonthBox().toString() +"-"+ registerView.getYearBox().toString();
+         //String bDay = registerView.getDayBox().toString() +"-"+ registerView.getMonthBox().toString() +"-"+ registerView.getYearBox().toString();
          if (registerView.getPatient().isSelected()) {
              registerModel.dbInserts.insertForPatient
-                     (registerView.getIdTextFiled().getText(), registerView.getPasswordField().toString(),
+                     (registerView.getIdTextFiled().getText(), getPassword(),
                              registerView.getFirstnameTextField().getText(), registerView.getLastnameTextField().getText(),
                              registerView.getEmailTextField().getText(), Double.parseDouble(registerView.getWeightTextField().getText()),
-                             Integer.parseInt(registerView.getHeightTextField().getText()), bDay, checkGender());
+                             Integer.parseInt(registerView.getHeightTextField().getText()), getDateStr(), checkGender());
          } else {
              registerModel.dbInserts.insertForDoctor
-                     (registerView.getIdTextFiled().getText(), registerView.getPasswordField().toString(),
+                     (registerView.getIdTextFiled().getText(), getPassword(),
                              registerView.getFirstnameTextField().getText(), registerView.getLastnameTextField().getText(),
-                             registerView.getEmailTextField().getText(), bDay, checkGender(), Integer.parseInt(registerView.getYearsOfExTextField().getText()));
+                             registerView.getEmailTextField().getText(), getDateStr(), checkGender(), Integer.parseInt(registerView.getYearsOfExTextField().getText()));
          }
      }
         registerView.dispose();
@@ -58,9 +58,9 @@ public class RegisterController {
 
     private String getDateStr(){
         
-       String dayStr = Integer.toString((Integer)registerView.getDayBox().getSelectedItem());
-       String monthStr = Integer.toString((Integer)registerView.getMonthBox().getSelectedItem());
-       String yearStr = Integer.toString ((Integer)registerView.getYearBox().getSelectedItem());
+        String dayStr = Integer.toString((Integer)registerView.getDayBox().getSelectedItem());
+        String monthStr = Integer.toString((Integer)registerView.getMonthBox().getSelectedItem());
+        String yearStr = Integer.toString ((Integer)registerView.getYearBox().getSelectedItem());
 
        return dayStr + "-" + monthStr + "-" + yearStr;
     }
