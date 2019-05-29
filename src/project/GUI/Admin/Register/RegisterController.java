@@ -1,12 +1,8 @@
 package project.GUI.Admin.Register;
-import project.GUI.Admin.StartAdminView;
 
 import javax.swing.*;
-import java.util.Vector;
-
 
 public class RegisterController {
-
 
     private RegisterModel registerModel;
     private RegisterView registerView;
