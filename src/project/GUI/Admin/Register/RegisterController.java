@@ -14,10 +14,10 @@ public class RegisterController {
         this.registerModel = registerModel;
         this.registerView = registerView;
 
-        initController();
+        addViewActionListeners();
     }
 
-    private void initController() {
+    private void addViewActionListeners() {
 
         registerView.getAddUser().addActionListener(e -> addUserAction());
     }
@@ -38,9 +38,7 @@ public class RegisterController {
                              registerView.getEmailTextField().getText(), bDay, checkGender(), Integer.parseInt(registerView.getYearsOfExTextField().getText()));
          }
      }
-
         registerView.dispose();
-        new StartAdminView(registerModel.admin);
     }
      private boolean checkNotNullFields()
      {

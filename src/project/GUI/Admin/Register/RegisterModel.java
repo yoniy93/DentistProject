@@ -5,7 +5,7 @@ import project.Logic.DBInserts;
 
 public class RegisterModel {
     Admin admin;
-    DBInserts dbInserts=new DBInserts();
+    DBInserts dbInserts = new DBInserts();
 
     public Admin getAdmin() {
         return admin;
