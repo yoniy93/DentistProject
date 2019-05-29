@@ -1,4 +1,4 @@
-package project.Logic;
+package project.Database;
 
 public class DBLocation {
 

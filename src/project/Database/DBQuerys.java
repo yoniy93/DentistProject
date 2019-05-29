@@ -1,4 +1,4 @@
-package project.Logic;
+package project.Database;
 
 import project.Entities.*;
 
@@ -8,7 +8,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Vector;
 
-public class DBQuerys extends DBHandler {
+public class DBQuerys extends DBInitializer {
 
     public Admin getAdminDetails (String id) {
         String sql = "SELECT * FROM users WHERE id="+id;

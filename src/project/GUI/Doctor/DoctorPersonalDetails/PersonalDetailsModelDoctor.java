@@ -1,7 +1,7 @@
 package project.GUI.Doctor.DoctorPersonalDetails;
 
 import project.Entities.Doctor;
-import project.Logic.DBUpdates;
+import project.Database.DBUpdates;
 
 public class PersonalDetailsModelDoctor {
 

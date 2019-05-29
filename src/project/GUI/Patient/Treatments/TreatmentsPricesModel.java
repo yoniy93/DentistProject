@@ -1,6 +1,6 @@
 package project.GUI.Patient.Treatments;
 
-import project.Logic.DBQuerys;
+import project.Database.DBQuerys;
 
 public class TreatmentsPricesModel
 {

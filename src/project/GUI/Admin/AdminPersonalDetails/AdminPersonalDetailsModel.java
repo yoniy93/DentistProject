@@ -1,7 +1,7 @@
 package project.GUI.Admin.AdminPersonalDetails;
 
 import project.Entities.Admin;
-import project.Logic.DBUpdates;
+import project.Database.DBUpdates;
 
 public class AdminPersonalDetailsModel
 {

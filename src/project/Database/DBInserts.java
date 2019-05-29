@@ -1,6 +1,6 @@
-package project.Logic;
+package project.Database;
 
-public class DBInserts extends DBHandler {
+public class DBInserts extends DBInitializer {
 
     public void insertInitialData(){
         insertForAdmin("1", "1", "אדמין", "Admin", "admin@gmail.com", "01-01-2000", "זכר");

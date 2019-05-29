@@ -1,7 +1,7 @@
 package project.GUI.Admin.Register;
 
 import project.Entities.Admin;
-import project.Logic.DBInserts;
+import project.Database.DBInserts;
 
 public class RegisterModel {
     Admin admin;

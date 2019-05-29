@@ -1,7 +1,7 @@
 package project.GUI.Patient.Treatments;
 
 import project.Entities.Treatments;
-import project.Logic.DBQuerys;
+import project.Database.DBQuerys;
 
 import javax.swing.*;
 import java.util.Vector;

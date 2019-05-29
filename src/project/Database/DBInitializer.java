@@ -1,8 +1,9 @@
-package project.Logic;
+package project.Database;
 
+import java.io.File;
 import java.sql.*;
 
-public class DBHandler {
+public class DBInitializer {
 
     public Connection connect() {
         // SQLite connection string
@@ -25,11 +26,34 @@ public class DBHandler {
             if (conn != null) {
                 DatabaseMetaData meta = conn.getMetaData();
                 System.out.println("The driver name is " + meta.getDriverName());
-                System.out.println("A new database has been created.");
+                System.out.println("Connection to DB was successfully.");
             }
 
         } catch (SQLException e) {
             System.out.println(e.getMessage());
+        }
+    }
+
+    private static boolean isDBExists() {
+        String s=DBLocation.getPath();
+        String location = s.substring(s.lastIndexOf(':') + 1).trim();
+        File file=new File(location);
+        return file.exists();
+    }
+
+    private static void createTablesInDB() {
+        createNewDatabase();
+        createNewTables();
+    }
+
+    public static void loadDatabaseWithInitialData(){
+        boolean isDBexists=isDBExists();
+        createTablesInDB();
+//        String newstring = new SimpleDateFormat("dd-MM-yyyy").format(date);
+        if (!isDBexists) {
+            System.out.println("Initial database was loaded successfully ");
+            DBInserts db=new DBInserts();
+            db.insertInitialData();
         }
     }
 
@@ -79,8 +103,5 @@ public class DBHandler {
         }
     }
 
-    public void deleteFromUsers(String id) {
-        String sql="DELETE FROM users WHERE id="+id;
-        connectAndExecute(sql);
-    }
+
 }

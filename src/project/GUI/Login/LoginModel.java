@@ -2,11 +2,11 @@ package project.GUI.Login;
 import project.Entities.Admin;
 import project.Entities.Doctor;
 import project.Entities.Patient;
+import project.Entities.USER_TYPE;
 import project.GUI.Admin.General.StartAdminView;
 import project.GUI.Doctor.General.StartDoctorView;
 import project.GUI.Patient.General.StartPatientView;
-import project.Logic.DBQuerys;
-import project.Logic.LogInHandler;
+import project.Database.DBQuerys;
 
 import java.sql.SQLException;
 
@@ -18,11 +18,10 @@ public class LoginModel {
     public boolean CheckLogin(String username, String password) throws SQLException {
 
         DBQuerys databaseQuerys=new DBQuerys();
-        LogInHandler logInHandler = new  LogInHandler();
 
-        if(logInHandler.isUserExists(username) && logInHandler.isPasswordCorrect(username,password))
+        if(this.isUserExists(username) && this.isPasswordCorrect(username,password))
         {
-            switch (logInHandler.getUserType(username))
+            switch (this.getUserType(username))
             {
                 case ADMIN:
                 {
@@ -48,5 +47,17 @@ public class LoginModel {
         }
         else
             return false;
+    }
+
+    public USER_TYPE getUserType (String username)  {
+        return new DBQuerys().getTypeOfUser(username);
+    }
+
+    public boolean isPasswordCorrect (String userid, String password) {
+        return new DBQuerys().isPasswordCorrect(userid,password);
+    }
+
+    public boolean isUserExists (String id) {
+        return new DBQuerys().isUserExists(id);
     }
 }
