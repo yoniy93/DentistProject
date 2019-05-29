@@ -1,7 +1,7 @@
-package project.GUI.Doctor;
-import project.GUI.Clinic.StartClinicInfo;
+package project.GUI.Doctor.General;
+import project.GUI.Clinic.Info.StartClinicInfo;
 import project.GUI.Doctor.DoctorPersonalDetails.StartPersonalDetailsDoctor;
-import project.GUI.PersonController;
+import project.GUI.General.PersonController;
 public class DoctorController extends PersonController {
 
     private DoctorModel doctorModel;

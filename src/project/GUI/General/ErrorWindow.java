@@ -1,13 +1,13 @@
-package project.GUI;
+package project.GUI.General;
 
 import javax.swing.*;
 import java.awt.*;
 
-public class ExceptionWindow {
+public class ErrorWindow {
 
     Component jframe;
     String message;
-    public ExceptionWindow(Component jframe,String message)
+    public ErrorWindow(Component jframe, String message)
     {
         this.jframe=jframe;
         this.message=message;

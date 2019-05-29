@@ -1,4 +1,4 @@
-package project.GUI.Clinic;
+package project.GUI.Clinic.Info;
 
 
 public class StartClinicInfo {

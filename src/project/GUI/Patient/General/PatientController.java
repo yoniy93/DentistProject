@@ -1,7 +1,7 @@
-package project.GUI.Patient;
+package project.GUI.Patient.General;
 
-import project.GUI.Clinic.StartClinicInfo;
-import project.GUI.PersonController;
+import project.GUI.Clinic.Info.StartClinicInfo;
+import project.GUI.General.PersonController;
 import project.GUI.Patient.PersonalDetails.StartPersonalDetailsPatient;
 import project.GUI.Patient.Treatments.StartTreatmentsPricesView;
 

@@ -1,4 +1,4 @@
-package project.GUI.Patient;
+package project.GUI.Patient.General;
 
 import project.Entities.Patient;
 

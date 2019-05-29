@@ -1,4 +1,4 @@
-package project.GUI.Admin;
+package project.GUI.Admin.General;
 
 import project.Entities.Admin;
 

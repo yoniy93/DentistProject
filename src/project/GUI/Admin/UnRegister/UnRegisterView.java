@@ -1,6 +1,6 @@
 package project.GUI.Admin.UnRegister;
 
-import project.GUI.CancleButton;
+import project.GUI.General.CancleButton;
 
 import javax.swing.*;
 import java.awt.*;

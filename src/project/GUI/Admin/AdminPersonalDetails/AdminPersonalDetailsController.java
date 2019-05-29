@@ -1,7 +1,7 @@
 package project.GUI.Admin.AdminPersonalDetails;
 
 import project.Entities.Admin;
-import project.GUI.PersonalDetailsView;
+import project.GUI.General.PersonalDetailsView;
 
 public class AdminPersonalDetailsController
 

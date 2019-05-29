@@ -1,6 +1,6 @@
-package project.GUI.Patient;
+package project.GUI.Patient.General;
 
-import project.GUI.PersonView;
+import project.GUI.General.PersonView;
 import javax.swing.*;
 
 public class PatientView extends PersonView {

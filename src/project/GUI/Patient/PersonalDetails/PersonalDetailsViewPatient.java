@@ -1,5 +1,5 @@
 package project.GUI.Patient.PersonalDetails;
-import project.GUI.PersonalDetailsView;
+import project.GUI.General.PersonalDetailsView;
 import javax.swing .*;
 import java.awt.*;
 

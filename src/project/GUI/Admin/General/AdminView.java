@@ -1,6 +1,6 @@
-package project.GUI.Admin;
+package project.GUI.Admin.General;
 
-import project.GUI.PersonView;
+import project.GUI.General.PersonView;
 
 import javax.swing.*;
 

@@ -1,4 +1,6 @@
-package project.GUI;
+package project.GUI.General;
+
+import project.GUI.General.CancleButton;
 
 import java.awt.Font;
 import javax.swing.*;

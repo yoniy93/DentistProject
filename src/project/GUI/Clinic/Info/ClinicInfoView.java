@@ -1,6 +1,6 @@
-package project.GUI.Clinic;
+package project.GUI.Clinic.Info;
 
-import project.GUI.CancleButton;
+import project.GUI.General.CancleButton;
 
 import javax.swing.*;
 import java.awt.*;

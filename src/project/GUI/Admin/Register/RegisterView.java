@@ -1,5 +1,5 @@
 package project.GUI.Admin.Register;
-import project.GUI.CancleButton;
+import project.GUI.General.CancleButton;
 
 import javax.swing.*;
 import java.awt.*;

@@ -1,5 +1,5 @@
 package project.GUI.Doctor.DoctorPersonalDetails;
-import project.GUI.PersonalDetailsView;
+import project.GUI.General.PersonalDetailsView;
 
 import javax.swing.*;
 import java.awt.*;

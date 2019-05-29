@@ -1,4 +1,4 @@
-package project.GUI;
+package project.GUI.General;
 
 import project.GUI.Login.StartLoginView;
 import javax.swing.*;

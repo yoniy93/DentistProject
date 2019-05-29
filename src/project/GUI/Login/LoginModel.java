@@ -2,9 +2,9 @@ package project.GUI.Login;
 import project.Entities.Admin;
 import project.Entities.Doctor;
 import project.Entities.Patient;
-import project.GUI.Admin.StartAdminView;
-import project.GUI.Doctor.StartDoctorView;
-import project.GUI.Patient.StartPatientView;
+import project.GUI.Admin.General.StartAdminView;
+import project.GUI.Doctor.General.StartDoctorView;
+import project.GUI.Patient.General.StartPatientView;
 import project.Logic.DBQuerys;
 import project.Logic.LogInHandler;
 

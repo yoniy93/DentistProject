@@ -1,4 +1,4 @@
-package project.GUI.Doctor;
+package project.GUI.Doctor.General;
 import project.Entities.Doctor;
 
 
