@@ -7,6 +7,8 @@ import java.util.Vector;
 
 public class RegisterView extends JFrame
 {
+    ImageIcon bgImage=new ImageIcon(this.getClass().getResource("p1.jpg"));
+    private JLabel image=new JLabel(bgImage);
     private CancleButton cancleButton = new CancleButton();
     private JButton addUserButton = new JButton("Submit");
     private JLabel roleLabel = new JLabel( "What is the user's role?");
@@ -143,12 +145,14 @@ public class RegisterView extends JFrame
         addUserButton.setBounds(200,600,150,30);
         cancleButton.setLocation(400,600,150,30);
 
+        image.setBounds(300,20,800,700);
     }
 
 
 
     private void addComponentsToFrame()
     {
+        add(image);
         add(addUserButton);
         add(dayLabel);
         add(yearLabel);

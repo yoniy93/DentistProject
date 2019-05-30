@@ -7,8 +7,9 @@ import java.awt.*;
 
 public class ClinicInfoView extends JFrame {
 
-
-    private JLabel clinicNameLabler = new JLabel( "מרפאת שיניים חולון");
+    ImageIcon bgImage=new ImageIcon(this.getClass().getResource("p1.jpg"));
+    private JLabel image=new JLabel(bgImage);
+    private JLabel clinicNameLable = new JLabel( "מרפאת שיניים ");
     private JLabel openningHoursLable = new JLabel( "שעות פתיחה:");
     private JLabel phoneNumberLable = new JLabel( "טלפונים:");
     private JLabel addressLabel = new JLabel( "כתובת:");
@@ -27,8 +28,8 @@ public class ClinicInfoView extends JFrame {
     }
 
     private void setLocationAndSize(){
-        clinicNameLabler.setFont(new Font("Tahoma", Font.BOLD , 10));
-        clinicNameLabler.setBounds(250, 50, 100, 100);
+        clinicNameLable.setFont(new Font("Tahoma", Font.BOLD , 10));
+        clinicNameLable.setBounds(250, 50, 100, 100);
 
         openningHoursLable.setFont(new Font("Tahoma", Font.BOLD, 10));
         openningHoursLable.setBounds(250,100,70,20);
@@ -40,11 +41,13 @@ public class ClinicInfoView extends JFrame {
         addressLabel.setBounds(200,250,70,10);
 
         cancleButton.setLocation(220,400,100,30);
+
+        image.setBounds(300,300,600,500);
     }
 
     private void addComponentsToFrame(){
-
-        add(clinicNameLabler);
+        add(image);
+        add(clinicNameLable);
         add(cancleButton);
         add(addressLabel);
         add(phoneNumberLable);
@@ -52,8 +55,8 @@ public class ClinicInfoView extends JFrame {
 
     }
 
-    public JLabel getClinicNameLabler() {
-        return clinicNameLabler;
+    public JLabel getClinicNameLable() {
+        return clinicNameLable;
     }
 
     public JLabel getOpenningHoursLable() {
