@@ -7,8 +7,6 @@ import java.awt.*;
 
 public class ClinicInfoView extends JFrame {
 
-    ImageIcon bgImage=new ImageIcon(this.getClass().getResource("p1.jpg"));
-    private JLabel image=new JLabel(bgImage);
     private JLabel clinicNameLable = new JLabel( "מרפאת שיניים ");
     private JLabel openningHoursLable = new JLabel( "שעות פתיחה:");
     private JLabel phoneNumberLable = new JLabel( "טלפונים:");
@@ -42,11 +40,11 @@ public class ClinicInfoView extends JFrame {
 
         cancleButton.setLocation(220,400,100,30);
 
-        image.setBounds(300,300,600,500);
+
     }
 
     private void addComponentsToFrame(){
-        add(image);
+
         add(clinicNameLable);
         add(cancleButton);
         add(addressLabel);
