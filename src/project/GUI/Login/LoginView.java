@@ -26,7 +26,7 @@ public class LoginView extends JFrame {
         addComponentsToFrame();
 
 
-        setTitle("Login Form");
+        setTitle("Login");
         setBounds(500, 100, 370, 550);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setResizable(false);
