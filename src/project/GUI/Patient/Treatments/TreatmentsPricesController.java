@@ -5,7 +5,6 @@ import project.Database.DBQuerys;
 
 public class TreatmentsPricesController
 {
-    DBQuerys dbQuerys=new DBQuerys();
     TreatmentsPricesView treatmentsPricesView;
     TreatmentsPricesModel treatmentsPricesModel;
     TreatmentsPricesController(TreatmentsPricesModel treatmentsPricesModel,TreatmentsPricesView treatmentsPricesView)

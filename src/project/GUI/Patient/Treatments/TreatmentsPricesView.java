@@ -1,5 +1,6 @@
 package project.GUI.Patient.Treatments;
 
+import project.Database.Locations;
 import project.Entities.Treatments;
 import project.Database.DBQuerys;
 
@@ -11,6 +12,10 @@ public class TreatmentsPricesView extends JFrame {
     private DBQuerys dbQuerys=new DBQuerys();
     private Vector<Treatments> treatmentsVector=dbQuerys.getTreatments();
     private String [] treatmentsName;
+
+    private ImageIcon imageForBG=new ImageIcon(Locations.getImagePath("FILENAME!!!!"));
+    private JLabel backGround=new JLabel(imageForBG);
+
     private JComboBox treatmentList;
     private JLabel treatmentPrices= new JLabel(" ");
 
@@ -34,12 +39,15 @@ public class TreatmentsPricesView extends JFrame {
     {
         treatmentList.setBounds(300, 200, 200, 30);
         treatmentPrices.setBounds(250, 200, 200 , 30);
+        backGround.setBounds(0,0,600,600);
     }
+
 
     private void addComponentsToFrame()
     {
         add(treatmentList);
         add(treatmentPrices);
+        add(backGround);
 
     }
 

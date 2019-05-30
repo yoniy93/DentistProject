@@ -19,11 +19,13 @@ public class PatientView extends PersonView {
     private void setLocationAndSize(){
         setAnAppointment.setBounds(150, 220, 150, 30);
         viewTreatments.setBounds(150,430,150,30);
+        getBackGround().setBounds(0,0,800,600);
     }
 
     private void addComponentsToFrame(){
         add(setAnAppointment);
         add(viewTreatments);
+        add(getBackGround());
     }
 
     public JButton getSetAnAppointment() {

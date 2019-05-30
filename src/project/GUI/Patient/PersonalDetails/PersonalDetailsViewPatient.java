@@ -25,6 +25,7 @@ public class PersonalDetailsViewPatient extends PersonalDetailsView {
 
         heightTextField.setBounds(170, 200, 150, 30);
         weightTextFiled.setBounds(170, 240, 150, 30);
+        getBackGround().setBounds(0,0,400,500);
     }
 
     private void addComponentsToFrame() {
@@ -33,6 +34,8 @@ public class PersonalDetailsViewPatient extends PersonalDetailsView {
 
         add(heightTextField);
         add(weightTextFiled);
+
+        add(getBackGround());
     }
 
     public JTextField getHeightTextField() {

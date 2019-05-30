@@ -1,16 +1,19 @@
 package project.GUI.General;
 
+import project.Database.Locations;
+
 import javax.swing.*;
 import java.awt.*;
 
 public abstract class PersonView extends JFrame {
 
+    private ImageIcon imageForBG=new ImageIcon(Locations.getImagePath("adminGeneral.jpg"));
+    private JLabel backGround=new JLabel(imageForBG);
 
     private JButton logoutButton = new JButton("Logout");
     private JButton editPersonalDetails = new JButton("Edit personal details");
     private JButton viewClinicStaffInfo = new JButton("View Clinic Staff Information");
     private JButton viewClinicDetails = new JButton("View Clinic Information ");
-
 
     public PersonView(){
         setLayout(null);
@@ -23,9 +26,7 @@ public abstract class PersonView extends JFrame {
         setVisible(true);
     }
 
-    public PersonView getPersonView() {
-        return this;
-    }
+
 
     private void setLocationAndSize() {
         logoutButton.setBounds(10, 10, 100, 30);
@@ -35,8 +36,6 @@ public abstract class PersonView extends JFrame {
         viewClinicStaffInfo.setFont(new Font("Ariel", Font.BOLD, 14));
         viewClinicDetails.setBounds(100,430,230,50);
         viewClinicDetails.setFont(new Font("Ariel", Font.BOLD, 14));
-
-
     }
 
     private void addComponentsToFrame() {
@@ -44,7 +43,6 @@ public abstract class PersonView extends JFrame {
         add(editPersonalDetails);
         add(viewClinicStaffInfo);
         add(viewClinicDetails);
-
     }
 
     public JButton getViewClinicDetails() {
@@ -61,4 +59,19 @@ public abstract class PersonView extends JFrame {
     public JButton getEditPersonalDetails() {
         return editPersonalDetails;
     }
+    public void setImageForBG(ImageIcon imageForBG) {
+        this.imageForBG = imageForBG;
+    }
+
+    public JLabel getBackGround() {
+        return backGround;
+    }
+
+    public void setBackGround(JLabel backGround) {
+        this.backGround = backGround;
+    }
+    public PersonView getPersonView() {
+        return this;
+    }
+
 }

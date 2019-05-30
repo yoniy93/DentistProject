@@ -1,7 +1,6 @@
 package project.GUI.General;
 
 import project.Database.Locations;
-import project.GUI.General.CancleButton;
 
 import java.awt.Font;
 import javax.swing.*;
@@ -9,7 +8,8 @@ import javax.swing.*;
 public class PersonalDetailsView extends JFrame {
 
     private ImageIcon imageForBG=new ImageIcon(Locations.getImagePath("editDetails.jpg"));
-    private JLabel backGround=new JLabel(imageForBG);
+    private JLabel backGround =new JLabel(imageForBG);
+
     private JButton editButton = new JButton("Apply");
     private CancleButton cancelButton = new CancleButton();
     private JLabel firstnameLabel = new JLabel("First Name: ");
@@ -98,5 +98,8 @@ public class PersonalDetailsView extends JFrame {
 
     public JPasswordField getPasswordField() {
         return passwordField;
+    }
+    public JLabel getBackGround() {
+        return backGround;
     }
 }

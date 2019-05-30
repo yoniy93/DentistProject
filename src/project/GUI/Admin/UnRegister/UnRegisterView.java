@@ -1,5 +1,6 @@
 package project.GUI.Admin.UnRegister;
 
+import project.Database.Locations;
 import project.GUI.General.CancleButton;
 
 import javax.swing.*;
@@ -7,6 +8,9 @@ import java.awt.*;
 
 public class UnRegisterView extends JFrame
 {
+    private ImageIcon imageForBG=new ImageIcon(Locations.getImagePath("FileNAME!!!"));
+    private JLabel backGround=new JLabel(imageForBG);
+
     private JButton submit = new JButton("SUBMIT");
     private JTextField idTextField = new JTextField();
     private JLabel idLabel = new JLabel("Enter id of user :");
@@ -34,6 +38,8 @@ public class UnRegisterView extends JFrame
 
         submit.setBounds(100,100,120,30);
         cancleButton.setLocation(240,100,120,30);
+
+        backGround.setBounds(0,0,450,200);
     }
 
     private void addComponentsToFrame()
@@ -42,6 +48,7 @@ public class UnRegisterView extends JFrame
         add(idTextField);
         add(submit);
         add(cancleButton);
+        add(backGround);
     }
 
     public JButton getSubmit() {

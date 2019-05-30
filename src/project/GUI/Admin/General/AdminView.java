@@ -8,8 +8,7 @@ import java.awt.*;
 
 public class AdminView extends PersonView {
 
-    private ImageIcon imageForBG=new ImageIcon(Locations.getImagePath("adminGeneral.jpg"));
-    private JLabel backGround=new JLabel(imageForBG);
+
     private JButton registerNewUser = new JButton("Register new user ");
     private JButton unRegisterNewUser= new JButton("Unregister exciting user ");
 
@@ -17,7 +16,6 @@ public class AdminView extends PersonView {
     {
         setLocationAndSize();
         addComponentsToFrame();
-
         setTitle("WELCOME ADMIN");
     }
 
@@ -26,13 +24,13 @@ public class AdminView extends PersonView {
         registerNewUser.setFont(new Font("Ariel", Font.BOLD, 14));
         unRegisterNewUser.setBounds(100, 220,   230, 50);
         unRegisterNewUser.setFont(new Font("Ariel", Font.BOLD, 14));
-        backGround.setBounds(0,0,800,600);
+        getBackGround().setBounds(0,0,800,600);
     }
 
     private void addComponentsToFrame(){
         add(unRegisterNewUser);
         add(registerNewUser);
-        add(backGround);
+        add(getBackGround());
     }
 
     public JButton getRegisterNewUser() { return registerNewUser; }

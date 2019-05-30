@@ -1,4 +1,5 @@
 package project.GUI.Admin.Register;
+import project.Database.Locations;
 import project.GUI.General.CancleButton;
 
 import javax.swing.*;
@@ -7,6 +8,8 @@ import java.util.Vector;
 
 public class RegisterView extends JFrame
 {
+    private ImageIcon imageForBG=new ImageIcon(Locations.getImagePath("registerUser.png"));
+    private JLabel backGround=new JLabel(imageForBG);
 
     private CancleButton cancleButton = new CancleButton();
     private JButton addUserButton = new JButton("Submit");
@@ -145,13 +148,14 @@ public class RegisterView extends JFrame
         addUserButton.setBounds(200,600,150,30);
         cancleButton.setLocation(400,600,150,30);
 
+        backGround.setBounds(0,0,800,700);
 
     }
 
 
 
-    private void addComponentsToFrame()
-    {
+    private void addComponentsToFrame() {
+
 
         add(addUserButton);
         add(dayLabel);
@@ -195,6 +199,8 @@ public class RegisterView extends JFrame
         add(monthBox);
         monthBox.setSelectedIndex(0);
         add(cancleButton);
+
+        add(backGround);
 
     }
 

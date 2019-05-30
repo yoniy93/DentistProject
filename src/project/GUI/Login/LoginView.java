@@ -50,7 +50,6 @@ public class LoginView extends JFrame {
         notLoginMessage.setFont(new Font("Tahoma",Font.BOLD,11));
         copyrights.setBounds(140,480,100,30);
         copyrights.setFont(new Font("Tahoma",Font.PLAIN,9));
-
     }
 
     private void addComponentsToFrame() {

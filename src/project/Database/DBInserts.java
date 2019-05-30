@@ -3,10 +3,10 @@ package project.Database;
 public class DBInserts extends DBInitializer {
 
     public void insertInitialData(){
-        insertForAdmin("1", "1", "אדמין", "Admin", "admin@gmail.com", "01-01-2000", "זכר");
-        insertForDoctor("2", "1", "עמית", "אפללו", "amit@gmail.com", "13-05-1993", "נקבה", 3);
-        insertForPatient("3", "1", "יונתן", "ירדני", "yoni@gmail.com", 60.5, 178, "13-05-1993", "זכר");
-        insertForPatient("4", "1", "אופיר", "גן", "offirgan@gmail.com", 56.5, 170, "04-09-1992", "Male");
+        insertForAdmin("1", "1", "Admin", "Admin", "admin@gmail.com", "01-01-2000", "male");
+        insertForDoctor("2", "1", "Amit", "Aflalo", "amit@gmail.com", "13-05-1993", "female", 3);
+        insertForPatient("3", "1", "Yonatan", "Yardeni", "yoni@gmail.com", 60.5, 178, "13-05-1993", "male");
+        insertForPatient("4", "1", "Ofir", "Gan", "offirgan@gmail.com", 56.5, 170, "04-09-1992", "male");
         insertTreatment(2, "סתימה", 60, 99);
         insertTreatment(3, "גשר", 90, 150);
         insertTreatment(4, "הלבנה", 60, 69.9);

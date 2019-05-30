@@ -1,11 +1,15 @@
 package project.GUI.Clinic.Info;
 
+import project.Database.Locations;
 import project.GUI.General.CancleButton;
 
 import javax.swing.*;
 import java.awt.*;
 
 public class ClinicInfoView extends JFrame {
+
+    private ImageIcon imageForBG=new ImageIcon(Locations.getImagePath("FileNAME!!!"));
+    private JLabel backGround=new JLabel(imageForBG);
 
     private String[][] tableData = {
             {"Days:", "Hours:"},
@@ -62,6 +66,7 @@ public class ClinicInfoView extends JFrame {
         hoursTable.getColumnModel().getColumn(1).setPreferredWidth(150);
 
         cancleButton.setLocation(220,400,20,30);
+        backGround.setBounds(0,0,600,500);
     }
 
     private void addComponentsToFrame(){
@@ -72,6 +77,7 @@ public class ClinicInfoView extends JFrame {
         add(addressLabel);
         add(phoneNumberLable);
         add(openningHoursLable);
+        add(backGround);
 
     }
 
