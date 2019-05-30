@@ -1,5 +1,6 @@
 package project.GUI.General;
 
+import project.Database.Locations;
 import project.GUI.General.CancleButton;
 
 import java.awt.Font;
@@ -7,7 +8,7 @@ import javax.swing.*;
 
 public class PersonalDetailsView extends JFrame {
 
-    private ImageIcon imageForBG=new ImageIcon(this.getClass().getResource("image1.jpg"));
+    private ImageIcon imageForBG=new ImageIcon(Locations.getImagePath("editDetails.jpg"));
     private JLabel backGround=new JLabel(imageForBG);
     private JButton editButton = new JButton("Apply");
     private CancleButton cancelButton = new CancleButton();

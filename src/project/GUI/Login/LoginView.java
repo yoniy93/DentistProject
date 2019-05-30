@@ -1,11 +1,13 @@
 package project.GUI.Login;
 
+import project.Database.Locations;
+
 import javax.swing.*;
 import java.awt.*;
 
 public class LoginView extends JFrame {
 
-    private ImageIcon imageForBG=new ImageIcon(this.getClass().getResource("pic3.jpg"));
+    private ImageIcon imageForBG=new ImageIcon(Locations.getImagePath("Login.jpg"));
     private JLabel backGround=new JLabel(imageForBG);
     private JLabel userLabel = new JLabel("ID:");
     private JLabel passwordLabel = new JLabel("PASSWORD:");

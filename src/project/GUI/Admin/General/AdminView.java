@@ -1,5 +1,6 @@
 package project.GUI.Admin.General;
 
+import project.Database.Locations;
 import project.GUI.General.PersonView;
 
 import javax.swing.*;
@@ -7,7 +8,7 @@ import java.awt.*;
 
 public class AdminView extends PersonView {
 
-    private ImageIcon imageForBG=new ImageIcon(this.getClass().getResource("image1.jpg"));
+    private ImageIcon imageForBG=new ImageIcon(Locations.getImagePath("adminGeneral.jpg"));
     private JLabel backGround=new JLabel(imageForBG);
     private JButton registerNewUser = new JButton("Register new user ");
     private JButton unRegisterNewUser= new JButton("Unregister exciting user ");

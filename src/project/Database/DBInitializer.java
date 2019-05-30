@@ -6,7 +6,7 @@ import java.sql.*;
 public class DBInitializer {
 
     public Connection connect() {
-        String url = DBLocation.getPath();
+        String url = Locations.getDatabasePath();
 
         Connection conn = null;
         try {
@@ -19,7 +19,7 @@ public class DBInitializer {
 
     public static void createNewDatabase() {
 
-        String url = DBLocation.getPath();
+        String url = Locations.getDatabasePath();
 
         try (Connection conn = DriverManager.getConnection(url)) {
             if (conn != null) {
@@ -34,7 +34,7 @@ public class DBInitializer {
     }
 
     private static boolean isDBExists() {
-        String s=DBLocation.getPath();
+        String s= Locations.getDatabasePath();
         String location = s.substring(s.lastIndexOf(':') + 1).trim();
         File file=new File(location);
         return file.exists();
@@ -60,7 +60,7 @@ public class DBInitializer {
 
         String url,sql,sql1,sql2,sql3,sql4,sql5,sql6;
 
-        url = DBLocation.getPath();
+        url = Locations.getDatabasePath();
 
         sql = "CREATE TABLE IF NOT EXISTS users (id text PRIMARY KEY, password text NOT NULL, firstname text NOT NULL," +
                 "lastname text NOT NULL, email text NOT NULL, weight double, height integer, birthdate date NOT NULL, userRole text," +
