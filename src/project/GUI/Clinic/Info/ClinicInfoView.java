@@ -37,20 +37,28 @@ public class ClinicInfoView extends JFrame {
     }
 
     private void setLocationAndSize(){
-        clinicNameLable.setFont(new Font("Tahoma", Font.BOLD , 10));
-        clinicNameLable.setBounds(250, 50, 20, 10);
+        clinicNameLable.setHorizontalAlignment(SwingConstants.CENTER);
+        clinicNameLable.setFont(new Font("Tahoma", Font.BOLD, 26));
+        clinicNameLable.setBounds(116, 28, 348, 69);
 
-        openningHoursLable.setFont(new Font("Tahoma", Font.BOLD, 10));
-        openningHoursLable.setBounds(250,100,20,10);
+        openningHoursLable.setHorizontalAlignment(SwingConstants.RIGHT);
+        openningHoursLable.setFont(new Font("Tahoma", Font.BOLD, 16));
+        openningHoursLable.setBounds(372,131,114,40);
 
-        phoneNumberLable.setFont(new Font("Tahoma", Font.BOLD, 10));
-        phoneNumberLable.setBounds(200,100, 20,10);
+        phoneNumberLable.setHorizontalAlignment(SwingConstants.RIGHT);
+        phoneNumberLable.setFont(new Font("Tahoma", Font.BOLD, 16));
+        phoneNumberLable.setBounds(150,300, 114,40);
 
-        addressLabel.setFont(new Font("Tahoma",Font.BOLD,10));
-        addressLabel.setBounds(200,250,20,10);
+        addressLabel.setHorizontalAlignment(SwingConstants.RIGHT);
+        addressLabel.setFont(new Font("Tahoma", Font.BOLD, 16));
+        addressLabel.setBounds(150,180,114,40);
 
-        hoursTable.setBounds(1,1,1,1);
-        hoursTable.setSize(20,20);
+        hoursTable.setBounds(312, 229, 225, 80);
+        hoursTable.setFont(new Font("Tahoma", Font.BOLD, 11));
+        hoursTable.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
+        hoursTable.getColumnModel().getColumn(0).setPreferredWidth(40);
+        hoursTable.getColumnModel().getColumn(1).setPreferredWidth(40);
+        hoursTable.getColumnModel().getColumn(2).setPreferredWidth(40);
 
         cancleButton.setLocation(220,400,20,30);
     }
