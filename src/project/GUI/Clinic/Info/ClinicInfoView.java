@@ -7,10 +7,21 @@ import java.awt.*;
 
 public class ClinicInfoView extends JFrame {
 
+    private String[][] data = {
+            {"", "09:00-17:00", "א'"},
+            {"", "09:00-17:00", "ב'"},
+            {"חצי יום","08:00-15:00","ג'"},
+            {"","09:00-17:00","ד'" },
+            {"קבלת תורים בלבד","09:00-17:00","ה'"}
+    };
+
+    private String[] columnNames = { "הערות", "שעות פתיחה", "ימים" };
+
     private JLabel clinicNameLable = new JLabel( "מרפאת שיניים ");
     private JLabel openningHoursLable = new JLabel( "שעות פתיחה:");
     private JLabel phoneNumberLable = new JLabel( "טלפונים:");
     private JLabel addressLabel = new JLabel( "כתובת:");
+    private JTable hoursTable = new JTable(data,columnNames);
     CancleButton cancleButton=new CancleButton();
 
     public ClinicInfoView() {
@@ -27,29 +38,31 @@ public class ClinicInfoView extends JFrame {
 
     private void setLocationAndSize(){
         clinicNameLable.setFont(new Font("Tahoma", Font.BOLD , 10));
-        clinicNameLable.setBounds(250, 50, 100, 100);
+        clinicNameLable.setBounds(250, 50, 20, 10);
 
         openningHoursLable.setFont(new Font("Tahoma", Font.BOLD, 10));
-        openningHoursLable.setBounds(250,100,70,20);
+        openningHoursLable.setBounds(250,100,20,10);
 
         phoneNumberLable.setFont(new Font("Tahoma", Font.BOLD, 10));
-        phoneNumberLable.setBounds(200,100, 70,20);
+        phoneNumberLable.setBounds(200,100, 20,10);
 
         addressLabel.setFont(new Font("Tahoma",Font.BOLD,10));
-        addressLabel.setBounds(200,250,70,10);
+        addressLabel.setBounds(200,250,20,10);
 
-        cancleButton.setLocation(220,400,100,30);
+        hoursTable.setBounds(1,1,1,1);
+        hoursTable.setSize(20,20);
 
-
+        cancleButton.setLocation(220,400,20,30);
     }
 
     private void addComponentsToFrame(){
 
+        add(hoursTable);
         add(clinicNameLable);
         add(cancleButton);
         add(addressLabel);
         add(phoneNumberLable);
-
+        add(openningHoursLable);
 
     }
 
