@@ -7,6 +7,8 @@ import javax.swing.*;
 
 public class PersonalDetailsView extends JFrame {
 
+    private ImageIcon imageForBG=new ImageIcon(this.getClass().getResource("image1.jpg"));
+    private JLabel backGround=new JLabel(imageForBG);
     private JButton editButton = new JButton("Apply");
     private CancleButton cancelButton = new CancleButton();
     private JLabel firstnameLabel = new JLabel("First Name: ");
@@ -53,6 +55,8 @@ public class PersonalDetailsView extends JFrame {
         lastnameTextField.setBounds(170, 80, 150, 30);
         emailTextField.setBounds(170, 120, 150, 30);
         passwordField.setBounds(170, 160, 150, 30);
+
+        backGround.setBounds(0,0,400,500);
     }
 
     private void addComponentsToFrame(){
@@ -68,6 +72,7 @@ public class PersonalDetailsView extends JFrame {
         add(firstnameTextField);
         add(emailTextField);
         add(passwordField);
+        add(backGround);
     }
 
     public JButton getEditButton() {
