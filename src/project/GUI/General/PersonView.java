@@ -4,10 +4,11 @@ import javax.swing.*;
 
 public abstract class PersonView extends JFrame {
 
+
     private JButton logoutButton = new JButton("Logout");
     private JButton editPersonalDetails = new JButton("Edit personal details");
     private JButton viewClinicStaffInfo = new JButton("View Clinic Staff Information: ");
-    private JButton viewClinicDetails = new JButton("הצג פרטי מרפאה");
+    private JButton viewClinicDetails = new JButton("View Clinic Information: ");
 
 
     public PersonView(){
