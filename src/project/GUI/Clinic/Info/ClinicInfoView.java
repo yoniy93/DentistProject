@@ -7,21 +7,22 @@ import java.awt.*;
 
 public class ClinicInfoView extends JFrame {
 
-    private String[][] data = {
-            {"", "09:00-17:00", "א'"},
-            {"", "09:00-17:00", "ב'"},
-            {"חצי יום","08:00-15:00","ג'"},
-            {"","09:00-17:00","ד'" },
-            {"קבלת תורים בלבד","09:00-17:00","ה'"}
+    private String[][] tableData = {
+            {"Days:", "Hours:"},
+            {"Sunday", "09:00 - 17:00"},
+            {"Monday", "09:00 - 17:00"},
+            {"Tuesday", "09:00 - 17:00"},
+            {"Wednesday", "08:00 - 15:00"},
+            {"Thursday", "09:00 - 17:00"},
     };
 
-    private String[] columnNames = { "הערות", "שעות פתיחה", "ימים" };
+    private String[] columnNames = { "Days:", "Hours:" };
 
     private JLabel clinicNameLable = new JLabel( "מרפאת שיניים ");
     private JLabel openningHoursLable = new JLabel( "שעות פתיחה:");
     private JLabel phoneNumberLable = new JLabel( "טלפונים:");
     private JLabel addressLabel = new JLabel( "כתובת:");
-    private JTable hoursTable = new JTable(data,columnNames);
+    private JTable hoursTable = new JTable(tableData,columnNames);
     CancleButton cancleButton=new CancleButton();
 
     public ClinicInfoView() {
@@ -53,12 +54,12 @@ public class ClinicInfoView extends JFrame {
         addressLabel.setFont(new Font("Tahoma", Font.BOLD, 16));
         addressLabel.setBounds(150,180,114,40);
 
-        hoursTable.setBounds(312, 229, 225, 80);
-        hoursTable.setFont(new Font("Tahoma", Font.BOLD, 11));
+        hoursTable.setBounds(300, 200, 230, 120);
+        hoursTable.setFont(new Font("Tahoma", Font.BOLD, 16));
         hoursTable.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
-        hoursTable.getColumnModel().getColumn(0).setPreferredWidth(40);
-        hoursTable.getColumnModel().getColumn(1).setPreferredWidth(40);
-        hoursTable.getColumnModel().getColumn(2).setPreferredWidth(40);
+        hoursTable.setRowHeight(20);
+        hoursTable.getColumnModel().getColumn(0).setPreferredWidth(120);
+        hoursTable.getColumnModel().getColumn(1).setPreferredWidth(150);
 
         cancleButton.setLocation(220,400,20,30);
     }
