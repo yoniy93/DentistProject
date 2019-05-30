@@ -32,8 +32,6 @@ public class LoginView extends JFrame {
         setVisible(true);
     }
 
-
-
     private void setLocationAndSize() {
         userLabel.setBounds(50, 150, 100, 30);
         userLabel.setFont(new Font("Tahoma", Font.BOLD, 14));
