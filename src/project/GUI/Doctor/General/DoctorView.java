@@ -1,13 +1,14 @@
 package project.GUI.Doctor.General;
 
+import project.Database.Locations;
 import project.GUI.General.PersonView;
 import javax.swing.*;
 
 public class DoctorView extends PersonView {
 
-    private ImageIcon imageForBG=new ImageIcon(this.getClass().getResource("image1.jpg"));
+    private ImageIcon imageForBG=new ImageIcon(Locations.getImagePath("Doctor.jpg"));
     private JLabel backGround=new JLabel(imageForBG);
-    private JButton enterShifts = new JButton("Manage your Shift");;
+    private JButton enterShifts = new JButton("Manage your Shift");
 
     public DoctorView()
     {
