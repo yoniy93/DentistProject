@@ -8,22 +8,20 @@ import java.awt.*;
 
 public class AdminView extends PersonView {
 
-
     private JButton registerNewUser = new JButton("Register new user ");
     private JButton unRegisterNewUser= new JButton("Unregister exciting user ");
 
-    public AdminView()
-    {
+    public AdminView() {
         setLocationAndSize();
         addComponentsToFrame();
-        setTitle("WELCOME ADMIN");
+        setTitle("Welcome Admin");
     }
 
     private void setLocationAndSize(){
         registerNewUser.setBounds(100, 150, 230, 50);
-        registerNewUser.setFont(new Font("Ariel", Font.BOLD, 14));
+        registerNewUser.setFont(getButtonFont());
         unRegisterNewUser.setBounds(100, 220,   230, 50);
-        unRegisterNewUser.setFont(new Font("Ariel", Font.BOLD, 14));
+        unRegisterNewUser.setFont(getButtonFont());
         getBackGround().setBounds(0,0,800,600);
     }
 
@@ -33,7 +31,11 @@ public class AdminView extends PersonView {
         add(getBackGround());
     }
 
-    public JButton getRegisterNewUser() { return registerNewUser; }
+    public JButton getRegisterNewUser() {
+        return registerNewUser;
+    }
 
-    public JButton getUnRegisterNewUser() { return unRegisterNewUser; }
+    public JButton getUnRegisterNewUser() {
+        return unRegisterNewUser;
+    }
 }

@@ -13,5 +13,4 @@ public class CancleButton extends JButton {
         setFont(new Font("Tahoma", Font.PLAIN, 14));
         setBounds(x, y, w, h);
     }
-
 }

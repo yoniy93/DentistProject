@@ -1,7 +1,6 @@
 package project.GUI.General;
 
 import project.Database.Locations;
-
 import java.awt.Font;
 import javax.swing.*;
 
@@ -73,6 +72,7 @@ public class PersonalDetailsView extends JFrame {
         add(firstnameTextField);
         add(emailTextField);
         add(passwordField);
+
         add(backGround);
     }
 
