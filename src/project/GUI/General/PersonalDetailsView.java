@@ -21,6 +21,8 @@ public class PersonalDetailsView extends JFrame {
     private JTextField emailTextField = new JTextField();
     private JPasswordField passwordField  = new JPasswordField();
 
+    private Font buttonFont = new Font("Ariel",Font.PLAIN,14);
+
     public PersonalDetailsView() {
         setLayout(null);
         setLocationAndSize();
@@ -34,21 +36,21 @@ public class PersonalDetailsView extends JFrame {
     }
 
     private void setLocationAndSize(){
-        editButton.setFont(new Font("Tahoma", Font.PLAIN , 14));
+        editButton.setFont(buttonFont);
         editButton.setBounds(80, 400, 100, 30);
 
         cancelButton.setLocation(220,400,100,30);
 
-        firstnameLabel.setFont(new Font("Tahoma", Font.BOLD, 14));
+        firstnameLabel.setFont(buttonFont);
         firstnameLabel.setBounds(60, 40, 100, 30);
 
-        lastnameLabel.setFont(new Font("Tahoma", Font.BOLD, 14));
+        lastnameLabel.setFont(buttonFont);
         lastnameLabel.setBounds(60, 80, 100, 30);
 
-        emailLabel.setFont(new Font("Tahoma", Font.BOLD, 14));
+        emailLabel.setFont(buttonFont);
         emailLabel.setBounds(60, 120, 100, 30);
 
-        passwordLabel.setFont(new Font("Tahoma", Font.BOLD, 14));
+        passwordLabel.setFont(buttonFont);
         passwordLabel.setBounds(60, 160, 100, 30);
 
         firstnameTextField.setBounds(170, 40, 150, 30);
@@ -101,5 +103,9 @@ public class PersonalDetailsView extends JFrame {
     }
     public JLabel getBackGround() {
         return backGround;
+    }
+
+    public Font getButtonFont() {
+        return buttonFont;
     }
 }

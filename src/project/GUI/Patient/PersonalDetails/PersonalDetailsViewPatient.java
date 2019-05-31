@@ -17,10 +17,10 @@ public class PersonalDetailsViewPatient extends PersonalDetailsView {
     }
 
     private void setLocationAndSize() {
-        heightLabel.setFont(new Font("Tahoma", Font.BOLD, 14));
+        heightLabel.setFont(getButtonFont());
         heightLabel.setBounds(60, 200, 100, 30);
 
-        weightLabel.setFont(new Font("Tahoma", Font.BOLD, 14));
+        weightLabel.setFont(getButtonFont());
         weightLabel.setBounds(60, 240, 100, 30);
 
         heightTextField.setBounds(170, 200, 150, 30);
