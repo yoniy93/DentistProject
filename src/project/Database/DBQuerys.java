@@ -21,7 +21,8 @@ public class DBQuerys extends DBInitializer {
 
             return new Admin(id,rs.getString("password"),
                     rs.getString("firstname"), rs.getString("lastname"),
-                    rs.getString("email"), date, rs.getString("gender"));
+                    rs.getString("email"), date, rs.getString("gender"),
+                    rs.getString("phoneNumber"));
         } catch (SQLException | ParseException e) {
             System.out.println(e.getMessage());
         }
@@ -40,7 +41,8 @@ public class DBQuerys extends DBInitializer {
             return new Doctor(id,rs.getString("password"),
                     rs.getString("firstname"), rs.getString("lastname"),
                     rs.getString("email"), date, rs.getInt("yearOfExperiens"),
-                    rs.getString("gender"));
+                    rs.getString("gender"),
+                    rs.getString("phoneNumber"));
 
         } catch (SQLException | ParseException e) {
             System.out.println(e.getMessage());
@@ -61,7 +63,8 @@ public class DBQuerys extends DBInitializer {
                     id, rs.getString("password"), rs.getString("firstname"),
                     rs.getString("lastname"), rs.getString("email"),
                     rs.getInt("weight"), rs.getInt("height"),
-                    date, rs.getString("gender"));
+                    date, rs.getString("gender"),
+                    rs.getString("phoneNumber"));
 
         } catch (SQLException | ParseException e) {
             System.out.println(e.getMessage());
@@ -131,7 +134,8 @@ public class DBQuerys extends DBInitializer {
                         resultSet.getString("email"),
                         resultSet.getDate("dateOfBirth"),
                         resultSet.getInt("yearsOfExp"),
-                        resultSet.getString("gender")));
+                        resultSet.getString("gender"),
+                        resultSet.getString("phoneNumber")));
             }
             return doctors;
         } catch (SQLException e) {

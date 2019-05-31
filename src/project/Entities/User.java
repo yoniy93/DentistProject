@@ -4,6 +4,7 @@ package project.Entities;
 public abstract class User extends Person {
     private String password;
     private String email;
+    private String phoneNumber;
     private USER_TYPE userRole;
 
     public USER_TYPE getUserRole() {
@@ -29,7 +30,11 @@ public abstract class User extends Person {
     public void setEmail(String email) {
         this.email = email;
     }
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
 
-
-
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
 }

@@ -64,7 +64,7 @@ public class DBInitializer {
 
         sql = "CREATE TABLE IF NOT EXISTS users (id text PRIMARY KEY, password text NOT NULL, firstname text NOT NULL," +
                 "lastname text NOT NULL, email text NOT NULL, weight double, height integer, birthdate date NOT NULL, userRole text," +
-                "yearOfExperiens integer, gender text);";
+                "yearOfExperiens integer, gender text, phoneNumber text NOT NULL);";
 
         sql1 ="CREATE TABLE IF NOT EXISTS medical_equipment (id integer PRIMARY KEY NOT NULL, treatmentname text NOT NULL,"+
                 " expiredate date NOT NULL, quantity integer NOT NULL);";

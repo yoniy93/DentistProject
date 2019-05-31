@@ -39,24 +39,24 @@ public class RegisterController {
 
 
     private void addUserAction() {
-     if (isAllFieldsFilled()) {
-         if (registerView.getPatient().isSelected()) {
-             registerModel.dbInserts.insertForPatient
-                     (registerView.getIdTextFiled().getText(), getPassword(),
-                             registerView.getFirstnameTextField().getText(), registerView.getLastnameTextField().getText(),
-                             registerView.getEmailTextField().getText(), Double.parseDouble(registerView.getWeightTextField().getText()),
-                             Integer.parseInt(registerView.getHeightTextField().getText()), getDate(), convertGenderToString());
-         } else if (registerView.getDoctor().isSelected()) {
-             registerModel.dbInserts.insertForDoctor
-                     (registerView.getIdTextFiled().getText(), getPassword(),
-                             registerView.getFirstnameTextField().getText(), registerView.getLastnameTextField().getText(),
-                             registerView.getEmailTextField().getText(), getDate(), convertGenderToString(), Integer.parseInt(registerView.getYearsOfExTextField().getText()));
-         }
-         new ErrorWindow(registerView,"New use created successfully");
-         registerView.dispose();
-     }
-     else
-        new ErrorWindow(registerView,"Error: please fill all fields");
+//     if (isAllFieldsFilled()) {
+//         if (registerView.getPatient().isSelected()) {
+//             registerModel.dbInserts.insertForPatient
+//                     (registerView.getIdTextFiled().getText(), getPassword(),
+//                             registerView.getFirstnameTextField().getText(), registerView.getLastnameTextField().getText(),
+//                             registerView.getEmailTextField().getText(), Double.parseDouble(registerView.getWeightTextField().getText()),
+//                             Integer.parseInt(registerView.getHeightTextField().getText()), getDate(), convertGenderToString());
+//         } else if (registerView.getDoctor().isSelected()) {
+//             registerModel.dbInserts.insertForDoctor
+//                     (registerView.getIdTextFiled().getText(), getPassword(),
+//                             registerView.getFirstnameTextField().getText(), registerView.getLastnameTextField().getText(),
+//                             registerView.getEmailTextField().getText(), getDate(), convertGenderToString(), Integer.parseInt(registerView.getYearsOfExTextField().getText()));
+//         }
+//         new ErrorWindow(registerView,"New use created successfully");
+//         registerView.dispose();
+//     }
+//     else
+//        new ErrorWindow(registerView,"Error: please fill all fields");
     }
 
     private boolean isAllFieldsFilled() {
