@@ -34,7 +34,7 @@ public class AdminPersonalDetailsController
         admin.setFirstName(personalDetailsView.getFirstnameTextField().getText());
         admin.setLastName(personalDetailsView.getLastnameTextField().getText());
         admin.setEmail(personalDetailsView.getEmailTextField().getText());
-        admin.setPassword(personalDetailsView.getPasswordField().toString());
+        admin.setPassword(new String(personalDetailsView.getPasswordField().getPassword()));
         adminPersonalDetailsModel.UpdateAdmin(admin);
     }
 
