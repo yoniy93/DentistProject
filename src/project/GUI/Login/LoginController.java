@@ -1,6 +1,8 @@
 package project.GUI.Login;
 
 import javax.swing.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.sql.SQLException;
 
 public class LoginController {
@@ -23,8 +25,19 @@ public class LoginController {
                 ex.printStackTrace();
             }
         });
+        loginV.getClickHere().addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                super.mouseClicked(e);
+                showRegisterMsg();
+            }
+        });
         loginV.getShowPassword().addActionListener(e -> showPasswordAction());
         loginV.getClearButton().addActionListener(e -> clearAction());
+    }
+
+    private void showRegisterMsg() {
+        JOptionPane.showMessageDialog(loginV, "At this moment, registration is valid only via Admin.\nFeel free to contact us by mail for additional assistance.\n                 help@dentisitry.com");
     }
 
     public String getUser(){

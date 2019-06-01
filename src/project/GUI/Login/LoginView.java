@@ -16,7 +16,9 @@ public class LoginView extends JFrame {
     private JButton loginButton = new JButton("Login");
     private JButton clearButton = new JButton("Clear");
     private JCheckBox showPassword = new JCheckBox("Show Password");
-    private JLabel notLoginMessage =new JLabel("Not register? please contact the admin");
+    private JLabel notLoginMessage =new JLabel("Not register? Click");
+    private JLabel clickHere =new JLabel("<HTML><U>here</U></HTML>");
+    private Font font=new Font("Ariel",Font.BOLD,14);
     private JLabel copyrights = new JLabel("© all rights reserved");
 
     public LoginView() {
@@ -36,9 +38,9 @@ public class LoginView extends JFrame {
 
     private void setLocationAndSize() {
         userLabel.setBounds(50, 150, 100, 30);
-        userLabel.setFont(new Font("Tahoma", Font.BOLD, 14));
+        userLabel.setFont(this.font);
         passwordLabel.setBounds(50, 220, 100, 30);
-        passwordLabel.setFont(new Font("Tahoma", Font.BOLD, 14));
+        passwordLabel.setFont(this.font);
         userTextField.setBounds(150, 150, 150, 30);
         passwordField.setBounds(150, 220, 150, 30);
         showPassword.setBounds(150, 250, 150, 30);
@@ -46,15 +48,21 @@ public class LoginView extends JFrame {
         loginButton.setBounds(50, 300, 100, 30);
         clearButton.setBounds(200, 300, 100, 30);
         backGround.setBounds(0,0,370,550);
-        notLoginMessage.setBounds(70,340,250,30);
-        notLoginMessage.setFont(new Font("Tahoma",Font.BOLD,11));
+
+        notLoginMessage.setBounds(110,340,120,30);
+        notLoginMessage.setFont(new Font("Ariel",Font.BOLD,11));
+
+        clickHere.setBounds(217,340,40,30);
+        clickHere.setFont(new Font ("Ariel",Font.BOLD,11));
+
         copyrights.setBounds(140,480,100,30);
-        copyrights.setFont(new Font("Tahoma",Font.PLAIN,9));
+        copyrights.setFont(new Font("Ariel",Font.PLAIN,9));
     }
 
     private void addComponentsToFrame() {
         add(userLabel);
         add(notLoginMessage);
+        add(clickHere);
         add(passwordLabel);
         add(userTextField);
         add(passwordField);
@@ -116,4 +124,13 @@ public class LoginView extends JFrame {
     public void setCopyrights(JLabel copyrights) {
         this.copyrights = copyrights;
     }
+
+    public JLabel getClickHere() {
+        return clickHere;
+    }
+
+    public void setClickHere(JLabel clickHere) {
+        this.clickHere = clickHere;
+    }
+
 }
