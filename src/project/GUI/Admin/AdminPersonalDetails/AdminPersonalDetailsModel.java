@@ -5,8 +5,6 @@ import project.Database.DBUpdates;
 
 public class AdminPersonalDetailsModel
 {
-
-
     Admin admin;
 
     public AdminPersonalDetailsModel(Admin admin)
@@ -17,8 +15,8 @@ public class AdminPersonalDetailsModel
         return admin;
     }
 
-    public void UpdateAdmin(Admin a) {
-        DBUpdates databaseUpdates=new DBUpdates();
-        databaseUpdates.updateAdmin(a);
+    public void UpdateAdmin() {
+        DBUpdates databaseUpdates = new DBUpdates();
+        databaseUpdates.updateAdmin(admin);
     }
 }
