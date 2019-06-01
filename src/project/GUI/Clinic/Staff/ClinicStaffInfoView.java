@@ -7,7 +7,7 @@ import javax.swing.*;
 
 public class ClinicStaffInfoView extends JFrame {
 /*
-    private ImageIcon imageForBG=new ImageIcon(Locations.getImagePath("FileNAME!!!"));
+    private ImageIcon imageForBG=new ImageIcon(Locations.getImagePath("clinicInfo.png"));
     private JLabel backGround=new JLabel(imageForBG);
 
 
@@ -20,7 +20,7 @@ public class ClinicStaffInfoView extends JFrame {
         setLocationAndSize();
         addComponentsToFrame();
 
-        setBounds(500, 100, 800, 600);
+        setBounds(500, 100, 800, 500);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setResizable(false);
         setVisible(true);

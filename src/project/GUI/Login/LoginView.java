@@ -7,7 +7,7 @@ import java.awt.*;
 
 public class LoginView extends JFrame {
 
-    private ImageIcon imageForBG=new ImageIcon(Locations.getImagePath("Login.jpg"));
+    private ImageIcon imageForBG=new ImageIcon(Locations.getImagePath("login.png"));
     private JLabel backGround=new JLabel(imageForBG);
     private JLabel userLabel = new JLabel("ID:");
     private JLabel passwordLabel = new JLabel("PASSWORD:");

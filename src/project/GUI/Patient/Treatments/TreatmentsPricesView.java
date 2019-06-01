@@ -13,7 +13,7 @@ public class TreatmentsPricesView extends JFrame {
     private Vector<Treatments> treatmentsVector=dbQuerys.getTreatments();
     private String [] treatmentsName;
 
-    private ImageIcon imageForBG=new ImageIcon(Locations.getImagePath("FILENAME!!!!"));
+    private ImageIcon imageForBG=new ImageIcon(Locations.getImagePath("searchTreatments.png"));
     private JLabel backGround=new JLabel(imageForBG);
 
     private JComboBox treatmentList;
@@ -29,8 +29,8 @@ public class TreatmentsPricesView extends JFrame {
 
 
         setTitle("Search Your Treatment: ");
-        setBounds(300, 100, 600, 600);
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setBounds(300, 100, 700, 500);
+//        setDefaultCloseOperation(EXIT_ON_CLOSE);
         setResizable(false);
         setVisible(true);
     }
@@ -39,7 +39,7 @@ public class TreatmentsPricesView extends JFrame {
     {
         treatmentList.setBounds(300, 200, 200, 30);
         treatmentPrices.setBounds(250, 200, 200 , 30);
-        backGround.setBounds(0,0,600,600);
+        backGround.setBounds(0,0,700,500);
     }
 
 

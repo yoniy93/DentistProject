@@ -7,7 +7,7 @@ import java.awt.*;
 
 public abstract class PersonView extends JFrame {
 
-    private ImageIcon imageForBG=new ImageIcon(Locations.getImagePath("adminGeneral.jpg"));
+    private ImageIcon imageForBG=new ImageIcon(Locations.getImagePath("mainapp.png"));
     private JLabel backGround=new JLabel(imageForBG);
 
     private JButton logoutButton = new JButton("Logout");

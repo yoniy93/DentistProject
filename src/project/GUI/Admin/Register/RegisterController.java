@@ -1,6 +1,5 @@
 package project.GUI.Admin.Register;
 
-import project.GUI.General.ErrorWindow;
 
 import java.awt.*;
 

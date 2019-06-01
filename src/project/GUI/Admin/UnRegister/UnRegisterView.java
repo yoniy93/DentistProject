@@ -8,7 +8,7 @@ import java.awt.*;
 
 public class UnRegisterView extends JFrame
 {
-    private ImageIcon imageForBG=new ImageIcon(Locations.getImagePath("FileNAME!!!"));
+    private ImageIcon imageForBG=new ImageIcon(Locations.getImagePath("unregister.png"));
     private JLabel backGround=new JLabel(imageForBG);
 
     private JButton submit = new JButton("SUBMIT");

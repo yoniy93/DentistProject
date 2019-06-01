@@ -6,7 +6,7 @@ import javax.swing.*;
 
 public class PersonalDetailsView extends JFrame {
 
-    private ImageIcon imageForBG=new ImageIcon(Locations.getImagePath("editDetails.jpg"));
+    private ImageIcon imageForBG=new ImageIcon(Locations.getImagePath("personalDetails.png"));
     private JLabel backGround =new JLabel(imageForBG);
 
     private JButton editButton = new JButton("Apply");
@@ -29,7 +29,7 @@ public class PersonalDetailsView extends JFrame {
         addComponentsToFrame();
 
         setTitle("Edit Personal Details");
-        setBounds(300, 100, 400, 500);
+        setBounds(300, 100, 400, 400);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setResizable(false);
         setVisible(true);
@@ -37,9 +37,9 @@ public class PersonalDetailsView extends JFrame {
 
     private void setLocationAndSize(){
         editButton.setFont(buttonFont);
-        editButton.setBounds(80, 400, 100, 30);
+        editButton.setBounds(80, 300, 100, 30);
 
-        cancelButton.setLocation(220,400,100,30);
+        cancelButton.setLocation(220,300,100,30);
 
         firstnameLabel.setFont(buttonFont);
         firstnameLabel.setBounds(60, 40, 100, 30);
@@ -58,7 +58,7 @@ public class PersonalDetailsView extends JFrame {
         emailTextField.setBounds(170, 120, 150, 30);
         passwordField.setBounds(170, 160, 150, 30);
 
-        backGround.setBounds(0,0,400,500);
+        backGround.setBounds(0,0,400,400);
     }
 
     private void addComponentsToFrame(){

@@ -8,7 +8,7 @@ import java.util.Vector;
 
 public class RegisterView extends JFrame
 {
-    private ImageIcon imageForBG=new ImageIcon(Locations.getImagePath("registerUser.png"));
+    private ImageIcon imageForBG=new ImageIcon(Locations.getImagePath("register.png"));
     private JLabel backGround=new JLabel(imageForBG);
 
     private CancleButton cancleButton = new CancleButton();
