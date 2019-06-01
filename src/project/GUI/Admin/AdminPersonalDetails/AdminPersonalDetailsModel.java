@@ -8,6 +8,7 @@ public class AdminPersonalDetailsModel
 
 
     Admin admin;
+
     public AdminPersonalDetailsModel(Admin admin)
     {
         this.admin=admin;
