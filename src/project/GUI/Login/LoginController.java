@@ -37,7 +37,7 @@ public class LoginController {
     }
 
     private void showRegisterMsg() {
-        JOptionPane.showMessageDialog(loginV, "At this moment, registration is valid only via Admin.\nFeel free to contact us by mail for additional assistance.\n                    help@dentisitry.com");
+        JOptionPane.showMessageDialog(loginV, "\nAt this moment, registration is valid only via Admin.\nFeel free to contact us by mail for additional assistance.\n\n                      help@dentisitry.com");
     }
 
     public String getUser(){

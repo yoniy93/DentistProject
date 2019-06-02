@@ -35,7 +35,7 @@ public class ClinicInfoView extends JFrame {
         addComponentsToFrame();
 
         setTitle("מידע שימושי");
-        setBounds(300, 300, 800, 500);
+        setBounds(200, 200, 800, 500);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setResizable(false);
         setVisible(true);
@@ -65,7 +65,7 @@ public class ClinicInfoView extends JFrame {
         hoursTable.getColumnModel().getColumn(0).setPreferredWidth(120);
         hoursTable.getColumnModel().getColumn(1).setPreferredWidth(150);
 
-        cancleButton.setLocation(220,400,20,30);
+        cancleButton.setLocation(220,400,100,30);
         backGround.setBounds(0,0,800,500);
     }
 

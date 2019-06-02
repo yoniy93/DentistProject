@@ -30,12 +30,12 @@ public class AdminPersonalDetailsController
     }
     private void editButtonAction()
     {
-        Admin admin=adminPersonalDetailsModel.getAdmin();
+        Admin admin = adminPersonalDetailsModel.getAdmin();
         admin.setFirstName(personalDetailsView.getFirstnameTextField().getText());
         admin.setLastName(personalDetailsView.getLastnameTextField().getText());
         admin.setEmail(personalDetailsView.getEmailTextField().getText());
-        admin.setPassword(personalDetailsView.getPasswordField().toString());
-        adminPersonalDetailsModel.UpdateAdmin(admin);
+        admin.setPassword(new String(personalDetailsView.getPasswordField().getPassword()));
+        adminPersonalDetailsModel.UpdateAdmin();
     }
 
     private void  cancelAction()
