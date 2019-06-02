@@ -22,10 +22,10 @@ public class ClinicInfoView extends JFrame {
 
     private String[] columnNames = { "Days:", "Hours:" };
 
-    private JLabel clinicNameLable = new JLabel( "מרפאת שיניים ");
-    private JLabel openningHoursLable = new JLabel( "שעות פתיחה:");
-    private JLabel phoneNumberLable = new JLabel( "טלפונים:");
-    private JLabel addressLabel = new JLabel( "כתובת:");
+    private JLabel clinicNameLable = new JLabel( "Dentist Clinic: ");
+    private JLabel openningHoursLable = new JLabel( "Opening Hours: ");
+    private JLabel phoneNumberLable = new JLabel( "Phone Numbers: ");
+    private JLabel addressLabel = new JLabel( "Address: ");
     private JTable hoursTable = new JTable(tableData,columnNames);
     CancleButton cancleButton=new CancleButton();
 
@@ -43,23 +43,23 @@ public class ClinicInfoView extends JFrame {
 
     private void setLocationAndSize(){
         clinicNameLable.setHorizontalAlignment(SwingConstants.CENTER);
-        clinicNameLable.setFont(new Font("Tahoma", Font.BOLD, 26));
+        clinicNameLable.setFont(new Font("Ariel", Font.BOLD, 26));
         clinicNameLable.setBounds(116, 28, 348, 69);
 
         openningHoursLable.setHorizontalAlignment(SwingConstants.RIGHT);
-        openningHoursLable.setFont(new Font("Tahoma", Font.BOLD, 16));
-        openningHoursLable.setBounds(372,131,114,40);
+        openningHoursLable.setFont(new Font("Ariel", Font.BOLD, 16));
+        openningHoursLable.setBounds(20,130,150,40);
 
         phoneNumberLable.setHorizontalAlignment(SwingConstants.RIGHT);
-        phoneNumberLable.setFont(new Font("Tahoma", Font.BOLD, 16));
-        phoneNumberLable.setBounds(150,300, 114,40);
+        phoneNumberLable.setFont(new Font("Ariel", Font.BOLD, 16));
+        phoneNumberLable.setBounds(20,300, 150,40);
 
         addressLabel.setHorizontalAlignment(SwingConstants.RIGHT);
-        addressLabel.setFont(new Font("Tahoma", Font.BOLD, 16));
-        addressLabel.setBounds(150,180,114,40);
+        addressLabel.setFont(new Font("Ariel", Font.BOLD, 16));
+        addressLabel.setBounds(420,120,114,40);
 
-        hoursTable.setBounds(300, 200, 230, 120);
-        hoursTable.setFont(new Font("Tahoma", Font.BOLD, 16));
+        hoursTable.setBounds(180, 130, 230, 120);
+        hoursTable.setFont(new Font("Ariel", Font.BOLD, 16));
         hoursTable.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
         hoursTable.setRowHeight(20);
         hoursTable.getColumnModel().getColumn(0).setPreferredWidth(120);
