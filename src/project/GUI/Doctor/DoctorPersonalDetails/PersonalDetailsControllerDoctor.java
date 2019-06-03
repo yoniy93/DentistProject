@@ -36,7 +36,7 @@ public class PersonalDetailsControllerDoctor {
         doctor.setFirstName(pDetailsView.getFirstnameTextField().getText());
         doctor.setLastName(pDetailsView.getLastnameTextField().getText());
         doctor.setEmail(pDetailsView.getEmailTextField().getText());
-        doctor.setPassword(pDetailsView.getPasswordField().toString());
+        doctor.setPassword(new String(pDetailsView.getPasswordField().getPassword()));
         doctor.setYearsOfEx(Integer.parseInt(pDetailsView.getYearsOfExpTextField().getText()));
         pDetailsModel.UpdateDoctor(doctor);
         JOptionPane.showMessageDialog( pDetailsView,  "Details Updated");
