@@ -3,6 +3,8 @@ package project.GUI.Patient.PersonalDetails;
 import project.Entities.Doctor;
 import project.Entities.Patient;
 
+import javax.swing.*;
+
 public class PersonalDetailsControllerPatient {
 
     private PersonalDetailsViewPatient pDetailsView;
@@ -44,6 +46,8 @@ public class PersonalDetailsControllerPatient {
         patient.setHeight(Integer.parseInt(pDetailsView.getHeightTextField().getText()));
         patient.setWeight(Integer.parseInt(pDetailsView.getHeightTextField().getText()));
         pDetailsModel.UpdatePatient(patient);
+        JOptionPane.showMessageDialog( pDetailsView,  "Details Updated");
+        pDetailsView.dispose();
 
     }
 

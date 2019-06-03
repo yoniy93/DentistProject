@@ -3,6 +3,8 @@ package project.GUI.Admin.AdminPersonalDetails;
 import project.Entities.Admin;
 import project.GUI.General.PersonalDetailsView;
 
+import javax.swing.*;
+
 public class AdminPersonalDetailsController
 
 {
@@ -36,6 +38,8 @@ public class AdminPersonalDetailsController
         admin.setEmail(personalDetailsView.getEmailTextField().getText());
         admin.setPassword(new String(personalDetailsView.getPasswordField().getPassword()));
         adminPersonalDetailsModel.UpdateAdmin();
+        JOptionPane.showMessageDialog( personalDetailsView,  "Details Updated");
+        personalDetailsView.dispose();
     }
 
     private void  cancelAction()

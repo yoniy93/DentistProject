@@ -2,6 +2,8 @@ package project.GUI.Doctor.DoctorPersonalDetails;
 
 import project.Entities.Doctor;
 
+import javax.swing.*;
+
 public class PersonalDetailsControllerDoctor {
 
     private PersonalDetailsViewDoctor pDetailsView;
@@ -40,6 +42,8 @@ public class PersonalDetailsControllerDoctor {
         doctor.setPassword(pDetailsView.getPasswordField().toString());
         doctor.setYearsOfEx(Integer.parseInt(pDetailsView.getYearsOfExpTextField().getText()));
         pDetailsModel.UpdateDoctor(doctor);
+        JOptionPane.showMessageDialog( pDetailsView,  "Details Updated");
+        pDetailsView.dispose();
     }
 
     public void CancelAction() {
