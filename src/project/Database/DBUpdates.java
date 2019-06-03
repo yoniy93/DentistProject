@@ -32,7 +32,7 @@ public class DBUpdates extends DBInitializer {
     }
 
     public void deleteUserFromDB(String id) {
-        String sql="DELETE FROM users WHERE id="+id;
+        String sql="DELETE FROM users WHERE id='"+id+"';";
         connectAndExecute(sql);
     }
 }
