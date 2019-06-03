@@ -36,10 +36,6 @@ public class TreatmentsPricesView extends JFrame {
         add(backGround);
 
     }
-    public void addTreatmentList()
-    {
-        add(treatmentList);
-    }
 
     public JComboBox getTreatmentList() {
         return treatmentList;
