@@ -1,6 +1,8 @@
 package project.GUI.Patient.Treatments;
 
 import project.Database.Locations;
+import project.GUI.General.CancleButton;
+
 import javax.swing.*;
 
 public class TreatmentsPricesView extends JFrame {
@@ -10,6 +12,7 @@ public class TreatmentsPricesView extends JFrame {
     private JComboBox treatmentList;
     private JLabel treatmentPrices= new JLabel(" ");
     private JButton payForTreatment=new JButton("PAY");
+    private CancleButton cancel=new CancleButton();
 
     public TreatmentsPricesView(JComboBox treatmentList) {
         setLayout(null);
@@ -28,12 +31,14 @@ public class TreatmentsPricesView extends JFrame {
         treatmentList.setBounds(100, 400, 200, 30);
         treatmentPrices.setBounds(320, 400, 100 , 30);
         payForTreatment.setBounds(450,400,100,30);
+        cancel.setBounds(570,30,100,30);
         backGround.setBounds(0,0,700,500);
     }
 
 
     private void addComponentsToFrame() {
         add(payForTreatment);
+        add(cancel);
         payForTreatment.setVisible(false);
         add(treatmentList);
         add(treatmentPrices);
@@ -53,17 +58,13 @@ public class TreatmentsPricesView extends JFrame {
         treatmentPrices.setText((String)price);
     }
 
-    public void setTreatmentList(JComboBox treatmentList) {
-        this.treatmentList = treatmentList;
+    public void setTreatmentList(JComboBox treatmentList) { this.treatmentList = treatmentList; }
 
-    }
-
-    public JButton getPayForTreatment()
-    {
-        return payForTreatment;
-    }
+    public JButton getPayForTreatment() { return payForTreatment; }
     public void setPayForTreatment() {
          payForTreatment.setVisible(true);
     }
+    public CancleButton getCancel() { return cancel; }
+
 
 }

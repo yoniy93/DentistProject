@@ -19,7 +19,7 @@ public class TreatmentsPricesController
     private void addViewActionListeners() {
         treatmentsPricesView.getTreatmentList().addActionListener(e->treatmentListAction());
         treatmentsPricesView.getPayForTreatment().addActionListener(e->paymentAction());
-
+        treatmentsPricesView.getCancel().addActionListener(e->treatmentsPricesView.dispose());
     }
 
     private void paymentAction()

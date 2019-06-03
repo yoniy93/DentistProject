@@ -139,8 +139,6 @@ public class PaymentView extends JFrame {
         this.monthBox = monthBox;
     }
 
-    public CancleButton getCancel() {
-        return cancel;
-    }
+    public CancleButton getCancel() { return cancel; }
 
 }
