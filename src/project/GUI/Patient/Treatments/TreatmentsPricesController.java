@@ -1,6 +1,7 @@
 package project.GUI.Patient.Treatments;
 
 import project.Entities.Treatments;
+import project.GUI.Patient.Payment.StartPaymentView;
 
 import javax.swing.*;
 
@@ -17,9 +18,14 @@ public class TreatmentsPricesController
     }
     private void addViewActionListeners() {
         treatmentsPricesView.getTreatmentList().addActionListener(e->treatmentListAction());
+        treatmentsPricesView.getPayForTreatment().addActionListener(e->paymentAction());
 
     }
 
+    private void paymentAction()
+    {
+        new StartPaymentView();
+    }
     private void treatmentListAction() {
         int i=treatmentsPricesView.getTreatmentList().getSelectedIndex();
         Treatments treatmentSelected=treatmentsPricesModel.getTreatmentsVector().get(i);

@@ -7,9 +7,9 @@ public class TreatmentsPricesView extends JFrame {
 
     private ImageIcon imageForBG=new ImageIcon(Locations.getImagePath("searchTreatments.png"));
     private JLabel backGround=new JLabel(imageForBG);
-
     private JComboBox treatmentList;
     private JLabel treatmentPrices= new JLabel(" ");
+    private JButton payForTreatment=new JButton("PAY");
 
     public TreatmentsPricesView(JComboBox treatmentList) {
         setLayout(null);
@@ -24,13 +24,16 @@ public class TreatmentsPricesView extends JFrame {
     }
 
     private void setLocationAndSize() {
-        treatmentList.setBounds(100, 100, 200, 30);
-        treatmentPrices.setBounds(300, 100, 200 , 30);
+
+        treatmentList.setBounds(100, 400, 200, 30);
+        treatmentPrices.setBounds(320, 400, 100 , 30);
+        payForTreatment.setBounds(450,400,100,30);
         backGround.setBounds(0,0,700,500);
     }
 
 
     private void addComponentsToFrame() {
+        add(payForTreatment);
         add(treatmentList);
         add(treatmentPrices);
         add(backGround);
@@ -52,6 +55,10 @@ public class TreatmentsPricesView extends JFrame {
     public void setTreatmentList(JComboBox treatmentList) {
         this.treatmentList = treatmentList;
 
+    }
+
+    public JButton getPayForTreatment() {
+        return payForTreatment;
     }
 
 }
