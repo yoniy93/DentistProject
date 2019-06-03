@@ -8,33 +8,37 @@ public class TreatmentsPricesView extends JFrame {
     private ImageIcon imageForBG=new ImageIcon(Locations.getImagePath("searchTreatments.png"));
     private JLabel backGround=new JLabel(imageForBG);
 
-    private JComboBox treatmentList=new JComboBox();
+    private JComboBox treatmentList;
     private JLabel treatmentPrices= new JLabel(" ");
 
-    public TreatmentsPricesView() {
+    public TreatmentsPricesView(JComboBox treatmentList) {
         setLayout(null);
+        setTreatmentList(treatmentList);
         setLocationAndSize();
         addComponentsToFrame();
-
         setTitle("Search Your Treatment: ");
         setBounds(300, 100, 700, 500);
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setResizable(false);
         setVisible(true);
     }
 
     private void setLocationAndSize() {
-        treatmentList.setBounds(300, 200, 200, 30);
-        treatmentPrices.setBounds(250, 200, 200 , 30);
+        treatmentList.setBounds(100, 100, 200, 30);
+        treatmentPrices.setBounds(300, 100, 200 , 30);
         backGround.setBounds(0,0,700,500);
     }
 
 
     private void addComponentsToFrame() {
-//        add(treatmentList);
+        add(treatmentList);
         add(treatmentPrices);
         add(backGround);
 
+    }
+    public void addTreatmentList()
+    {
+        add(treatmentList);
     }
 
     public JComboBox getTreatmentList() {
@@ -51,6 +55,7 @@ public class TreatmentsPricesView extends JFrame {
 
     public void setTreatmentList(JComboBox treatmentList) {
         this.treatmentList = treatmentList;
+
     }
 
 }

@@ -21,7 +21,6 @@ public class ClinicInfoView extends JFrame {
     };
 
     private String[] columnNames = { "Days:", "Hours:" };
-
     private JLabel clinicNameLable = new JLabel( "Dentist Clinic: ");
     private JLabel openningHoursLable = new JLabel( "Opening Hours: ");
     private JLabel phoneNumberLable = new JLabel( "Phone Numbers: ");
@@ -48,14 +47,20 @@ public class ClinicInfoView extends JFrame {
 
         openningHoursLable.setHorizontalAlignment(SwingConstants.RIGHT);
         openningHoursLable.setFont(new Font("Ariel", Font.BOLD, 16));
-        openningHoursLable.setBounds(20,130,150,40);
+        openningHoursLable.setOpaque(true);
+        openningHoursLable.setBackground(Color.lightGray);
+        openningHoursLable.setBounds(20,120,150,40);
 
         phoneNumberLable.setHorizontalAlignment(SwingConstants.RIGHT);
         phoneNumberLable.setFont(new Font("Ariel", Font.BOLD, 16));
+        phoneNumberLable.setOpaque(true);
+        phoneNumberLable.setBackground(Color.lightGray);
         phoneNumberLable.setBounds(20,300, 150,40);
 
         addressLabel.setHorizontalAlignment(SwingConstants.RIGHT);
         addressLabel.setFont(new Font("Ariel", Font.BOLD, 16));
+        addressLabel.setOpaque(true);
+        addressLabel.setBackground(Color.lightGray);
         addressLabel.setBounds(420,120,114,40);
 
         hoursTable.setBounds(180, 130, 230, 120);

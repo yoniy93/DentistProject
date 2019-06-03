@@ -6,14 +6,13 @@ import javax.swing.*;
 
 public class TreatmentsPricesController
 {
-    TreatmentsPricesView treatmentsPricesView;
+   TreatmentsPricesView treatmentsPricesView;
     TreatmentsPricesModel treatmentsPricesModel;
 
-    TreatmentsPricesController(TreatmentsPricesModel treatmentsPricesModel,TreatmentsPricesView treatmentsPricesView) {
+    TreatmentsPricesController(TreatmentsPricesModel treatmentsPricesModel) {
         this.treatmentsPricesModel=treatmentsPricesModel;
-        this.treatmentsPricesView=treatmentsPricesView;
-        treatmentsPricesView.setTreatmentList(new JComboBox(treatmentsPricesModel.getAllTreatments()));
-        treatmentsPricesView.add(treatmentsPricesView.getTreatmentList());
+        JComboBox treatmentList= new JComboBox(treatmentsPricesModel.getAllTreatments());
+        treatmentsPricesView=new TreatmentsPricesView (treatmentList);
         addViewActionListeners();
     }
     private void addViewActionListeners() {
