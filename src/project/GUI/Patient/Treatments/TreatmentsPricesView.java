@@ -1,49 +1,41 @@
 package project.GUI.Patient.Treatments;
 
 import project.Database.Locations;
-import project.GUI.General.CancleButton;
-
+import project.Entities.Treatments;
 import javax.swing.*;
+import java.awt.*;
+import java.util.List;
 
 public class TreatmentsPricesView extends JFrame {
 
     private ImageIcon imageForBG=new ImageIcon(Locations.getImagePath("searchTreatments.png"));
     private JLabel backGround=new JLabel(imageForBG);
-    private JComboBox treatmentList;
-    private JLabel treatmentPrices= new JLabel(" ");
-    private JButton payForTreatment=new JButton("PAY");
-    private CancleButton cancel=new CancleButton();
 
-    public TreatmentsPricesView(JComboBox treatmentList) {
+    Treatments a=new Treatments("1","default",50,100);
+    private JComboBox<Treatments> treatmentList=new JComboBox<Treatments>();
+    private JLabel treatmentPrices= new JLabel("מחיר");
+
+    public TreatmentsPricesView() {
         setLayout(null);
-        setTreatmentList(treatmentList);
         setLocationAndSize();
         addComponentsToFrame();
         setTitle("Search Your Treatment: ");
-        setBounds(300, 100, 700, 500);
-        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setResizable(false);
-        setVisible(true);
     }
 
     private void setLocationAndSize() {
-
-        treatmentList.setBounds(100, 400, 200, 30);
-        treatmentPrices.setBounds(320, 400, 100 , 30);
-        payForTreatment.setBounds(450,400,100,30);
-        cancel.setBounds(570,30,100,30);
+        this.setBounds(300, 100, 700, 500);
+        treatmentList.setBounds(300, 200, 200, 30);
+        treatmentPrices.setBounds(250, 200, 200 , 30);
         backGround.setBounds(0,0,700,500);
     }
 
 
     private void addComponentsToFrame() {
-        add(payForTreatment);
-        add(cancel);
-        payForTreatment.setVisible(false);
-        add(treatmentList);
-        add(treatmentPrices);
-        add(backGround);
-
+        treatmentList.addItem(a);
+        this.add(treatmentList);
+        this.add(treatmentPrices);
+        this.add(backGround);
     }
 
     public JComboBox getTreatmentList() {
@@ -55,18 +47,21 @@ public class TreatmentsPricesView extends JFrame {
     }
 
     public void setTreatmentPrices(String price) {
+        treatmentPrices.setFont(new Font("Ariel",Font.BOLD,14));
         treatmentPrices.setText((String)price);
     }
 
-    public void setTreatmentList(JComboBox treatmentList) { this.treatmentList = treatmentList; }
-
-    public JButton getPayForTreatment() { return payForTreatment; }
-
-    public void setPayForTreatment() {
-         payForTreatment.setVisible(true);
+    public void setTreatmentList(JComboBox treatmentList) {
+        this.treatmentList = treatmentList;
     }
 
-    public CancleButton getCancel() { return cancel; }
+    public void setTreatmentList(List<Treatments> values) {
+        this.treatmentList.removeAllItems();
+        values.forEach(x -> this.treatmentList.addItem(x));
+    }
 
+    public void setVisible() {
+        setVisible(true);
+    }
 
 }

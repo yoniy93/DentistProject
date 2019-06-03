@@ -3,6 +3,7 @@ package project.GUI.Patient.Treatments;
 import project.Database.DBQuerys;
 import project.Entities.Treatments;
 
+import java.util.List;
 import java.util.Vector;
 
 public class TreatmentsPricesModel
@@ -10,7 +11,7 @@ public class TreatmentsPricesModel
 
     private DBQuerys dbQuerys=new DBQuerys();
     private String [] treatmentsName;
-    private Vector<Treatments> treatmentsVector;
+    private List<Treatments> treatmentsList;
 
     public String[] getTreatmentsName() {
         return treatmentsName;
@@ -20,26 +21,19 @@ public class TreatmentsPricesModel
         this.treatmentsName = treatmentsName;
     }
 
-    public Vector<Treatments> getTreatmentsVector() {
-        return treatmentsVector;
+    public List<Treatments> getTreatmentsVector() {
+        return treatmentsList;
     }
 
     public void setTreatmentsVector(Vector<Treatments> treatmentsVector) {
-        this.treatmentsVector = treatmentsVector;
+        this.treatmentsList = treatmentsVector;
     }
 
-    public String [] getAllTreatments(){
-        treatmentsVector=dbQuerys.getTreatments();
-        setTreatmentsName();
-        return treatmentsName;
+    public List<Treatments> getAllTreatments(){
+        treatmentsList=dbQuerys.getTreatments();
+        return treatmentsList;
     }
 
-    private void setTreatmentsName() {
-        treatmentsName=new String[treatmentsVector.size()];
-        for(int i=0;i<treatmentsVector.size();i++) {
-            treatmentsName[i]=(treatmentsVector.get(i).getName());
-        }
-    }
 
 
 

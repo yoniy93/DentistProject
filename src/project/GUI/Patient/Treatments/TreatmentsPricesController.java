@@ -1,39 +1,33 @@
 package project.GUI.Patient.Treatments;
 
 import project.Entities.Treatments;
-import project.GUI.Patient.Payment.StartPaymentView;
 
 import javax.swing.*;
 
 public class TreatmentsPricesController
 {
-   TreatmentsPricesView treatmentsPricesView;
+    TreatmentsPricesView treatmentsPricesView;
     TreatmentsPricesModel treatmentsPricesModel;
 
-    TreatmentsPricesController(TreatmentsPricesModel treatmentsPricesModel) {
-        this.treatmentsPricesModel=treatmentsPricesModel;
-        JComboBox treatmentList= new JComboBox(treatmentsPricesModel.getAllTreatments());
-        treatmentsPricesView=new TreatmentsPricesView (treatmentList);
+    TreatmentsPricesController() {
+        this.treatmentsPricesModel=new TreatmentsPricesModel();
+        this.treatmentsPricesView=new TreatmentsPricesView();
+        treatmentsPricesView.getTreatmentList().setVisible(true);
         addViewActionListeners();
+        treatmentsPricesView.setTreatmentList(treatmentsPricesModel.getAllTreatments());
+        treatmentsPricesView.setVisible();
     }
     private void addViewActionListeners() {
         treatmentsPricesView.getTreatmentList().addActionListener(e->treatmentListAction());
-        treatmentsPricesView.getPayForTreatment().addActionListener(e->paymentAction());
-        treatmentsPricesView.getCancel().addActionListener(e->treatmentsPricesView.dispose());
+
     }
 
-    private void paymentAction()
-    {
-        int i=treatmentsPricesView.getTreatmentList().getSelectedIndex();
-        Treatments treatmentSelected=treatmentsPricesModel.getTreatmentsVector().get(i);
-        new StartPaymentView(treatmentSelected);
-    }
     private void treatmentListAction() {
-        int i=treatmentsPricesView.getTreatmentList().getSelectedIndex();
-        Treatments treatmentSelected=treatmentsPricesModel.getTreatmentsVector().get(i);
-        double price= treatmentSelected.getPrice();
-        treatmentsPricesView.setTreatmentPrices(Double.toString(price));
-        treatmentsPricesView.setPayForTreatment();
+        Treatments treatment = (Treatments)treatmentsPricesView.getTreatmentList().getSelectedItem();
+
+        if (treatment != null) {
+            treatmentsPricesView.setTreatmentPrices(Double.toString(treatment.getPrice()));
+        }
     }
 
 

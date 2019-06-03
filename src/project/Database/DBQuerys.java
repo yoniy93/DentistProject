@@ -5,7 +5,9 @@ import project.Entities.*;
 import java.sql.*;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.Vector;
 
 public class DBQuerys extends DBInitializer {
@@ -144,8 +146,8 @@ public class DBQuerys extends DBInitializer {
         return null;
     }
 
-    public Vector<Treatments> getTreatments (){
-        Vector<Treatments> treatments=new Vector<>(1);
+    public List<Treatments> getTreatments (){
+        List<Treatments> treatments=new ArrayList<>(1);
         String sql="SELECT * FROM treatments;";
         try (Connection conn = this.connect();
              PreparedStatement pstmt  = conn.prepareStatement(sql)) {
