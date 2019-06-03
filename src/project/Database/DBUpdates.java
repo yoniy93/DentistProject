@@ -21,7 +21,7 @@ public class DBUpdates extends DBInitializer {
     }
 
     public void updateDoctorDetails(Doctor d){
-        String sql= "UPDATE users SET password='"+d.getPassword()+"', firstname="+d.getFirstName() +
+        String sql= "UPDATE users SET password='"+d.getPassword()+"', firstname='"+d.getFirstName() +
                 "', lastname='"+d.getLastName() +"', email='"+d.getEmail() +"', phoneNumber='"+d.getPhoneNumber() +"' WHERE id='" +d.getId()+"';";
         connectAndExecute(sql);
     }
