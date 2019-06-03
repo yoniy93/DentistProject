@@ -23,6 +23,7 @@ public class PersonalDetailsControllerDoctor {
         pDetailsView.getEmailTextField().setText(pDetailsModel.getDoctor().getEmail());
         pDetailsView.getPasswordField().setText(pDetailsModel.getDoctor().getPassword());
         pDetailsView.getYearsOfExpTextField().setText(Integer.toString(pDetailsModel.getDoctor().getYearsOfEx()));
+        pDetailsView.getPhoneNumberTextField().setText(pDetailsModel.getDoctor().getPhoneNumber());
     }
 
     private void addViewActionListeners() {

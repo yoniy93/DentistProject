@@ -25,6 +25,7 @@ public class PersonalDetailsControllerPatient {
         pDetailsView.getPasswordField().setText(pDetailsModel.getPatient().getPassword());
         pDetailsView.getHeightTextField().setText(Integer.toString(pDetailsModel.getPatient().getHeight()));
         pDetailsView.getWeightTextFiled().setText(Integer.toString(pDetailsModel.getPatient().getWeight()));
+        pDetailsView.getPhoneNumberTextField().setText(pDetailsModel.getPatient().getPhoneNumber());
     }
 
     private void addViewActionListeners() {

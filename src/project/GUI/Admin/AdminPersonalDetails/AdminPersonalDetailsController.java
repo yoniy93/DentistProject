@@ -29,6 +29,7 @@ public class AdminPersonalDetailsController
         personalDetailsView.getLastnameTextField().setText(adminPersonalDetailsModel.getAdmin().getLastName());
         personalDetailsView.getEmailTextField().setText(adminPersonalDetailsModel.getAdmin().getEmail());
         personalDetailsView.getPasswordField().setText(adminPersonalDetailsModel.getAdmin().getPassword());
+        personalDetailsView.getPhoneNumberTextField().setText(adminPersonalDetailsModel.getAdmin().getPhoneNumber());
     }
     private void editButtonAction()
     {

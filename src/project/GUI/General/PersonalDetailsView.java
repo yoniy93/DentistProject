@@ -14,8 +14,10 @@ public class PersonalDetailsView extends JFrame {
     private JLabel firstnameLabel = new JLabel("First Name: ");
     private JLabel lastnameLabel = new JLabel( "Last Name: ");
     private JLabel emailLabel = new JLabel( "Email: ");
+    private JLabel phoneNumber=new JLabel("Phone: ");
     private JLabel passwordLabel = new JLabel("Password: ");
 
+    private JTextField phoneNumberTextField=new JTextField();
     private JTextField firstnameTextField = new JTextField();
     private JTextField lastnameTextField = new JTextField();
     private JTextField emailTextField = new JTextField();
@@ -35,11 +37,13 @@ public class PersonalDetailsView extends JFrame {
         setVisible(true);
     }
 
+
+
     private void setLocationAndSize(){
         editButton.setFont(buttonFont);
-        editButton.setBounds(80, 300, 100, 30);
+        editButton.setBounds(80, 320, 100, 30);
 
-        cancelButton.setLocation(220,300,100,30);
+        cancelButton.setLocation(220,320,100,30);
 
         firstnameLabel.setFont(buttonFont);
         firstnameLabel.setBounds(60, 40, 100, 30);
@@ -53,10 +57,14 @@ public class PersonalDetailsView extends JFrame {
         passwordLabel.setFont(buttonFont);
         passwordLabel.setBounds(60, 160, 100, 30);
 
+        phoneNumber.setBounds(60,200,100,30);
+        phoneNumber.setFont(buttonFont);
+
         firstnameTextField.setBounds(170, 40, 150, 30);
         lastnameTextField.setBounds(170, 80, 150, 30);
         emailTextField.setBounds(170, 120, 150, 30);
         passwordField.setBounds(170, 160, 150, 30);
+        phoneNumberTextField.setBounds(170,200,150,30);
 
         backGround.setBounds(0,0,400,400);
     }
@@ -69,6 +77,8 @@ public class PersonalDetailsView extends JFrame {
         add(lastnameLabel);
         add(emailLabel);
         add(passwordLabel);
+        add(phoneNumber);
+        add(phoneNumberTextField);
 
         add(lastnameTextField);
         add(firstnameTextField);
@@ -107,5 +117,9 @@ public class PersonalDetailsView extends JFrame {
 
     public Font getButtonFont() {
         return buttonFont;
+    }
+
+    public JTextField getPhoneNumberTextField() {
+        return phoneNumberTextField;
     }
 }

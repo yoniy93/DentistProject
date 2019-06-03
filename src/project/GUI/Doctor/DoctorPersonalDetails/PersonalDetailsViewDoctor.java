@@ -17,8 +17,8 @@ public class PersonalDetailsViewDoctor extends PersonalDetailsView{
 
     private void setLocationAndSize() {
         yearsOfExpLabel.setFont(getButtonFont());
-        yearsOfExpLabel.setBounds(60, 200, 100, 30);
-        yearsOfExpTextField.setBounds(170, 200, 150, 30);
+        yearsOfExpLabel.setBounds(60, 240, 100, 30);
+        yearsOfExpTextField.setBounds(170, 240, 150, 30);
     }
 
     private void addComponentsToFrame(){

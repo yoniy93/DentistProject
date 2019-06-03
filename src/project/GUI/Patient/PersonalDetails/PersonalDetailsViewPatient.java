@@ -18,13 +18,13 @@ public class PersonalDetailsViewPatient extends PersonalDetailsView {
 
     private void setLocationAndSize() {
         heightLabel.setFont(getButtonFont());
-        heightLabel.setBounds(60, 200, 100, 30);
+        heightLabel.setBounds(60, 240, 100, 30);
 
         weightLabel.setFont(getButtonFont());
-        weightLabel.setBounds(60, 240, 100, 30);
+        weightLabel.setBounds(60, 280, 100, 30);
 
-        heightTextField.setBounds(170, 200, 150, 30);
-        weightTextFiled.setBounds(170, 240, 150, 30);
+        heightTextField.setBounds(170, 240, 150, 30);
+        weightTextFiled.setBounds(170, 280, 150, 30);
         getBackGround().setBounds(0,0,400,400);
     }
 
