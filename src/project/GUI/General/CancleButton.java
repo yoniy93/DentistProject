@@ -10,7 +10,7 @@ public class CancleButton extends JButton {
     }
 
     public void setLocation(int x, int y, int w, int h) {
-        setFont(new Font("Tahoma", Font.PLAIN, 14));
+        setFont(new Font("Tahoma", Font.BOLD, 14));
         setBounds(x, y, w, h);
     }
 }

@@ -14,7 +14,9 @@ public class PaymentController {
     private void initController()
     {
         paymentView.getSubmit().addActionListener(e->submitAction());
+        paymentView.getCancel().addActionListener(e->paymentView.dispose());
     }
+
 
     private void submitAction()
     {

@@ -138,4 +138,9 @@ public class PaymentView extends JFrame {
     public void setMonthBox(JComboBox monthBox) {
         this.monthBox = monthBox;
     }
+
+    public CancleButton getCancel() {
+        return cancel;
+    }
+
 }
