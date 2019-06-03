@@ -61,9 +61,11 @@ public class TreatmentsPricesView extends JFrame {
     public void setTreatmentList(JComboBox treatmentList) { this.treatmentList = treatmentList; }
 
     public JButton getPayForTreatment() { return payForTreatment; }
+
     public void setPayForTreatment() {
          payForTreatment.setVisible(true);
     }
+
     public CancleButton getCancel() { return cancel; }
 
 

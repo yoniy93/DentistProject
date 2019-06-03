@@ -27,6 +27,7 @@ public class RegisterView extends JFrame
     private JLabel yearLabel = new JLabel("Year: ");
     private JLabel monthLabel = new JLabel("Month: ");
     private JLabel dayLabel = new JLabel("Day: ");
+    private JLabel phoneNumber=new JLabel("Phone :");
 
     private Vector yearVector = new Vector(100);
     private Vector monthVector = new Vector(12) ;
@@ -52,6 +53,7 @@ public class RegisterView extends JFrame
     private JTextField heightTextField = new JTextField();
     private JTextField weightTextField = new JTextField();
     private JTextField yearsOfExTextField = new JTextField();
+    private JTextField phoneNumberTextField=new JTextField();
 
 
     public RegisterView() {
@@ -109,41 +111,46 @@ public class RegisterView extends JFrame
         idLabel.setFont(new Font("Tahoma", Font.BOLD, 14));
         idLabel.setBounds(60,120,100,30);
 
+        phoneNumber.setFont(new Font("Tahoma", Font.BOLD, 14));
+        phoneNumber.setBounds(60, 160, 100, 30);
+
         emailLabel.setFont(new Font("Tahoma", Font.BOLD, 14));
-        emailLabel.setBounds(60, 160, 100, 30);
+        emailLabel.setBounds(60, 200, 100, 30);
 
         passwordLabel.setFont(new Font("Tahoma", Font.BOLD, 14));
-        passwordLabel.setBounds(60, 200, 100, 30);
+        passwordLabel.setBounds(60, 240, 100, 30);
 
-        genderLabel.setBounds(60,240,70,50);
-        roleLabel.setBounds(60,300,140,50);
-        dateOfBirthLabel.setBounds(60,360,100,50);
-        weightLabel.setBounds(60,400,150,50);
-        heightLabel.setBounds(60,440,150,50);
-        yearOfExpLabel.setBounds(60,480,150,50);
+        genderLabel.setBounds(60,300,70,30);
+        roleLabel.setBounds(60,340,140,30);
+        dateOfBirthLabel.setBounds(60,395,100,50);
+        weightLabel.setBounds(60,440,150,50);
+        heightLabel.setBounds(60,480,150,50);
+        yearOfExpLabel.setBounds(60,540,150,50);
+
 
         firstnameTextField.setBounds(170, 40, 150, 30);
         lastnameTextField.setBounds(170, 80, 150, 30);
         idTextFiled.setBounds(170,120,150,30);
-        emailTextField.setBounds(170, 160, 150, 30);
-        passwordField.setBounds(170, 200, 150, 30);
+        phoneNumberTextField.setBounds(170, 160, 150, 30);
+        emailTextField.setBounds(170, 200, 150, 30);
+        passwordField.setBounds(170, 240, 150, 30);
 
-        maleRButton.setBounds(120,240,60,50);
-        femaleRButton.setBounds(190,240,70,50);
+        maleRButton.setBounds(120,300,60,30);
+        femaleRButton.setBounds(190,300,70,30);
 
-        patientRButton.setBounds(210,300,70,50);
-        doctorRButton.setBounds(290,300,70,50);
+        patientRButton.setBounds(210,340,70,30);
+        doctorRButton.setBounds(290,340,70,30);
 
-        yearLabel.setBounds(150,380,40,20);
-        yearBox.setBounds(200,380,120,20);
-        monthLabel.setBounds(330, 380,60,20);
-        monthBox.setBounds(400,380,120,20);
-        dayLabel.setBounds(530,380,40,20);
-        dayBox.setBounds(580,380,120,20);
+        yearLabel.setBounds(150,410,40,20);
+        yearBox.setBounds(200,410,120,20);
+        monthLabel.setBounds(330, 410,60,20);
+        monthBox.setBounds(400,410,120,20);
+        dayLabel.setBounds(530,410,40,20);
+        dayBox.setBounds(580,410,120,20);
 
-        weightTextField.setBounds(170,410,150,25);
-        heightTextField.setBounds(170,450,150,25);
-        yearsOfExTextField.setBounds(200,490,150,25);
+        weightTextField.setBounds(170,450,150,25);
+        heightTextField.setBounds(170,490,150,25);
+        yearsOfExTextField.setBounds(200,550,150,25);
 
         addUserButton.setBounds(200,600,150,30);
         cancleButton.setLocation(400,600,150,30);
@@ -156,7 +163,8 @@ public class RegisterView extends JFrame
 
     private void addComponentsToFrame() {
 
-
+        add(phoneNumber);
+        add(phoneNumberTextField);
         add(addUserButton);
         add(dayLabel);
         add(yearLabel);
@@ -304,6 +312,8 @@ public class RegisterView extends JFrame
     public CancleButton getCancleButton() {
         return cancleButton;
     }
+
+    public JTextField getPhoneNumberTextField() { return phoneNumberTextField; }
 
 }
 
