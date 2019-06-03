@@ -1,6 +1,5 @@
 package project.GUI.Patient.PersonalDetails;
 
-import project.Entities.Doctor;
 import project.Entities.Patient;
 
 import javax.swing.*;
@@ -33,17 +32,13 @@ public class PersonalDetailsControllerPatient {
         pDetailsView.getCancelButton().addActionListener(e-> CancelAction());
     }
 
-    private String getPassword(){
-        return new String(pDetailsView.getPasswordField().getPassword());
-    }
-
     public void EditAction()
     {
         Patient patient=pDetailsModel.getPatient();
         patient.setFirstName(pDetailsView.getFirstnameTextField().getText());
         patient.setLastName(pDetailsView.getLastnameTextField().getText());
         patient.setEmail(pDetailsView.getEmailTextField().getText());
-        patient.setPassword(pDetailsView.getPasswordField().toString());
+        patient.setPassword(new String(pDetailsView.getPasswordField().getPassword()));
         patient.setHeight(Integer.parseInt(pDetailsView.getHeightTextField().getText()));
         patient.setWeight(Integer.parseInt(pDetailsView.getHeightTextField().getText()));
         pDetailsModel.UpdatePatient(patient);
