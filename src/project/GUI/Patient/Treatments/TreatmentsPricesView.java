@@ -34,6 +34,7 @@ public class TreatmentsPricesView extends JFrame {
 
     private void addComponentsToFrame() {
         add(payForTreatment);
+        payForTreatment.setVisible(false);
         add(treatmentList);
         add(treatmentPrices);
         add(backGround);
@@ -57,8 +58,12 @@ public class TreatmentsPricesView extends JFrame {
 
     }
 
-    public JButton getPayForTreatment() {
+    public JButton getPayForTreatment()
+    {
         return payForTreatment;
+    }
+    public void setPayForTreatment() {
+         payForTreatment.setVisible(true);
     }
 
 }

@@ -1,9 +1,11 @@
 package project.GUI.Patient.Payment;
 
+import project.Entities.Treatments;
+
 public class StartPaymentView {
 
-    public StartPaymentView() {
-        PaymentModel paymentModel = new PaymentModel();
+    public StartPaymentView(Treatments treatment) {
+        PaymentModel paymentModel = new PaymentModel(treatment);
         PaymentView paymentView = new PaymentView();
         new PaymentController(paymentView, paymentModel);
     }

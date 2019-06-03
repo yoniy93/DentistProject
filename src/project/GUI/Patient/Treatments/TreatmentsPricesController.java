@@ -24,13 +24,16 @@ public class TreatmentsPricesController
 
     private void paymentAction()
     {
-        new StartPaymentView();
+        int i=treatmentsPricesView.getTreatmentList().getSelectedIndex();
+        Treatments treatmentSelected=treatmentsPricesModel.getTreatmentsVector().get(i);
+        new StartPaymentView(treatmentSelected);
     }
     private void treatmentListAction() {
         int i=treatmentsPricesView.getTreatmentList().getSelectedIndex();
         Treatments treatmentSelected=treatmentsPricesModel.getTreatmentsVector().get(i);
         double price= treatmentSelected.getPrice();
         treatmentsPricesView.setTreatmentPrices(Double.toString(price));
+        treatmentsPricesView.setPayForTreatment();
     }
 
 
