@@ -5,6 +5,8 @@ import project.Entities.Doctor;
 import project.Entities.MedicalEquipment;
 import project.Entities.Patient;
 
+import java.text.SimpleDateFormat;
+
 public class DBUpdates extends DBInitializer {
 
     public void updateEquipmentsQuantity(MedicalEquipment m){
@@ -20,14 +22,13 @@ public class DBUpdates extends DBInitializer {
 
     public void updateDoctorDetails(Doctor d){
         String sql= "UPDATE users SET password='"+d.getPassword()+"', firstname="+d.getFirstName() +
-                "', lastname='"+d.getLastName() +"', email='"+d.getEmail() +"', birthdate='"+ d.getDateOfBirth()+
-                "', birthdate='"+d.getDateOfBirth() +"', phoneNumber='"+d.getPhoneNumber() +"' WHERE id=" +d.getId()+";";
+                "', lastname='"+d.getLastName() +"', email='"+d.getEmail() +"', phoneNumber='"+d.getPhoneNumber() +"' WHERE id=" +d.getId()+";";
         connectAndExecute(sql);
     }
 
     public void updateAdmin(Admin a) {
         String sql= "UPDATE users SET password='"+a.getPassword()+"', firstname='"+a.getFirstName() +
-                "', lastname='"+a.getLastName() +"', email='"+a.getEmail() +"', phoneNumber='"+a.getPhoneNumber() +"' WHERE id=" +a.getId()+";";
+                "', lastname='"+a.getLastName() +"', email='"+a.getEmail() +"', phoneNumber='"+a.getPhoneNumber() +"' WHERE id='" +a.getId()+"';";
         connectAndExecute(sql);
     }
 
