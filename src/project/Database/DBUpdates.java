@@ -14,20 +14,20 @@ public class DBUpdates extends DBInitializer {
 
     public void updatePatientDetails(Patient p){
         String sql= "UPDATE users SET password="+p.getPassword()+", firstname="+p.getFirstName() +
-                ", lastname="+p.getLastName() +", email="+p.getEmail() +" phoneNumber="+p.getPhoneNumber() +" WHERE id=" +p.getId()+";";
+                ", lastname="+p.getLastName() +", email="+p.getEmail() +", phoneNumber="+p.getPhoneNumber() +" WHERE id=" +p.getId()+";";
         connectAndExecute(sql);
     }
 
     public void updateDoctorDetails(Doctor d){
         String sql= "UPDATE users SET password="+d.getPassword()+", firstname="+d.getFirstName() +
                 ", lastname="+d.getLastName() +", email="+d.getEmail() +", birthdate="+ d.getDateOfBirth()+
-                ", birthdate="+d.getDateOfBirth() +" phoneNumber="+d.getPhoneNumber() +" WHERE id=" +d.getId()+";";
+                ", birthdate="+d.getDateOfBirth() +", phoneNumber="+d.getPhoneNumber() +" WHERE id=" +d.getId()+";";
         connectAndExecute(sql);
     }
 
     public void updateAdmin(Admin a) {
         String sql= "UPDATE users SET password="+a.getPassword()+", firstname="+a.getFirstName() +
-                ", lastname="+a.getLastName() +", email="+a.getEmail() +" phoneNumber="+a.getPhoneNumber() +" WHERE id=" +a.getId()+";";
+                ", lastname="+a.getLastName() +", email="+a.getEmail() +", phoneNumber="+a.getPhoneNumber() +" WHERE id=" +a.getId()+";";
         connectAndExecute(sql);
     }
 
