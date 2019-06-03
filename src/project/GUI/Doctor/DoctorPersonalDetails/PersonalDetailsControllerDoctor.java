@@ -21,7 +21,7 @@ public class PersonalDetailsControllerDoctor {
         pDetailsView.getFirstnameTextField().setText(pDetailsModel.getDoctor().getFirstName());
         pDetailsView.getLastnameTextField().setText(pDetailsModel.getDoctor().getLastName());
         pDetailsView.getEmailTextField().setText(pDetailsModel.getDoctor().getEmail());
-        pDetailsView.getPasswordField().setText(pDetailsModel.getDoctor().getPassword());
+        pDetailsView.getPasswordField().setText(new String(pDetailsView.getPasswordField().getPassword()));
         pDetailsView.getYearsOfExpTextField().setText(Integer.toString(pDetailsModel.getDoctor().getYearsOfEx()));
         pDetailsView.getPhoneNumberTextField().setText(pDetailsModel.getDoctor().getPhoneNumber());
     }
@@ -29,10 +29,6 @@ public class PersonalDetailsControllerDoctor {
     private void addViewActionListeners() {
         pDetailsView.getEditButton().addActionListener(e->EditAction());
         pDetailsView.getCancelButton().addActionListener(e-> CancelAction());
-    }
-
-    private String getPassword(){
-        return new String(pDetailsView.getPasswordField().getPassword());
     }
 
     public void EditAction() {
