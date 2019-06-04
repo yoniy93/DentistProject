@@ -23,7 +23,7 @@ public class PersonalDetailsControllerPatient {
         pDetailsView.getEmailTextField().setText(pDetailsModel.getPatient().getEmail());
         pDetailsView.getPasswordField().setText(pDetailsModel.getPatient().getPassword());
         pDetailsView.getHeightTextField().setText(Integer.toString(pDetailsModel.getPatient().getHeight()));
-        pDetailsView.getWeightTextFiled().setText(Integer.toString(pDetailsModel.getPatient().getWeight()));
+        pDetailsView.getWeightTextFiled().setText(Double.toString(pDetailsModel.getPatient().getWeight()));
         pDetailsView.getPhoneNumberTextField().setText(pDetailsModel.getPatient().getPhoneNumber());
     }
 
@@ -40,7 +40,7 @@ public class PersonalDetailsControllerPatient {
         patient.setEmail(pDetailsView.getEmailTextField().getText());
         patient.setPassword(new String(pDetailsView.getPasswordField().getPassword()));
         patient.setHeight(Integer.parseInt(pDetailsView.getHeightTextField().getText()));
-        patient.setWeight(Integer.parseInt(pDetailsView.getHeightTextField().getText()));
+        patient.setWeight(Double.parseDouble(pDetailsView.getWeightTextFiled().getText()));
         pDetailsModel.UpdatePatient(patient);
         JOptionPane.showMessageDialog( pDetailsView,  "Details Updated");
         pDetailsView.dispose();

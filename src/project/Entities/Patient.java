@@ -3,9 +3,9 @@ import java.util.*;
 public class Patient extends User {
 
     private int height;
-    private int weight;
+    private double weight;
 
-    public Patient(String id, String password, String firstname, String lastname, String email, int weight, int height, Date dateOfBirth, String gender,String phoneNumber)
+    public Patient(String id, String password, String firstname, String lastname, String email, double weight, int height, Date dateOfBirth, String gender,String phoneNumber)
     {
         this.setUserRole(USER_TYPE.PATIENT);
         this.setId(id);
@@ -20,11 +20,11 @@ public class Patient extends User {
         this.setPhoneNumber(phoneNumber);
     }
 
-    public int getWeight() {
+    public double getWeight() {
         return weight;
     }
 
-    public void setWeight(int weight) {
+    public void setWeight(double weight) {
         this.weight = weight;
     }
 
