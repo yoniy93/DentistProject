@@ -4,6 +4,8 @@ import project.Database.Locations;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
 
 public class LoginView extends JFrame {
 
@@ -15,9 +17,9 @@ public class LoginView extends JFrame {
     private JPasswordField passwordField = new JPasswordField();
     private JButton loginButton = new JButton("Login");
     private JButton clearButton = new JButton("Clear");
-    private JCheckBox showPassword = new JCheckBox("Show Password");
+    private JCheckBox passwordCheckBox = new JCheckBox("Show Password");
     private JLabel notLoginMessage =new JLabel("Not register? Click");
-    private JLabel clickHere =new JLabel("<HTML><U>here</U></HTML>");
+    private JLabel clickHereLabel =new JLabel("<HTML><U>here</U></HTML>");
     private Font font=new Font("Ariel",Font.BOLD,14);
     private JLabel copyrights = new JLabel("© all rights reserved");
 
@@ -43,8 +45,8 @@ public class LoginView extends JFrame {
         passwordLabel.setFont(this.font);
         userTextField.setBounds(150, 150, 150, 30);
         passwordField.setBounds(150, 220, 150, 30);
-        showPassword.setBounds(150, 250, 150, 30);
-        showPassword.setOpaque(false);
+        passwordCheckBox.setBounds(150, 250, 150, 30);
+        passwordCheckBox.setOpaque(false);
         loginButton.setBounds(50, 300, 100, 30);
         clearButton.setBounds(200, 300, 100, 30);
         backGround.setBounds(0,0,370,550);
@@ -52,8 +54,8 @@ public class LoginView extends JFrame {
         notLoginMessage.setBounds(110,340,120,30);
         notLoginMessage.setFont(new Font("Ariel",Font.BOLD,11));
 
-        clickHere.setBounds(217,340,40,30);
-        clickHere.setFont(new Font ("Ariel",Font.BOLD,11));
+        clickHereLabel.setBounds(217,340,40,30);
+        clickHereLabel.setFont(new Font ("Ariel",Font.BOLD,11));
 
         copyrights.setBounds(140,480,100,30);
         copyrights.setFont(new Font("Ariel",Font.PLAIN,9));
@@ -62,15 +64,44 @@ public class LoginView extends JFrame {
     private void addComponentsToFrame() {
         add(userLabel);
         add(notLoginMessage);
-        add(clickHere);
+        add(clickHereLabel);
         add(passwordLabel);
         add(userTextField);
         add(passwordField);
-        add(showPassword);
+        add(passwordCheckBox);
         add(loginButton);
         add(clearButton);
         add(copyrights);
         add(backGround);
+    }
+
+    public void setAction(ActionListener showPassword, ActionListener login, ActionListener clear, MouseAdapter clickHere) {
+        passwordCheckBox.addActionListener(showPassword);
+        loginButton.addActionListener(login);
+        clearButton.addActionListener(clear);
+        clickHereLabel.addMouseListener(clickHere);
+    }
+
+    public void showRegisterMsg() {
+        JOptionPane.showMessageDialog(this, "\nAt this moment, registration is valid only via Admin.\nFeel free to contact us by mail for additional assistance.\n\n                      help@dentisitry.com");
+    }
+
+    public void showLoginMsg() {
+        JOptionPane.showMessageDialog(this, "Invalid Username or Password");
+    }
+
+    public void clearText(){
+        userTextField.setText("");
+        passwordField.setText("");
+    }
+
+    public void showHidePassword(){
+        if (passwordCheckBox.isSelected()) {
+            passwordField.setEchoChar((char) 0);
+        } else {
+            passwordField.setEchoChar('*');
+        }
+
     }
 
     public JTextField getUserTextField() {
@@ -81,6 +112,7 @@ public class LoginView extends JFrame {
         return passwordField;
     }
 
+/*
     public JButton getLoginButton() {
         return loginButton;
     }
@@ -90,7 +122,7 @@ public class LoginView extends JFrame {
     }
 
     public JCheckBox getShowPassword() {
-        return showPassword;
+        return passwordCheckBox;
     }
 
     public ImageIcon getImageForBG() {
@@ -126,11 +158,12 @@ public class LoginView extends JFrame {
     }
 
     public JLabel getClickHere() {
-        return clickHere;
+        return clickHereLabel;
     }
 
     public void setClickHere(JLabel clickHere) {
-        this.clickHere = clickHere;
+        clickHereLabel = clickHere;
     }
+*/
 
 }
