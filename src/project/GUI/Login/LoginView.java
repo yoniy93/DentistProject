@@ -13,24 +13,23 @@ public class LoginView extends JFrame {
     private JLabel backGround=new JLabel(imageForBG);
     private JLabel userLabel = new JLabel("ID:");
     private JLabel passwordLabel = new JLabel("PASSWORD:");
+    private JLabel notLoginMessage =new JLabel("Not register? Click");
+    private JLabel clickHereLabel =new JLabel("<HTML><U>here</U></HTML>");
+    private JLabel copyrights = new JLabel("© all rights reserved");
+    private Font labelFont = new Font("Ariel",Font.BOLD,14);
+    private Font msgFont = new Font("Ariel",Font.BOLD,11);
+    private Font copyrightsFont = new Font("Ariel",Font.PLAIN,9);
     private JTextField userTextField = new JTextField();
     private JPasswordField passwordField = new JPasswordField();
     private JButton loginButton = new JButton("Login");
     private JButton clearButton = new JButton("Clear");
     private JCheckBox passwordCheckBox = new JCheckBox("Show Password");
-    private JLabel notLoginMessage =new JLabel("Not register? Click");
-    private JLabel clickHereLabel =new JLabel("<HTML><U>here</U></HTML>");
-    private Font font=new Font("Ariel",Font.BOLD,14);
-    private JLabel copyrights = new JLabel("© all rights reserved");
 
     public LoginView() {
-        generateLoginFrame();
-    }
-
-    private void generateLoginFrame() {
         setLayout(null);
         setLocationAndSize();
         addComponentsToFrame();
+
         setTitle("Login");
         setBounds(500, 100, 370, 550);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -40,9 +39,9 @@ public class LoginView extends JFrame {
 
     private void setLocationAndSize() {
         userLabel.setBounds(50, 150, 100, 30);
-        userLabel.setFont(this.font);
+        userLabel.setFont(this.labelFont);
         passwordLabel.setBounds(50, 220, 100, 30);
-        passwordLabel.setFont(this.font);
+        passwordLabel.setFont(this.labelFont);
         userTextField.setBounds(150, 150, 150, 30);
         passwordField.setBounds(150, 220, 150, 30);
         passwordCheckBox.setBounds(150, 250, 150, 30);
@@ -52,13 +51,13 @@ public class LoginView extends JFrame {
         backGround.setBounds(0,0,370,550);
 
         notLoginMessage.setBounds(110,340,120,30);
-        notLoginMessage.setFont(new Font("Ariel",Font.BOLD,11));
+        notLoginMessage.setFont(this.msgFont);
 
         clickHereLabel.setBounds(217,340,40,30);
-        clickHereLabel.setFont(new Font ("Ariel",Font.BOLD,11));
+        clickHereLabel.setFont(this.msgFont);
 
         copyrights.setBounds(140,480,100,30);
-        copyrights.setFont(new Font("Ariel",Font.PLAIN,9));
+        copyrights.setFont(this.copyrightsFont);
     }
 
     private void addComponentsToFrame() {
