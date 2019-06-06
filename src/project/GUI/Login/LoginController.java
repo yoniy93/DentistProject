@@ -18,7 +18,6 @@ public class LoginController {
     }
 
     public void addViewActionListeners() {
-
         MouseAdapter click = new MouseAdapter(){
             @Override
             public void mouseClicked(MouseEvent e) {
@@ -36,19 +35,8 @@ public class LoginController {
                         e->clearAction(),click);
     }
 
-
-
-    public String getUser(){
-
-        return loginV.getUserTextField().getText();
-    }
-
-    public String getPassword(){
-        return new String(loginV.getPasswordField().getPassword());
-    }
-
     public void loginAction() throws SQLException {
-        if(!loginM.CheckLogin(getUser(), getPassword()))
+        if(!loginM.CheckLogin(loginV.getUser(), loginV.getPassword()))
         {
             loginV.showLoginMsg();
         }

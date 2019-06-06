@@ -82,6 +82,14 @@ public class LoginView extends JFrame {
         clickHereLabel.addMouseListener(clickHere);
     }
 
+    public String getUser(){
+        return userTextField.getText();
+    }
+
+    public String getPassword(){
+        return new String(passwordField.getPassword());
+    }
+
     public void showRegisterMsg() {
         JOptionPane.showMessageDialog(this, "\nAt this moment, registration is valid only via Admin.\nFeel free to contact us by mail for additional assistance.\n\n                      help@dentisitry.com");
     }
@@ -104,6 +112,8 @@ public class LoginView extends JFrame {
 
     }
 
+
+    /*
     public JTextField getUserTextField() {
         return userTextField;
     }
@@ -112,7 +122,7 @@ public class LoginView extends JFrame {
         return passwordField;
     }
 
-/*
+
     public JButton getLoginButton() {
         return loginButton;
     }
@@ -165,5 +175,4 @@ public class LoginView extends JFrame {
         clickHereLabel = clickHere;
     }
 */
-
 }
