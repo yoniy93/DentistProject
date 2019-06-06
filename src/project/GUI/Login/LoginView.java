@@ -74,7 +74,7 @@ public class LoginView extends JFrame {
         add(backGround);
     }
 
-    public void setAction(ActionListener showPassword, ActionListener login, ActionListener clear, MouseAdapter clickHere) {
+    public void setActions(ActionListener showPassword, ActionListener login, ActionListener clear, MouseAdapter clickHere) {
         passwordCheckBox.addActionListener(showPassword);
         loginButton.addActionListener(login);
         clearButton.addActionListener(clear);

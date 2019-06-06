@@ -25,7 +25,7 @@ public class LoginController {
             }
         };
 
-        loginV.setAction(e->showPasswordAction(),
+        loginV.setActions(e->showPasswordAction(),
                         e-> { try {
                                 loginAction();
                             } catch (SQLException ex) {
