@@ -5,7 +5,6 @@ import javax.swing.*;
 
 public abstract class PersonController {
 
-
     protected void logoutAction(PersonView personView) {
        personView.dispose();
        SwingUtilities.invokeLater(new Runnable() {
