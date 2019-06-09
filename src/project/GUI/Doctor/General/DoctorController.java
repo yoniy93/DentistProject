@@ -1,7 +1,9 @@
 package project.GUI.Doctor.General;
-import project.GUI.Clinic.Info.StartClinicInfo;
+
 import project.GUI.Doctor.DoctorPersonalDetails.StartPersonalDetailsDoctor;
 import project.GUI.General.PersonController;
+import javax.swing.*;
+
 public class DoctorController extends PersonController {
 
     private DoctorModel doctorModel;
@@ -17,27 +19,27 @@ public class DoctorController extends PersonController {
     }
 
     private void addViewActionListeners() {
+        addActionsToPerson(doctorView);
+        doctorView.setActions(e->editDetailsAction(), e->enterShiftAction());
+        /*
         doctorView.getLogoutButton().addActionListener(e -> logoutAction(doctorView));
         doctorView.getEditPersonalDetails().addActionListener(e -> EditDetailsAction());
         doctorView.getEnterShifts().addActionListener(e -> EnterShiftAction());
         doctorView.getViewClinicStaffInfo().addActionListener(e -> ViewInfoAction());
         doctorView.getViewClinicDetails().addActionListener(e->viewClinicInfo());
+        */
     }
 
-    private void viewClinicInfo() {
-        new StartClinicInfo();
-    }
-
-    private void EditDetailsAction()
+    private void editDetailsAction()
     {
-        new StartPersonalDetailsDoctor(doctorModel.getDoctor());
+        SwingUtilities.invokeLater(new Runnable() {
+            public void run() {
+                new StartPersonalDetailsDoctor(doctorModel.getDoctor());
+            }
+        });
     }
 
-    private void EnterShiftAction() {
-
-    }
-
-    private void ViewInfoAction() {
+    private void enterShiftAction() {
 
     }
 }

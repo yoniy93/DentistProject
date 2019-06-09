@@ -1,9 +1,10 @@
 package project.GUI.Patient.General;
 
-import project.GUI.Clinic.Info.StartClinicInfo;
 import project.GUI.General.PersonController;
 import project.GUI.Patient.PersonalDetails.StartPersonalDetailsPatient;
 import project.GUI.Patient.Treatments.StartTreatmentsPricesView;
+
+import javax.swing.*;
 
 public class PatientController extends PersonController{
 
@@ -18,23 +19,35 @@ public class PatientController extends PersonController{
     }
 
     private void addViewActionListeners() {
+
+        addActionsToPerson(patientView);
+        patientView.setActions(e->editDetailsAction(), e->setAnAppointmentAction(),e->viewTreatmentsAction());
+/*
         patientView.getLogoutButton().addActionListener(e -> logoutAction(patientView));
         patientView.getEditPersonalDetails().addActionListener(e -> editDetailsAction());
         patientView.getViewTreatments().addActionListener(e->viewTreatmentsAction());
         patientView.getViewClinicDetails().addActionListener(e->viewClinicInfo());
-    }
-
-    private void viewClinicInfo() {
-        new StartClinicInfo();
+*/
     }
 
     private void editDetailsAction() {
-        new StartPersonalDetailsPatient(patientModel.getPatient());
+        SwingUtilities.invokeLater(new Runnable() {
+            public void run() {
+                new StartPersonalDetailsPatient(patientModel.getPatient());
+            }
+        });
+
     }
 
-    private void viewTreatmentsAction() {
-        new StartTreatmentsPricesView();
+    private void setAnAppointmentAction() {
+
     }
 
-
+    private void viewTreatmentsAction(){
+        SwingUtilities.invokeLater(new Runnable() {
+            public void run() {
+                new StartTreatmentsPricesView();
+            }
+        });
+    }
 }

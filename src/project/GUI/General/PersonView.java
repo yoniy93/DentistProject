@@ -4,6 +4,7 @@ import project.Database.Locations;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionListener;
 
 public abstract class PersonView extends JFrame {
 
@@ -11,13 +12,13 @@ public abstract class PersonView extends JFrame {
     private JLabel backGround=new JLabel(imageForBG);
 
     private JButton logoutButton = new JButton("Logout");
-    private JButton editPersonalDetails = new JButton("Edit personal details");
+    protected JButton editPersonalDetails = new JButton("Edit personal details");
     private JButton viewClinicStaffInfo = new JButton("View Clinic Staff Information");
     private JButton viewClinicDetails = new JButton("View Clinic Information ");
 
     private Font buttonFont = new Font("Ariel",Font.BOLD,14);
 
-    public PersonView(){
+    protected PersonView(){
         setLayout(null);
         setLocationAndSize();
         addComponentsToFrame();
@@ -48,40 +49,17 @@ public abstract class PersonView extends JFrame {
         add(viewClinicDetails);
     }
 
-    public JButton getViewClinicDetails() {
-        return viewClinicDetails;
-    }
-
-    public JButton getLogoutButton() {
-        return logoutButton;
-    }
-
-    public JButton getViewClinicStaffInfo() {
-        return viewClinicStaffInfo;
-    }
-
-    public JButton getEditPersonalDetails() {
-        return editPersonalDetails;
-    }
-
-    public void setImageForBG(ImageIcon imageForBG) {
-        this.imageForBG = imageForBG;
+    protected void setActionsToPerson(ActionListener logout, ActionListener viewStaff, ActionListener viewClinic) {
+            logoutButton.addActionListener(logout);
+            viewClinicDetails.addActionListener(viewClinic);
+            viewClinicStaffInfo.addActionListener(viewStaff);
     }
 
     public JLabel getBackGround() {
         return backGround;
     }
 
-    public void setBackGround(JLabel backGround) {
-        this.backGround = backGround;
-    }
-
-    public PersonView getPersonView() {
-        return this;
-    }
-
     public Font getButtonFont() {
         return buttonFont;
     }
-
 }
