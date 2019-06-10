@@ -2,8 +2,6 @@ package project.GUI.Patient.Treatments;
 
 import project.Entities.Treatments;
 
-import javax.swing.*;
-
 public class TreatmentsPricesController
 {
     TreatmentsPricesView treatmentsPricesView;
@@ -12,21 +10,20 @@ public class TreatmentsPricesController
     TreatmentsPricesController() {
         this.treatmentsPricesModel=new TreatmentsPricesModel();
         this.treatmentsPricesView=new TreatmentsPricesView();
-        treatmentsPricesView.getTreatmentList().setVisible(true);
+        treatmentsPricesView.getTreatmentListComboBox().setVisible(true);
         addViewActionListeners();
         treatmentsPricesView.setTreatmentList(treatmentsPricesModel.getAllTreatments());
         treatmentsPricesView.setVisible();
     }
     private void addViewActionListeners() {
-        treatmentsPricesView.getTreatmentList().addActionListener(e->treatmentListAction());
-
+        treatmentsPricesView.getTreatmentListComboBox().addActionListener(e->treatmentListAction());
     }
 
     private void treatmentListAction() {
-        Treatments treatment = (Treatments)treatmentsPricesView.getTreatmentList().getSelectedItem();
+        Treatments treatment = (Treatments)treatmentsPricesView.getTreatmentListComboBox().getSelectedItem();
 
         if (treatment != null) {
-            treatmentsPricesView.setTreatmentPrices(Double.toString(treatment.getPrice()));
+            treatmentsPricesView.setTreatmentInfo(Double.toString(treatment.getPrice()),Integer.toString(treatment.getDuration()),"None");
         }
     }
 
