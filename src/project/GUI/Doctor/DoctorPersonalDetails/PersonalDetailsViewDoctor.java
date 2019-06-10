@@ -19,11 +19,13 @@ public class PersonalDetailsViewDoctor extends PersonalDetailsView{
         yearsOfExpLabel.setFont(getButtonFont());
         yearsOfExpLabel.setBounds(60, 240, 100, 30);
         yearsOfExpTextField.setBounds(170, 240, 150, 30);
+        getBackGround().setBounds(0,0,400,400);
     }
 
     private void addComponentsToFrame(){
         add(yearsOfExpLabel);
         add(yearsOfExpTextField);
+        add(getBackGround());
     }
 
     public JTextField getYearsOfExpTextField() {

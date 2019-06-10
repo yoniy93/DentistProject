@@ -2,7 +2,7 @@ package project.GUI.Patient.General;
 
 import project.GUI.General.PersonView;
 import javax.swing.*;
-import java.awt.*;
+import java.awt.event.ActionListener;
 
 public class PatientView extends PersonView {
 
@@ -31,11 +31,9 @@ public class PatientView extends PersonView {
         add(getBackGround());
     }
 
-    public JButton getSetAnAppointment() {
-        return setAnAppointment;
-    }
-
-    public JButton getViewTreatments() {
-        return viewTreatments;
+    public void setActions(ActionListener edit, ActionListener set, ActionListener view){
+        editPersonalDetails.addActionListener((edit));
+        setAnAppointment.addActionListener(set);
+        viewTreatments.addActionListener(view);
     }
 }

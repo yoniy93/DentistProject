@@ -29,7 +29,8 @@ public class AdminView extends PersonView {
         add(getBackGround());
     }
 
-    public void setActionS(ActionListener register, ActionListener unregister) {
+    public void setActions(ActionListener edit, ActionListener register, ActionListener unregister) {
+        editPersonalDetails.addActionListener((edit));
         registerButton.addActionListener(register);
         unRegisterButton.addActionListener(unregister);
     }
