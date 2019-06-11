@@ -1,6 +1,7 @@
 package project.GUI.Doctor.General;
 
 import project.GUI.Doctor.DoctorPersonalDetails.StartPersonalDetailsDoctor;
+import project.GUI.Doctor.DoctorShifts.ManageShiftView;
 import project.GUI.General.PersonController;
 import javax.swing.*;
 
@@ -40,6 +41,10 @@ public class DoctorController extends PersonController {
     }
 
     private void enterShiftAction() {
-
+        SwingUtilities.invokeLater(new Runnable() {
+            public void run() {
+                new ManageShiftView();
+            }
+        });
     }
 }
