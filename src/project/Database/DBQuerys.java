@@ -110,8 +110,6 @@ public class DBQuerys extends DBInitializer {
                     return USER_TYPE.DOCTOR;
                 case "P":
                     return USER_TYPE.PATIENT;
-                case "S":
-                    return USER_TYPE.SECRETARY;
                 default:
                     return USER_TYPE.ERROR;
             }
