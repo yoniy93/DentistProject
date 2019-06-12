@@ -6,9 +6,13 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
+import java.util.Observable;
 
-public class LoginView extends JFrame {
+import static javax.swing.WindowConstants.EXIT_ON_CLOSE;
 
+public class LoginView extends Observable {
+
+    private JFrame loginFrame = new JFrame();
     private ImageIcon imageForBG=new ImageIcon(Locations.getImagePath("login.png"));
     private JLabel backGround=new JLabel(imageForBG);
     private JLabel userLabel = new JLabel("ID:");
@@ -26,15 +30,15 @@ public class LoginView extends JFrame {
     private JCheckBox passwordCheckBox = new JCheckBox("Show Password");
 
     public LoginView() {
-        setLayout(null);
+        loginFrame.setLayout(null);
         setLocationAndSize();
         addComponentsToFrame();
 
-        setTitle("Login");
-        setBounds(500, 100, 370, 550);
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setResizable(false);
-        setVisible(true);
+        loginFrame.setTitle("Login");
+        loginFrame.setBounds(500, 100, 370, 550);
+        loginFrame.setDefaultCloseOperation(EXIT_ON_CLOSE);
+        loginFrame.setResizable(false);
+        loginFrame.setVisible(true);
     }
 
     private void setLocationAndSize() {
@@ -61,17 +65,17 @@ public class LoginView extends JFrame {
     }
 
     private void addComponentsToFrame() {
-        add(userLabel);
-        add(notLoginMessage);
-        add(clickHereLabel);
-        add(passwordLabel);
-        add(userTextField);
-        add(passwordField);
-        add(passwordCheckBox);
-        add(loginButton);
-        add(clearButton);
-        add(copyrights);
-        add(backGround);
+        loginFrame.add(userLabel);
+        loginFrame.add(notLoginMessage);
+        loginFrame.add(clickHereLabel);
+        loginFrame.add(passwordLabel);
+        loginFrame.add(userTextField);
+        loginFrame.add(passwordField);
+        loginFrame.add(passwordCheckBox);
+        loginFrame.add(loginButton);
+        loginFrame.add(clearButton);
+        loginFrame.add(copyrights);
+        loginFrame.add(backGround);
     }
 
     public void setActions(ActionListener showPassword, ActionListener login, ActionListener clear, MouseAdapter clickHere) {
@@ -90,11 +94,11 @@ public class LoginView extends JFrame {
     }
 
     public void showRegisterMsg() {
-        JOptionPane.showMessageDialog(this, "\nAt this moment, registration is valid only via Admin.\nFeel free to contact us by mail for additional assistance.\n\n                      help@dentisitry.com");
+        JOptionPane.showMessageDialog(loginFrame, "\nAt this moment, registration is valid only via Admin.\nFeel free to contact us by mail for additional assistance.\n\n                      help@dentisitry.com");
     }
 
     public void showLoginMsg() {
-        JOptionPane.showMessageDialog(this, "Invalid Username or Password");
+        JOptionPane.showMessageDialog(loginFrame, "Invalid Username or Password");
     }
 
     public void clearText(){
@@ -109,5 +113,14 @@ public class LoginView extends JFrame {
             passwordField.setEchoChar('*');
         }
 
+    }
+
+    public void checkLogin(){
+        setChanged();
+        notifyObservers(1);
+    }
+
+    public void closeFrame(){
+        loginFrame.dispose();
     }
 }

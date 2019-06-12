@@ -9,13 +9,11 @@ import project.GUI.Patient.General.StartPatientView;
 import project.Database.DBQuerys;
 
 import java.sql.SQLException;
+import java.util.Observable;
 
-public class LoginModel {
+public class LoginModel extends Observable {
 
-    public LoginModel() {
-    }
-
-    public boolean CheckLogin(String username, String password) throws SQLException {
+    public void CheckLogin(String username, String password) throws SQLException {
 
         DBQuerys databaseQuerys=new DBQuerys();
 
@@ -41,12 +39,18 @@ public class LoginModel {
                     new StartPatientView(patient);
                     break;
                 }
-                case ERROR: return false;
+                case ERROR: {
+                    setChanged();
+                    notifyObservers(false);
+                    return;
+                }
             }
-            return true;
+            setChanged();
+            notifyObservers(true);
         }
         else
-            return false;
+            setChanged();
+            notifyObservers(false);
     }
 
     public USER_TYPE getUserType (String username)  {
@@ -60,4 +64,6 @@ public class LoginModel {
     public boolean isUserExists (String id) {
         return new DBQuerys().isUserExists(id);
     }
+
+
 }

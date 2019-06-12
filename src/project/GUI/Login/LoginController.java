@@ -3,8 +3,10 @@ package project.GUI.Login;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.sql.SQLException;
+import java.util.Observable;
+import java.util.Observer;
 
-public class LoginController {
+public class LoginController implements Observer {
 
     private LoginModel loginM;
     private LoginView loginV ;
@@ -25,22 +27,20 @@ public class LoginController {
             }
         };
 
-        loginV.setActions(e->showPasswordAction(),
-                        e-> { try {
-                                loginAction();
-                            } catch (SQLException ex) {
-                                ex.printStackTrace();
-                            }},
-                        e->clearAction(),click);
+        loginV.setActions(e->showPasswordAction(), e-> loginAction(), e->clearAction(),click);
     }
 
-    public void loginAction() throws SQLException {
+    public void loginAction() {
+
+        loginV.checkLogin();
+/*
         if(!loginM.CheckLogin(loginV.getUser(), loginV.getPassword()))
         {
             loginV.showLoginMsg();
         }
         else
-            loginV.dispose();
+            loginV.closeFrame();
+ */
     }
 
     public void clearAction(){
@@ -49,5 +49,25 @@ public class LoginController {
 
     public void showPasswordAction(){
         loginV.showHidePassword();
+    }
+
+    @Override
+    public void update(Observable observable, Object o) {
+        if(observable instanceof LoginView)
+        {
+            try {
+                loginM.CheckLogin(loginV.getUser(), loginV.getPassword());
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+
+        }else if (observable instanceof LoginModel) {
+
+                if ((boolean) o) {
+                    loginV.closeFrame();
+                } else {
+                    loginV.showLoginMsg();
+                }
+            }
     }
 }
