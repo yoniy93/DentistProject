@@ -8,6 +8,18 @@ import java.util.Vector;
 
 public class RegisterView extends JFrame
 {
+
+    /*
+    NumberFormat longFormat = NumberFormat.getIntegerInstance();
+
+    NumberFormatter numberFormatter = new NumberFormatter(longFormat);
+    numberFormatter.setValueClass(Long.class); //optional, ensures you will always get a long value
+    numberFormatter.setAllowsInvalid(false); //this is the key!!
+    numberFormatter.setMinimum(0l); //Optional
+
+    JFormattedTextField field = new JFormattedTextField(numberFormatter);
+    */
+
     private ImageIcon imageForBG=new ImageIcon(Locations.getImagePath("register.png"));
     private JLabel backGround=new JLabel(imageForBG);
 
