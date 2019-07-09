@@ -162,4 +162,18 @@ public class DBQuerys extends DBInitializer {
         }
         return null;
     }
+
+    public boolean isAvailableTime (String date, String time)
+    {
+        boolean isAvailable;
+        String sql = "SELECT appointmentTIME FROM appointments WHERE appointmentDATE = " + date + " AND appointmentTIME = "+ time;
+        try (Connection conn = this.connect();
+             PreparedStatement pstmt  = conn.prepareStatement(sql)) {
+            ResultSet resultSet = pstmt.executeQuery();
+            isAvailable = !(resultSet.getString("appointmentTIME").equals(time));
+        } catch (SQLException e) {
+            return false;
+        }
+        return isAvailable;
+    }
 }

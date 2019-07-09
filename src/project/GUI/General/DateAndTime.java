@@ -39,6 +39,7 @@ public class DateAndTime extends JPanel {
         TimePickerSettings timeSettings = dateTimePicker.timePicker.getSettings();
         LocalTime start = LocalTime.of(8,0);
         LocalTime finish = LocalTime.of(17, 0);
+        //timeSettings.setVetoPolicy(new VetoPolicy());
         timeSettings.generatePotentialMenuTimes(OneHour,start,finish);
         timeSettings.setFormatForDisplayTime("hh:mm");
         timeSettings.use24HourClockFormat();
