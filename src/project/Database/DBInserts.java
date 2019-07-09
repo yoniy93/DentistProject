@@ -15,6 +15,7 @@ public class DBInserts extends DBInitializer {
         insertMedicalEquipment(12, "מספריים", "12-12-2022", 5);
         insertMedicalEquipment(13, "סכין", "12-12-2024", 10);
         insertMedicalEquipment(14, "מנורה", "12-12-2024", 4);
+        insertAppointments(1,"17-07-2019","10:00", "4", "2");
     }
 
     public void insertMedicalEquipment(int id,String name, String expiredate,int quantity){

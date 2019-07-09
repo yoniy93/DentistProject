@@ -163,17 +163,15 @@ public class DBQuerys extends DBInitializer {
         return null;
     }
 
-    public boolean isAvailableTime (String date, String time)
-    {
-        boolean isAvailable;
-        String sql = "SELECT appointmentTIME FROM appointments WHERE appointmentDATE = " + date + " AND appointmentTIME = "+ time;
+    public boolean isAvailableTime (String date, String time) {
+        String sql = "SELECT appointmentTIME FROM appointments WHERE appointmentDATE like " + '"' + date + '"' + " AND appointmentTIME like " + '"' + time + '"';
         try (Connection conn = this.connect();
              PreparedStatement pstmt  = conn.prepareStatement(sql)) {
             ResultSet resultSet = pstmt.executeQuery();
-            isAvailable = !(resultSet.getString("appointmentTIME").equals(time));
+            return !resultSet.next();
         } catch (SQLException e) {
+            System.out.println(e.getMessage());
             return false;
         }
-        return isAvailable;
     }
 }

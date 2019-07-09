@@ -1,6 +1,6 @@
 package project.GUI.Doctor.DoctorShifts;
 
-import project.GUI.General.DateAndTime;
+import project.GUI.General.Calendar.DateAndTime;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
