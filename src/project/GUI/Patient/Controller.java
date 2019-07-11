@@ -1,29 +1,29 @@
-package project.GUI.Patient.General;
+package project.GUI.Patient;
 
 import project.GUI.General.PersonController;
-import project.GUI.Patient.Appointments.SetAnAppointment;
+import project.GUI.Patient.General.PatientModel;
+import project.GUI.Patient.General.PatientView;
 import project.GUI.Patient.PersonalDetails.StartPersonalDetailsPatient;
 import project.GUI.Patient.Treatments.StartTreatmentsPricesView;
 
 import javax.swing.*;
 
-public class PatientController extends PersonController{
+public class Controller  extends PersonController {
 
-    private PatientModel patientModel;
+    private Model patientModel;
     private PatientView patientView;
 
-    public PatientController(PatientModel patientM, PatientView patientV)
+    public Controller(Model patientM, PatientView patientV)
     {
         patientView = patientV;
         patientModel = patientM;
         addViewActionListeners();
     }
 
-    private void addViewActionListeners() {
+    private void addViewActionListeners(){
 
         addActionsToPerson(patientView);
         patientView.setActions(e->editDetailsAction(), e->setAnAppointmentAction(),e->viewTreatmentsAction());
-
 /*
         patientView.getLogoutButton().addActionListener(e -> logoutAction(patientView));
         patientView.getEditPersonalDetails().addActionListener(e -> editDetailsAction());
@@ -42,7 +42,6 @@ public class PatientController extends PersonController{
     }
 
     private void setAnAppointmentAction() {
-        new SetAnAppointment();
 
     }
 
@@ -54,3 +53,5 @@ public class PatientController extends PersonController{
         });
     }
 }
+
+

@@ -2,6 +2,7 @@ package project.GUI.Patient.PersonalDetails;
 import project.GUI.General.PersonalDetailsView;
 import javax.swing .*;
 import java.awt.*;
+import java.awt.event.ActionListener;
 
 public class PersonalDetailsViewPatient extends PersonalDetailsView {
 
@@ -44,5 +45,11 @@ public class PersonalDetailsViewPatient extends PersonalDetailsView {
 
     public JTextField getWeightTextFiled() {
         return weightTextFiled;
+    }
+
+    public void setActions(ActionListener edit, ActionListener cancel){
+        getEditButton().addActionListener((edit));
+        getCancelButton().addActionListener(cancel);
+
     }
 }

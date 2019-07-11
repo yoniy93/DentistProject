@@ -9,7 +9,7 @@ import java.awt.event.ActionListener;
 public class ManageShiftView extends JFrame implements ActionListener {
 
     DateAndTime dateTimePanel = new DateAndTime();
-    JButton btn = new JButton("Test");
+    JButton btn = new JButton("Check Date");
 
     public ManageShiftView(){
         setLayout(null);
@@ -24,7 +24,7 @@ public class ManageShiftView extends JFrame implements ActionListener {
 
     private void setLocationAndSize() {
         dateTimePanel.setLocation(100, 100);
-        btn.setBounds(200,200,100,30);
+        btn.setBounds(200,200,130,30);
     }
 
     private void addComponentsToFrame() {
