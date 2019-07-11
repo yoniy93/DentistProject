@@ -70,10 +70,6 @@ public class TreatmentsPricesView extends JFrame {
         return treatmentListComboBox;
     }
 
-    public JLabel getTreatmentPrices() {
-        return treatmentPrices;
-    }
-
     public void setTreatmentInfo(String price,String duration, String description) {
         Font font=new Font("Ariel",Font.PLAIN,14);
         treatmentPrices.setFont(font);
@@ -84,11 +80,6 @@ public class TreatmentsPricesView extends JFrame {
 
         treatmentDescription.setFont(font);
         treatmentDescription.setText((String)description);
-    }
-
-
-    public void setTreatmentListComboBox(JComboBox treatmentListComboBox) {
-        this.treatmentListComboBox = treatmentListComboBox;
     }
 
     public void setTreatmentList(List<Treatments> values) {

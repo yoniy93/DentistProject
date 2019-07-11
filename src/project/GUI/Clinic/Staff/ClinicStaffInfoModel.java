@@ -9,9 +9,10 @@ public class ClinicStaffInfoModel {
 
     DBQuerys dbQuerys =new DBQuerys();;
 
-    public void createDoctorsTable()
+    public Vector<Doctor> createDoctorsTable()
     {
         Vector<Doctor> doctors=new Vector<Doctor>();
         doctors=dbQuerys.getDoctors();
+        return doctors;
     }
 }
