@@ -62,7 +62,7 @@ public class DBQuerys extends DBInitializer {
             return new Patient(
                     id, rs.getString("password"), rs.getString("firstname"),
                     rs.getString("lastname"), rs.getString("email"),
-                    rs.getInt("weight"), rs.getInt("height"),
+                    rs.getDouble("weight"), rs.getInt("height"),
                     date, rs.getString("gender"),
                     rs.getString("phoneNumber"));
 
