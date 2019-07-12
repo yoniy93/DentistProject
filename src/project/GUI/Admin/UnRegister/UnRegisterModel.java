@@ -10,7 +10,7 @@ public class UnRegisterModel
         this.admin=admin;
     }
 
-    public void deleteUser (String id) {
-        new DBUpdates().deleteUserFromDB(id);
+    public String deleteUser (String id) {
+        return new DBUpdates().deleteUserFromDB(id);
     }
 }

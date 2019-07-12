@@ -19,8 +19,12 @@ public class UnRegisterController
     }
 
     private void submitAction() {
-        unRegisterModel.deleteUser(unRegisterView.getIdTextField().getText());
-        JOptionPane.showMessageDialog(unRegisterView, "User has been deleted successfully");
+        String msg_recived;
+        msg_recived=unRegisterModel.deleteUser(unRegisterView.getIdTextField().getText());
+        if (msg_recived.equals("Sucssesfuly"))
+            JOptionPane.showMessageDialog(unRegisterView, "User has been deleted successfully");
+        else JOptionPane.showMessageDialog(unRegisterView, msg_recived);
+
     }
 
 }

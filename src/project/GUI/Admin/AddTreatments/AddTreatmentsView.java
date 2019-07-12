@@ -1,6 +1,7 @@
 package project.GUI.Admin.AddTreatments;
 
 import project.Database.DBInserts;
+import project.Database.Locations;
 import project.Entities.Treatments;
 import project.GUI.General.ErrorWindow;
 
@@ -9,7 +10,11 @@ import java.awt.*;
 
 public class AddTreatmentsView extends JFrame
 {
-    AddTreatmentsController addTreatmentsController=new AddTreatmentsController();
+    private ImageIcon imageForBG=new ImageIcon(Locations.getImagePath("searchTreatments.png"));
+    private JLabel backGround=new JLabel(imageForBG);
+
+    AddTreatmentsController addTreatmentsController=new AddTreatmentsController(this);
+
     private JLabel treatmentId= new JLabel("ID:");
     private JLabel treatmentName=new JLabel(" Name:");
     private JLabel treatmentDuration=new JLabel("Duration:");
@@ -30,7 +35,7 @@ public class AddTreatmentsView extends JFrame
         addComponentsToFrame();
         addActionListeners();
         setTitle("Add New Treatment:");
-        setBounds(300, 20, 600, 400);
+        setBounds(300, 20, 700, 500);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setResizable(false);
         setVisible(true);
@@ -56,11 +61,7 @@ public class AddTreatmentsView extends JFrame
 
         addTreatment.setBounds(150,250,150,30);
         cancel.setBounds(310,250,150,30);
-
-
-
-
-
+        backGround.setBounds(0,0,700,500);
     }
 
     private void addComponentsToFrame()
@@ -75,6 +76,7 @@ public class AddTreatmentsView extends JFrame
         add(treatmentPriceTextField);
         add(cancel);
         add(addTreatment);
+        add(backGround);
 
     }
 
@@ -86,13 +88,17 @@ public class AddTreatmentsView extends JFrame
     }
 
     private void addAction() {
+        String msg_recieved;
         if(checkAllFields()) {
             Treatments treatments = new Treatments(getTreatmentIdTextField().getText(), getTreatmentNameTextField().getText(),
                     Integer.parseInt(getTreatmentDurationTextField().getText()), Double.parseDouble(getTreatmentPriceTextField().getText()));
 
-            addTreatmentsController.addAction(treatments);
-            new ErrorWindow(this,"New Treatment Added successfully");
-            this.dispose();
+            msg_recieved=addTreatmentsController.addAction(treatments);
+            if (msg_recieved.equals("Sucssesfuly")) {
+                new ErrorWindow(this, "New Treatment Added successfully");
+                this.dispose();
+            }
+            else new ErrorWindow(this, msg_recieved);
         }
         else
         {

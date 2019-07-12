@@ -7,9 +7,9 @@ public class AddTreatmentsModel
 {
     DBInserts dbInserts = new DBInserts();
 
-    public void InsertTreatment(int Id, String Name , int Duration, double Price)
+    public String InsertTreatment(int Id, String Name , int Duration, double Price)
     {
-        dbInserts.insertTreatment(Id, Name,Duration, Price);
+        return dbInserts.insertTreatment(Id, Name,Duration, Price);
     }
 
 }

@@ -32,8 +32,8 @@ public class DBUpdates extends DBInitializer {
         connectAndExecute(sql);
     }
 
-    public void deleteUserFromDB(String id) {
+    public String deleteUserFromDB(String id) {
         String sql="DELETE FROM users WHERE id='"+id+"';";
-        connectAndExecute(sql);
+        return connectAndExecute(sql);
     }
 }

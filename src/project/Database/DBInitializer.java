@@ -95,13 +95,15 @@ public class DBInitializer {
             System.out.println(e.getMessage());
         }
     }
-    protected void connectAndExecute(String sql){
+    protected String connectAndExecute(String sql){
         try (Connection conn = this.connect();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
             pstmt.executeUpdate();
-            conn.commit();
+            //conn.commit();
+            return "Sucssesfuly";
         } catch (SQLException e) {
-            System.out.println(e.getMessage());
+            System.out.println(e.getMessage() );
+            return e.getMessage();
         }
     }
 
