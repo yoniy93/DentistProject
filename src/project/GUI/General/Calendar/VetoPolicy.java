@@ -10,7 +10,6 @@ import java.time.LocalTime;
 
 public class VetoPolicy implements DateVetoPolicy, TimeVetoPolicy
 {
-
     private String date = null;
 
     VetoPolicy(){ }
@@ -29,7 +28,6 @@ public class VetoPolicy implements DateVetoPolicy, TimeVetoPolicy
 
     @Override
     public boolean isTimeAllowed(LocalTime localTime) {
-
         String time = localTime.toString();
         DBQuerys databaseQueries = new DBQuerys();
 

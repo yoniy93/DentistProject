@@ -8,10 +8,7 @@ import static com.github.lgooddatepicker.components.TimePickerSettings.TimeIncre
 import javax.swing.JPanel;
 import java.awt.*;
 import java.time.DayOfWeek;
-
 import java.time.LocalTime;
-
-
 
 public class DateAndTime extends JPanel {
 
