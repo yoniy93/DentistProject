@@ -69,7 +69,7 @@ public class RegisterController {
         }
         else {
             if (registerView.getDoctor().isSelected())
-                return registerView.getYearsOfExTextField().getText().equals("");
+                return !registerView.getYearsOfExTextField().getText().equals("");
             else
                 return !registerView.getWeightTextField().getText().equals("") && !registerView.getHeightTextField().getText().equals("");
         }

@@ -103,6 +103,8 @@ public class ClinicInfoView extends JFrame {
 
     }
 
+
+
     public JLabel getClinicNameLable() {
         return clinicNameLable;
     }

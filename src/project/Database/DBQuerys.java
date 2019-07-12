@@ -120,26 +120,30 @@ public class DBQuerys extends DBInitializer {
         }
     }
 
-    public Vector<Doctor> getDoctors () {
-        Vector<Doctor> doctors = new Vector<>(1);
-        String sql ="SELECT * FROM users WHERE userRols='D';";
+    public List<Doctor> getDoctors () {
+        List<Doctor> doctors = new ArrayList<>(1);
+        String sql ="SELECT * FROM users WHERE userRole='D';";
         try (Connection conn = this.connect();
              PreparedStatement pstmt  = conn.prepareStatement(sql)) {
             ResultSet resultSet=pstmt.executeQuery();
             while (resultSet.next()){
+                SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy");
+                Date date = format.parse(resultSet.getString("birthdate"));
                 doctors.add(new Doctor(resultSet.getString("id"),
                         resultSet.getString("password"),
                         resultSet.getString("firstname"),
                         resultSet.getString("lastname"),
                         resultSet.getString("email"),
-                        resultSet.getDate("dateOfBirth"),
-                        resultSet.getInt("yearsOfExp"),
+                        date,
+                        resultSet.getInt("yearOfExperiens"),
                         resultSet.getString("gender"),
                         resultSet.getString("phoneNumber")));
             }
             return doctors;
         } catch (SQLException e) {
             System.out.println(e.getMessage());
+        } catch (ParseException e) {
+            e.printStackTrace();
         }
         return null;
     }

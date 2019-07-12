@@ -22,6 +22,7 @@ public class DBInserts extends DBInitializer {
         String sql="INSERT INTO medical_equipment(id, treatmentname, expiredate, quantity)"+
                 " VALUES ('"+id+"', '"+name+"', '"+expiredate+"', '"+quantity+"');";
         connectAndExecute(sql);
+
     }
 
     public void insertTreatment(int id,String name, int duration, double price){

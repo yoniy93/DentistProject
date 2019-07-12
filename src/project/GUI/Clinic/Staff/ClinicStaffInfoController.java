@@ -11,28 +11,31 @@ public class ClinicStaffInfoController
     ClinicStaffInfoView clinicStaffInfoView;
     ClinicStaffInfoModel clinicStaffInfoModel;
 
-    public ClinicStaffInfoController(ClinicStaffInfoModel clinicStaffInfoModel,ClinicStaffInfoView clinicStaffInfoView)
+    public ClinicStaffInfoController()
     {
-        this.clinicStaffInfoModel=clinicStaffInfoModel;
-        this.clinicStaffInfoView=clinicStaffInfoView;
-
-        initController();
+        clinicStaffInfoModel=new ClinicStaffInfoModel();
+        clinicStaffInfoView=new ClinicStaffInfoView();
+        clinicStaffInfoView.getDoctorJComboBox().setVisible(true);
+        addViewActionListeners();
+        clinicStaffInfoView.setDoctorList (clinicStaffInfoModel.getDoctorList());
+        clinicStaffInfoView.setVisible();
     }
 
-
-    private void initController()
-    {
-
-        clinicStaffInfoView.setList(clinicStaffInfoModel.createDoctorsTable());
-        clinicStaffInfoView.getDoctorJComboBox().addActionListener(e->setValues());
+    private void addViewActionListeners() {
+        this.clinicStaffInfoView.getDoctorJComboBox().addActionListener(e->doctorlistAction());
     }
 
-    private void setValues()
-    {
-        Doctor doctor = (Doctor)clinicStaffInfoView.getDoctorJComboBox().getSelectedItem();
+    private void doctorlistAction() {
+        Doctor d = (Doctor) this.clinicStaffInfoView.getDoctorJComboBox().getSelectedItem();
 
-        if (doctor != null) {
-            clinicStaffInfoView.setInfoOfDoctor(doctor.getFirstName(),doctor.getLastName(),doctor.getGender(),doctor.getPhoneNumber(),doctor.getEmail());
+        if (d != null) {
+            clinicStaffInfoView.setInfoOfDoctor(d.getFirstName(),
+                                                d.getLastName(),
+                                                d.getGender(),
+                                                d.getPhoneNumber(),
+                                                d.getEmail(),
+                                                d.getYearsOfEx()) ;
         }
     }
+
 }

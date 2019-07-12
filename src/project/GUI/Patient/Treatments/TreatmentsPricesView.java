@@ -73,13 +73,13 @@ public class TreatmentsPricesView extends JFrame {
     public void setTreatmentInfo(String price,String duration, String description) {
         Font font=new Font("Ariel",Font.PLAIN,14);
         treatmentPrices.setFont(font);
-        treatmentPrices.setText((String)price);
+        treatmentPrices.setText(price);
 
         treatmentDuration.setFont(font);
-        treatmentDuration.setText((String)duration);
+        treatmentDuration.setText(duration);
 
         treatmentDescription.setFont(font);
-        treatmentDescription.setText((String)description);
+        treatmentDescription.setText(description);
     }
 
     public void setTreatmentList(List<Treatments> values) {

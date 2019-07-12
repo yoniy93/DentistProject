@@ -5,6 +5,10 @@ import java.sql.*;
 
 public class DBInitializer {
 
+    public DBInitializer( ){
+
+    }
+
     public Connection connect() {
         String url = Locations.getDatabasePath();
 
@@ -95,6 +99,7 @@ public class DBInitializer {
         try (Connection conn = this.connect();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
             pstmt.executeUpdate();
+            conn.commit();
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }

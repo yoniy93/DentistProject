@@ -2,17 +2,20 @@ package project.GUI.Clinic.Staff;
 
 import project.Database.DBQuerys;
 import project.Entities.Doctor;
+import project.Entities.Treatments;
 
+import java.util.List;
 import java.util.Vector;
 
 public class ClinicStaffInfoModel {
 
-    DBQuerys dbQuerys =new DBQuerys();;
+    DBQuerys dbQuerys =new DBQuerys();
+    private List<Doctor> doctorsList;
 
-    public Vector<Doctor> createDoctorsTable()
+
+    public List<Doctor> getDoctorList()
     {
-        Vector<Doctor> doctors=new Vector<Doctor>();
-        doctors=dbQuerys.getDoctors();
-        return doctors;
+        doctorsList=dbQuerys.getDoctors();
+        return doctorsList;
     }
 }
