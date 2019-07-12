@@ -27,7 +27,7 @@ public class DateAndTime extends JPanel {
     }
 
     private void setDateSettings() {
-        dateTimePicker.datePicker.addDateChangeListener(new DateListener(dateTimePicker.timePicker.getSettings()));
+        dateTimePicker.datePicker.addDateChangeListener(new DateListener(dateTimePicker));
         DatePickerSettings dateSettings = dateTimePicker.datePicker.getSettings();
         dateSettings.setVetoPolicy(new VetoPolicy());
         dateSettings.setVisibleTodayButton(false);

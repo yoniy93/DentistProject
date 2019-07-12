@@ -33,9 +33,6 @@ public class VetoPolicy implements DateVetoPolicy, TimeVetoPolicy
         String time = localTime.toString();
         DBQuerys databaseQueries = new DBQuerys();
 
-        //System.out.println("time: " + time + databaseQueries.isAvailableTime(date,time) + "\n");
-        System.out.println("time: " + time + " Date: " + date + " " + databaseQueries.isAvailableTime(date,time));
-
         return databaseQueries.isAvailableTime(date,time);
     }
 }

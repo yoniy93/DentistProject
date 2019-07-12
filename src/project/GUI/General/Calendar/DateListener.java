@@ -1,22 +1,21 @@
 package project.GUI.General.Calendar;
 
-import com.github.lgooddatepicker.components.TimePickerSettings;
+import com.github.lgooddatepicker.components.DateTimePicker;
 import com.github.lgooddatepicker.optionalusertools.DateChangeListener;
 import com.github.lgooddatepicker.zinternaltools.DateChangeEvent;
 
-import java.time.LocalDate;
-
 public class DateListener implements DateChangeListener {
 
-    private TimePickerSettings timeSettings;
-    public DateListener(TimePickerSettings settings)
+    private DateTimePicker dateTimePicker;
+    public DateListener(DateTimePicker dateTimePicker)
     {
-        timeSettings = settings;
+        this.dateTimePicker = dateTimePicker;
     }
 
     public void dateChanged(DateChangeEvent event) {
         String date = convertDateToString(event.getNewDate().getDayOfMonth() , event.getNewDate().getMonthValue() , event.getNewDate().getYear());
-        timeSettings.setVetoPolicy(new VetoPolicy(date));
+        dateTimePicker.timePicker.getSettings().setVetoPolicy(new VetoPolicy(date));
+        dateTimePicker.timePicker.clear();
     }
 
     private String convertDateToString (int day, int month, int year) {
