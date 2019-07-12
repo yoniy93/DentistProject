@@ -1,5 +1,6 @@
 package project.GUI.Admin.General;
 
+import project.GUI.Admin.AddTreatments.AddTreatmentsStart;
 import project.GUI.Admin.AdminPersonalDetails.StartPersonalDetailsAdmin;
 import project.GUI.Admin.Register.StartRegisterView;
 import project.GUI.Admin.UnRegister.StartUnRegister;
@@ -21,7 +22,7 @@ public class AdminController extends PersonController {
 
     private void addViewActionListeners () {
         addActionsToPerson(adminView);
-        adminView.setActions(e->editPersonalDetailsAction(), e->registerAction(), e->unregisterAction());
+        adminView.setActions(e->editPersonalDetailsAction(), e->registerAction(), e->unregisterAction(), e->newTreatments());
 
         /*
         adminView.getLogoutButton().addActionListener(e -> logoutAction(adminView));
@@ -29,6 +30,14 @@ public class AdminController extends PersonController {
         adminView.getViewClinicStaffInfo().addActionListener(e->viewStaffInfoAction());
         adminView.getViewClinicDetails().addActionListener(e->viewClinicInfoAction());
         */
+    }
+
+    private void newTreatments() {
+        SwingUtilities.invokeLater(new Runnable() {
+            public void run() {
+                new AddTreatmentsStart();
+            }
+        });
     }
 
     private void registerAction() {

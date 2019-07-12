@@ -3,9 +3,9 @@ package project.GUI.General;
 import javax.swing.*;
 import java.awt.*;
 
-public class CancleButton extends JButton {
+public class CancelButton extends JButton {
 
-    public CancleButton( ){
+    public CancelButton( ){
         setText("Cancel");
     }
 

@@ -1,7 +1,7 @@
 package project.GUI.Admin.UnRegister;
 
 import project.Database.Locations;
-import project.GUI.General.CancleButton;
+import project.GUI.General.CancelButton;
 
 import javax.swing.*;
 import java.awt.*;
@@ -14,7 +14,7 @@ public class UnRegisterView extends JFrame
     private JButton submit = new JButton("SUBMIT");
     private JTextField idTextField = new JTextField();
     private JLabel idLabel = new JLabel("Enter id of user :");
-    CancleButton cancleButton=new CancleButton();
+    CancelButton cancelButton =new CancelButton();
 
     public UnRegisterView()
     {
@@ -37,7 +37,7 @@ public class UnRegisterView extends JFrame
         idTextField.setBounds(200,45,100,20);
 
         submit.setBounds(100,100,120,30);
-        cancleButton.setLocation(240,100,120,30);
+        cancelButton.setLocation(240,100,120,30);
 
         backGround.setBounds(0,0,450,200);
     }
@@ -47,7 +47,7 @@ public class UnRegisterView extends JFrame
         add(idLabel);
         add(idTextField);
         add(submit);
-        add(cancleButton);
+        add(cancelButton);
         add(backGround);
     }
 
@@ -60,7 +60,7 @@ public class UnRegisterView extends JFrame
     }
 
     public JButton getCancel() {
-        return cancleButton;
+        return cancelButton;
     }
 
 }

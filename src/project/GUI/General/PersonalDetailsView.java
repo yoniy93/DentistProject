@@ -10,7 +10,7 @@ public class PersonalDetailsView extends JFrame {
     private JLabel backGround =new JLabel(imageForBG);
 
     private JButton editButton = new JButton("Apply");
-    private CancleButton cancelButton = new CancleButton();
+    private CancelButton cancelButton = new CancelButton();
     private JLabel firstnameLabel = new JLabel("First Name: ");
     private JLabel lastnameLabel = new JLabel( "Last Name: ");
     private JLabel emailLabel = new JLabel( "Email: ");
@@ -92,7 +92,7 @@ public class PersonalDetailsView extends JFrame {
         return editButton;
     }
 
-    public CancleButton getCancelButton() {
+    public CancelButton getCancelButton() {
         return cancelButton;
     }
 

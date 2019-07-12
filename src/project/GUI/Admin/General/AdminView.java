@@ -8,6 +8,7 @@ public class AdminView extends PersonView {
 
     private JButton registerButton = new JButton("Register new user ");
     private JButton unRegisterButton= new JButton("Unregister exciting user ");
+    private JButton addNewTreatments=new JButton("Add New Treatments");
 
     public AdminView() {
         setLocationAndSize();
@@ -20,18 +21,22 @@ public class AdminView extends PersonView {
         registerButton.setFont(getButtonFont());
         unRegisterButton.setBounds(100, 220,   230, 50);
         unRegisterButton.setFont(getButtonFont());
+        addNewTreatments.setBounds(100, 80,   230, 50);
+        addNewTreatments.setFont(getButtonFont());
         getBackGround().setBounds(0,0,800,600);
     }
 
     private void addComponentsToFrame(){
         add(unRegisterButton);
         add(registerButton);
+        add(addNewTreatments);
         add(getBackGround());
     }
 
-    public void setActions(ActionListener edit, ActionListener register, ActionListener unregister) {
+    public void setActions(ActionListener edit, ActionListener register, ActionListener unregister ,ActionListener addTreatments) {
         editPersonalDetails.addActionListener((edit));
         registerButton.addActionListener(register);
         unRegisterButton.addActionListener(unregister);
+        addNewTreatments.addActionListener(addTreatments);
     }
 }

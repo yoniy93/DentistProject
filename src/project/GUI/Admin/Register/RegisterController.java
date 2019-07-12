@@ -21,7 +21,7 @@ public class RegisterController {
         registerView.getAddUser().addActionListener(e -> addUserAction());
         registerView.getDoctor().addActionListener(e-> setVisibleTextFieldForDoctor());
         registerView.getPatient().addActionListener(e-> setVisibleTextFieldForPatient());
-        registerView.getCancleButton().addActionListener(e-> registerView.dispose());
+        registerView.getCancelButton().addActionListener(e-> registerView.dispose());
     }
 
     private void setVisibleTextFieldForDoctor(){
@@ -56,8 +56,8 @@ public class RegisterController {
          new ErrorWindow(registerView,"New use created successfully");
          registerView.dispose();
      }
-     else
-        new ErrorWindow(registerView,"Error: please fill all fields");
+   else
+       new ErrorWindow(registerView,"Error: please fill all fields");
     }
 
     private boolean isAllFieldsFilled() {

@@ -1,6 +1,6 @@
 package project.GUI.Patient.Payment;
 import project.Database.Locations;
-import project.GUI.General.CancleButton;
+import project.GUI.General.CancelButton;
 
 import javax.swing.*;
 import java.util.Vector;
@@ -14,7 +14,7 @@ public class PaymentView extends JFrame {
     private JLabel validity=new JLabel("Validity:");
     private JLabel CVV= new JLabel("CVV :");
     private JButton submit=new JButton("Submit");
-    private CancleButton cancel=new CancleButton();
+    private CancelButton cancel=new CancelButton();
     private JTextField idTextField=new JTextField(9);
     private JTextField creditTextField=new JTextField(16);
     private JTextField CVVTextField=new JTextField(3);
@@ -139,6 +139,6 @@ public class PaymentView extends JFrame {
         this.monthBox = monthBox;
     }
 
-    public CancleButton getCancel() { return cancel; }
+    public CancelButton getCancel() { return cancel; }
 
 }

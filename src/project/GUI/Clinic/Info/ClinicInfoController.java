@@ -11,7 +11,7 @@ public class ClinicInfoController {
     }
 
     private void addViewActionListeners() {
-        clinicInfoView.cancleButton.addActionListener(e -> clinicInfoView.dispose());
+        clinicInfoView.cancelButton.addActionListener(e -> clinicInfoView.dispose());
     }
 
 }

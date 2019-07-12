@@ -1,7 +1,7 @@
 package project.GUI.Clinic.Info;
 
 import project.Database.Locations;
-import project.GUI.General.CancleButton;
+import project.GUI.General.CancelButton;
 import javax.swing.*;
 import java.awt.*;
 
@@ -27,7 +27,7 @@ public class ClinicInfoView extends JFrame {
     private JLabel phone1 = new JLabel( "  03-6880321");
 
     private JTable hoursTable = new JTable(tableData,columnNames);
-    CancleButton cancleButton=new CancleButton();
+    CancelButton cancelButton =new CancelButton();
 
     public ClinicInfoView() {
         setLayout(null);
@@ -85,7 +85,7 @@ public class ClinicInfoView extends JFrame {
         phone1.setBounds(220,305,150,30);
         phone1.setBorder(BorderFactory.createLineBorder(Color.BLACK, 2));
 
-        cancleButton.setLocation(610,400,100,30);
+        cancelButton.setLocation(610,400,100,30);
         backGround.setBounds(0,0,800,500);
     }
 
@@ -93,7 +93,7 @@ public class ClinicInfoView extends JFrame {
 
         add(hoursTable);
         add(clinicNameLable);
-        add(cancleButton);
+        add(cancelButton);
         add(addressLabel);
         add(address);
         add(phone1);
@@ -121,7 +121,7 @@ public class ClinicInfoView extends JFrame {
         return addressLabel;
     }
 
-    public CancleButton getCancleButton() {
-        return cancleButton;
+    public CancelButton getCancelButton() {
+        return cancelButton;
     }
 }

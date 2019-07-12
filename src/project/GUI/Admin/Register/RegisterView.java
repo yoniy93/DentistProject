@@ -1,6 +1,6 @@
 package project.GUI.Admin.Register;
 import project.Database.Locations;
-import project.GUI.General.CancleButton;
+import project.GUI.General.CancelButton;
 
 import javax.swing.*;
 import java.awt.*;
@@ -23,7 +23,7 @@ public class RegisterView extends JFrame
     private ImageIcon imageForBG=new ImageIcon(Locations.getImagePath("register.png"));
     private JLabel backGround=new JLabel(imageForBG);
 
-    private CancleButton cancleButton = new CancleButton();
+    private CancelButton cancelButton = new CancelButton();
     private JButton addUserButton = new JButton("Submit");
     private JLabel roleLabel = new JLabel( "What is the user's role?");
     private JLabel firstNameLabel = new JLabel("First Name: ");
@@ -165,7 +165,7 @@ public class RegisterView extends JFrame
         yearsOfExTextField.setBounds(200,550,150,25);
 
         addUserButton.setBounds(200,600,150,30);
-        cancleButton.setLocation(400,600,150,30);
+        cancelButton.setLocation(400,600,150,30);
 
         backGround.setBounds(0,0,800,700);
 
@@ -218,7 +218,7 @@ public class RegisterView extends JFrame
         dayBox.setSelectedIndex(0);
         add(monthBox);
         monthBox.setSelectedIndex(0);
-        add(cancleButton);
+        add(cancelButton);
 
         add(backGround);
 
@@ -321,8 +321,8 @@ public class RegisterView extends JFrame
         return addUserButton;
     }
 
-    public CancleButton getCancleButton() {
-        return cancleButton;
+    public CancelButton getCancelButton() {
+        return cancelButton;
     }
 
     public JTextField getPhoneNumberTextField() { return phoneNumberTextField; }

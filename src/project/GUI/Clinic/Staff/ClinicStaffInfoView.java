@@ -2,9 +2,8 @@ package project.GUI.Clinic.Staff;
 
 import project.Database.Locations;
 import project.Entities.Doctor;
-import project.GUI.General.CancleButton;
+import project.GUI.General.CancelButton;
 import javax.swing.*;
-import javax.swing.border.Border;
 import java.awt.*;
 import java.util.List;
 
@@ -34,7 +33,7 @@ public class ClinicStaffInfoView extends JFrame {
     private JLabel clinicNameLable = new JLabel( "<HTML><U>Doctors Info:</U></HTML>");
 
 
-    CancleButton cancleButton=new CancleButton();
+    CancelButton cancelButton =new CancelButton();
 
 
     public ClinicStaffInfoView() {
@@ -124,7 +123,7 @@ public class ClinicStaffInfoView extends JFrame {
         yeasOfExperienceValue.setOpaque(true);
         yeasOfExperienceValue.setBorder(BorderFactory.createLineBorder(Color.BLACK, 2));
 
-        cancleButton.setLocation(550,400,80,30);
+        cancelButton.setLocation(550,400,80,30);
         backGround.setBounds(0,0,800,500);
 
 
@@ -146,7 +145,7 @@ public class ClinicStaffInfoView extends JFrame {
         add(emailValue);
         add(yeasOfExperience);
         add(yeasOfExperienceValue);
-        add(cancleButton);
+        add(cancelButton);
         add(backGround);
 
 
