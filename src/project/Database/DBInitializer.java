@@ -6,7 +6,7 @@ import java.sql.*;
 public class DBInitializer {
 
     public DBInitializer( ){
-
+        // do here singletone!
     }
 
     public Connection connect() {
@@ -52,7 +52,6 @@ public class DBInitializer {
     public static void loadDatabaseWithInitialData(){
         boolean isDBexists=isDBExists();
         createTablesInDB();
-//        String newstring = new SimpleDateFormat("dd-MM-yyyy").format(date);
         if (!isDBexists) {
             System.out.println("Initial database was loaded successfully ");
             DBInserts db=new DBInserts();
@@ -62,7 +61,7 @@ public class DBInitializer {
 
     public static void createNewTables() {
 
-        String url,sql,sql1,sql2,sql3,sql4,sql5,sql6;
+        String url,sql,sql1,sql2,sql3,sql4;
 
         url = Locations.getDatabasePath();
 
@@ -79,7 +78,7 @@ public class DBInitializer {
         sql3="CREATE TABLE IF NOT EXISTS appointments (treatmentID integer PRIMARY KEY NOT NULL, appointmentDATE date NOT NULL,"+
                 " appointmentTIME time NOT NULL,clientID text NOT NULL, doctorID text NOT NULL);";
 
-        sql4="CREATE TABLE IF NOT EXISTS mediciens (medicineid integer NOT NULL PRIMARY KEY,expiredate date NOT NULL," +
+        sql4="CREATE TABLE IF NOT EXISTS mediciens (id integer NOT NULL PRIMARY KEY,expiredate date NOT NULL," +
                 "quantity integer NOT NULL,medicinename text NOT NULL);";
 
         try (Connection conn = DriverManager.getConnection(url);
@@ -99,7 +98,6 @@ public class DBInitializer {
         try (Connection conn = this.connect();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
             pstmt.executeUpdate();
-            //conn.commit();
             return "Sucssesfuly";
         } catch (SQLException e) {
             System.out.println(e.getMessage() );

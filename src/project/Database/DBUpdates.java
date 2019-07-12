@@ -5,8 +5,6 @@ import project.Entities.Doctor;
 import project.Entities.MedicalEquipment;
 import project.Entities.Patient;
 
-import java.text.SimpleDateFormat;
-
 public class DBUpdates extends DBInitializer {
 
     public void updateEquipmentsQuantity(MedicalEquipment m){

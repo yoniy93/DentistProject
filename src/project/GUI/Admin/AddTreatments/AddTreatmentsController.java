@@ -15,6 +15,10 @@ public class AddTreatmentsController {
     }
 
     public String addAction(Treatments treatments) {
-        return addTreatmentsModel.InsertTreatment(Integer.parseInt(treatments.getId()),treatments.getName(),treatments.getDuration(),treatments.getPrice());
+        treatments.setId( Integer.toString(addTreatmentsModel.getAvailableId())+1 );
+        return addTreatmentsModel.InsertTreatment(Integer.parseInt(treatments.getId()),
+                                                                  treatments.getName(),
+                                                                  treatments.getDuration(),
+                                                                  treatments.getPrice());
     }
 }

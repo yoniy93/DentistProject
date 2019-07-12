@@ -1,14 +1,12 @@
 package project.Database;
 
 import project.Entities.*;
-
 import java.sql.*;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import java.util.Vector;
 
 public class DBQuerys extends DBInitializer {
 
@@ -168,7 +166,7 @@ public class DBQuerys extends DBInitializer {
     }
 
     public boolean isAvailableTime (String date, String time) {
-        String sql = "SELECT appointmentTIME FROM appointments WHERE appointmentDATE like " + '"' + date + '"' + " AND appointmentTIME like " + '"' + time + '"';
+        String sql = "SELECT appointmentTIME FROM appointments WHERE appointmentDATE like "+'"'+date+'"'+" AND appointmentTIME like "+'"'+time+'"';
         try (Connection conn = this.connect();
              PreparedStatement pstmt  = conn.prepareStatement(sql)) {
             ResultSet resultSet = pstmt.executeQuery();
@@ -176,6 +174,18 @@ public class DBQuerys extends DBInitializer {
         } catch (SQLException e) {
             System.out.println(e.getMessage());
             return false;
+        }
+    }
+
+    public int getLastId(String tablename){
+        String sql="Select max(id) from "+tablename+";";
+        try (Connection conn = this.connect();
+             PreparedStatement pstmt  = conn.prepareStatement(sql)) {
+            ResultSet resultSet = pstmt.executeQuery();
+            return resultSet.getInt(1);
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+            return -1;
         }
     }
 }
