@@ -8,31 +8,61 @@ public class DBInserts {
     DBInitializer dbInitializer=DBInitializer.getInstance();
 
     public void insertInitialData(){
+        initializeUsers();
+        initializeTreatments();
+        initializeEquipments();
+        initializeAppointments();
+    }
+
+    private void initializeUsers(){
         insertForAdmin("1", "1", "Admin", "Admin", "admin@gmail.com", "01-01-2000", "male","0547690760");
+
         insertForDoctor("2", "1", "Amit", "Aflalo", "amit@gmail.com", "13-05-1993", "female", 3,"0547690750");
-        insertForDoctor("3", "1", "Doctor", "ABC", "amit@gmail.com", "13-05-1993", "female", 3,"0547690750");
+        insertForDoctor("3", "1", "Doctor", "doc", "amit@gmail.com", "13-05-1993", "female", 3,"0547690750");
+
         insertForPatient("4", "1", "Yonatan", "Yardeni", "yoni@gmail.com", 60.5, 178, "13-05-1993", "male","0547690740");
         insertForPatient("5", "1", "Ofir", "Gan", "offirgan@gmail.com", 56.5, 170, "04-09-1992", "male","0547690730");
+    }
+
+    private void initializeTreatments(){
         insertTreatment(1, "צילום", 30, 54.9);
         insertTreatment(2, "סתימה", 60, 99);
         insertTreatment(3, "גשר", 90, 150);
         insertTreatment(4, "הלבנה", 60, 69.9);
         insertTreatment(5, "שיננית", 30, 75);
-        insertMedicalEquipment(11, "מזרק", "12-12-2020", 5);
-        insertMedicalEquipment(12, "מספריים", "12-12-2022", 5);
-        insertMedicalEquipment(13, "סכין", "12-12-2024", 10);
-        insertMedicalEquipment(14, "מנורה", "12-12-2024", 4);
-        insertAppointments(1,5,"17-07-2019","10:00", "4", "2");
-        insertAppointments(2,4,"17-07-2019","11:00", "4", "2");
-        insertAppointments(3,2,"17-07-2019","12:00", "4", "2");
-        insertAppointments(4,2,"17-07-2019","13:00", "4", "2");
-        insertAppointments(5,2,"17-07-2019","08:00", "4", "3");
-        insertAppointments(6,2,"17-07-2019","09:00", "4", "3");
-        insertAppointments(7,3,"17-07-2019","10:00", "4", "3");
-        insertAppointments(8,3,"17-07-2019","13:00", "4", "2");
-        insertAppointments(9,4,"17-07-2019","08:00", "5", "3");
-        insertAppointments(10,4,"17-07-2019","09:00", "5", "3");
-        insertAppointments(11,4,"17-07-2019","10:00", "5", "3");
+    }
+
+    private void initializeEquipments(){
+        insertMedicalEquipment(1, "מזרק", "12-12-2020", 5);
+        insertMedicalEquipment(2, "מספריים", "12-12-2022", 5);
+        insertMedicalEquipment(3, "סכין", "12-12-2024", 10);
+        insertMedicalEquipment(4, "מנורה", "12-12-2024", 4);
+
+    }
+
+    private void initializeAppointments(){
+        insertAppointments(1,5,"17-07-2019","10:00", "4", "3");
+        insertAppointments(2,4,"17-07-2019","11:00", "4", "3");
+        insertAppointments(3,2,"17-07-2019","12:00", "4", "3");
+        insertAppointments(4,2,"17-07-2019","13:00", "4", "3");
+        insertAppointments(5,2,"18-07-2019","08:00", "4", "3");
+        insertAppointments(6,2,"18-07-2019","09:00", "5", "3");
+        insertAppointments(7,3,"18-07-2019","10:00", "5", "3");
+        insertAppointments(8,3,"18-07-2019","13:00", "5", "3");
+        insertAppointments(9,4,"21-07-2019","08:00", "5", "3");
+        insertAppointments(10,4,"17-07-2019","09:00", "5", "2");
+        insertAppointments(11,4,"17-07-2019","10:00", "5", "2");
+        insertAppointments(12,4,"17-07-2019","11:00", "4", "2");
+        insertAppointments(13,2,"17-07-2019","12:00", "4", "2");
+        insertAppointments(14,2,"17-07-2019","13:00", "4", "2");
+        insertAppointments(15,2,"18-07-2019","15:00", "4", "2");
+        insertAppointments(16,2,"18-07-2019","16:00", "4", "2");
+        insertAppointments(17,3,"21-07-2019","10:00", "4", "2");
+        insertAppointments(18,3,"21-07-2019","12:00", "4", "2");
+        insertAppointments(19,4,"22-07-2019","08:00", "5", "2");
+        insertAppointments(20,4,"22-07-2019","09:00", "5", "2");
+        insertAppointments(21,4,"12-07-2019","10:00", "5", "2");
+
     }
 
     public String insertMedicalEquipment(int id,String name, String expiredate,int quantity){
