@@ -21,7 +21,7 @@ public class DBTest {
     @BeforeAll
     static void setUp() throws ParseException {
 
-        DBInserts.loadDatabaseWithInitialData();
+        DBInitializer.loadDatabaseWithInitialData();
         query = new DBQuerys();
 
         Date adminBirthDate = new SimpleDateFormat("dd-MM-yyyy").parse("01-01-2000");
