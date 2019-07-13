@@ -31,6 +31,8 @@ public class DateAndTime extends JPanel {
         dateSettings.setVisibleNextYearButton(false);
         dateSettings.setVisiblePreviousYearButton(false);
         dateSettings.setFirstDayOfWeek(DayOfWeek.SUNDAY);
+        dateSettings.setFormatForDatesCommonEra("dd-MM-yyyy");
+        dateSettings.setFormatForDatesBeforeCommonEra("dd-MM-uuuu");
 
     }
 
