@@ -121,7 +121,7 @@ public class DBQuerys{
     }
 
     public List<Doctor> getDoctors () {
-        List<Doctor> doctors = new ArrayList<>(1);
+        List<Doctor> doctors = new ArrayList<>(0);
         String sql ="SELECT * FROM users WHERE userRole='D';";
         try (Connection conn = dbInitializer.connect();
              PreparedStatement pstmt  = conn.prepareStatement(sql)) {
@@ -173,7 +173,7 @@ public class DBQuerys{
     }
 
     public List<Treatments> getTreatments (){
-        List<Treatments> treatments=new ArrayList<>(1);
+        List<Treatments> treatments=new ArrayList<>(0);
         String sql="SELECT * FROM treatments;";
         try (Connection conn = dbInitializer.connect();
              PreparedStatement pstmt  = conn.prepareStatement(sql)) {
@@ -192,8 +192,8 @@ public class DBQuerys{
     }
 
     public List<Appointment> getAllTreatmetsForUser(String id){
-        List<Appointment> appointments=new ArrayList<>(1);
-        String sql="SELECT * FROM treatments WHERE clientID="+id+";";
+        List<Appointment> appointments=new ArrayList<>(0);
+        String sql="SELECT * FROM appointments WHERE clientID="+id+";";
         try (Connection conn = dbInitializer.connect();
              PreparedStatement pstmt  = conn.prepareStatement(sql)) {
             ResultSet resultSet=pstmt.executeQuery();
@@ -218,7 +218,21 @@ public class DBQuerys{
         return null;
     }
 
-    public List<Patient> getAllPatients() {
+    public List<String> getAllPatientsID() {
+        List<String> patientsIdList=new ArrayList<>(0);
+        String sql="SELECT clientID FROM appointments;";
+        try (Connection conn = dbInitializer.connect();
+             PreparedStatement pstmt  = conn.prepareStatement(sql)) {
+            ResultSet resultSet=pstmt.executeQuery();
+            while (resultSet.next()){
+                patientsIdList.add(resultSet.getString(1));
+            }
+            if (patientsIdList.size()==0)
+                return null;
+            return patientsIdList;
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
         return null;
     }
 }

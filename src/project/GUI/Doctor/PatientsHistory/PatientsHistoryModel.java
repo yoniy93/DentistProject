@@ -10,8 +10,8 @@ public class PatientsHistoryModel {
 
     DBQuerys dbQuerys=new DBQuerys();
 
-    public List<Patient> queryAllPatients(){
-        return dbQuerys.getAllPatients();
+    public List<String> queryAllPatientsID(){
+        return dbQuerys.getAllPatientsID();
     }
 
     public List<Appointment> quertAllTreatmentsHistory(String patientId) {

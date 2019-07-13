@@ -17,9 +17,9 @@ public class PatientsHistoryView extends JFrame{
 
     private PatientsHistoryController patientsHistoryController=new PatientsHistoryController();
 
-    private JComboBox<Patient> patientJComboBox = new JComboBox<Patient>();
+    private JComboBox<String> patientJComboBox = new JComboBox<String>();
 
-    private JLabel selectPatientLable =new JLabel("Select Patient:");
+    private JLabel selectPatientLable =new JLabel("Select Patient ID:");
 
     CancelButton cancelButton=new CancelButton();
 
@@ -27,25 +27,22 @@ public class PatientsHistoryView extends JFrame{
     public PatientsHistoryView() {
         this.getPatientJComboBox().setVisible(true);
         this.setDoctorList(patientsHistoryController.getPatientsList());
-
         setLayout(null);
         setLocationAndSize();
         addComponentsToFrame();
         addActionListeners();
-        setTitle("Add New Treatment:");
+        setTitle("Patients Treatments History:");
         setBounds(300, 20, 700, 500);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setResizable(false);
         setVisible(true);
-
     }
 
     private void setLocationAndSize() {
 
-        patientJComboBox.setBounds(130, 80, 200, 50);
+        patientJComboBox.setBounds(60, 130, 200, 50);
 
-
-        selectPatientLable.setFont(new Font("Tahoma", Font.BOLD, 14));
+        selectPatientLable.setFont(new Font("Ariel", Font.BOLD, 14));
         selectPatientLable.setBounds(60,80,100,30);
 
         cancelButton.setLocation(310,250,120,30);
@@ -65,7 +62,7 @@ public class PatientsHistoryView extends JFrame{
         return patientJComboBox;
     }
 
-    public void setDoctorList(List<Patient> values) {
+    public void setDoctorList(List<String> values) {
         this.patientJComboBox.removeAllItems();
         values.forEach(x -> this.patientJComboBox.addItem(x));
     }

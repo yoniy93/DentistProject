@@ -13,8 +13,8 @@ public class PatientsHistoryController {
 
     }
 
-    public List<Patient> getPatientsList(){
-        return patientsHistoryModel.queryAllPatients();
+    public List<String> getPatientsList(){
+        return patientsHistoryModel.queryAllPatientsID();
     }
 
     public List<Appointment> getTreatmentHistory(String patientId) {
