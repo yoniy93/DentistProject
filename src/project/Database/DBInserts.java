@@ -10,8 +10,9 @@ public class DBInserts {
     public void insertInitialData(){
         insertForAdmin("1", "1", "Admin", "Admin", "admin@gmail.com", "01-01-2000", "male","0547690760");
         insertForDoctor("2", "1", "Amit", "Aflalo", "amit@gmail.com", "13-05-1993", "female", 3,"0547690750");
-        insertForPatient("3", "1", "Yonatan", "Yardeni", "yoni@gmail.com", 60.5, 178, "13-05-1993", "male","0547690740");
-        insertForPatient("4", "1", "Ofir", "Gan", "offirgan@gmail.com", 56.5, 170, "04-09-1992", "male","0547690730");
+        insertForDoctor("3", "1", "Amit", "Aflalo", "amit@gmail.com", "13-05-1993", "female", 3,"0547690750");
+        insertForPatient("4", "1", "Yonatan", "Yardeni", "yoni@gmail.com", 60.5, 178, "13-05-1993", "male","0547690740");
+        insertForPatient("5", "1", "Ofir", "Gan", "offirgan@gmail.com", 56.5, 170, "04-09-1992", "male","0547690730");
         insertTreatment(2, "סתימה", 60, 99);
         insertTreatment(3, "גשר", 90, 150);
         insertTreatment(4, "הלבנה", 60, 69.9);
@@ -21,6 +22,12 @@ public class DBInserts {
         insertMedicalEquipment(13, "סכין", "12-12-2024", 10);
         insertMedicalEquipment(14, "מנורה", "12-12-2024", 4);
         insertAppointments(1,"17-07-2019","10:00", "4", "2");
+        insertAppointments(2,"17-07-2019","11:00", "4", "2");
+        insertAppointments(3,"17-07-2019","12:00", "4", "2");
+        insertAppointments(4,"17-07-2019","13:00", "4", "2");
+        insertAppointments(5,"17-07-2019","08:00", "4", "3");
+        insertAppointments(6,"17-07-2019","09:00", "4", "3");
+        insertAppointments(7,"17-07-2019","10:00", "4", "3");
     }
 
     public String insertMedicalEquipment(int id,String name, String expiredate,int quantity){
