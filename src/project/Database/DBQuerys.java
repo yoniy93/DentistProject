@@ -217,4 +217,8 @@ public class DBQuerys{
         }
         return null;
     }
+
+    public List<Patient> getAllPatients() {
+        return null;
+    }
 }

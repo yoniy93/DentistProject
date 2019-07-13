@@ -35,5 +35,9 @@ public class Patient extends User {
     public void setHeight(int height) {
         this.height = height;
     }
+    @Override
+    public String toString() {
+        return super.toString();
+    }
 
 }

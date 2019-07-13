@@ -54,4 +54,5 @@ public class Appointment {
     public void setPatientId(String patientId) {
         this.patientId = patientId;
     }
+
 }
