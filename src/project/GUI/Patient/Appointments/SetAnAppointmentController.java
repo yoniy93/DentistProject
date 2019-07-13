@@ -5,11 +5,10 @@ public class SetAnAppointmentController {
     SetAnAppointmentView setAnAppointmentView;
     SetAnAppointmentModel setAnAppointmentModel;
 
-
-   public SetAnAppointmentController()
+   public SetAnAppointmentController(SetAnAppointmentView appointmentV, SetAnAppointmentModel appointmentM)
    {
-       setAnAppointmentModel = new SetAnAppointmentModel();
-       setAnAppointmentView = new SetAnAppointmentView();
+       setAnAppointmentModel = appointmentM;
+       setAnAppointmentView = appointmentV;
 
        addViewActionListeners();
        setAnAppointmentView.setDoctorList (setAnAppointmentModel.getDoctorList());
