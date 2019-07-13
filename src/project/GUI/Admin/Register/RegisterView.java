@@ -114,22 +114,22 @@ public class RegisterView extends JFrame
 
     private void setLocationAndSize()
     {
-        firstNameLabel.setFont(new Font("Tahoma", Font.BOLD, 14));
+        firstNameLabel.setFont(new Font("Ariel", Font.BOLD, 14));
         firstNameLabel.setBounds(60, 40, 100, 30);
 
-        lastNameLabel.setFont(new Font("Tahoma", Font.BOLD, 14));
+        lastNameLabel.setFont(new Font("Ariel", Font.BOLD, 14));
         lastNameLabel.setBounds(60, 80, 100, 30);
 
-        idLabel.setFont(new Font("Tahoma", Font.BOLD, 14));
+        idLabel.setFont(new Font("Ariel", Font.BOLD, 14));
         idLabel.setBounds(60,120,100,30);
 
-        phoneNumber.setFont(new Font("Tahoma", Font.BOLD, 14));
+        phoneNumber.setFont(new Font("Ariel", Font.BOLD, 14));
         phoneNumber.setBounds(60, 160, 100, 30);
 
-        emailLabel.setFont(new Font("Tahoma", Font.BOLD, 14));
+        emailLabel.setFont(new Font("Ariel", Font.BOLD, 14));
         emailLabel.setBounds(60, 200, 100, 30);
 
-        passwordLabel.setFont(new Font("Tahoma", Font.BOLD, 14));
+        passwordLabel.setFont(new Font("Ariel", Font.BOLD, 14));
         passwordLabel.setBounds(60, 240, 100, 30);
 
         genderLabel.setBounds(60,300,70,30);
@@ -164,8 +164,9 @@ public class RegisterView extends JFrame
         heightTextField.setBounds(170,490,150,25);
         yearsOfExTextField.setBounds(200,550,150,25);
 
-        addUserButton.setBounds(200,600,150,30);
-        cancelButton.setLocation(400,600,150,30);
+        addUserButton.setBounds(200,600,120,30);
+        addUserButton.setFont(new Font("Ariel",Font.BOLD, 12));
+        cancelButton.setLocation(400,600,120,30);
 
         backGround.setBounds(0,0,800,700);
 
@@ -325,7 +326,9 @@ public class RegisterView extends JFrame
         return cancelButton;
     }
 
-    public JTextField getPhoneNumberTextField() { return phoneNumberTextField; }
+    public JTextField getPhoneNumberTextField() {
+        return phoneNumberTextField;
+    }
 
 }
 

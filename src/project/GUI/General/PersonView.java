@@ -31,15 +31,16 @@ public abstract class PersonView extends JFrame {
 
     private void setLocationAndSize() {
         logoutButton.setBounds(10, 10, 100, 30);
+        logoutButton.setFont(new Font("Ariel",Font.BOLD, 12));
 
         editPersonalDetails.setBounds(100, 290, 230, 50);
-        editPersonalDetails.setFont(this.buttonFont);
+        editPersonalDetails.setFont(getButtonFont());
 
         viewClinicStaffInfo.setBounds(100,360,230,50);
-        viewClinicStaffInfo.setFont(this.buttonFont);
+        viewClinicStaffInfo.setFont(getButtonFont());
 
         viewClinicDetails.setBounds(100,430,230,50);
-        viewClinicDetails.setFont(this.buttonFont);
+        viewClinicDetails.setFont(getButtonFont());
     }
 
     private void addComponentsToFrame() {

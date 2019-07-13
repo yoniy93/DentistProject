@@ -3,6 +3,7 @@ package project.GUI.Admin.AddTreatments;
 import project.Database.DBInserts;
 import project.Database.Locations;
 import project.Entities.Treatments;
+import project.GUI.General.CancelButton;
 import project.GUI.General.ErrorWindow;
 
 import javax.swing.*;
@@ -23,8 +24,8 @@ public class AddTreatmentsView extends JFrame
     private JTextField treatmentDurationTextField=new JTextField();
     private JTextField treatmentPriceTextField=new JTextField();
 
-    private JButton addTreatment=new JButton("ADD");
-    private JButton cancel=new JButton("Cancel");
+    private JButton addTreatment=new JButton("Submit");
+    CancelButton cancelButton=new CancelButton();
 
     public AddTreatmentsView()
     {
@@ -53,8 +54,9 @@ public class AddTreatmentsView extends JFrame
         treatmentPrice.setBounds(60,160,100,30);
         treatmentPriceTextField.setBounds(160, 160, 100, 30);
 
-        addTreatment.setBounds(150,250,150,30);
-        cancel.setBounds(310,250,150,30);
+        addTreatment.setBounds(150,250,120,30);
+        addTreatment.setFont(new Font("Ariel",Font.BOLD, 12));
+        cancelButton.setLocation(310,250,120,30);
         backGround.setBounds(0,0,700,500);
     }
 
@@ -67,7 +69,7 @@ public class AddTreatmentsView extends JFrame
 
         add(treatmentPrice);
         add(treatmentPriceTextField);
-        add(cancel);
+        add(cancelButton);
         add(addTreatment);
         add(backGround);
 
@@ -129,7 +131,7 @@ public class AddTreatmentsView extends JFrame
     }
 
     public JButton getCancel() {
-        return cancel;
+        return cancelButton;
     }
 
 

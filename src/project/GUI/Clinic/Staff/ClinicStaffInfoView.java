@@ -57,22 +57,21 @@ public class ClinicStaffInfoView extends JFrame {
         this.firstName.setFont(font);
         this.gender.setFont(font);
         clinicNameLable.setFont(new Font("Ariel",Font.BOLD,30));
-
-
     }
 
     private void setLocationAndSize() {
         clinicNameLable.setHorizontalAlignment(SwingConstants.CENTER);
         clinicNameLable.setBounds(300, 10, 200, 80);
 
-        doctorJComboBox.setBounds(40, 100, 200, 50);
+        doctorJComboBox.setBounds(130, 80, 200, 50);
+
 
         firstName.setHorizontalAlignment(SwingConstants.LEFT);
         firstName.setOpaque(false);
         firstName.setBounds(400,80,200,30);
         firstNameValue.setBounds(550,80,200,30);
         firstNameValue.setHorizontalAlignment(SwingConstants.CENTER);
-        firstNameValue.setBackground(Color.lightGray);
+        firstNameValue.setBackground(Color.WHITE);
         firstNameValue.setOpaque(true);
         firstNameValue.setBorder(BorderFactory.createLineBorder(Color.BLACK, 2));
 
@@ -81,7 +80,7 @@ public class ClinicStaffInfoView extends JFrame {
         lastName.setBounds(400,120, 200,30);
         lastNameValue.setBounds(550,120,200,30);
         lastNameValue.setHorizontalAlignment(SwingConstants.CENTER);
-        lastNameValue.setBackground(Color.lightGray);
+        lastNameValue.setBackground(Color.WHITE);
         lastNameValue.setOpaque(true);
         lastNameValue.setBorder(BorderFactory.createLineBorder(Color.BLACK, 2));
 
@@ -91,7 +90,7 @@ public class ClinicStaffInfoView extends JFrame {
         emailValue.setBounds(550,160,200,30);
         emailValue.setHorizontalAlignment(SwingConstants.CENTER);
         emailValue.setOpaque(true);
-        emailValue.setBackground(Color.lightGray);
+        emailValue.setBackground(Color.WHITE);
         emailValue.setBorder(BorderFactory.createLineBorder(Color.BLACK, 2));
 
         phoneNumber.setHorizontalAlignment(SwingConstants.LEFT);
@@ -99,7 +98,7 @@ public class ClinicStaffInfoView extends JFrame {
         phoneNumber.setBounds(400,200,200,30);
         phoneNumberValue.setHorizontalAlignment(SwingConstants.CENTER);
         phoneNumberValue.setBounds(550,200,200,30);
-        phoneNumberValue.setBackground(Color.lightGray);
+        phoneNumberValue.setBackground(Color.WHITE);
         phoneNumberValue.setOpaque(true);
         phoneNumberValue.setBorder(BorderFactory.createLineBorder(Color.BLACK, 2));
 
@@ -109,7 +108,7 @@ public class ClinicStaffInfoView extends JFrame {
         gender.setBounds(400,240, 200,30);
         genderValue.setBounds(550,240,200,30);
         genderValue.setHorizontalAlignment(SwingConstants.CENTER);
-        genderValue.setBackground(Color.lightGray);
+        genderValue.setBackground(Color.WHITE);
         genderValue.setOpaque(true);
         genderValue.setBorder(BorderFactory.createLineBorder(Color.BLACK, 2));
 
@@ -119,18 +118,15 @@ public class ClinicStaffInfoView extends JFrame {
         yeasOfExperience.setBounds(400,280, 200,30);
         yeasOfExperienceValue.setBounds(550,280,200,30);
         yeasOfExperienceValue.setHorizontalAlignment(SwingConstants.CENTER);
-        yeasOfExperienceValue.setBackground(Color.lightGray);
+        yeasOfExperienceValue.setBackground(Color.WHITE);
         yeasOfExperienceValue.setOpaque(true);
         yeasOfExperienceValue.setBorder(BorderFactory.createLineBorder(Color.BLACK, 2));
 
-        cancelButton.setLocation(550,400,80,30);
+        cancelButton.setLocation(650,400,120,30);
         backGround.setBounds(0,0,800,500);
-
-
     }
 
     private void addComponentsToFrame() {
-
         add(doctorJComboBox);
         add(clinicNameLable);
         add(firstName);
@@ -147,8 +143,6 @@ public class ClinicStaffInfoView extends JFrame {
         add(yeasOfExperienceValue);
         add(cancelButton);
         add(backGround);
-
-
     }
 
     public void setInfoOfDoctor (String firstName , String lastName, String gender , String phoneNumber, String email, int yearsOfEx) {

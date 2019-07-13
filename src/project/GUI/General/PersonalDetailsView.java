@@ -37,28 +37,26 @@ public class PersonalDetailsView extends JFrame {
         setVisible(true);
     }
 
-
-
     private void setLocationAndSize(){
-        editButton.setFont(buttonFont);
+        editButton.setFont(new Font("Ariel",Font.BOLD, 12));
         editButton.setBounds(80, 320, 100, 30);
 
         cancelButton.setLocation(220,320,100,30);
 
-        firstnameLabel.setFont(buttonFont);
+        firstnameLabel.setFont(getButtonFont());
         firstnameLabel.setBounds(60, 40, 100, 30);
 
-        lastnameLabel.setFont(buttonFont);
+        lastnameLabel.setFont(getButtonFont());
         lastnameLabel.setBounds(60, 80, 100, 30);
 
-        emailLabel.setFont(buttonFont);
+        emailLabel.setFont(getButtonFont());
         emailLabel.setBounds(60, 120, 100, 30);
 
-        passwordLabel.setFont(buttonFont);
+        passwordLabel.setFont(getButtonFont());
         passwordLabel.setBounds(60, 160, 100, 30);
 
         phoneNumber.setBounds(60,200,100,30);
-        phoneNumber.setFont(buttonFont);
+        phoneNumber.setFont(getButtonFont());
 
         firstnameTextField.setBounds(170, 40, 150, 30);
         lastnameTextField.setBounds(170, 80, 150, 30);
@@ -69,22 +67,19 @@ public class PersonalDetailsView extends JFrame {
         backGround.setBounds(0,0,400,400);
     }
 
-    private void addComponentsToFrame(){
+    private void addComponentsToFrame() {
         add(editButton);
         add(cancelButton);
-
         add(firstnameLabel);
         add(lastnameLabel);
         add(emailLabel);
         add(passwordLabel);
         add(phoneNumber);
         add(phoneNumberTextField);
-
         add(lastnameTextField);
         add(firstnameTextField);
         add(emailTextField);
         add(passwordField);
-
         add(backGround);
     }
 

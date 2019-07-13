@@ -10,7 +10,7 @@ public class CancelButton extends JButton {
     }
 
     public void setLocation(int x, int y, int w, int h) {
-        setFont(new Font("Tahoma",Font.BOLD, 12));
+        setFont(new Font("Ariel",Font.BOLD, 12));
         setBounds(x, y, w, h);
     }
 }

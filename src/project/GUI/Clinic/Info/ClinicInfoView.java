@@ -85,7 +85,7 @@ public class ClinicInfoView extends JFrame {
         phone1.setBounds(220,305,150,30);
         phone1.setBorder(BorderFactory.createLineBorder(Color.BLACK, 2));
 
-        cancelButton.setLocation(610,400,100,30);
+        cancelButton.setLocation(610,400,120,30);
         backGround.setBounds(0,0,800,500);
     }
 

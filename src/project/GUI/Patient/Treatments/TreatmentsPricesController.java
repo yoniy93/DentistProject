@@ -17,6 +17,7 @@ public class TreatmentsPricesController
     }
     private void addViewActionListeners() {
         treatmentsPricesView.getTreatmentListComboBox().addActionListener(e->treatmentListAction());
+        treatmentsPricesView.cancelButton.addActionListener(e -> treatmentsPricesView.dispose());
     }
 
     private void treatmentListAction() {

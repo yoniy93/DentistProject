@@ -1,5 +1,9 @@
 package project.Database;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class DBInserts extends DBInitializer {
 
     public void insertInitialData(){
@@ -32,8 +36,15 @@ public class DBInserts extends DBInitializer {
     }
 
     public String insertAppointments(int appointmentid,String date, String time, String clientid, String doctorid){
+        SimpleDateFormat format=new SimpleDateFormat("dd-MM-yyyy");
+        Date date_format;
+        try {
+            date_format=format.parse(date);
+        } catch (ParseException e) {
+            return "date error";
+        }
         String sql="INSERT INTO appointments(treatmentID, appointmentDATE, appointmentTIME,clientID,doctorID)"+
-                " VALUES ('"+appointmentid+"', '"+date+"', '"+time+"', '"+clientid+"', '"+doctorid+"');";
+                " VALUES ('"+appointmentid+"', '"+date_format+"', '"+time+"', '"+clientid+"', '"+doctorid+"');";
         return connectAndExecute(sql);
     }
 

@@ -11,7 +11,7 @@ public class UnRegisterView extends JFrame
     private ImageIcon imageForBG=new ImageIcon(Locations.getImagePath("unregister.png"));
     private JLabel backGround=new JLabel(imageForBG);
 
-    private JButton submit = new JButton("SUBMIT");
+    private JButton submit = new JButton("Submit");
     private JTextField idTextField = new JTextField();
     private JLabel idLabel = new JLabel("Enter id of user :");
     CancelButton cancelButton =new CancelButton();
@@ -22,7 +22,7 @@ public class UnRegisterView extends JFrame
         setLocationAndSize();
         addComponentsToFrame();
 
-        setTitle("UnRegister an User");
+        setTitle("Unregister a user");
         setBounds(300, 100, 450, 200);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setResizable(false);
@@ -31,12 +31,13 @@ public class UnRegisterView extends JFrame
 
     private void setLocationAndSize()
     {
-        idLabel.setFont(new Font("Tahoma", Font.BOLD, 14));
+        idLabel.setFont(new Font("Ariel", Font.BOLD, 14));
         idLabel.setBounds(20, 40, 150, 30);
 
         idTextField.setBounds(200,45,100,20);
 
         submit.setBounds(100,100,120,30);
+        submit.setFont(new Font("Ariel",Font.BOLD, 12));
         cancelButton.setLocation(240,100,120,30);
 
         backGround.setBounds(0,0,450,200);

@@ -23,7 +23,11 @@ public class ClinicStaffInfoController
 
     private void addViewActionListeners() {
         this.clinicStaffInfoView.getDoctorJComboBox().addActionListener(e->doctorlistAction());
+        clinicStaffInfoView.cancelButton.addActionListener(e -> clinicStaffInfoView.dispose());
+
     }
+
+
 
     private void doctorlistAction() {
         Doctor d = (Doctor) this.clinicStaffInfoView.getDoctorJComboBox().getSelectedItem();

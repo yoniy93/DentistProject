@@ -2,6 +2,8 @@ package project.GUI.Patient.Treatments;
 
 import project.Database.Locations;
 import project.Entities.Treatments;
+import project.GUI.General.CancelButton;
+
 import javax.swing.*;
 import java.awt.*;
 import java.util.List;
@@ -18,6 +20,12 @@ public class TreatmentsPricesView extends JFrame {
     private JLabel treatmentPrices= new JLabel();
     private JLabel treatmentDuration = new JLabel();
     private JLabel treatmentDescription= new JLabel();
+
+
+
+    private Font buttonFont=new Font("Ariel",Font.BOLD,14);
+
+    CancelButton cancelButton=new CancelButton();
 
 
 
@@ -43,6 +51,8 @@ public class TreatmentsPricesView extends JFrame {
         treatmentDuration.setBounds(550, 300,100,30);
         treatmentDurationLable.setBounds(430,300,150,30);
 
+        cancelButton.setLocation(500,400,120,30);
+
         backGround.setBounds(0,0,700,500);
     }
 
@@ -55,14 +65,14 @@ public class TreatmentsPricesView extends JFrame {
         this.add(treatmentPricesLable);
         this.add(treatmentListComboBox);
         this.add(treatmentPrices);
+        this.add(cancelButton);
         this.add(backGround);
     }
 
     private void setLablesFont(){
-        Font font=new Font("Ariel",Font.BOLD,14);
-        this.treatmentPricesLable.setFont(font);
-        this.treatmentDurationLable.setFont(font);
-        this.treatmentDescriptionLable.setFont(font);
+        this.treatmentPricesLable.setFont(getButtonFont());
+        this.treatmentDurationLable.setFont(getButtonFont());
+        this.treatmentDescriptionLable.setFont(getButtonFont());
 
     }
 
@@ -71,14 +81,11 @@ public class TreatmentsPricesView extends JFrame {
     }
 
     public void setTreatmentInfo(String price,String duration, String description) {
-        Font font=new Font("Ariel",Font.PLAIN,14);
-        treatmentPrices.setFont(font);
+        treatmentPrices.setFont(getButtonFont());
         treatmentPrices.setText(price);
-
-        treatmentDuration.setFont(font);
+        treatmentDuration.setFont(getButtonFont());
         treatmentDuration.setText(duration);
-
-        treatmentDescription.setFont(font);
+        treatmentDescription.setFont(getButtonFont());
         treatmentDescription.setText(description);
     }
 
@@ -89,6 +96,10 @@ public class TreatmentsPricesView extends JFrame {
 
     public void setVisible() {
         setVisible(true);
+    }
+
+    public Font getButtonFont() {
+        return buttonFont;
     }
 
 }
