@@ -20,7 +20,7 @@ import static com.github.lgooddatepicker.components.TimePickerSettings.TimeIncre
 import java.time.DayOfWeek;
 import java.time.LocalTime;
 
-public class SetAnAppointmentView extends JFrame implements ActionListener{
+public class SetAnAppointmentView extends JFrame {
 
     ImageIcon imageForBG = new ImageIcon(Locations.getImagePath("clinicInfo.png"));
     JLabel backGround = new JLabel(imageForBG);
@@ -56,7 +56,7 @@ public class SetAnAppointmentView extends JFrame implements ActionListener{
         setLayout(null);
 
         setLocationAndSize();
-        setDateOfBirth();
+        setDate();
         addComponentsToFrame();
         setDateSettings();
         setTimeSettings();
@@ -70,13 +70,13 @@ public class SetAnAppointmentView extends JFrame implements ActionListener{
     private void setLocationAndSize() {
 
         doctorLabel.setFont(new Font("Ariel", Font.BOLD, 14));
-        doctorLabel.setBounds(170,50,120, 30);
-        doctorComboBox.setBounds(300,50,100,30);
+        doctorLabel.setBounds(200,50,120, 30);
+        doctorComboBox.setBounds(330,50,100,30);
 
         dateAndTimeLabel.setFont(new Font("Ariel", Font.BOLD, 14));
-        dateAndTimeLabel.setBounds(170,130,120, 30);
+        dateAndTimeLabel.setBounds(200,130,150, 30);
 
-        dateTimePickerPanel.setBounds(270,130,280,35);
+        dateTimePickerPanel.setBounds(320,130,280,35);
         dateTimePickerPanel.setOpaque(false);
 
         creditCardLabel.setFont(new Font("Ariel", Font.BOLD, 14));
@@ -117,6 +117,7 @@ public class SetAnAppointmentView extends JFrame implements ActionListener{
         add(doctorComboBox);
 
         add(dateAndTimeLabel);
+
         dateTimePickerPanel.add(datePicker);
         dateTimePickerPanel.add(timePicker);
         add(dateTimePickerPanel);
@@ -124,7 +125,7 @@ public class SetAnAppointmentView extends JFrame implements ActionListener{
         add(backGround);
     }
 
-    private void setDateOfBirth() {
+    private void setDate() {
         for(int i=0;i<12; i++)
         {
             monthVector.insertElementAt(i+1,i);
@@ -134,11 +135,6 @@ public class SetAnAppointmentView extends JFrame implements ActionListener{
         {
             yearVector.insertElementAt(min++,i);
         }
-    }
-
-    @Override
-    public void actionPerformed(ActionEvent event) {
-        JOptionPane.showMessageDialog(this,"Date: " + getDate() +"\nTime: " + getTime());
     }
 
     public void setDoctorList(List<Doctor> values) {
@@ -192,5 +188,25 @@ public class SetAnAppointmentView extends JFrame implements ActionListener{
         datePicker.clear();
         timePicker.clear();
     }
+
+    public boolean haveEmptyTextFields(){
+
+        String datePickerText = datePicker.getText();
+        String timePickerText = timePicker.getText();
+
+        String creditCardText = creditCardTextField.getText();
+
+        int monthIndex = monthComboBox.getSelectedIndex();
+        int yearIndex = yearComboBox.getSelectedIndex();
+
+        String cvvCardText = cvvTextField.getText();
+
+        if(datePickerText == null || timePickerText == null || creditCardText == null || monthIndex == -1 || yearIndex == -1 || cvvCardText == null )
+            return true;
+        else
+            return false;
+
+    }
+
 }
 

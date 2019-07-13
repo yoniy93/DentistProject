@@ -1,5 +1,7 @@
 package project.GUI.Patient.Appointments;
 
+import javax.swing.*;
+
 public class SetAnAppointmentController {
 
     SetAnAppointmentView setAnAppointmentView;
@@ -25,6 +27,15 @@ public class SetAnAppointmentController {
     }
 
     public void insertAppointmentAction(){
+
+       if(setAnAppointmentView.haveEmptyTextFields()) {
+           JOptionPane.showMessageDialog(setAnAppointmentView, "Some Information haven't been field");
+       }
+       else
+           {
+               JOptionPane.showMessageDialog(setAnAppointmentView, "Everything is Correct");
+           }
+
 
     }
 
