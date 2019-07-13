@@ -1,16 +1,16 @@
 package project.GUI.General.Calendar;
 
-import com.github.lgooddatepicker.components.DateTimePicker;
+import com.github.lgooddatepicker.components.TimePicker;
 import com.github.lgooddatepicker.optionalusertools.DateChangeListener;
 import com.github.lgooddatepicker.zinternaltools.DateChangeEvent;
 
 public class DateListener implements DateChangeListener {
 
-    private DateTimePicker dateTimePicker;
+    private TimePicker timePicker;
     private String doctorID;
 
-    public DateListener(DateTimePicker dateTimePicker, String doctorID) {
-        this.dateTimePicker = dateTimePicker;
+    public DateListener(TimePicker timePicker, String doctorID) {
+        this.timePicker = timePicker;
         this.doctorID = doctorID;
     }
 
@@ -18,8 +18,8 @@ public class DateListener implements DateChangeListener {
 
         if(event.getNewDate() != null){
             String date = convertDateToString(event.getNewDate().getDayOfMonth() , event.getNewDate().getMonthValue() , event.getNewDate().getYear());
-            dateTimePicker.timePicker.getSettings().setVetoPolicy(new VetoPolicy(date, doctorID));
-            dateTimePicker.timePicker.clear();
+            timePicker.getSettings().setVetoPolicy(new VetoPolicy(date, doctorID));
+            timePicker.clear();
         }
     }
 

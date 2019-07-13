@@ -31,7 +31,7 @@ public class DBTest {
         expectedDoctor = new Doctor("2", "1", "Amit", "Aflalo", "amit@gmail.com", doctorBirthDate , 3, "female","0547690750");
 
         Date patientBirthDate = new SimpleDateFormat("dd-MM-yyyy").parse("13-05-1993");
-        expectedPatient = new Patient("3", "1", "Yonatan", "Yardeni", "yoni@gmail.com", 60.5, 178, patientBirthDate, "male","0547690740");
+        expectedPatient = new Patient("4", "1", "Yonatan", "Yardeni", "yoni@gmail.com", 60.5, 178, patientBirthDate, "male","0547690740");
 
         expectedTreatment = new Treatments("2", "סתימה", 60, 99);
     }
@@ -67,7 +67,7 @@ public class DBTest {
 
     @Test
     void getPatientDetails() {
-        Patient actualPatient = query.getPatientDetails("3");
+        Patient actualPatient = query.getPatientDetails("4");
 
         assertEquals(expectedPatient.getId(),actualPatient.getId(), "Patient ID Not Equal");
         assertEquals(expectedPatient.getPassword(),actualPatient.getPassword(), "Patient Password Not Equal");
@@ -98,7 +98,7 @@ public class DBTest {
     void getTypeOfUser() {
         assertEquals(ADMIN,query.getTypeOfUser("1"), "User Type Should Be Admin");
         assertEquals(DOCTOR,query.getTypeOfUser("2"), "User Type Should Be Doctor");
-        assertEquals(PATIENT,query.getTypeOfUser("3"), "User Type Should Be Patient");
+        assertEquals(PATIENT,query.getTypeOfUser("4"), "User Type Should Be Patient");
     }
 
     @Test
