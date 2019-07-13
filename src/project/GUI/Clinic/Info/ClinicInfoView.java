@@ -18,6 +18,7 @@ public class ClinicInfoView extends JFrame {
             {" Wednesday", "08:00 - 15:00"},
             {" Thursday", "09:00 - 17:00"},
     };
+
     private String[] columnNames = { "Days:", "Hours:" };
     private JLabel clinicNameLable = new JLabel( "<HTML><U>Clinic Info:</U></HTML>");
     private JLabel openningHoursLable = new JLabel( "Opening Hours: ");

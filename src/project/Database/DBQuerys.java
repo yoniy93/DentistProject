@@ -198,10 +198,12 @@ public class DBQuerys{
              PreparedStatement pstmt  = conn.prepareStatement(sql)) {
             ResultSet resultSet=pstmt.executeQuery();
             while (resultSet.next()){
+
                 SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
+                Date date = (Date)dateFormat.parse(resultSet.getString("appointmentDATE"));
+
                 SimpleDateFormat timeFormat = new SimpleDateFormat("mm:ss");
-                Date date = dateFormat.parse(resultSet.getString("appointmentDATE"));
-                Time time = (Time) timeFormat.parse(resultSet.getString("appointmentTIME"));
+                Time time = (Time)timeFormat.parse(resultSet.getString("appointmentTIME"));
 
                 appointments.add(new Appointment(resultSet.getString("treatmentID"),
                         (java.sql.Date) date,
@@ -230,6 +232,21 @@ public class DBQuerys{
             if (patientsIdList.size()==0)
                 return null;
             return patientsIdList;
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        return null;
+    }
+
+    public String getTreatmentName (String id){
+        String sql="SELECT treatmentname FROM treatments WHERE id="+id+";";
+        try (Connection conn = dbInitializer.connect();
+             PreparedStatement pstmt  = conn.prepareStatement(sql)) {
+            ResultSet resultSet=pstmt.executeQuery();
+            if (resultSet.next()){
+                return resultSet.getString(1);
+            }
+            else return null;
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }

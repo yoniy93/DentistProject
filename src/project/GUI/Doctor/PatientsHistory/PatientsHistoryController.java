@@ -20,4 +20,12 @@ public class PatientsHistoryController {
     public List<Appointment> getTreatmentHistory(String patientId) {
         return patientsHistoryModel.quertAllTreatmentsHistory(patientId);
     }
+
+    public String queryTreatmentName(String id){
+        return patientsHistoryModel.dbQuerys.getTreatmentName(id);
+    }
+
+    public String queryDoctorName(String id){
+        return patientsHistoryModel.dbQuerys.getDoctorDetails(id).toString();
+    }
 }

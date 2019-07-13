@@ -6,6 +6,7 @@ import project.Entities.Patient;
 import project.GUI.General.CancelButton;
 
 import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -21,13 +22,49 @@ public class PatientsHistoryView extends JFrame{
 
     private JLabel selectPatientLable =new JLabel("Select Patient ID:");
 
+
+    JTable tbl=new JTable();
+    DefaultTableModel dtm=new DefaultTableModel();
+    JScrollPane jScrollPane;
+    String header[] = new String[] { "Date" ,"Treatment", "Time", "Doctor" };
+
+    private JTable updateTableDetails(){
+        dtm.setRowCount(0);
+        dtm.setColumnCount(0);
+        dtm.setColumnIdentifiers(header);
+        tbl.setModel(dtm);
+        // add row dynamically into the table
+        for (Appointment x : patientsHistoryController.getTreatmentHistory(getSelectedID())) {
+            dtm.addRow(new Object[] { x.getTreatmentDate(),
+                                      getTreatmentName(x.getTreatmentID()),
+                                      x.getTreatmentTime(),
+                                      getDoctorName(x.getDoctorId())} );
+        }
+        return tbl;
+    }
+
+    private String getTreatmentName(String id){
+        return patientsHistoryController.queryTreatmentName(id);
+    }
+
+    private String getDoctorName(String id){
+        return patientsHistoryController.queryDoctorName(id);
+    }
+
+
     CancelButton cancelButton=new CancelButton();
 
 
+
+
+
     public PatientsHistoryView() {
+        setLayout(null);
         this.getPatientJComboBox().setVisible(true);
         this.setDoctorList(patientsHistoryController.getPatientsList());
-        setLayout(null);
+        tbl.setBounds(100,100,300,200);
+        updateTableDetails();
+        jScrollPane=new JScrollPane(tbl);
         setLocationAndSize();
         addComponentsToFrame();
         addActionListeners();
@@ -36,6 +73,10 @@ public class PatientsHistoryView extends JFrame{
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setResizable(false);
         setVisible(true);
+    }
+
+    private String getSelectedID(){
+        return patientJComboBox.getSelectedItem().toString();
     }
 
     private void setLocationAndSize() {
@@ -51,6 +92,7 @@ public class PatientsHistoryView extends JFrame{
     }
 
     private void addComponentsToFrame(){
+        add(jScrollPane);
         add(patientJComboBox);
         add(selectPatientLable);
         add(cancelButton);
