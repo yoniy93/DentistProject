@@ -7,8 +7,7 @@ public class SetAnAppointmentController {
     SetAnAppointmentView setAnAppointmentView;
     SetAnAppointmentModel setAnAppointmentModel;
 
-   public SetAnAppointmentController(SetAnAppointmentView appointmentV, SetAnAppointmentModel appointmentM)
-   {
+   public SetAnAppointmentController(SetAnAppointmentView appointmentV, SetAnAppointmentModel appointmentM) {
        setAnAppointmentModel = appointmentM;
        setAnAppointmentView = appointmentV;
 
@@ -32,18 +31,17 @@ public class SetAnAppointmentController {
        if(setAnAppointmentView.haveEmptyTextFields()) {
            JOptionPane.showMessageDialog(setAnAppointmentView, "Some Information haven't been field");
        }
-       else
-           {
-               int appointmentID = setAnAppointmentModel.getLastAppointmentID() + 1;
-               int treatmentID = setAnAppointmentView.getTreatmentID();
-               String date = setAnAppointmentView.getDate();
-               String time = setAnAppointmentView.getTime();
-               String doctorid = setAnAppointmentView.getDoctorID();
+       else {
+           int appointmentID = setAnAppointmentModel.getLastAppointmentID() + 1;
+           int treatmentID = setAnAppointmentView.getTreatmentID();
+           String date = setAnAppointmentView.getDate();
+           String time = setAnAppointmentView.getTime();
+           String doctorid = setAnAppointmentView.getDoctorID();
 
-               setAnAppointmentModel.insertAppointment(appointmentID, treatmentID, date, time, doctorid);
+           setAnAppointmentModel.insertAppointment(appointmentID, treatmentID, date, time, doctorid);
 
-               JOptionPane.showMessageDialog(setAnAppointmentView, "Appointment has been Schedule");
-               setAnAppointmentView.dispose();
-           }
+           JOptionPane.showMessageDialog(setAnAppointmentView, "Appointment has been Schedule");
+           setAnAppointmentView.dispose();
+       }
     }
 }

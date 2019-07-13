@@ -221,7 +221,7 @@ public class SetAnAppointmentView extends JFrame {
         timePicker.clear();
     }
 
-    public boolean haveEmptyTextFields(){
+    public boolean haveEmptyTextFields() {
         String datePickerText = datePicker.getText();
         String timePickerText = timePicker.getText();
 
@@ -232,10 +232,7 @@ public class SetAnAppointmentView extends JFrame {
 
         String cvvCardText = cvvTextField.getText();
 
-        if(datePickerText == null || timePickerText == null || creditCardText.equals("") || monthIndex == -1 || yearIndex == -1 || cvvCardText.equals(""))
-            return true;
-        else
-            return false;
+        return (datePickerText == null || timePickerText == null || creditCardText.equals("") || monthIndex == -1 || yearIndex == -1 || cvvCardText.equals(""));
     }
 
 }
