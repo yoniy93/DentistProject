@@ -34,7 +34,8 @@ public class PatientsHistoryView extends JFrame{
         dtm.setColumnIdentifiers(header);
         tbl.setModel(dtm);
         // add row dynamically into the table
-        for (Appointment x : patientsHistoryController.getTreatmentHistory(getSelectedID())) {
+        List<Appointment> listAppointment=patientsHistoryController.getTreatmentHistory(getSelectedID());
+        for (Appointment x : listAppointment) {
             dtm.addRow(new Object[] { x.getTreatmentDate(),
                                       getTreatmentName(x.getTreatmentID()),
                                       x.getTreatmentTime(),

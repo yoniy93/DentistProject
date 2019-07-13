@@ -1,6 +1,7 @@
 package project.Database;
 
 import project.Entities.*;
+
 import java.sql.*;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -199,14 +200,15 @@ public class DBQuerys{
             ResultSet resultSet=pstmt.executeQuery();
             while (resultSet.next()){
 
-                SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
-                Date date = (Date)dateFormat.parse(resultSet.getString("appointmentDATE"));
+                SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy");
+                Date date = format.parse(resultSet.getString("appointmentDATE"));
 
-                SimpleDateFormat timeFormat = new SimpleDateFormat("mm:ss");
-                Time time = (Time)timeFormat.parse(resultSet.getString("appointmentTIME"));
+                SimpleDateFormat timeFormat = new SimpleDateFormat("HH:mm");
+                Time time = new java.sql.Time(timeFormat.parse(resultSet.getString("appointmentTIME")).getTime());
+                        //(Time)timeFormat.parse(resultSet.getString("appointmentTIME"));
 
                 appointments.add(new Appointment(resultSet.getString("treatmentID"),
-                        (java.sql.Date) date,
+                        date,
                         time,
                         resultSet.getString("clientID"),
                         resultSet.getString("doctorID")));
