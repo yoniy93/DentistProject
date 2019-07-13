@@ -5,8 +5,14 @@ import java.sql.*;
 
 public class DBInitializer {
 
-    public DBInitializer( ){
-        // do here singletone!
+    private static DBInitializer instance;
+
+    private DBInitializer () {}
+
+    public static DBInitializer getInstance(){
+        if (instance==null)
+            instance=new DBInitializer();
+        return instance;
     }
 
     public Connection connect() {

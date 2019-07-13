@@ -8,11 +8,12 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class DBQuerys extends DBInitializer {
+public class DBQuerys{
 
+    DBInitializer dbInitializer=DBInitializer.getInstance();
     public Admin getAdminDetails (String id) {
         String sql = "SELECT * FROM users WHERE id="+id;
-        try (Connection conn = this.connect();
+        try (Connection conn = dbInitializer.connect();
              Statement stmt  = conn.createStatement();
              ResultSet rs    = stmt.executeQuery(sql)) {
 
@@ -31,7 +32,7 @@ public class DBQuerys extends DBInitializer {
 
     public Doctor getDoctorDetails (String id) {
         String sql = "SELECT * FROM users WHERE id="+id;
-        try (Connection conn = this.connect();
+        try (Connection conn = dbInitializer.connect();
              Statement stmt  = conn.createStatement();
              ResultSet rs    = stmt.executeQuery(sql)) {
 
@@ -52,7 +53,7 @@ public class DBQuerys extends DBInitializer {
 
     public Patient getPatientDetails (String id) {
         String sql = "SELECT * FROM users WHERE id="+id;
-        try (Connection conn = this.connect();
+        try (Connection conn = dbInitializer.connect();
              Statement stmt  = conn.createStatement();
              ResultSet rs    = stmt.executeQuery(sql)) {
 
@@ -74,7 +75,7 @@ public class DBQuerys extends DBInitializer {
 
     public boolean isUserExists (String userid){
         String sql = "SELECT id FROM users WHERE id ="+userid;
-        try (Connection conn = connect();
+        try (Connection conn = dbInitializer.connect();
              PreparedStatement pstmt  = conn.prepareStatement(sql)) {
             ResultSet resultSet=pstmt.executeQuery();
             return resultSet.getString("id").equals(userid);
@@ -86,7 +87,7 @@ public class DBQuerys extends DBInitializer {
 
     public boolean isPasswordCorrect (String userid, String password){
         String sql = "SELECT password FROM users WHERE id ="+userid;
-        try (Connection conn = this.connect();
+        try (Connection conn = dbInitializer.connect();
              PreparedStatement pstmt  = conn.prepareStatement(sql)) {
             ResultSet resultSet=pstmt.executeQuery();
             return resultSet.getString("password").equals(password);
@@ -98,7 +99,7 @@ public class DBQuerys extends DBInitializer {
 
     public USER_TYPE getTypeOfUser (String userid){
         String sql = "SELECT userRole FROM users WHERE id ="+userid;
-        try (Connection conn = this.connect();
+        try (Connection conn = dbInitializer.connect();
              PreparedStatement pstmt  = conn.prepareStatement(sql)) {
             String userType = pstmt.executeQuery().getString("userRole");
             switch (userType) {
@@ -121,7 +122,7 @@ public class DBQuerys extends DBInitializer {
     public List<Doctor> getDoctors () {
         List<Doctor> doctors = new ArrayList<>(1);
         String sql ="SELECT * FROM users WHERE userRole='D';";
-        try (Connection conn = this.connect();
+        try (Connection conn = dbInitializer.connect();
              PreparedStatement pstmt  = conn.prepareStatement(sql)) {
             ResultSet resultSet=pstmt.executeQuery();
             while (resultSet.next()){
@@ -149,7 +150,7 @@ public class DBQuerys extends DBInitializer {
     public List<Treatments> getTreatments (){
         List<Treatments> treatments=new ArrayList<>(1);
         String sql="SELECT * FROM treatments;";
-        try (Connection conn = this.connect();
+        try (Connection conn = dbInitializer.connect();
              PreparedStatement pstmt  = conn.prepareStatement(sql)) {
             ResultSet resultSet=pstmt.executeQuery();
             while (resultSet.next()){
@@ -167,7 +168,7 @@ public class DBQuerys extends DBInitializer {
 
     public boolean isAvailableTime (String date, String time) {
         String sql = "SELECT appointmentTIME FROM appointments WHERE appointmentDATE like "+'"'+date+'"'+" AND appointmentTIME like "+'"'+time+'"';
-        try (Connection conn = this.connect();
+        try (Connection conn = dbInitializer.connect();
              PreparedStatement pstmt  = conn.prepareStatement(sql)) {
             ResultSet resultSet = pstmt.executeQuery();
             return !resultSet.next();
@@ -179,7 +180,7 @@ public class DBQuerys extends DBInitializer {
 
     public int getLastId(String tablename){
         String sql="Select max(id) from "+tablename+";";
-        try (Connection conn = this.connect();
+        try (Connection conn = dbInitializer.connect();
              PreparedStatement pstmt  = conn.prepareStatement(sql)) {
             ResultSet resultSet = pstmt.executeQuery();
             return resultSet.getInt(1);
