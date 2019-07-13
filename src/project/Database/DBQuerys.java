@@ -235,4 +235,19 @@ public class DBQuerys{
         }
         return null;
     }
+
+    public String getTreatmentName (String id){
+        String sql="SELECT treatmentname FROM treatments WHERE id="+id+";";
+        try (Connection conn = dbInitializer.connect();
+             PreparedStatement pstmt  = conn.prepareStatement(sql)) {
+            ResultSet resultSet=pstmt.executeQuery();
+            if (resultSet.next()){
+                return resultSet.getString(1);
+            }
+            else return null;
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        return null;
+    }
 }
