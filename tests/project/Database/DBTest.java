@@ -8,6 +8,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static project.Entities.USER_TYPE.*;
 
 public class DBTest {
 
@@ -82,21 +83,43 @@ public class DBTest {
 
     @Test
     void isUserExists() {
+        assertEquals(true,query.isUserExists("1"), "User ID Need To Be Exist");
+        assertEquals(false,query.isUserExists("-1"), "User ID Doesn't Need To Be Exist");
+
     }
 
     @Test
     void isPasswordCorrect() {
+        assertEquals(true,query.isPasswordCorrect("1","1"), "Password Should Be Correct");
+        assertEquals(false,query.isPasswordCorrect("1","-5"), "Password Should Be Not Correct");
     }
 
     @Test
     void getTypeOfUser() {
+        assertEquals(ADMIN,query.getTypeOfUser("1"), "User Type Should Be Admin");
+        assertEquals(DOCTOR,query.getTypeOfUser("2"), "User Type Should Be Doctor");
+        assertEquals(PATIENT,query.getTypeOfUser("3"), "User Type Should Be Patient");
     }
 
     @Test
     void getDoctors() {
+
     }
 
     @Test
     void getTreatments() {
+    }
+
+    @Test
+    void isAvailableTime(){
+        assertEquals(false,query.isAvailableTime("17-07-2019", "10:00"), "Time Should Not Be Avaliable");
+        assertEquals(true,query.isAvailableTime("20-07-2019", "10:00"), "Time Should Be Avaliable");
+
+    }
+
+    @Test
+    void getLastID(){
+
+
     }
 }
