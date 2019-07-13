@@ -37,7 +37,6 @@ public class DBInserts {
         insertMedicalEquipment(2, "מספריים", "12-12-2022", 5);
         insertMedicalEquipment(3, "סכין", "12-12-2024", 10);
         insertMedicalEquipment(4, "מנורה", "12-12-2024", 4);
-
     }
 
     private void initializeAppointments(){
@@ -62,7 +61,6 @@ public class DBInserts {
         insertAppointments(19,4,"22-07-2019","08:00", "5", "2");
         insertAppointments(20,4,"22-07-2019","09:00", "5", "2");
         insertAppointments(21,4,"12-07-2019","10:00", "5", "2");
-
     }
 
     public String insertMedicalEquipment(int id,String name, String expiredate,int quantity){
