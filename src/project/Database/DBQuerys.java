@@ -206,7 +206,8 @@ public class DBQuerys{
 
                 SimpleDateFormat timeFormat = new SimpleDateFormat("HH:mm");
                 Time time = new java.sql.Time(timeFormat.parse(resultSet.getString("appointmentTIME")).getTime());
-                temp=new Appointment(resultSet.getString("treatmentID"),
+                temp=new Appointment(resultSet.getString("appointmentID"),
+                        resultSet.getString("treatmentID"),
                         date, time,
                         resultSet.getString("clientID"),
                         resultSet.getString("doctorID"));

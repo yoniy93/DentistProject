@@ -6,19 +6,31 @@ import java.util.Date;
 
 public class Appointment {
 
+
+
+    private String appointmentID;
     private String treatmentID;
     private Time treatmentTime ;
     private Date treatmentDate;
     private String  doctorId;
     private String patientId;
 
-    public Appointment(String treatmentID, Date appointmentDATE, Time appointmentTIME, String clientID, String doctorID) {
+    public Appointment(String appointmentID,String treatmentID, Date appointmentDATE, Time appointmentTIME, String clientID, String doctorID) {
+        setAppointmentID(appointmentID);
         setTreatmentID(treatmentID);
         setTreatmentDate(appointmentDATE);
         setTreatmentTime(appointmentTIME);
         setPatientId(clientID);
         setDoctorId(doctorID);
 
+    }
+
+    public String getAppointmentID() {
+        return appointmentID;
+    }
+
+    public void setAppointmentID(String appointmentID) {
+        this.appointmentID = appointmentID;
     }
 
     public String getTreatmentID() {

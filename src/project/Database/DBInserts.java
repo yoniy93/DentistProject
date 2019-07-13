@@ -21,17 +21,17 @@ public class DBInserts {
         insertMedicalEquipment(12, "מספריים", "12-12-2022", 5);
         insertMedicalEquipment(13, "סכין", "12-12-2024", 10);
         insertMedicalEquipment(14, "מנורה", "12-12-2024", 4);
-        insertAppointments(1,"17-07-2019","10:00", "4", "2");
-        insertAppointments(2,"17-07-2019","11:00", "4", "2");
-        insertAppointments(3,"17-07-2019","12:00", "4", "2");
-        insertAppointments(4,"17-07-2019","13:00", "4", "2");
-        insertAppointments(5,"17-07-2019","08:00", "4", "3");
-        insertAppointments(6,"17-07-2019","09:00", "4", "3");
-        insertAppointments(7,"17-07-2019","10:00", "4", "3");
-        insertAppointments(8,"17-07-2019","13:00", "4", "2");
-        insertAppointments(9,"17-07-2019","08:00", "5", "3");
-        insertAppointments(10,"17-07-2019","09:00", "5", "3");
-        insertAppointments(11,"17-07-2019","10:00", "5", "3");
+        insertAppointments(1,5,"17-07-2019","10:00", "4", "2");
+        insertAppointments(2,4,"17-07-2019","11:00", "4", "2");
+        insertAppointments(3,2,"17-07-2019","12:00", "4", "2");
+        insertAppointments(4,2,"17-07-2019","13:00", "4", "2");
+        insertAppointments(5,2,"17-07-2019","08:00", "4", "3");
+        insertAppointments(6,2,"17-07-2019","09:00", "4", "3");
+        insertAppointments(7,3,"17-07-2019","10:00", "4", "3");
+        insertAppointments(8,3,"17-07-2019","13:00", "4", "2");
+        insertAppointments(9,4,"17-07-2019","08:00", "5", "3");
+        insertAppointments(10,4,"17-07-2019","09:00", "5", "3");
+        insertAppointments(11,4,"17-07-2019","10:00", "5", "3");
     }
 
     public String insertMedicalEquipment(int id,String name, String expiredate,int quantity){
@@ -47,7 +47,7 @@ public class DBInserts {
         return dbInitializer.connectAndExecute(sql);
     }
 
-    public String insertAppointments(int appointmentid,String date, String time, String clientid, String doctorid){
+    public String insertAppointments(int appointmentID,int treatmentID,String date, String time, String clientid, String doctorid){
 //        SimpleDateFormat format=new SimpleDateFormat("dd-MM-yyyy");
 //        Date date_format;
 //        try {
@@ -55,8 +55,8 @@ public class DBInserts {
 //        } catch (ParseException e) {
 //            return "date error";
 //        }
-        String sql="INSERT INTO appointments(treatmentID, appointmentDATE, appointmentTIME,clientID,doctorID)"+
-                " VALUES ('"+appointmentid+"', '"+date+"', '"+time+"', '"+clientid+"', '"+doctorid+"');";
+        String sql="INSERT INTO appointments(appointmentID, treatmentID,appointmentDATE, appointmentTIME,clientID,doctorID)"+
+                " VALUES ('"+appointmentID+"', '"+treatmentID+"', '"+date+"', '"+time+"', '"+clientid+"', '"+doctorid+"');";
         return dbInitializer.connectAndExecute(sql);
     }
 
