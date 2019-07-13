@@ -166,14 +166,7 @@ public class DBQuerys extends DBInitializer {
     }
 
     public boolean isAvailableTime (String date, String time) {
-        SimpleDateFormat format=new SimpleDateFormat("dd-MM-yyyy");
-        Date date_format;
-        try {
-            date_format=format.parse(date);
-        } catch (ParseException e) {
-            return false;
-        }
-        String sql = "SELECT appointmentTIME FROM appointments WHERE appointmentDATE like "+'"'+date_format+'"'+" AND appointmentTIME like "+'"'+time+'"';
+        String sql = "SELECT appointmentTIME FROM appointments WHERE appointmentDATE like "+'"'+date+'"'+" AND appointmentTIME like "+'"'+time+'"';
         try (Connection conn = this.connect();
              PreparedStatement pstmt  = conn.prepareStatement(sql)) {
             ResultSet resultSet = pstmt.executeQuery();
