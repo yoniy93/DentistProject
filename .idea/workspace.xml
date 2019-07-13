@@ -1,17 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3649734b-3b86-4b6c-a45c-1367960c8b58" name="Default Changelist" comment="">
+    <list default="true" id="3649734b-3b86-4b6c-a45c-1367960c8b58" name="Default Changelist" comment="שינוי שם לproject">
+      <change afterPath="$PROJECT_DIR$/src/project/GUI/Patient/Appointments/SetAnAppointmentController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/project/GUI/Patient/Appointments/SetAnAppointmentModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/project/GUI/Patient/Appointments/SetAnAppointmentView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DentistProject.iml" beforeDir="false" afterPath="$PROJECT_DIR$/DentistProject.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/apiguardian-api-1.1.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/junit-jupiter-api-5.5.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/junit-platform-commons-1.5.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opentest4j-1.2.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project/Database/DBQuerys.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/Database/DBQuerys.java" afterDir="false" />
-    </list>
-    <list id="b8ad4f7b-8062-417d-85f0-1c06e49ba2b8" name="other" comment="other">
-      <change beforePath="$PROJECT_DIR$/DentistProject.iml" beforeDir="false" afterPath="$PROJECT_DIR$/DentistProject.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project/GUI/Patient/Appointments/SetAnAppointment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project/GUI/Patient/General/PatientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/GUI/Patient/General/PatientController.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -51,16 +48,24 @@
     <select />
   </component>
   <component name="DefaultGradleProjectSettings">
-    <option name="testRunner" value="GRADLE" />
-    <option name="delegatedBuild" value="true" />
+    <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tests/project/Database/DBTest.java">
+        <entry file="file://$PROJECT_DIR$/src/project/GUI/Patient/Appointments/SetAnAppointmentView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="86" column="45" selection-start-line="86" selection-start-column="33" selection-end-line="86" selection-end-column="45" />
+            <state relative-caret-position="257">
+              <caret line="93" column="5" selection-start-line="93" selection-start-column="5" selection-end-line="93" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/project/GUI/Patient/Appointments/SetAnAppointmentModel.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="274">
+              <caret line="17" column="5" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -68,14 +73,40 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/project/Database/DBQuerys.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/project/GUI/Patient/Appointments/SetAnAppointmentController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1275">
-              <caret line="75" column="47" selection-start-line="75" selection-start-column="47" selection-end-line="75" selection-end-column="47" />
+            <state relative-caret-position="170">
+              <caret line="10" selection-start-line="10" selection-end-line="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/project/GUI/Clinic/Staff/ClinicStaffInfoModel.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="17" column="42" lean-forward="true" selection-start-line="17" selection-start-column="42" selection-end-line="17" selection-end-column="42" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/project/GUI/Clinic/Staff/ClinicStaffInfoView.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2839">
+              <caret line="174" column="46" lean-forward="true" selection-start-line="174" selection-start-column="46" selection-end-line="174" selection-end-column="46" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/project/GUI/Clinic/Staff/ClinicStaffInfoController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="359">
+              <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#getLastId#0;class#DBQuerys#0" />
               </folding>
             </state>
           </provider>
@@ -88,7 +119,6 @@
       <list>
         <option value="Enum" />
         <option value="Class" />
-        <option value="Singleton" />
       </list>
     </option>
   </component>
@@ -96,11 +126,7 @@
     <findStrings>
       <find>weightk</find>
       <find>insertfo</find>
-      <find>convertDateToString</find>
     </findStrings>
-    <dirStrings>
-      <dir>C:\Downloads\First Degree\IntelliJ\DentistProject</dir>
-    </dirStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -108,9 +134,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/project/GUI/Admin/AdminView.java" />
-        <option value="$PROJECT_DIR$/src/project/GUI/Clinic/StartClinicInfoView.java" />
-        <option value="$PROJECT_DIR$/src/project/GUI/Clinic/ClinicInfoController.java" />
         <option value="$PROJECT_DIR$/src/project/GUI/Clinic/StartClinicInfo.java" />
         <option value="$PROJECT_DIR$/src/project/GUI/Clinic/ClinicInfoView.java" />
         <option value="$PROJECT_DIR$/src/project/GUI/Doctor/DoctorController.java" />
@@ -140,6 +163,7 @@
         <option value="$PROJECT_DIR$/src/project/GUI/Doctor/DoctorPersonalDetails/PersonalDetailsViewDoctor.java" />
         <option value="$PROJECT_DIR$/src/project/GUI/Admin/UnRegister/UnRegisterModel.java" />
         <option value="$PROJECT_DIR$/src/project/GUI/General/ErrorWindow.java" />
+        <option value="$PROJECT_DIR$/src/project/GUI/Admin/Register/RegisterController.java" />
         <option value="$PROJECT_DIR$/src/project/GUI/Clinic/Staff/ClinicStaffInfoView.java" />
         <option value="$PROJECT_DIR$/src/project/GUI/Admin/UnRegister/UnRegisterView.java" />
         <option value="$PROJECT_DIR$/src/project/GUI/Admin/Register/RegisterView.java" />
@@ -150,51 +174,39 @@
         <option value="$PROJECT_DIR$/src/project/GUI/Login/LoginView.java" />
         <option value="$PROJECT_DIR$/src/project/GUI/Login/LoginController.java" />
         <option value="$PROJECT_DIR$/src/project/Entities/Doctor.java" />
+        <option value="$PROJECT_DIR$/src/project/Database/DBQuerys.java" />
         <option value="$PROJECT_DIR$/src/project/GUI/Patient/Treatments/TreatmentsPricesModel.java" />
         <option value="$PROJECT_DIR$/src/project/Entities/Treatments.java" />
         <option value="$PROJECT_DIR$/src/project/GUI/Patient/Treatments/StartTreatmentsPricesView.java" />
         <option value="$PROJECT_DIR$/src/project/GUI/Patient/Treatments/TreatmentsPricesController.java" />
         <option value="$PROJECT_DIR$/src/project/GUI/Patient/Treatments/TreatmentsPricesView.java" />
-        <option value="$PROJECT_DIR$/src/project/GUI/Admin/Register/RegisterController.java" />
+        <option value="$PROJECT_DIR$/src/project/GUI/Patient/General/PatientController.java" />
         <option value="$PROJECT_DIR$/tests/project/Database/DBTest.java" />
-        <option value="$PROJECT_DIR$/src/project/GUI/test.java" />
-        <option value="$PROJECT_DIR$/src/project/Database/DBQuerys.java" />
+        <option value="$PROJECT_DIR$/src/project/GUI/Patient/Appointments/SetAnAppointment.java" />
+        <option value="$PROJECT_DIR$/src/project/GUI/Patient/Appointments/SetAnAppointmentModel.java" />
+        <option value="$PROJECT_DIR$/src/project/GUI/Patient/Appointments/SetAnAppointmentController.java" />
       </list>
     </option>
   </component>
-  <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/DentistProject.iml">
-      <ranges>
-        <range start1="6" end1="7" start2="6" end2="6" changelist="3649734b-3b86-4b6c-a45c-1367960c8b58" />
-        <range start1="9" end1="10" start2="8" end2="9" changelist="b8ad4f7b-8062-417d-85f0-1c06e49ba2b8" />
-        <range start1="32" end1="36" start2="31" end2="35" changelist="3649734b-3b86-4b6c-a45c-1367960c8b58" />
-      </ranges>
-    </file>
-  </component>
-  <component name="ProjectFrameBounds">
-    <option name="width" value="1360" />
-    <option name="height" value="768" />
+  <component name="ProjectFrameBounds" fullScreen="true">
+    <option name="y" value="23" />
+    <option name="width" value="1680" />
+    <option name="height" value="941" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="false" id="Update" />
   </component>
   <component name="ProjectView">
-    <navigator proportions="" version="1">
+    <navigator currentView="Scope" currentSubView="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope" proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="DentistProject" type="b2602c69:ProjectViewProjectNode" />
               <item name="DentistProject" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DentistProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DentistProject" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="DentistProject" type="b2602c69:ProjectViewProjectNode" />
@@ -207,11 +219,121 @@
               <item name="tests" type="462c0819:PsiDirectoryNode" />
               <item name="Database" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="DentistProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="Scope">
+        <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
+          <expand>
+            <path>
+              <item name="DentistProject" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="DentistProject" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+            </path>
+            <path>
+              <item name="DentistProject" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="DentistProject" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="DentistProject" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="DentistProject" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="project" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="DentistProject" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="DentistProject" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="project" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="Database" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="DentistProject" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="DentistProject" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="project" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="GUI" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="DentistProject" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="DentistProject" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="project" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="GUI" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="Admin" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="DentistProject" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="DentistProject" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="project" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="GUI" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="Admin" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="Register" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="DentistProject" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="DentistProject" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="project" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="GUI" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="Clinic" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="DentistProject" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="DentistProject" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="project" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="GUI" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="Clinic" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="Staff" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="DentistProject" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="DentistProject" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="project" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="GUI" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="General" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="DentistProject" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="DentistProject" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="project" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="GUI" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="Patient" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="DentistProject" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="DentistProject" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="project" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="GUI" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="Patient" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="Appointments" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="DentistProject" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="DentistProject" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="tests" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="DentistProject" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="DentistProject" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="tests" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="project" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -248,7 +370,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.DBTest">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Locations" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="project.Database.Locations" />
       <module name="DentistProject" />
@@ -271,18 +393,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DBTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="DentistProject" />
-      <option name="PACKAGE_NAME" value="project.Database" />
-      <option name="MAIN_CLASS_NAME" value="project.Database.DBTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.DBTest" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.Locations" />
       </list>
@@ -318,7 +430,6 @@
       <workItem from="1559289233391" duration="4679000" />
       <workItem from="1559365096746" duration="8794000" />
       <workItem from="1559398820703" duration="4112000" />
-      <workItem from="1562999484081" duration="6170000" />
     </task>
     <task id="LOCAL-00053" summary="לוגיקה לכניסה">
       <created>1558903028996</created>
@@ -656,54 +767,24 @@
       <option name="project" value="LOCAL" />
       <updated>1559377013866</updated>
     </task>
-    <task id="LOCAL‎00101" summary="Ofir :)">
-      <created>1563003955466</created>
-      <option name="number" value="LOCAL‎00101" />
-      <option name="presentableId" value="LOCAL‎00101" />
-      <updated>1563003955466</updated>
+    <task id="LOCAL-00101" summary="שינוי שם לproject">
+      <created>1563006141238</created>
+      <option name="number" value="00101" />
+      <option name="presentableId" value="LOCAL-00101" />
+      <option name="project" value="LOCAL" />
+      <updated>1563006141238</updated>
     </task>
     <option name="localTasksCounter" value="102" />
     <servers />
   </component>
-  <component name="TestHistory">
-    <history-entry file="DBTest - 2019.07.13 at 09h 47m 03s.xml">
-      <configuration name="DBTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="DBTest - 2019.07.13 at 09h 49m 50s.xml">
-      <configuration name="DBTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="DBTest - 2019.07.13 at 09h 50m 09s.xml">
-      <configuration name="DBTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="DBTest - 2019.07.13 at 09h 55m 18s.xml">
-      <configuration name="DBTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="DBTest - 2019.07.13 at 10h 18m 05s.xml">
-      <configuration name="DBTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="DBTest - 2019.07.13 at 10h 20m 31s.xml">
-      <configuration name="DBTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="DBTest - 2019.07.13 at 10h 21m 17s.xml">
-      <configuration name="DBTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="DBTest - 2019.07.13 at 10h 23m 24s.xml">
-      <configuration name="DBTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="DBTest - 2019.07.13 at 10h 50m 11s.xml">
-      <configuration name="DBTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="DBTest - 2019.07.13 at 10h 52m 19s.xml">
-      <configuration name="DBTest" configurationId="JUnit" />
-    </history-entry>
-  </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="136377000" />
+    <option name="totallyTimeSpent" value="137295000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1360" height="768" extended-state="0" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24076924" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25113463" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -712,17 +793,17 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32959184" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.2503937" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.24549918" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4993895" weight="0.3989796" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" weight="0.36020407" />
+      <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.49924356" weight="0.36006546" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.4993895" weight="0.06360424" />
-      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50061053" side_tool="true" weight="0.39929327" />
-      <window_info anchor="bottom" id="Messages" order="12" sideWeight="0.4993895" weight="0.28346458" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50075644" side_tool="true" weight="0.36006546" />
+      <window_info anchor="bottom" id="Messages" order="12" sideWeight="0.49848714" weight="0.2831424" />
       <window_info anchor="bottom" id="Duplicate detector" order="13" visible="true" weight="0.32959184" />
       <window_info anchor="bottom" id="Database Console" order="14" weight="0.32959184" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -744,10 +825,9 @@
     <MESSAGE value="ishai hagever" />
     <MESSAGE value="yonatan check" />
     <MESSAGE value="second commit" />
-    <MESSAGE value="שינוי שם לproject" />
     <MESSAGE value="לוגיקה לכניסה" />
-    <MESSAGE value="Ofir :)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ofir :)" />
+    <MESSAGE value="שינוי שם לproject" />
+    <option name="LAST_COMMIT_MESSAGE" value="שינוי שם לproject" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -765,12 +845,6 @@
           <line>50</line>
           <properties />
           <option name="timeStamp" value="17" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/project/GUI/Login/LoginController.java</url>
-          <line>53</line>
-          <properties />
-          <option name="timeStamp" value="20" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -822,9 +896,13 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/project/GUI/General/CancleButton.java" />
-    <entry file="das://c5eb2707-046d-4b89-a62e-48a96ce9aa60/schema/main/table/mediciens" />
-    <entry file="das://c5eb2707-046d-4b89-a62e-48a96ce9aa60/schema/main/table/appointments" />
+    <entry file="file://$PROJECT_DIR$/src/project/Entities/USER_TYPE.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="24" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/project/Entities/User.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="570">
@@ -861,18 +939,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/project/Database/DBInitializer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="347">
+          <caret line="60" column="53" lean-forward="true" selection-start-line="60" selection-start-column="53" selection-end-line="60" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
     <entry file="das://c5eb2707-046d-4b89-a62e-48a96ce9aa60/schema/main/table/users" />
     <entry file="file://$PROJECT_DIR$/src/project/Database/DBUpdates.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="254">
           <caret line="25" column="5" lean-forward="true" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/project/Database/DBInserts.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="45" lean-forward="true" selection-start-line="12" selection-start-column="45" selection-end-line="12" selection-end-column="45" />
         </state>
       </provider>
     </entry>
@@ -897,6 +975,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/project/GUI/Admin/Register/RegisterController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="217">
+          <caret line="54" column="34" lean-forward="true" selection-start-line="54" selection-start-column="34" selection-end-line="54" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/project/GUI/General/ErrorWindow.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -911,13 +996,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/project/GUI/Clinic/Staff/ClinicStaffInfoView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="85" selection-start-line="9" selection-start-column="85" selection-end-line="9" selection-end-column="85" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/project/GUI/Admin/UnRegister/UnRegisterView.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
@@ -925,10 +1003,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/project/GUI/Admin/Register/RegisterView.java">
+    <entry file="file://$PROJECT_DIR$/src/project/GUI/Admin/General/AdminView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="79" selection-start-line="10" selection-start-column="79" selection-end-line="10" selection-end-column="79" />
+        <state relative-caret-position="120">
+          <caret line="8" column="36" lean-forward="true" selection-start-line="8" selection-start-column="36" selection-end-line="8" selection-end-column="36" />
         </state>
       </provider>
     </entry>
@@ -967,6 +1045,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/project/GUI/Login/LoginView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="484">
+          <caret line="54" column="31" selection-start-line="54" selection-start-column="31" selection-end-line="54" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/project/GUI/Patient/PersonalDetails/PersonalDetailsViewPatient.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
@@ -995,187 +1080,186 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/project/GUI/Patient/Treatments/TreatmentsPricesView.java">
+    <entry file="file://$PROJECT_DIR$/src/project/GUI/Login/LoginController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="18" column="24" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/project/GUI/Patient/Treatments/TreatmentsPricesModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="39" selection-start-column="39" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/project/Entities/Treatments.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="37" column="33" selection-start-line="37" selection-start-column="33" selection-end-line="37" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/project/GUI/Patient/Treatments/TreatmentsPricesController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="28" selection-start-line="28" selection-end-line="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/project/GUI/Patient/Treatments/StartTreatmentsPricesView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="8" column="1" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/project/GUI/Patient/General/PatientController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="35" column="32" selection-start-line="35" selection-end-line="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/project/Entities/Doctor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="10" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/project/Entities/USER_TYPE.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="25" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/project/GUI/General/Calendar/VetoPolicy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-68">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding>
-            <element signature="e#444#445#0" expanded="true" />
-            <element signature="e#476#477#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/project/GUI/Admin/Register/RegisterController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="102" selection-start-line="102" selection-end-line="102" />
-          <folding>
-            <element signature="method#convertDateToString#0;class#RegisterController#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/project/GUI/General/Calendar/DateAndTime.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="43" column="5" selection-start-line="36" selection-start-column="35" selection-end-line="43" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/project/GUI/General/Calendar/DateListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="41">
-          <caret line="14" column="25" lean-forward="true" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/project/GUI/test.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+        <state relative-caret-position="585">
+          <caret line="39" column="49" selection-start-line="39" selection-start-column="49" selection-end-line="39" selection-end-column="49" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/project/GUI/Login/LoginModel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="63" column="31" selection-start-line="63" selection-start-column="19" selection-end-line="63" selection-end-column="31" />
-          <folding>
-            <element signature="method#CheckLogin#0;class#LoginModel#0" />
-            <element signature="e#2028#2029#0" expanded="true" />
-            <element signature="e#2082#2083#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/project/Database/DBInitializer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="16" column="46" selection-start-line="16" selection-start-column="33" selection-end-line="16" selection-end-column="46" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#createNewDatabase#0;class#DBInitializer#0" />
-            <element signature="method#isDBExists#0;class#DBInitializer#0" />
-            <element signature="method#createTablesInDB#0;class#DBInitializer#0" />
-            <element signature="method#loadDatabaseWithInitialData#0;class#DBInitializer#0" />
-            <element signature="method#createNewTables#0;class#DBInitializer#0" />
-            <element signature="method#connectAndExecute#0;class#DBInitializer#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/project/Database/DBTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="86" column="45" selection-start-line="86" selection-start-column="33" selection-end-line="86" selection-end-column="45" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/project/GUI/Admin/General/AdminView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="8" column="36" lean-forward="true" selection-start-line="8" selection-start-column="36" selection-end-line="8" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/project/GUI/Admin/General/AdminController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/project/GUI/Login/LoginController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="42" column="3" lean-forward="true" selection-start-line="42" selection-start-column="3" selection-end-line="42" selection-end-column="3" />
-          <folding>
-            <element signature="method#addViewActionListeners#0;class#LoginController#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/project/GUI/Login/LoginView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="782">
-          <caret line="54" column="31" lean-forward="true" selection-start-line="54" selection-start-column="31" selection-end-line="54" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/project/GUI/Patient/Appointments/SetAnAppointment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        <state relative-caret-position="300">
+          <caret line="20" selection-start-line="20" selection-end-line="20" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/project/Database/DBQuerys.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1275">
-          <caret line="75" column="47" selection-start-line="75" selection-start-column="47" selection-end-line="75" selection-end-column="47" />
+        <state relative-caret-position="314">
+          <caret line="148" column="35" selection-start-line="148" selection-start-column="35" selection-end-line="148" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/project/Entities/Doctor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="10" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/project/Entities/Treatments.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="555">
+          <caret line="37" column="33" selection-start-line="37" selection-start-column="33" selection-end-line="37" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/project/GUI/Patient/Treatments/StartTreatmentsPricesView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="1" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/project/GUI/Patient/Treatments/TreatmentsPricesModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1">
+          <caret column="39" selection-start-column="39" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/project/GUI/Patient/Treatments/TreatmentsPricesController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="28" column="40" selection-start-line="28" selection-start-column="40" selection-end-line="28" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/project/GUI/Patient/Treatments/TreatmentsPricesView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="18" column="24" lean-forward="true" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/project/GUI/General/Calendar/VetoPolicy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="21" column="50" selection-start-line="21" selection-start-column="50" selection-end-line="21" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/project/GUI/General/Calendar/DateListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/project/GUI/General/Calendar/DateAndTime.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="12" column="36" selection-start-line="12" selection-start-column="36" selection-end-line="12" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/project/Database/DBTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/project/GUI/Patient/General/PatientController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="16" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/project/Database/DBInserts.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="29" selection-start-line="29" selection-end-line="29" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#getLastId#0;class#DBQuerys#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/project/Entities/Appointment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="10" column="16" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="16" />
+          <folding>
+            <element signature="e#302#303#0" expanded="true" />
+            <element signature="e#338#339#0" expanded="true" />
+            <element signature="e#400#401#0" expanded="true" />
+            <element signature="e#450#451#0" expanded="true" />
+            <element signature="e#488#489#0" expanded="true" />
+            <element signature="e#524#525#0" expanded="true" />
+            <element signature="e#580#581#0" expanded="true" />
+            <element signature="e#630#631#0" expanded="true" />
+            <element signature="e#668#669#0" expanded="true" />
+            <element signature="e#704#705#0" expanded="true" />
+            <element signature="e#760#761#0" expanded="true" />
+            <element signature="e#810#811#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/project/GUI/Admin/Register/RegisterView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="697">
+          <caret line="124" lean-forward="true" selection-start-line="124" selection-end-line="124" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/project/GUI/Patient/Appointments/SetAnAppointmentView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="257">
+          <caret line="93" column="5" selection-start-line="93" selection-start-column="5" selection-end-line="93" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/project/GUI/Clinic/Staff/ClinicStaffInfoController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="359">
+          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/project/GUI/Clinic/Staff/ClinicStaffInfoView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2839">
+          <caret line="174" column="46" lean-forward="true" selection-start-line="174" selection-start-column="46" selection-end-line="174" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/project/GUI/Clinic/Staff/ClinicStaffInfoModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="17" column="42" lean-forward="true" selection-start-line="17" selection-start-column="42" selection-end-line="17" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/project/GUI/Patient/Appointments/SetAnAppointmentController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/project/GUI/Patient/Appointments/SetAnAppointmentModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="274">
+          <caret line="17" column="5" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1237,7 +1321,6 @@
             <option name="proportions">
               <list>
                 <option value="0.2" />
-                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>
