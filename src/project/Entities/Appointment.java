@@ -13,6 +13,11 @@ public class Appointment {
     private String patientId;
 
     public Appointment(String treatmentID, Date appointmentDATE, Time appointmentTIME, String clientID, String doctorID) {
+        setTreatmentID(treatmentID);
+        setTreatmentDate(appointmentDATE);
+        setTreatmentTime(appointmentTIME);
+        setPatientId(clientID);
+        setDoctorId(doctorID);
 
     }
 

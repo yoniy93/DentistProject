@@ -198,6 +198,7 @@ public class DBQuerys{
         try (Connection conn = dbInitializer.connect();
              PreparedStatement pstmt  = conn.prepareStatement(sql)) {
             ResultSet resultSet=pstmt.executeQuery();
+            Appointment temp;
             while (resultSet.next()){
 
                 SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy");
@@ -205,13 +206,11 @@ public class DBQuerys{
 
                 SimpleDateFormat timeFormat = new SimpleDateFormat("HH:mm");
                 Time time = new java.sql.Time(timeFormat.parse(resultSet.getString("appointmentTIME")).getTime());
-                        //(Time)timeFormat.parse(resultSet.getString("appointmentTIME"));
-
-                appointments.add(new Appointment(resultSet.getString("treatmentID"),
-                        date,
-                        time,
+                temp=new Appointment(resultSet.getString("treatmentID"),
+                        date, time,
                         resultSet.getString("clientID"),
-                        resultSet.getString("doctorID")));
+                        resultSet.getString("doctorID"));
+                appointments.add(temp);
             }
             return appointments;
         } catch (SQLException e) {
@@ -224,7 +223,7 @@ public class DBQuerys{
 
     public List<String> getAllPatientsID() {
         List<String> patientsIdList=new ArrayList<>(0);
-        String sql="SELECT clientID FROM appointments;";
+        String sql="SELECT DISTINCT clientID FROM appointments;";
         try (Connection conn = dbInitializer.connect();
              PreparedStatement pstmt  = conn.prepareStatement(sql)) {
             ResultSet resultSet=pstmt.executeQuery();

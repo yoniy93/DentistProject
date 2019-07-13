@@ -28,6 +28,10 @@ public class DBInserts {
         insertAppointments(5,"17-07-2019","08:00", "4", "3");
         insertAppointments(6,"17-07-2019","09:00", "4", "3");
         insertAppointments(7,"17-07-2019","10:00", "4", "3");
+        insertAppointments(8,"17-07-2019","13:00", "4", "2");
+        insertAppointments(9,"17-07-2019","08:00", "5", "3");
+        insertAppointments(10,"17-07-2019","09:00", "5", "3");
+        insertAppointments(11,"17-07-2019","10:00", "5", "3");
     }
 
     public String insertMedicalEquipment(int id,String name, String expiredate,int quantity){

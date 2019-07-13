@@ -6,12 +6,15 @@ import project.Entities.Patient;
 import project.GUI.General.CancelButton;
 
 import javax.swing.*;
+import javax.swing.table.AbstractTableModel;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
 import java.awt.*;
-import java.util.ArrayList;
 import java.util.List;
 
+
 public class PatientsHistoryView extends JFrame{
+
 
     private ImageIcon imageForBG=new ImageIcon(Locations.getImagePath("searchTreatments.png"));
     private JLabel backGround=new JLabel(imageForBG);
@@ -28,13 +31,13 @@ public class PatientsHistoryView extends JFrame{
     JScrollPane jScrollPane;
     String header[] = new String[] { "Date" ,"Treatment", "Time", "Doctor" };
 
-    private JTable updateTableDetails(){
+    private JTable updateTableDetails(String id){
         dtm.setRowCount(0);
         dtm.setColumnCount(0);
         dtm.setColumnIdentifiers(header);
         tbl.setModel(dtm);
         // add row dynamically into the table
-        List<Appointment> listAppointment=patientsHistoryController.getTreatmentHistory(getSelectedID());
+        List<Appointment> listAppointment=patientsHistoryController.getTreatmentHistory(id);
         for (Appointment x : listAppointment) {
             dtm.addRow(new Object[] { x.getTreatmentDate(),
                                       getTreatmentName(x.getTreatmentID()),
@@ -62,9 +65,10 @@ public class PatientsHistoryView extends JFrame{
     public PatientsHistoryView() {
         setLayout(null);
         this.getPatientJComboBox().setVisible(true);
-        this.setDoctorList(patientsHistoryController.getPatientsList());
+        this.setPatientList(patientsHistoryController.getPatientsList());
         tbl.setBounds(100,100,300,200);
-        updateTableDetails();
+        tbl=updateTableDetails(getSelectedID());
+        tbl.setFont(new Font("Ariel", Font.BOLD, 14));
         jScrollPane=new JScrollPane(tbl);
         setLocationAndSize();
         addComponentsToFrame();
@@ -82,12 +86,13 @@ public class PatientsHistoryView extends JFrame{
 
     private void setLocationAndSize() {
 
-        patientJComboBox.setBounds(60, 130, 200, 50);
+        patientJComboBox.setBounds(50, 100, 200, 50);
 
         selectPatientLable.setFont(new Font("Ariel", Font.BOLD, 14));
         selectPatientLable.setBounds(60,80,100,30);
+        jScrollPane.setBounds(100,200,400,200);
 
-        cancelButton.setLocation(310,250,120,30);
+        cancelButton.setLocation(400,400,120,30);
         backGround.setBounds(0,0,700,500);
 
     }
@@ -105,7 +110,7 @@ public class PatientsHistoryView extends JFrame{
         return patientJComboBox;
     }
 
-    public void setDoctorList(List<String> values) {
+    public void setPatientList(List<String> values) {
         this.patientJComboBox.removeAllItems();
         values.forEach(x -> this.patientJComboBox.addItem(x));
     }
@@ -118,10 +123,8 @@ public class PatientsHistoryView extends JFrame{
 
     private void updatePatientTreatmentHistopry() {
         String patientId = ((Patient) this.getPatientJComboBox().getSelectedItem()).getId();
-        List<Appointment> appointmentList;
-        appointmentList=patientsHistoryController.getTreatmentHistory(patientId);
+        updateTableDetails(patientId);
     }
-
 
     private void cancelAction() {
         this.dispose();
