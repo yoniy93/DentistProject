@@ -64,6 +64,4 @@ public class LoginModel extends Observable {
     public boolean isUserExists (String id) {
         return new DBQuerys().isUserExists(id);
     }
-
-
 }

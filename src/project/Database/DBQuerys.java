@@ -148,8 +148,8 @@ public class DBQuerys{
         return null;
     }
 
-    public boolean isAvailableTime (String date, String time) {
-        String sql = "SELECT appointmentTIME FROM appointments WHERE appointmentDATE like "+'"'+date+'"'+" AND appointmentTIME like "+'"'+time+'"';
+    public boolean isAvailableTime (String doctorID,String date, String time) {
+        String sql = "SELECT appointmentTIME FROM appointments WHERE appointmentDATE like " + '"' + date + '"' + " AND doctorID like " + '"' + doctorID + '"' + "AND appointmentTIME like "+'"'+time+'"';
         try (Connection conn = dbInitializer.connect();
              PreparedStatement pstmt  = conn.prepareStatement(sql)) {
             ResultSet resultSet = pstmt.executeQuery();

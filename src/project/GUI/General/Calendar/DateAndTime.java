@@ -1,3 +1,4 @@
+/*
 package project.GUI.General.Calendar;
 
 import com.github.lgooddatepicker.components.DatePickerSettings;
@@ -33,7 +34,6 @@ public class DateAndTime extends JPanel {
         dateSettings.setFirstDayOfWeek(DayOfWeek.SUNDAY);
         dateSettings.setFormatForDatesCommonEra("dd-MM-yyyy");
         dateSettings.setFormatForDatesBeforeCommonEra("dd-MM-uuuu");
-
     }
 
     private void setTimeSettings() {
@@ -58,3 +58,4 @@ public class DateAndTime extends JPanel {
         return dateTimePicker.getDatePicker().getText();
     }
 }
+*/

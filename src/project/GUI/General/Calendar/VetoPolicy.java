@@ -10,12 +10,14 @@ import java.time.LocalTime;
 
 public class VetoPolicy implements DateVetoPolicy, TimeVetoPolicy
 {
-    private String date = null;
+    private String date;
+    private String doctorID;
 
-    VetoPolicy(){ }
+    public VetoPolicy(){ }
 
-    VetoPolicy(String date){
+    public VetoPolicy(String date, String doctorID){
         this.date = date;
+        this.doctorID = doctorID;
     }
 
     @Override
@@ -31,6 +33,6 @@ public class VetoPolicy implements DateVetoPolicy, TimeVetoPolicy
         String time = localTime.toString();
         DBQuerys databaseQueries = new DBQuerys();
 
-        return databaseQueries.isAvailableTime(date,time);
+        return databaseQueries.isAvailableTime(doctorID,date,time);
     }
 }

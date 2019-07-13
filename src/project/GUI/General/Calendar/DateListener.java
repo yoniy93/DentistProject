@@ -7,14 +7,16 @@ import com.github.lgooddatepicker.zinternaltools.DateChangeEvent;
 public class DateListener implements DateChangeListener {
 
     private DateTimePicker dateTimePicker;
-    public DateListener(DateTimePicker dateTimePicker)
-    {
+    private String doctorID;
+
+    public DateListener(DateTimePicker dateTimePicker, String doctorID) {
         this.dateTimePicker = dateTimePicker;
+        this.doctorID = doctorID;
     }
 
     public void dateChanged(DateChangeEvent event) {
         String date = convertDateToString(event.getNewDate().getDayOfMonth() , event.getNewDate().getMonthValue() , event.getNewDate().getYear());
-        dateTimePicker.timePicker.getSettings().setVetoPolicy(new VetoPolicy(date));
+        dateTimePicker.timePicker.getSettings().setVetoPolicy(new VetoPolicy(date, doctorID));
         dateTimePicker.timePicker.clear();
     }
 
