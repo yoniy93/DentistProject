@@ -1,10 +1,9 @@
 package project.GUI.Admin.AddTreatments;
 
-import project.Database.DBInserts;
 import project.Database.Locations;
 import project.Entities.Treatments;
 import project.GUI.General.CancelButton;
-import project.GUI.General.ErrorWindow;
+import project.GUI.General.MessageWindow;
 
 import javax.swing.*;
 import java.awt.*;
@@ -90,13 +89,13 @@ public class AddTreatmentsView extends JFrame
 
             msg_recieved=addTreatmentsController.addAction(treatments);
             if (msg_recieved.equals("Sucssesfuly")) {
-                new ErrorWindow(this, "New Treatment Added successfully");
+                new MessageWindow(this, "New Treatment Added successfully");
                 this.dispose();
             }
-            else new ErrorWindow(this, msg_recieved);
+            else new MessageWindow(this, msg_recieved);
         }
         else {
-            new ErrorWindow(this,"Error: please fill all fields");
+            new MessageWindow(this,"Error: please fill all fields");
         }
     }
 

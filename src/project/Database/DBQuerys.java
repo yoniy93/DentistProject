@@ -78,7 +78,8 @@ public class DBQuerys{
         try (Connection conn = dbInitializer.connect();
              PreparedStatement pstmt  = conn.prepareStatement(sql)) {
             ResultSet resultSet=pstmt.executeQuery();
-            return resultSet.next();
+            boolean isExist=resultSet.next();
+            return isExist;
         } catch (SQLException e) {
             System.out.println(e.getMessage());
             return false;

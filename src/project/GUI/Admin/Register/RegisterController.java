@@ -1,7 +1,7 @@
 package project.GUI.Admin.Register;
 
 
-import project.GUI.General.ErrorWindow;
+import project.GUI.General.MessageWindow;
 
 import java.awt.*;
 
@@ -55,14 +55,14 @@ public class RegisterController {
                                 registerView.getEmailTextField().getText(), getDate(), convertGenderToString(), Integer.parseInt(registerView.getYearsOfExTextField().getText()),registerView.getPhoneNumberTextField().getText());
              }
              if (msg_recieved.equals("Sucssesfuly")) {
-                 new ErrorWindow(registerView, "New use created successfully");
+                 new MessageWindow(registerView, "New use created successfully");
                  registerView.dispose();
              }
-             else new ErrorWindow(registerView, msg_recieved);
+             else new MessageWindow(registerView, msg_recieved);
 
        }
        else
-           new ErrorWindow(registerView,"Error: please fill all fields");
+           new MessageWindow(registerView,"Error: please fill all fields");
         }
 
         private boolean isAllFieldsFilled() {

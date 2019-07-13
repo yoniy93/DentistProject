@@ -1,5 +1,6 @@
 package project.GUI.Admin.UnRegister;
 
+import project.Database.DBQuerys;
 import project.Database.DBUpdates;
 import project.Entities.Admin;
 
@@ -12,5 +13,9 @@ public class UnRegisterModel
 
     public String deleteUser (String id) {
         return new DBUpdates().deleteUserFromDB(id);
+    }
+    public Boolean isUserExists(String id) {
+        return new DBQuerys().isUserExists(id);
+
     }
 }

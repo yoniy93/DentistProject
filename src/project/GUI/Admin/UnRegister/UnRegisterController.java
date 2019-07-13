@@ -1,5 +1,7 @@
 package project.GUI.Admin.UnRegister;
 
+import project.GUI.General.MessageWindow;
+
 import javax.swing.*;
 
 public class UnRegisterController
@@ -20,11 +22,20 @@ public class UnRegisterController
 
     private void submitAction() {
         String msg_recived;
-        msg_recived=unRegisterModel.deleteUser(unRegisterView.getIdTextField().getText());
-        if (msg_recived.equals("Sucssesfuly"))
-            JOptionPane.showMessageDialog(unRegisterView, "User has been deleted successfully");
-        else JOptionPane.showMessageDialog(unRegisterView, msg_recived);
+        String id = unRegisterView.getIdTextField().getText();
+        if (!unRegisterModel.isUserExists(id))
+            new MessageWindow(unRegisterView, "User dont exists");
+        else {
+            if (id.equals("1"))
+                new MessageWindow(unRegisterView, "Cannot delete Admin user");
+            else {
 
+                msg_recived = unRegisterModel.deleteUser(id);
+                if (msg_recived.equals("Sucssesfuly")) {
+                    new MessageWindow(unRegisterView, "User has been deleted successfully");
+                    unRegisterView.dispose();
+                } else new MessageWindow(unRegisterView, msg_recived);
+            }
+        }
     }
-
 }
