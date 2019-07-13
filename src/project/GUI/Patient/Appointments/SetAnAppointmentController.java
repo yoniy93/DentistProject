@@ -21,6 +21,7 @@ public class SetAnAppointmentController {
 
     public void selectDoctorAction(){
         setAnAppointmentView.setDateListener(setAnAppointmentView.getDoctorID());
+        setAnAppointmentView.clearDateAndTime();
     }
 
     public void insertAppointmentAction(){

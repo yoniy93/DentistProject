@@ -185,5 +185,10 @@ public class SetAnAppointmentView extends JFrame implements ActionListener{
     public void setDateListener(String doctorID){
         dateTimePicker.datePicker.addDateChangeListener(new DateListener(dateTimePicker, doctorID));
     }
+
+    public void clearDateAndTime(){
+        dateTimePicker.datePicker.clear();
+        dateTimePicker.timePicker.clear();
+    }
 }
 

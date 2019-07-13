@@ -15,9 +15,12 @@ public class DateListener implements DateChangeListener {
     }
 
     public void dateChanged(DateChangeEvent event) {
-        String date = convertDateToString(event.getNewDate().getDayOfMonth() , event.getNewDate().getMonthValue() , event.getNewDate().getYear());
-        dateTimePicker.timePicker.getSettings().setVetoPolicy(new VetoPolicy(date, doctorID));
-        dateTimePicker.timePicker.clear();
+
+        if(event.getNewDate() != null){
+            String date = convertDateToString(event.getNewDate().getDayOfMonth() , event.getNewDate().getMonthValue() , event.getNewDate().getYear());
+            dateTimePicker.timePicker.getSettings().setVetoPolicy(new VetoPolicy(date, doctorID));
+            dateTimePicker.timePicker.clear();
+        }
     }
 
     private String convertDateToString (int day, int month, int year) {
