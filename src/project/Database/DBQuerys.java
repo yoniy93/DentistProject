@@ -78,7 +78,7 @@ public class DBQuerys{
         try (Connection conn = dbInitializer.connect();
              PreparedStatement pstmt  = conn.prepareStatement(sql)) {
             ResultSet resultSet=pstmt.executeQuery();
-            return resultSet.getString("id").equals(userid);
+            return resultSet.next();
         } catch (SQLException e) {
             System.out.println(e.getMessage());
             return false;
