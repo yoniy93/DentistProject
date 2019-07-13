@@ -48,7 +48,7 @@ public class DBInserts {
         return dbInitializer.connectAndExecute(sql);
     }
 
-    public String insertAppointments(int appointmentID,int treatmentID,String date, String time, String clientid, String doctorid){
+    public String insertAppointments(int id,int treatmentID,String date, String time, String clientid, String doctorid){
 //        SimpleDateFormat format=new SimpleDateFormat("dd-MM-yyyy");
 //        Date date_format;
 //        try {
@@ -56,8 +56,8 @@ public class DBInserts {
 //        } catch (ParseException e) {
 //            return "date error";
 //        }
-        String sql="INSERT INTO appointments(appointmentID, treatmentID,appointmentDATE, appointmentTIME,clientID,doctorID)"+
-                " VALUES ('"+appointmentID+"', '"+treatmentID+"', '"+date+"', '"+time+"', '"+clientid+"', '"+doctorid+"');";
+        String sql="INSERT INTO appointments(id, treatmentID,appointmentDATE, appointmentTIME,clientID,doctorID)"+
+                " VALUES ('"+id+"', '"+treatmentID+"', '"+date+"', '"+time+"', '"+clientid+"', '"+doctorid+"');";
         return dbInitializer.connectAndExecute(sql);
     }
 

@@ -40,9 +40,7 @@ public class SetAnAppointmentController {
                String time = setAnAppointmentView.getTime();
                String doctorid = setAnAppointmentView.getDoctorID();
 
-              setAnAppointmentModel.insertAppointment(appointmentID, treatmentID, date, time, doctorid);
+               setAnAppointmentModel.insertAppointment(appointmentID, treatmentID, date, time, doctorid);
            }
-
-
     }
 }
