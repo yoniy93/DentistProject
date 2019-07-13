@@ -1,7 +1,7 @@
 package project.GUI.Patient.General;
 
 import project.GUI.General.PersonController;
-import project.GUI.Patient.Appointments.SetAnAppointment;
+import project.GUI.Patient.Appointments.SetAnAppointmentView;
 import project.GUI.Patient.PersonalDetails.StartPersonalDetailsPatient;
 import project.GUI.Patient.Treatments.StartTreatmentsPricesView;
 
@@ -42,7 +42,7 @@ public class PatientController extends PersonController{
     }
 
     private void setAnAppointmentAction() {
-        new SetAnAppointment();
+        new SetAnAppointmentView();
 
     }
 
