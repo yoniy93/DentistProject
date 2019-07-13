@@ -37,15 +37,15 @@ public class DBInserts {
     }
 
     public String insertAppointments(int appointmentid,String date, String time, String clientid, String doctorid){
-        SimpleDateFormat format=new SimpleDateFormat("dd-MM-yyyy");
-        Date date_format;
-        try {
-            date_format=format.parse(date);
-        } catch (ParseException e) {
-            return "date error";
-        }
+//        SimpleDateFormat format=new SimpleDateFormat("dd-MM-yyyy");
+//        Date date_format;
+//        try {
+//            date_format=format.parse(date);
+//        } catch (ParseException e) {
+//            return "date error";
+//        }
         String sql="INSERT INTO appointments(treatmentID, appointmentDATE, appointmentTIME,clientID,doctorID)"+
-                " VALUES ('"+appointmentid+"', '"+date_format+"', '"+time+"', '"+clientid+"', '"+doctorid+"');";
+                " VALUES ('"+appointmentid+"', '"+date+"', '"+time+"', '"+clientid+"', '"+doctorid+"');";
         return dbInitializer.connectAndExecute(sql);
     }
 

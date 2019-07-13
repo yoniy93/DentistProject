@@ -23,13 +23,14 @@ public class PatientsHistoryView extends JFrame{
     private JLabel selectPatientLable =new JLabel("Select Patient ID:");
 
 
-    JTable tbl;
-    DefaultTableModel dtm;
+    JTable tbl=new JTable();
+    DefaultTableModel dtm=new DefaultTableModel();
+    JScrollPane jScrollPane;
     String header[] = new String[] { "Date" ,"Treatment", "Time", "Doctor" };
 
-    private JTable updateTableDetails(int size){
-        tbl = new JTable();
-        dtm = new DefaultTableModel(0, 0);
+    private JTable updateTableDetails(){
+        dtm.setRowCount(0);
+        dtm.setColumnCount(0);
         dtm.setColumnIdentifiers(header);
         tbl.setModel(dtm);
         // add row dynamically into the table
@@ -61,9 +62,9 @@ public class PatientsHistoryView extends JFrame{
         setLayout(null);
         this.getPatientJComboBox().setVisible(true);
         this.setDoctorList(patientsHistoryController.getPatientsList());
-        int i=0;
-        for (Appointment x : patientsHistoryController.getTreatmentHistory(getSelectedID()) )
-
+        tbl.setBounds(100,100,300,200);
+        updateTableDetails();
+        jScrollPane=new JScrollPane(tbl);
         setLocationAndSize();
         addComponentsToFrame();
         addActionListeners();
@@ -91,6 +92,7 @@ public class PatientsHistoryView extends JFrame{
     }
 
     private void addComponentsToFrame(){
+        add(jScrollPane);
         add(patientJComboBox);
         add(selectPatientLable);
         add(cancelButton);

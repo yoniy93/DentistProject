@@ -198,10 +198,12 @@ public class DBQuerys{
              PreparedStatement pstmt  = conn.prepareStatement(sql)) {
             ResultSet resultSet=pstmt.executeQuery();
             while (resultSet.next()){
+
                 SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
+                Date date = (Date)dateFormat.parse(resultSet.getString("appointmentDATE"));
+
                 SimpleDateFormat timeFormat = new SimpleDateFormat("mm:ss");
-                Date date = dateFormat.parse(resultSet.getString("appointmentDATE"));
-                Time time = (Time) timeFormat.parse(resultSet.getString("appointmentTIME"));
+                Time time = (Time)timeFormat.parse(resultSet.getString("appointmentTIME"));
 
                 appointments.add(new Appointment(resultSet.getString("treatmentID"),
                         (java.sql.Date) date,
