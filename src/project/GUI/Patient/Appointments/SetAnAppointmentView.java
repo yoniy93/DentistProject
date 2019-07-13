@@ -6,11 +6,11 @@ import project.Entities.Doctor;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
 import java.util.Vector;
 
+import project.Entities.Treatments;
 import project.GUI.General.Calendar.DateListener;
 import project.GUI.General.Calendar.VetoPolicy;
 import project.GUI.General.CancelButton;
@@ -22,34 +22,35 @@ import java.time.LocalTime;
 
 public class SetAnAppointmentView extends JFrame {
 
-    ImageIcon imageForBG = new ImageIcon(Locations.getImagePath("clinicInfo.png"));
-    JLabel backGround = new JLabel(imageForBG);
+    private ImageIcon imageForBG = new ImageIcon(Locations.getImagePath("clinicInfo.png"));
+    private JLabel backGround = new JLabel(imageForBG);
 
-    JButton setAppointmentButton = new JButton("Set An Appointment");
-    CancelButton cancelButton = new CancelButton();
+    private JButton setAppointmentButton = new JButton("Set An Appointment");
+    private CancelButton cancelButton = new CancelButton();
 
-    JLabel doctorLabel = new JLabel("Select Doctor:");
-    JLabel dateAndTimeLabel = new JLabel("Select Date & time:");
-    JLabel creditCardLabel = new JLabel("Credit Card");
-    JLabel validityLabel = new JLabel("Validity:");
-    JLabel cvvLabel = new JLabel("CVV:");
+    private JLabel doctorLabel = new JLabel("Select Doctor:");
+    private JLabel treatmentLabel = new JLabel("Select Treatment:");
+    private JLabel dateAndTimeLabel = new JLabel("Select Date & time:");
+    private JLabel creditCardLabel = new JLabel("Credit Card");
+    private JLabel validityLabel = new JLabel("Validity:");
+    private JLabel cvvLabel = new JLabel("CVV:");
 
-    JTextField creditCardTextField = new JTextField("");
-    JTextField validityTextField = new JTextField("");
-    JTextField cvvTextField = new JTextField("");
+    private JTextField creditCardTextField = new JTextField("");
+    private JTextField cvvTextField = new JTextField("");
 
-    Vector yearVector = new Vector(100);
-    Vector monthVector = new Vector(12) ;
+    private Vector yearVector = new Vector(100);
+    private Vector monthVector = new Vector(12) ;
 
-    JComboBox monthComboBox = new JComboBox(monthVector);
-    JComboBox yearComboBox = new JComboBox(yearVector);
+    private JComboBox monthComboBox = new JComboBox(monthVector);
+    private JComboBox yearComboBox = new JComboBox(yearVector);
 
-    JComboBox<Doctor> doctorComboBox = new JComboBox<Doctor>();
+    private JComboBox<Doctor> doctorComboBox = new JComboBox<Doctor>();
+    private JComboBox<Treatments> treatmentComboBox = new JComboBox<Treatments>();
 
-    JPanel dateTimePickerPanel = new JPanel();
+    private JPanel dateTimePickerPanel = new JPanel();
 
-    DatePicker datePicker = new DatePicker();
-    TimePicker timePicker = new TimePicker();
+    private DatePicker datePicker = new DatePicker();
+    private TimePicker timePicker = new TimePicker();
 
 
     public SetAnAppointmentView(){
@@ -69,14 +70,18 @@ public class SetAnAppointmentView extends JFrame {
 
     private void setLocationAndSize() {
 
+        treatmentLabel.setFont(new Font("Ariel", Font.BOLD, 14));
+        treatmentLabel.setBounds(200,50,120, 30);
+        treatmentComboBox.setBounds(330,50,100,30);
+
         doctorLabel.setFont(new Font("Ariel", Font.BOLD, 14));
-        doctorLabel.setBounds(200,50,120, 30);
-        doctorComboBox.setBounds(330,50,100,30);
+        doctorLabel.setBounds(200,100,120, 30);
+        doctorComboBox.setBounds(330,100,100,30);
 
         dateAndTimeLabel.setFont(new Font("Ariel", Font.BOLD, 14));
-        dateAndTimeLabel.setBounds(200,130,150, 30);
+        dateAndTimeLabel.setBounds(200,160,150, 30);
 
-        dateTimePickerPanel.setBounds(320,130,280,35);
+        dateTimePickerPanel.setBounds(320,160,280,35);
         dateTimePickerPanel.setOpaque(false);
 
         creditCardLabel.setFont(new Font("Ariel", Font.BOLD, 14));
@@ -105,13 +110,15 @@ public class SetAnAppointmentView extends JFrame {
         add(creditCardTextField);
 
         add(validityLabel);
-        add(validityTextField);
 
         add(cvvLabel);
         add(cvvTextField);
 
         add(yearComboBox);
         add(monthComboBox);
+
+        add(treatmentLabel);
+        add(treatmentComboBox);
 
         add(doctorLabel);
         add(doctorComboBox);
@@ -139,7 +146,12 @@ public class SetAnAppointmentView extends JFrame {
 
     public void setDoctorList(List<Doctor> values) {
         this.doctorComboBox.removeAllItems();
-        values.forEach(x -> this.doctorComboBox.addItem(x));
+        values.forEach(doctor -> this.doctorComboBox.addItem(doctor));
+    }
+
+    public void setTreatmentList(List<Treatments> values) {
+        this.treatmentComboBox.removeAllItems();
+        values.forEach(treatment -> this.treatmentComboBox.addItem(treatment));
     }
 
     private void setDateSettings() {
@@ -166,12 +178,32 @@ public class SetAnAppointmentView extends JFrame {
         return ((Doctor) doctorComboBox.getSelectedItem()).getId();
     }
 
+    public int getTreatmentID() {
+        return Integer.parseInt(((Treatments)treatmentComboBox.getSelectedItem()).getId());
+    }
+
     public String getTime(){
         return timePicker.getText();
     }
 
     public String getDate() {
         return datePicker.getText();
+    }
+
+    public String getCreditCard() {
+        return creditCardTextField.getText();
+    }
+
+    public String getCvv() {
+        return cvvTextField.getText();
+    }
+
+    public String getValidityMonth() {
+        return monthComboBox.getSelectedItem().toString();
+    }
+
+    public String getValidityYear() {
+        return yearComboBox.getSelectedItem().toString();
     }
 
     public void setActions(ActionListener select, ActionListener insert ,ActionListener cancel) {
@@ -205,5 +237,6 @@ public class SetAnAppointmentView extends JFrame {
         else
             return false;
     }
+
 }
 

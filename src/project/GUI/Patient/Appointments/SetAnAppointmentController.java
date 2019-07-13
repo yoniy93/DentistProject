@@ -14,11 +14,12 @@ public class SetAnAppointmentController {
 
        addViewActionListeners();
        setAnAppointmentView.setDoctorList (setAnAppointmentModel.getDoctorList());
+       setAnAppointmentView.setTreatmentList (setAnAppointmentModel.getTreatmentList());
        setAnAppointmentView.setVisible(true);
    }
 
     private void addViewActionListeners() {
-        setAnAppointmentView.setActions(e->selectDoctorAction(), e->insertAppointmentAction(), e->cancelAction());
+        setAnAppointmentView.setActions(e->selectDoctorAction(), e->insertAppointmentAction(), e->setAnAppointmentView.dispose());
     }
 
     public void selectDoctorAction(){
@@ -33,15 +34,15 @@ public class SetAnAppointmentController {
        }
        else
            {
-               JOptionPane.showMessageDialog(setAnAppointmentView, "Everything is Correct");
+               int appointmentID = setAnAppointmentModel.getLastAppointmentID() + 1;
+               int treatmentID = setAnAppointmentView.getTreatmentID();
+               String date = setAnAppointmentView.getDate();
+               String time = setAnAppointmentView.getTime();
+               String doctorid = setAnAppointmentView.getDoctorID();
+
+              setAnAppointmentModel.insertAppointment(appointmentID, treatmentID, date, time, doctorid);
            }
 
 
     }
-
-    public void cancelAction(){
-
-    }
-
-
 }

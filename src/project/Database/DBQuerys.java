@@ -12,6 +12,7 @@ import java.util.List;
 public class DBQuerys{
 
     DBInitializer dbInitializer=DBInitializer.getInstance();
+
     public Admin getAdminDetails (String id) {
         String sql = "SELECT * FROM users WHERE id="+id;
         try (Connection conn = dbInitializer.connect();

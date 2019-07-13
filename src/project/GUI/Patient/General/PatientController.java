@@ -42,7 +42,7 @@ public class PatientController extends PersonController{
     }
 
     private void setAnAppointmentAction() {
-        new StartAppointmentView();
+        new StartAppointmentView(patientModel.getPatient());
 
     }
 
