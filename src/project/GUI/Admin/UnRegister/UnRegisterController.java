@@ -24,7 +24,7 @@ public class UnRegisterController
         String msg_recived;
         String id = unRegisterView.getIdTextField().getText();
         if (!unRegisterModel.isUserExists(id))
-            new MessageWindow(unRegisterView, "User dont exists");
+            new MessageWindow(unRegisterView, "User doesnt exist");
         else {
             if (id.equals("1"))
                 new MessageWindow(unRegisterView, "Cannot delete Admin user");
