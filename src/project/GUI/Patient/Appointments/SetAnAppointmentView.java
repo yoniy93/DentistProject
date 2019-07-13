@@ -34,9 +34,9 @@ public class SetAnAppointmentView extends JFrame {
     JLabel validityLabel = new JLabel("Validity:");
     JLabel cvvLabel = new JLabel("CVV:");
 
-    JTextField creditCardTextField = new JTextField();
-    JTextField validityTextField = new JTextField();
-    JTextField cvvTextField = new JTextField();
+    JTextField creditCardTextField = new JTextField("");
+    JTextField validityTextField = new JTextField("");
+    JTextField cvvTextField = new JTextField("");
 
     Vector yearVector = new Vector(100);
     Vector monthVector = new Vector(12) ;
@@ -190,7 +190,6 @@ public class SetAnAppointmentView extends JFrame {
     }
 
     public boolean haveEmptyTextFields(){
-
         String datePickerText = datePicker.getText();
         String timePickerText = timePicker.getText();
 
@@ -201,12 +200,10 @@ public class SetAnAppointmentView extends JFrame {
 
         String cvvCardText = cvvTextField.getText();
 
-        if(datePickerText == null || timePickerText == null || creditCardText == null || monthIndex == -1 || yearIndex == -1 || cvvCardText == null )
+        if(datePickerText == null || timePickerText == null || creditCardText.equals("") || monthIndex == -1 || yearIndex == -1 || cvvCardText.equals(""))
             return true;
         else
             return false;
-
     }
-
 }
 
