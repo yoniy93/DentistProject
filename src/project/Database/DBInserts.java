@@ -10,7 +10,7 @@ public class DBInserts {
     public void insertInitialData(){
         insertForAdmin("1", "1", "Admin", "Admin", "admin@gmail.com", "01-01-2000", "male","0547690760");
         insertForDoctor("2", "1", "Amit", "Aflalo", "amit@gmail.com", "13-05-1993", "female", 3,"0547690750");
-        insertForDoctor("3", "1", "Amit", "Aflalo", "amit@gmail.com", "13-05-1993", "female", 3,"0547690750");
+        insertForDoctor("3", "1", "Doctor", "ABC", "amit@gmail.com", "13-05-1993", "female", 3,"0547690750");
         insertForPatient("4", "1", "Yonatan", "Yardeni", "yoni@gmail.com", 60.5, 178, "13-05-1993", "male","0547690740");
         insertForPatient("5", "1", "Ofir", "Gan", "offirgan@gmail.com", 56.5, 170, "04-09-1992", "male","0547690730");
         insertTreatment(2, "סתימה", 60, 99);
