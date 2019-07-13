@@ -30,4 +30,3 @@ public class DoctorView extends PersonView {
         enterShiftsButton.addActionListener(enterShifts);
     }
 }
-

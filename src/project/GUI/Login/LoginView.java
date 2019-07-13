@@ -112,7 +112,6 @@ public class LoginView extends Observable {
         } else {
             passwordField.setEchoChar('*');
         }
-
     }
 
     public void checkLogin(){

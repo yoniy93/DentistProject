@@ -35,9 +35,13 @@ public class SetAnAppointment extends JFrame implements ActionListener{
         }
 
 
+
+
         @Override
         public void actionPerformed(ActionEvent event) {
             JOptionPane.showMessageDialog(this,"Date: " + dateTimePanel.getDate() +"\nTime: " + dateTimePanel.getTime());
+
+
         }
     }
 
