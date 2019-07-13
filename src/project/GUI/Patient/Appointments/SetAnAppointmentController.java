@@ -41,6 +41,9 @@ public class SetAnAppointmentController {
                String doctorid = setAnAppointmentView.getDoctorID();
 
                setAnAppointmentModel.insertAppointment(appointmentID, treatmentID, date, time, doctorid);
+
+               JOptionPane.showMessageDialog(setAnAppointmentView, "Appointment has been Schedule");
+               setAnAppointmentView.dispose();
            }
     }
 }
