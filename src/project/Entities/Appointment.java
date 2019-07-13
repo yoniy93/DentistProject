@@ -5,18 +5,22 @@ import java.sql.Time;
 
 public class Appointment {
 
-    private Treatments treatmentType;
+    private String treatmentID;
     private Time treatmentTime ;
     private Date treatmentDate;
-    private Doctor  doctor;
-    private Patient patient;
+    private String  doctorId;
+    private String patientId;
 
-    public Treatments getTreatmentType() {
-        return treatmentType;
+    public Appointment(String treatmentID, Date appointmentDATE, Time appointmentTIME, String clientID, String doctorID) {
+
     }
 
-    public void setTreatmentType(Treatments treatmentType) {
-        this.treatmentType = treatmentType;
+    public String getTreatmentID() {
+        return treatmentID;
+    }
+
+    public void setTreatmentID(String treatmentID) {
+        this.treatmentID = treatmentID;
     }
 
     public Time getTreatmentTime() {
@@ -35,22 +39,19 @@ public class Appointment {
         this.treatmentDate = treatmentDate;
     }
 
-    public Doctor getDoctor() {
-        return doctor;
+    public String getDoctorId() {
+        return doctorId;
     }
 
-    public void setDoctor(Doctor doctor) {
-        this.doctor = doctor;
+    public void setDoctorId(String doctorId) {
+        this.doctorId = doctorId;
     }
 
-    public Patient getPatient() {
-        return patient;
+    public String getPatientId() {
+        return patientId;
     }
 
-    public void setPatient(Patient patient) {
-        this.patient = patient;
+    public void setPatientId(String patientId) {
+        this.patientId = patientId;
     }
-
-
-
 }

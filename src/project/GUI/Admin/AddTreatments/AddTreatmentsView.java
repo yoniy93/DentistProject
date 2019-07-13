@@ -91,6 +91,7 @@ public class AddTreatmentsView extends JFrame
             if (msg_recieved.equals("Sucssesfuly")) {
                 new MessageWindow(this, "New Treatment Added successfully");
                 this.dispose();
+
             }
             else new MessageWindow(this, msg_recieved);
         }

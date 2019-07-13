@@ -148,25 +148,6 @@ public class DBQuerys{
         return null;
     }
 
-    public List<Treatments> getTreatments (){
-        List<Treatments> treatments=new ArrayList<>(1);
-        String sql="SELECT * FROM treatments;";
-        try (Connection conn = dbInitializer.connect();
-             PreparedStatement pstmt  = conn.prepareStatement(sql)) {
-            ResultSet resultSet=pstmt.executeQuery();
-            while (resultSet.next()){
-                treatments.add(new Treatments(resultSet.getString("id"),
-                        resultSet.getString("treatmentname"),
-                        resultSet.getInt("durationmin"),
-                        resultSet.getInt("price")));
-            }
-            return treatments;
-        } catch (SQLException e) {
-            System.out.println(e.getMessage());
-        }
-        return null;
-    }
-
     public boolean isAvailableTime (String date, String time) {
         String sql = "SELECT appointmentTIME FROM appointments WHERE appointmentDATE like "+'"'+date+'"'+" AND appointmentTIME like "+'"'+time+'"';
         try (Connection conn = dbInitializer.connect();
@@ -189,5 +170,51 @@ public class DBQuerys{
             System.out.println(e.getMessage());
             return -1;
         }
+    }
+
+    public List<Treatments> getTreatments (){
+        List<Treatments> treatments=new ArrayList<>(1);
+        String sql="SELECT * FROM treatments;";
+        try (Connection conn = dbInitializer.connect();
+             PreparedStatement pstmt  = conn.prepareStatement(sql)) {
+            ResultSet resultSet=pstmt.executeQuery();
+            while (resultSet.next()){
+                treatments.add(new Treatments(resultSet.getString("id"),
+                        resultSet.getString("treatmentname"),
+                        resultSet.getInt("durationmin"),
+                        resultSet.getInt("price")));
+            }
+            return treatments;
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        return null;
+    }
+
+    public List<Appointment> getAllTreatmetsForUser(String id){
+        List<Appointment> appointments=new ArrayList<>(1);
+        String sql="SELECT * FROM treatments WHERE clientID="+id+";";
+        try (Connection conn = dbInitializer.connect();
+             PreparedStatement pstmt  = conn.prepareStatement(sql)) {
+            ResultSet resultSet=pstmt.executeQuery();
+            while (resultSet.next()){
+                SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
+                SimpleDateFormat timeFormat = new SimpleDateFormat("mm:ss");
+                Date date = dateFormat.parse(resultSet.getString("appointmentDATE"));
+                Time time = (Time) timeFormat.parse(resultSet.getString("appointmentTIME"));
+
+                appointments.add(new Appointment(resultSet.getString("treatmentID"),
+                        (java.sql.Date) date,
+                        time,
+                        resultSet.getString("clientID"),
+                        resultSet.getString("doctorID")));
+            }
+            return appointments;
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 }
