@@ -1,4 +1,6 @@
+/*
 package project.GUI.Doctor.DoctorShifts;
+/
 
 import project.GUI.General.Calendar.DateAndTime;
 
@@ -40,4 +42,4 @@ public class ManageShiftView extends JFrame implements ActionListener {
         JOptionPane.showMessageDialog(this,"Date: " + dateTimePanel.getDate() +"\nTime: " + dateTimePanel.getTime());
     }
 }
-
+*/

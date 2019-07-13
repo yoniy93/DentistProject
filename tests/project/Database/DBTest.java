@@ -112,8 +112,8 @@ public class DBTest {
 
     @Test
     void isAvailableTime(){
-        assertEquals(false,query.isAvailableTime("17-07-2019", "10:00"), "Time Should Not Be Avaliable");
-        assertEquals(true,query.isAvailableTime("20-07-2019", "10:00"), "Time Should Be Avaliable");
+        assertEquals(false,query.isAvailableTime("2","17-07-2019", "10:00"), "Time Should Not Be Avaliable");
+        assertEquals(true,query.isAvailableTime("2","20-07-2019", "10:00"), "Time Should Be Avaliable");
 
     }
 
