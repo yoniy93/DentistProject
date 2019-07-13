@@ -8,9 +8,8 @@ import java.awt.event.ActionListener;
 
 public class SetAnAppointment extends JFrame implements ActionListener{
 
-
         DateAndTime dateTimePanel = new DateAndTime();
-        JButton btn = new JButton("Check Date");
+        JButton button = new JButton("Check Date");
 
         public SetAnAppointment(){
             setLayout(null);
@@ -25,14 +24,14 @@ public class SetAnAppointment extends JFrame implements ActionListener{
 
         private void setLocationAndSize() {
             dateTimePanel.setLocation(100, 100);
-            btn.setBounds(200,200,130,30);
+            button.setBounds(200,200,130,30);
         }
 
         private void addComponentsToFrame() {
             add(dateTimePanel);
-            add(btn);
+            add(button);
 
-            btn.addActionListener(this);
+            button.addActionListener(this);
         }
 
 

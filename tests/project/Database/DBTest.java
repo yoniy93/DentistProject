@@ -17,7 +17,7 @@ public class DBTest {
     static Doctor expectedDoctor;
     static Patient expectedPatient;
     static Treatments expectedTreatment;
-
+S
     @BeforeAll
     static void setUp() throws ParseException {
 
