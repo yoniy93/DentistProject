@@ -101,7 +101,6 @@ public class RegisterController {
         return dayString+"-"+monthString+"-"+year;
     }
 
-
     private String convertGenderToString() {
         String genderSelection;
         if (registerView.getMale().isSelected())
