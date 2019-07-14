@@ -8,6 +8,7 @@ import project.GUI.General.CancelButton;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
+import java.awt.event.ActionListener;
 import java.util.List;
 
 
@@ -16,13 +17,11 @@ public class PatientsHistoryView extends JFrame{
 
     private ImageIcon imageForBG=new ImageIcon(Locations.getImagePath("searchTreatments.png"));
     private JLabel backGround=new JLabel(imageForBG);
-
-    private PatientsHistoryController patientsHistoryController=new PatientsHistoryController();
-
     private JComboBox<String> patientJComboBox = new JComboBox<String>();
 
     private JLabel selectPatientLabel =new JLabel("Select Patient ID:");
 
+    PatientsHistoryController patientsHistoryController=new PatientsHistoryController();
 
     JTable tbl=new JTable();
     DefaultTableModel dtm=new DefaultTableModel();
@@ -115,11 +114,11 @@ public class PatientsHistoryView extends JFrame{
 
     private void addActionListeners() {
         getCancel().addActionListener(e->cancelAction());
-        this.getPatientJComboBox().addActionListener(e->updatePatientTreatmentHistopry());
+        this.getPatientJComboBox().addActionListener(e-> updatePatientTreatmentHistory());
         this.cancelButton.addActionListener(e -> this.dispose());
     }
 
-    private void updatePatientTreatmentHistopry() {
+    private void updatePatientTreatmentHistory() {
         String patientId = ((Patient) this.getPatientJComboBox().getSelectedItem()).getId();
         updateTableDetails(patientId);
     }
@@ -132,5 +131,6 @@ public class PatientsHistoryView extends JFrame{
     public JButton getCancel() {
         return cancelButton;
     }
+
 
 }

@@ -8,8 +8,11 @@ import java.util.List;
 public class PatientsHistoryController {
 
     PatientsHistoryModel patientsHistoryModel;
+
+
     PatientsHistoryController(){
-        patientsHistoryModel=new PatientsHistoryModel();
+       this.patientsHistoryModel=new PatientsHistoryModel();
+
 
     }
 

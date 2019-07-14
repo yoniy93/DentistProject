@@ -110,7 +110,7 @@ public class DBQuerys{
                     return USER_TYPE.ADMIN;
                 case "D":
                     return USER_TYPE.DOCTOR;
-                case "P":
+                case "StartPatientHistory":
                     return USER_TYPE.PATIENT;
                 default:
                     return USER_TYPE.ERROR;

@@ -6,7 +6,6 @@ import java.awt.event.ActionListener;
 
 public class DoctorView extends PersonView {
 
-    private JButton enterShiftsButton = new JButton("Manage your Shift");
     private JButton patientsHistory = new JButton("Show Patients History");
 
 
@@ -17,22 +16,19 @@ public class DoctorView extends PersonView {
     }
 
     private void setLocationAndSize() {
-        enterShiftsButton.setFont(getButtonFont());
-        enterShiftsButton.setBounds(100, 220, 230, 50);
         patientsHistory.setFont(getButtonFont());
-        patientsHistory.setBounds(100,150,230,50);
+        patientsHistory.setBounds(100,220,230,50);
         getBackGround().setBounds(0,0,800,600);
     }
 
     private void addComponentsToFrame() {
-        add(enterShiftsButton);
+
         add(patientsHistory);
         add(getBackGround());
     }
 
-    public void setActions(ActionListener edit, ActionListener enterShifts, ActionListener showHistory){
+    public void setActions(ActionListener edit,  ActionListener showHistory){
         editPersonalDetails.addActionListener((edit));
-        enterShiftsButton.addActionListener(enterShifts);
         patientsHistory.addActionListener(showHistory);
     }
 }
