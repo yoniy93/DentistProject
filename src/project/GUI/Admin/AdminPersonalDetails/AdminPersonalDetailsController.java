@@ -21,6 +21,7 @@ public class AdminPersonalDetailsController
     private void addViewActionListeners() {
         personalDetailsView.setActions(e->editAction(), e-> personalDetailsView.dispose());
     }
+
     private void SetTextFieldsCurrentValues() {
         personalDetailsView.initializePersonFields(adminPersonalDetailsModel.getAdmin());
     }

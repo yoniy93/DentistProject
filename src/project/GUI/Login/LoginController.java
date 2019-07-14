@@ -50,7 +50,6 @@ public class LoginController implements Controller {
             } catch (SQLException e) {
                 e.printStackTrace();
             }
-
         }
         else{
             if (observable instanceof LoginModel)
