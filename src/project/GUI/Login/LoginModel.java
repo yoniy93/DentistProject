@@ -11,7 +11,7 @@ import project.Database.DBQuerys;
 import java.sql.SQLException;
 import java.util.Observable;
 
-public class LoginModel extends Observable {
+public class LoginModel extends Observable implements Model {
 
     public void CheckLogin(String username, String password) throws SQLException {
 

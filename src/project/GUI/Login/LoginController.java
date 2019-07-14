@@ -6,14 +6,14 @@ import java.sql.SQLException;
 import java.util.Observable;
 import java.util.Observer;
 
-public class LoginController implements Observer {
+public class LoginController implements Controller {
 
     private LoginModel loginM;
     private LoginView loginV ;
 
-    public LoginController(LoginModel loginM, LoginView loginV){
-        this.loginM = loginM;
-        this.loginV = loginV;
+    public LoginController(Model loginM, View loginV){
+        this.loginM = (LoginModel) loginM;
+        this.loginV = (LoginView) loginV;
 
         addViewActionListeners();
     }
@@ -31,16 +31,7 @@ public class LoginController implements Observer {
     }
 
     public void loginAction() {
-
         loginV.checkLogin();
-/*
-        if(!loginM.CheckLogin(loginV.getUser(), loginV.getPassword()))
-        {
-            loginV.showLoginMsg();
-        }
-        else
-            loginV.closeFrame();
- */
     }
 
     public void clearAction(){
@@ -52,22 +43,24 @@ public class LoginController implements Observer {
     }
 
     @Override
-    public void update(Observable observable, Object o) {
-        if(observable instanceof LoginView)
-        {
+    public void update(Observable observable, Object isGrunted) {
+        if(observable instanceof LoginView) {
             try {
                 loginM.CheckLogin(loginV.getUser(), loginV.getPassword());
             } catch (SQLException e) {
                 e.printStackTrace();
             }
 
-        }else if (observable instanceof LoginModel) {
-
-                if ((boolean) o) {
+        }
+        else{
+            if (observable instanceof LoginModel)
+            {
+                if ((boolean) isGrunted) {
                     loginV.closeFrame();
                 } else {
                     loginV.showLoginMsg();
                 }
             }
+        }
     }
 }

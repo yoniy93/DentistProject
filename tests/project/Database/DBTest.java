@@ -108,6 +108,7 @@ public class DBTest {
 
     @Test
     void getTreatments() {
+
     }
 
     @Test
@@ -119,7 +120,6 @@ public class DBTest {
 
     @Test
     void getLastID(){
-
 
     }
 }

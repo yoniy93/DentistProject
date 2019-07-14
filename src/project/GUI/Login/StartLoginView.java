@@ -3,10 +3,12 @@ package project.GUI.Login;
 public class StartLoginView {
 
     public StartLoginView(){
-        LoginModel loginM = new LoginModel();
-        LoginView loginV = new LoginView();
-        LoginController loginC = new LoginController(loginM, loginV);
-        loginM.addObserver(loginC);
-        loginV.addObserver(loginC);
+        Model loginM = new LoginModel();
+        View loginV = new LoginView();
+        Controller loginC = new LoginController(loginM, loginV);
+        ((LoginModel)loginM).addObserver(loginC);
+        ((LoginView)loginV).addObserver(loginC);
+
+        loginV.startView();
     }
 }

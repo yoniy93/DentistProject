@@ -10,7 +10,7 @@ import java.util.Observable;
 
 import static javax.swing.WindowConstants.EXIT_ON_CLOSE;
 
-public class LoginView extends Observable {
+public class LoginView extends Observable implements View {
 
     private JFrame loginFrame = new JFrame();
     private ImageIcon imageForBG=new ImageIcon(Locations.getImagePath("login.png"));
@@ -29,7 +29,8 @@ public class LoginView extends Observable {
     private JButton clearButton = new JButton("Clear");
     private JCheckBox passwordCheckBox = new JCheckBox("Show Password");
 
-    public LoginView() {
+    @Override
+    public void startView() {
         loginFrame.setLayout(null);
         setLocationAndSize();
         addComponentsToFrame();
