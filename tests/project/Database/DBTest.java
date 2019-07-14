@@ -10,7 +10,7 @@ import java.util.Date;
 import static org.junit.jupiter.api.Assertions.*;
 import static project.Entities.USER_TYPE.*;
 
-public class DBTest {
+public class DBTest  {
 
     static DBQuerys query;
     static Admin expectedAdmin;

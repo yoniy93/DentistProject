@@ -2,6 +2,7 @@ package project.GUI.Clinic.Staff;
 
 import project.Entities.Doctor;
 
+
 public class ClinicStaffInfoController
 {
 
@@ -19,14 +20,14 @@ public class ClinicStaffInfoController
     }
 
     private void addViewActionListeners() {
-        this.clinicStaffInfoView.getDoctorJComboBox().addActionListener(e->doctorlistAction());
+        this.clinicStaffInfoView.getDoctorJComboBox().addActionListener(e-> doctorListAction());
         clinicStaffInfoView.cancelButton.addActionListener(e -> clinicStaffInfoView.dispose());
 
     }
 
 
 
-    private void doctorlistAction() {
+    private void doctorListAction() {
         Doctor d = (Doctor) this.clinicStaffInfoView.getDoctorJComboBox().getSelectedItem();
 
         if (d != null) {

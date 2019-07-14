@@ -6,9 +6,7 @@ import project.Entities.Patient;
 import project.GUI.General.CancelButton;
 
 import javax.swing.*;
-import javax.swing.table.AbstractTableModel;
 import javax.swing.table.DefaultTableModel;
-import javax.swing.table.TableModel;
 import java.awt.*;
 import java.util.List;
 
@@ -23,7 +21,7 @@ public class PatientsHistoryView extends JFrame{
 
     private JComboBox<String> patientJComboBox = new JComboBox<String>();
 
-    private JLabel selectPatientLable =new JLabel("Select Patient ID:");
+    private JLabel selectPatientLabel =new JLabel("Select Patient ID:");
 
 
     JTable tbl=new JTable();
@@ -88,8 +86,8 @@ public class PatientsHistoryView extends JFrame{
 
         patientJComboBox.setBounds(50, 100, 200, 50);
 
-        selectPatientLable.setFont(new Font("Ariel", Font.BOLD, 14));
-        selectPatientLable.setBounds(60,80,100,30);
+        selectPatientLabel.setFont(new Font("Ariel", Font.BOLD, 14));
+        selectPatientLabel.setBounds(60,80,100,30);
         jScrollPane.setBounds(100,200,400,200);
 
         cancelButton.setLocation(400,400,120,30);
@@ -100,7 +98,7 @@ public class PatientsHistoryView extends JFrame{
     private void addComponentsToFrame(){
         add(jScrollPane);
         add(patientJComboBox);
-        add(selectPatientLable);
+        add(selectPatientLabel);
         add(cancelButton);
         add(backGround);
 
