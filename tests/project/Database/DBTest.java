@@ -60,7 +60,7 @@ public class DBTest {
         assertEquals(expectedDoctor.getLastName(),actualDoctor.getLastName(), "Doctor Last Name Not Equal");
         assertEquals(expectedDoctor.getEmail(),actualDoctor.getEmail(), "Doctor Email Not Equal");
         assertEquals(expectedDoctor.getDateOfBirth(),actualDoctor.getDateOfBirth(), "Doctor Birth Date Not Equal");
-        assertEquals(expectedDoctor.getYearsOfEx(),actualDoctor.getYearsOfEx(), "Doctor Years Of Experience Not Equal");
+        assertEquals(expectedDoctor.getYearsOfExp(),actualDoctor.getYearsOfExp(), "Doctor Years Of Experience Not Equal");
         assertEquals(expectedDoctor.getGender(),actualDoctor.getGender(), "Doctor Gender Not Equal");
         assertEquals(expectedDoctor.getPhoneNumber(),actualDoctor.getPhoneNumber(), "Doctor Phone Number Not Equal");
     }

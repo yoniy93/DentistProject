@@ -20,7 +20,7 @@ public class Doctor extends User{
     }
 
 
-    public int getYearsOfEx() {
+    public int getYearsOfExp() {
         return yearsOfExp;
     }
 

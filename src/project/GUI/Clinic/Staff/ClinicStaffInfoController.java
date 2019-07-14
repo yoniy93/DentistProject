@@ -1,9 +1,6 @@
 package project.GUI.Clinic.Staff;
 
 import project.Entities.Doctor;
-import project.Entities.Treatments;
-
-import java.util.ArrayList;
 
 public class ClinicStaffInfoController
 {
@@ -38,7 +35,7 @@ public class ClinicStaffInfoController
                                                 d.getGender(),
                                                 d.getPhoneNumber(),
                                                 d.getEmail(),
-                                                d.getYearsOfEx()) ;
+                                                d.getYearsOfExp()) ;
         }
     }
 

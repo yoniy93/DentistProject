@@ -3,7 +3,6 @@ import project.Entities.Doctor;
 import project.GUI.General.PersonalDetailsView;
 
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.ActionListener;
 
 public class PersonalDetailsViewDoctor extends PersonalDetailsView{
@@ -41,7 +40,7 @@ public class PersonalDetailsViewDoctor extends PersonalDetailsView{
     public void initializeFields(Doctor doctor){
         initializePersonFields(doctor);
 
-        setYearsOfExpText(Integer.toString(doctor.getYearsOfEx()));
+        setYearsOfExpText(Integer.toString(doctor.getYearsOfExp()));
     }
 
     public void setActions(ActionListener edit, ActionListener cancel){
