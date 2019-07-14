@@ -73,5 +73,10 @@ public class Appointment {
         this.patientId = patientId;
     }
 
+    @Override
+    public String toString() {
+        return super.toString();
+    }
+
 
 }

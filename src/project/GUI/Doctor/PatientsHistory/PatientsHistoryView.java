@@ -119,7 +119,7 @@ public class PatientsHistoryView extends JFrame{
     }
 
     private void updatePatientTreatmentHistory() {
-        String patientId = ((Patient) this.getPatientJComboBox().getSelectedItem()).getId();
+        String patientId = patientJComboBox.getSelectedItem().toString();
         updateTableDetails(patientId);
     }
 
