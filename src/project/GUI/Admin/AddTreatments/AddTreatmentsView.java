@@ -7,13 +7,13 @@ import project.GUI.General.MessageWindow;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionListener;
 
 public class AddTreatmentsView extends JFrame
 {
     private ImageIcon imageForBG=new ImageIcon(Locations.getImagePath("searchTreatments.png"));
     private JLabel backGround=new JLabel(imageForBG);
 
-    AddTreatmentsController addTreatmentsController=new AddTreatmentsController(this);
 
     private JLabel treatmentName=new JLabel(" Name:");
     private JLabel treatmentDuration=new JLabel("Duration:");
@@ -30,7 +30,6 @@ public class AddTreatmentsView extends JFrame
         setLayout(null);
         setLocationAndSize();
         addComponentsToFrame();
-        addActionListeners();
         setTitle("Add New Treatment:");
         setBounds(300, 20, 700, 500);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
@@ -72,30 +71,20 @@ public class AddTreatmentsView extends JFrame
 
     }
 
-    private void addActionListeners() {
-        getAddTreatment().addActionListener(e->addAction());
-        getCancel().addActionListener(e->cancelAction());
+    public void setActions(ActionListener add,ActionListener cancel) {
+        getAddTreatment().addActionListener(add);
+        getCancel().addActionListener(cancel);
     }
 
-    private void addAction() {
-        String msg_recieved;
-        if(checkAllFields()) {
-            Treatments treatments = new Treatments("0", getTreatmentNameTextField().getText(),
+    public Treatments addAction() {
+
+        if (checkAllFields()) {
+            return new Treatments("0", getTreatmentNameTextField().getText(),
                     Integer.parseInt(getTreatmentDurationTextField().getText()), Double.parseDouble(getTreatmentPriceTextField().getText()));
-
-            msg_recieved=addTreatmentsController.addAction(treatments);
-            if (msg_recieved.equals("Sucssesfuly")) {
-                new MessageWindow(this, "New Treatment Added successfully");
-                this.dispose();
-
-            }
-            else new MessageWindow(this, msg_recieved);
         }
-        else {
-            new MessageWindow(this,"Error: please fill all fields");
-        }
+
+        return null;
     }
-
     private boolean checkAllFields() {
 
         if(!getTreatmentNameTextField().getText().equals("") &&
@@ -106,27 +95,25 @@ public class AddTreatmentsView extends JFrame
             return false;
     }
 
-    private void cancelAction() {
-     this.dispose();
-    }
 
-    public JTextField getTreatmentNameTextField() {
+
+    private JTextField getTreatmentNameTextField() {
         return treatmentNameTextField;
     }
 
-    public JTextField getTreatmentDurationTextField() {
+    private JTextField getTreatmentDurationTextField() {
         return treatmentDurationTextField;
     }
 
-    public JTextField getTreatmentPriceTextField() {
+    private JTextField getTreatmentPriceTextField() {
         return treatmentPriceTextField;
     }
 
-    public JButton getAddTreatment() {
+    private JButton getAddTreatment() {
         return addTreatment;
     }
 
-    public JButton getCancel() {
+    private  JButton getCancel() {
         return cancelButton;
     }
 

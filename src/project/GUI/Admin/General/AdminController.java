@@ -1,17 +1,22 @@
 package project.GUI.Admin.General;
 
-import project.GUI.Admin.AddTreatments.AddTreatmentsStart;
-import project.GUI.Admin.AdminPersonalDetails.StartPersonalDetailsAdmin;
+import project.Entities.Admin;
+import project.Entities.Treatments;
+import project.GUI.Admin.AddTreatments.AddTreatmentsView;
 import project.GUI.Admin.Register.StartRegisterView;
 import project.GUI.Admin.UnRegister.StartUnRegister;
+import project.GUI.General.MessageWindow;
 import project.GUI.General.PersonController;
-
+import project.GUI.General.PersonalDetailsView;
 import javax.swing.*;
+
 
 public class AdminController extends PersonController {
 
     private AdminModel adminModel;
     private AdminView adminView;
+    private PersonalDetailsView personalDetailsView;
+    private AddTreatmentsView addTreatmentsView;
 
     public AdminController(AdminModel adminM, AdminView adminV) {
         adminModel = adminM;
@@ -24,43 +29,64 @@ public class AdminController extends PersonController {
         addActionsToPerson(adminView);
         adminView.setActions(e->editPersonalDetailsAction(), e->registerAction(), e->unregisterAction(), e->newTreatments());
 
-        /*
-        adminView.getLogoutButton().addActionListener(e -> logoutAction(adminView));
-        adminView.getEditPersonalDetails().addActionListener(e->editPersonalDetailsAction());
-        adminView.getViewClinicStaffInfo().addActionListener(e->viewStaffInfoAction());
-        adminView.getViewClinicDetails().addActionListener(e->viewClinicInfoAction());
-        */
     }
 
     private void newTreatments() {
-        SwingUtilities.invokeLater(new Runnable() {
-            public void run() {
-                new AddTreatmentsStart();
-            }
-        });
+
+        addTreatmentsView=new AddTreatmentsView();
+        addTreatmentsView.setActions(e-> addTreatmentAction(), e->addTreatmentsView.dispose());
+    }
+
+    public void addTreatmentAction() {
+        String msg_received;
+        Treatments treatments = addTreatmentsView.addAction();
+        if (treatments != null) {
+            treatments.setId(Integer.toString(adminModel.getAvailableId()) + 1);
+            msg_received = adminModel.InsertTreatment(Integer.parseInt(treatments.getId()),
+                    treatments.getName(),
+                    treatments.getDuration(),
+                    treatments.getPrice());
+            if (msg_received.equals("Successfully")) {
+                new MessageWindow(addTreatmentsView, "New Treatment Added successfully");
+                addTreatmentsView.dispose();
+
+            } else new MessageWindow(addTreatmentsView, "ID IS ALREADY EXISTS IN OUR SYSTEM");
+        } else {
+            new MessageWindow(addTreatmentsView, "Error: please fill all fields");
+        }
+
     }
 
     private void registerAction() {
-        SwingUtilities.invokeLater(new Runnable() {
-            public void run() {
-                new StartRegisterView(adminModel.getAdmin());
-            }
-        });
+
+        new StartRegisterView(adminModel.getAdmin());
     }
 
     private void unregisterAction() {
-        SwingUtilities.invokeLater(new Runnable() {
-            public void run() {
-                new StartUnRegister(adminModel.getAdmin());
-            }
-        });
+
+        new StartUnRegister(adminModel.getAdmin());
     }
 
     private void editPersonalDetailsAction() {
-        SwingUtilities.invokeLater(new Runnable() {
-            public void run() {
-                new StartPersonalDetailsAdmin(adminModel.getAdmin());
-            }
-        });
+
+        personalDetailsView=new PersonalDetailsView();
+        personalDetailsView.setActions(e->editAction(), e-> personalDetailsView.dispose());
+        personalDetailsView.initializePersonFields(adminModel.getAdmin());
+    }
+
+    private void editAction() {
+        Admin admin = adminModel.getAdmin();
+
+        admin.setFirstName(personalDetailsView.getFirstNameText());
+        admin.setLastName(personalDetailsView.getLastNameText());
+        admin.setEmail(personalDetailsView.getEmailText());
+        admin.setPassword(personalDetailsView.getPasswordText());
+        admin.setPhoneNumber(personalDetailsView.getPhoneNumberText());
+
+        adminModel.UpdateAdmin();
+
+        JOptionPane.showMessageDialog( personalDetailsView,  "Details Updated");
+
+        personalDetailsView.dispose();
     }
 }
