@@ -29,7 +29,6 @@ public class UnRegisterController
             if (id.equals("1"))
                 new MessageWindow(unRegisterView, "Cannot delete Admin user");
             else {
-
                 msg_recived = unRegisterModel.deleteUser(id);
                 if (msg_recived.equals("Sucssesfuly")) {
                     new MessageWindow(unRegisterView, "User has been deleted successfully");

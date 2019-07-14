@@ -26,8 +26,7 @@ public class AddTreatmentsView extends JFrame
     private JButton addTreatment=new JButton("Submit");
     CancelButton cancelButton=new CancelButton();
 
-    public AddTreatmentsView()
-    {
+    public AddTreatmentsView() {
         setLayout(null);
         setLocationAndSize();
         addComponentsToFrame();
@@ -59,8 +58,7 @@ public class AddTreatmentsView extends JFrame
         backGround.setBounds(0,0,700,500);
     }
 
-    private void addComponentsToFrame()
-    {
+    private void addComponentsToFrame() {
         add(treatmentName);
         add(treatmentNameTextField);
         add(treatmentDuration);
@@ -74,11 +72,9 @@ public class AddTreatmentsView extends JFrame
 
     }
 
-    private void addActionListeners()
-    {
+    private void addActionListeners() {
         getAddTreatment().addActionListener(e->addAction());
         getCancel().addActionListener(e->cancelAction());
-
     }
 
     private void addAction() {

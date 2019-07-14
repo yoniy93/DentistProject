@@ -9,8 +9,7 @@ public class PatientView extends PersonView {
     private JButton setAnAppointment = new JButton("Set An Appointment ");
     private JButton viewTreatments = new JButton("View Treatments");
 
-    public PatientView()
-    {
+    public PatientView() {
         setLocationAndSize();
         addComponentsToFrame();
 

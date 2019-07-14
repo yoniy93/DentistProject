@@ -4,6 +4,7 @@ import project.Database.Locations;
 import project.GUI.General.CancelButton;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionListener;
 
 public class ClinicInfoView extends JFrame {
 
@@ -91,7 +92,6 @@ public class ClinicInfoView extends JFrame {
     }
 
     private void addComponentsToFrame(){
-
         add(hoursTable);
         add(clinicNameLable);
         add(cancelButton);
@@ -104,25 +104,7 @@ public class ClinicInfoView extends JFrame {
 
     }
 
-
-
-    public JLabel getClinicNameLable() {
-        return clinicNameLable;
-    }
-
-    public JLabel getOpenningHoursLable() {
-        return openningHoursLable;
-    }
-
-    public JLabel getPhoneNumberLable() {
-        return phoneNumberLable;
-    }
-
-    public JLabel getAddressLabel() {
-        return addressLabel;
-    }
-
-    public CancelButton getCancelButton() {
-        return cancelButton;
+    public void setActions(ActionListener cancel){
+        cancelButton.addActionListener((cancel));
     }
 }
