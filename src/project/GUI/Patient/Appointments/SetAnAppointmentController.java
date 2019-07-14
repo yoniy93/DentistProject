@@ -29,7 +29,7 @@ public class SetAnAppointmentController {
     public void insertAppointmentAction(){
 
        if(setAnAppointmentView.haveEmptyTextFields()) {
-           JOptionPane.showMessageDialog(setAnAppointmentView, "Some Information haven't been field");
+           JOptionPane.showMessageDialog(setAnAppointmentView, "Some Information Haven't Been Field Yet");
        }
        else {
            int appointmentID = setAnAppointmentModel.getLastAppointmentID() + 1;

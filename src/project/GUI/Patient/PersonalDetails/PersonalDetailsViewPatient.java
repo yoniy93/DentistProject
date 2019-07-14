@@ -1,7 +1,9 @@
 package project.GUI.Patient.PersonalDetails;
+
+import project.Entities.Patient;
+import project.Entities.Person;
 import project.GUI.General.PersonalDetailsView;
 import javax.swing .*;
-import java.awt.*;
 import java.awt.event.ActionListener;
 
 public class PersonalDetailsViewPatient extends PersonalDetailsView {
@@ -39,17 +41,31 @@ public class PersonalDetailsViewPatient extends PersonalDetailsView {
         add(getBackGround());
     }
 
-    public JTextField getHeightTextField() {
-        return heightTextField;
+    public String getHeightText() {
+        return heightTextField.getText();
     }
 
-    public JTextField getWeightTextFiled() {
-        return weightTextFiled;
+    public String getWeightText() {
+        return weightTextFiled.getText();
+    }
+
+    protected void setHeightTextField(String height) {
+        heightTextField.setText(height);
+    }
+
+    protected void setWeightTextFiled(String weight) {
+        weightTextFiled.setText(weight);
+    }
+
+    public void initializeFields(Patient patient){
+        initializePersonFields(patient);
+
+        setHeightTextField(Integer.toString(patient.getHeight()));
+        setWeightTextFiled(Double.toString(patient.getWeight()));
     }
 
     public void setActions(ActionListener edit, ActionListener cancel){
         getEditButton().addActionListener((edit));
         getCancelButton().addActionListener(cancel);
-
     }
 }

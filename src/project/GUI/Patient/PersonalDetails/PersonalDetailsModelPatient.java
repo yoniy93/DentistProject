@@ -17,8 +17,9 @@ public class PersonalDetailsModelPatient {
         this.patient = patient;
     }
 
-    public void UpdatePatient(Patient p) {
+    public void UpdatePatient(Patient patient) {
         DBUpdates databaseUpdates = new DBUpdates();
-        databaseUpdates.updatePatientDetails(p);
+        databaseUpdates.updatePatientDetails(patient);
+        this.patient = patient;
     }
 }

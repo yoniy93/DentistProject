@@ -1,7 +1,11 @@
 package project.GUI.General;
 
 import project.Database.Locations;
+import project.Entities.Person;
+import project.Entities.User;
+
 import java.awt.Font;
+import java.awt.event.ActionListener;
 import javax.swing.*;
 
 public class PersonalDetailsView extends JFrame {
@@ -83,38 +87,72 @@ public class PersonalDetailsView extends JFrame {
         add(backGround);
     }
 
-    public JButton getEditButton() {
+    protected JButton getEditButton() {
         return editButton;
     }
 
-    public CancelButton getCancelButton() {
+    protected CancelButton getCancelButton() {
         return cancelButton;
     }
 
-    public JTextField getLastnameTextField() {
-        return lastnameTextField;
+    public String getFirstNameText() {
+        return firstnameTextField.getText();
     }
 
-    public JTextField getFirstnameTextField() {
-        return firstnameTextField;
+    public String getLastNameText() {
+        return lastnameTextField.getText();
     }
 
-    public JTextField getEmailTextField() {
-        return emailTextField;
+    public String getEmailText() {
+        return emailTextField.getText();
     }
 
-    public JPasswordField getPasswordField() {
-        return passwordField;
+    public String getPasswordText() {
+        return new String(passwordField.getPassword());
     }
-    public JLabel getBackGround() {
+
+    public String getPhoneNumberText() {
+        return phoneNumberTextField.getText();
+    }
+
+    private void setFirstNameTextField(String firstname) {
+        firstnameTextField.setText(firstname);
+    }
+
+    private void setLastNameTextField(String lastnaame) {
+        lastnameTextField.setText(lastnaame);
+    }
+
+    private void setEmailTextField(String Email) {
+        emailTextField.setText(Email);
+    }
+
+    private void setPasswordField(String password) {
+        passwordField.setText(password);
+    }
+
+    private void setPhoneNumberTextField(String phoneNumber) {
+        phoneNumberTextField.setText(phoneNumber);
+    }
+
+    public void initializePersonFields(User user){
+        setFirstNameTextField(user.getFirstName());
+        setLastNameTextField(user.getLastName());
+        setEmailTextField(user.getEmail());
+        setPasswordField(user.getPassword());
+        setPhoneNumberTextField(user.getPhoneNumber());
+    }
+
+    protected JLabel getBackGround() {
         return backGround;
     }
 
-    public Font getButtonFont() {
+    protected Font getButtonFont() {
         return buttonFont;
     }
 
-    public JTextField getPhoneNumberTextField() {
-        return phoneNumberTextField;
+    public void setActions(ActionListener edit, ActionListener cancel){
+        getEditButton().addActionListener((edit));
+        getCancelButton().addActionListener(cancel);
     }
 }

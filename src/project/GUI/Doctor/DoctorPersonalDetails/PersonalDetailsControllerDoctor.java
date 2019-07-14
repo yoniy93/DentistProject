@@ -18,32 +18,25 @@ public class PersonalDetailsControllerDoctor {
     }
 
     private void SetTextFieldsCurrentValues() {
-        pDetailsView.getFirstnameTextField().setText(pDetailsModel.getDoctor().getFirstName());
-        pDetailsView.getLastnameTextField().setText(pDetailsModel.getDoctor().getLastName());
-        pDetailsView.getEmailTextField().setText(pDetailsModel.getDoctor().getEmail());
-        pDetailsView.getPasswordField().setText(pDetailsModel.getDoctor().getPassword());
-        pDetailsView.getYearsOfExpTextField().setText(Integer.toString(pDetailsModel.getDoctor().getYearsOfEx()));
-        pDetailsView.getPhoneNumberTextField().setText(pDetailsModel.getDoctor().getPhoneNumber());
+        pDetailsView.initializeFields(pDetailsModel.getDoctor());
     }
 
     private void addViewActionListeners() {
-        pDetailsView.getEditButton().addActionListener(e->EditAction());
-        pDetailsView.getCancelButton().addActionListener(e-> CancelAction());
+        pDetailsView.setActions(e->editAction(), e-> pDetailsView.dispose());
     }
 
-    public void EditAction() {
-        Doctor doctor=pDetailsModel.getDoctor();
-        doctor.setFirstName(pDetailsView.getFirstnameTextField().getText());
-        doctor.setLastName(pDetailsView.getLastnameTextField().getText());
-        doctor.setEmail(pDetailsView.getEmailTextField().getText());
-        doctor.setPassword(new String(pDetailsView.getPasswordField().getPassword()));
-        doctor.setYearsOfEx(Integer.parseInt(pDetailsView.getYearsOfExpTextField().getText()));
+    private void editAction() {
+        Doctor doctor = pDetailsModel.getDoctor();
+
+        doctor.setFirstName(pDetailsView.getFirstNameText());
+        doctor.setLastName(pDetailsView.getLastNameText());
+        doctor.setEmail(pDetailsView.getEmailText());
+        doctor.setPassword(pDetailsView.getPasswordText());
+        doctor.setYearsOfEx(Integer.parseInt(pDetailsView.getYearsOfExpText()));
+        doctor.setPhoneNumber(pDetailsView.getPhoneNumberText());
+
         pDetailsModel.UpdateDoctor(doctor);
         JOptionPane.showMessageDialog( pDetailsView,  "Details Updated");
-        pDetailsView.dispose();
-    }
-
-    public void CancelAction() {
         pDetailsView.dispose();
     }
 }

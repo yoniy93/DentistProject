@@ -10,44 +10,36 @@ public class PersonalDetailsControllerPatient {
     private PersonalDetailsModelPatient pDetailsModel;
 
     public PersonalDetailsControllerPatient(PersonalDetailsModelPatient pPM , PersonalDetailsViewPatient pPV) {
-        pDetailsModel=pPM;
-        pDetailsView=pPV;
+        pDetailsModel = pPM;
+        pDetailsView = pPV;
 
         SetTextFieldsCurrentValues();
         addViewActionListeners();
     }
 
     private void SetTextFieldsCurrentValues() {
-        pDetailsView.getFirstnameTextField().setText(pDetailsModel.getPatient().getFirstName());
-        pDetailsView.getLastnameTextField().setText(pDetailsModel.getPatient().getLastName());
-        pDetailsView.getEmailTextField().setText(pDetailsModel.getPatient().getEmail());
-        pDetailsView.getPasswordField().setText(pDetailsModel.getPatient().getPassword());
-        pDetailsView.getHeightTextField().setText(Integer.toString(pDetailsModel.getPatient().getHeight()));
-        pDetailsView.getWeightTextFiled().setText(Double.toString(pDetailsModel.getPatient().getWeight()));
-        pDetailsView.getPhoneNumberTextField().setText(pDetailsModel.getPatient().getPhoneNumber());
+        pDetailsView.initializeFields(pDetailsModel.getPatient());
     }
 
     private void addViewActionListeners() {
-        pDetailsView.getEditButton().addActionListener(e->EditAction());
-        pDetailsView.getCancelButton().addActionListener(e-> CancelAction());
+        pDetailsView.setActions(e->editAction(), e-> pDetailsView.dispose());
     }
 
-    public void EditAction()
-    {
-        Patient patient=pDetailsModel.getPatient();
-        patient.setFirstName(pDetailsView.getFirstnameTextField().getText());
-        patient.setLastName(pDetailsView.getLastnameTextField().getText());
-        patient.setEmail(pDetailsView.getEmailTextField().getText());
-        patient.setPassword(new String(pDetailsView.getPasswordField().getPassword()));
-        patient.setHeight(Integer.parseInt(pDetailsView.getHeightTextField().getText()));
-        patient.setWeight(Double.parseDouble(pDetailsView.getWeightTextFiled().getText()));
+    private void editAction() {
+        Patient patient = pDetailsModel.getPatient();
+
+        patient.setFirstName(pDetailsView.getFirstNameText());
+        patient.setLastName(pDetailsView.getLastNameText());
+        patient.setEmail(pDetailsView.getEmailText());
+        patient.setPassword(pDetailsView.getPasswordText());
+        patient.setHeight(Integer.parseInt(pDetailsView.getHeightText()));
+        patient.setWeight(Double.parseDouble(pDetailsView.getWeightText()));
+        patient.setPhoneNumber(pDetailsView.getPhoneNumberText());
+
         pDetailsModel.UpdatePatient(patient);
+
         JOptionPane.showMessageDialog( pDetailsView,  "Details Updated");
-        pDetailsView.dispose();
 
-    }
-
-    public void CancelAction() {
         pDetailsView.dispose();
     }
 }

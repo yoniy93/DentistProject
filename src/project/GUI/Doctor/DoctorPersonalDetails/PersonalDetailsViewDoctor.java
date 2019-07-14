@@ -1,8 +1,10 @@
 package project.GUI.Doctor.DoctorPersonalDetails;
+import project.Entities.Doctor;
 import project.GUI.General.PersonalDetailsView;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionListener;
 
 public class PersonalDetailsViewDoctor extends PersonalDetailsView{
 
@@ -28,7 +30,22 @@ public class PersonalDetailsViewDoctor extends PersonalDetailsView{
         add(getBackGround());
     }
 
-    public JTextField getYearsOfExpTextField() {
-        return yearsOfExpTextField;
+    public String getYearsOfExpText() {
+        return yearsOfExpTextField.getText();
+    }
+
+    private void setYearsOfExpText(String yearsOfExp) {
+        yearsOfExpTextField.setText(yearsOfExp);
+    }
+
+    public void initializeFields(Doctor doctor){
+        initializePersonFields(doctor);
+
+        setYearsOfExpText(Integer.toString(doctor.getYearsOfEx()));
+    }
+
+    public void setActions(ActionListener edit, ActionListener cancel){
+        getEditButton().addActionListener((edit));
+        getCancelButton().addActionListener(cancel);
     }
 }
