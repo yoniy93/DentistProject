@@ -34,10 +34,6 @@ public class PatientController extends PersonController{
     private void editDetailsAction() {
         pDetailsView =  new PersonalDetailsViewPatient();
         pDetailsView.setActions(e->editAction(), e-> pDetailsView.dispose());
-        SetTextFieldsCurrentValues();
-    }
-
-    private void SetTextFieldsCurrentValues() {
         pDetailsView.initializeFields(patientModel.getPatient());
     }
 
@@ -70,12 +66,12 @@ public class PatientController extends PersonController{
         setAnAppointmentView.setActions(e->selectDoctorAction(), e->insertAppointmentAction(), e->setAnAppointmentView.dispose());
     }
 
-    public void selectDoctorAction(){
+    private void selectDoctorAction(){
         setAnAppointmentView.setDateListener(setAnAppointmentView.getDoctorID());
         setAnAppointmentView.clearDateAndTime();
     }
 
-    public void insertAppointmentAction(){
+    private void insertAppointmentAction(){
         if(setAnAppointmentView.haveEmptyTextFields()) {
             JOptionPane.showMessageDialog(setAnAppointmentView, "Some Information Haven't Been Field Yet");
         }
