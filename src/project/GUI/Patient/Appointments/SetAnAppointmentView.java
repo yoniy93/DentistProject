@@ -66,7 +66,7 @@ public class SetAnAppointmentView extends JFrame {
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setResizable(false);
         setVisible(true);
-        }
+    }
 
     private void setLocationAndSize() {
 
@@ -188,22 +188,6 @@ public class SetAnAppointmentView extends JFrame {
 
     public String getDate() {
         return datePicker.getText();
-    }
-
-    public String getCreditCard() {
-        return creditCardTextField.getText();
-    }
-
-    public String getCvv() {
-        return cvvTextField.getText();
-    }
-
-    public String getValidityMonth() {
-        return monthComboBox.getSelectedItem().toString();
-    }
-
-    public String getValidityYear() {
-        return yearComboBox.getSelectedItem().toString();
     }
 
     public void setActions(ActionListener select, ActionListener insert ,ActionListener cancel) {

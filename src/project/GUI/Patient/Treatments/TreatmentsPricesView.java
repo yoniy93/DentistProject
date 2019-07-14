@@ -1,33 +1,33 @@
 package project.GUI.Patient.Treatments;
 
 import project.Database.Locations;
+import project.Entities.Doctor;
 import project.Entities.Treatments;
 import project.GUI.General.CancelButton;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionListener;
 import java.util.List;
 
 public class TreatmentsPricesView extends JFrame {
 
-    private ImageIcon imageForBG=new ImageIcon(Locations.getImagePath("searchTreatments.png"));
-    private JLabel backGround=new JLabel(imageForBG);
+    private ImageIcon imageForBG = new ImageIcon(Locations.getImagePath("searchTreatments.png"));
+    private JLabel backGround = new JLabel(imageForBG);
 
-    private JComboBox<Treatments> treatmentListComboBox =new JComboBox<Treatments>();
-    private JLabel treatmentPricesLable= new JLabel("Price:");
+    private JComboBox<Treatments> treatmentsComboBox = new JComboBox<Treatments>();
+
+    private JLabel treatmentPricesLable = new JLabel("Price:");
     private JLabel treatmentDurationLable = new JLabel("Duration (min):");
-    private JLabel treatmentDescriptionLable= new JLabel("Description:");
-    private JLabel treatmentPrices= new JLabel();
+    private JLabel treatmentDescriptionLable = new JLabel("Description:");
+
+    private JLabel treatmentPrices = new JLabel();
     private JLabel treatmentDuration = new JLabel();
     private JLabel treatmentDescription= new JLabel();
 
+    private Font font = new Font("Ariel",Font.BOLD,14);
 
-
-    private Font buttonFont=new Font("Ariel",Font.BOLD,14);
-
-    CancelButton cancelButton=new CancelButton();
-
-
+    CancelButton cancelButton = new CancelButton();
 
     public TreatmentsPricesView() {
         setLayout(null);
@@ -36,11 +36,12 @@ public class TreatmentsPricesView extends JFrame {
         addComponentsToFrame();
         setTitle("Search Your Treatment: ");
         setResizable(false);
+        setVisible(true);
     }
 
     private void setLocationAndSize() {
         this.setBounds(300, 100, 700, 500);
-        treatmentListComboBox.setBounds(400, 100, 200, 50);
+        treatmentsComboBox.setBounds(400, 100, 200, 50);
 
         treatmentPrices.setBounds(300, 300, 100 , 30);
         treatmentPricesLable.setBounds(250,300,100,30);
@@ -56,50 +57,48 @@ public class TreatmentsPricesView extends JFrame {
         backGround.setBounds(0,0,700,500);
     }
 
-
     private void addComponentsToFrame() {
         this.add(treatmentDescription);
         this.add(treatmentDescriptionLable);
         this.add(treatmentDuration);
         this.add(treatmentDurationLable);
         this.add(treatmentPricesLable);
-        this.add(treatmentListComboBox);
+        this.add(treatmentsComboBox);
         this.add(treatmentPrices);
         this.add(cancelButton);
         this.add(backGround);
     }
 
     private void setLablesFont(){
-        this.treatmentPricesLable.setFont(getButtonFont());
-        this.treatmentDurationLable.setFont(getButtonFont());
-        this.treatmentDescriptionLable.setFont(getButtonFont());
-
-    }
-
-    public JComboBox getTreatmentListComboBox() {
-        return treatmentListComboBox;
-    }
-
-    public void setTreatmentInfo(String price,String duration, String description) {
-        treatmentPrices.setFont(getButtonFont());
-        treatmentPrices.setText(price);
-        treatmentDuration.setFont(getButtonFont());
-        treatmentDuration.setText(duration);
-        treatmentDescription.setFont(getButtonFont());
-        treatmentDescription.setText(description);
+        treatmentPricesLable.setFont(getFont());
+        treatmentDurationLable.setFont(getFont());
+        treatmentDescriptionLable.setFont(getFont());
     }
 
     public void setTreatmentList(List<Treatments> values) {
-        this.treatmentListComboBox.removeAllItems();
-        values.forEach(x -> this.treatmentListComboBox.addItem(x));
+        this.treatmentsComboBox.removeAllItems();
+        values.forEach(treatment -> this.treatmentsComboBox.addItem(treatment));
     }
 
-    public void setVisible() {
-        setVisible(true);
+    public Treatments getTreatment() {
+        return (Treatments)treatmentsComboBox.getSelectedItem();
     }
 
-    public Font getButtonFont() {
-        return buttonFont;
+    public void setTreatmentInfo(String price,String duration, String description) {
+        treatmentPrices.setFont(getFont());
+        treatmentPrices.setText(price);
+        treatmentDuration.setFont(getFont());
+        treatmentDuration.setText(duration);
+        treatmentDescription.setFont(getFont());
+        treatmentDescription.setText(description);
     }
 
+    public void setActions(ActionListener select, ActionListener cancel) {
+        treatmentsComboBox.addActionListener(select);
+        cancelButton.addActionListener((cancel));
+    }
+
+    public Font getFont() {
+        return font;
+    }
 }
