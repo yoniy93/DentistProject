@@ -8,6 +8,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
 
+//Window to add new treatment to clinic . Possible only for Admin.
 public class AddTreatmentsView extends JFrame
 {
     private ImageIcon imageForBG=new ImageIcon(Locations.getImagePath("searchTreatments.png"));
@@ -18,17 +19,19 @@ public class AddTreatmentsView extends JFrame
     private JLabel treatmentDuration=new JLabel("Duration:");
     private JLabel treatmentPrice=new JLabel("Price:");
 
-    private JTextField treatmentNameTextField=new JTextField();
-    private JTextField treatmentDurationTextField=new JTextField();
-    private JTextField treatmentPriceTextField=new JTextField();
+    private JTextField treatmentNameTextField=new JTextField(); //field to enter name of treatment
+    private JTextField treatmentDurationTextField=new JTextField();//field to enter duration of treatment
+    private JTextField treatmentPriceTextField=new JTextField();//field to enter price of treatment
 
     private JButton addTreatment=new JButton("Submit");
     CancelButton cancelButton=new CancelButton();
 
     public AddTreatmentsView() {
+
         setLayout(null);
         setLocationAndSize();
         addComponentsToFrame();
+
         setTitle("Add New Treatment:");
         setBounds(300, 20, 700, 500);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
@@ -70,10 +73,12 @@ public class AddTreatmentsView extends JFrame
 
     }
 
+    //set action listener to window
     public void setActions(ActionListener add,ActionListener cancel) {
-        getAddTreatment().addActionListener(add);
-        getCancel().addActionListener(cancel);
+        getAddTreatment().addActionListener(add); //action listener to add button
+        getCancel().addActionListener(cancel); //action listener to cancl button
     }
+
 
     public Boolean addAction() {
 
@@ -81,6 +86,8 @@ public class AddTreatmentsView extends JFrame
            return true;
         return false;
     }
+
+    //Check if all information about the new treatment is filled by Admin
     private boolean checkAllFields() {
 
         if(!getTreatmentNameText().equals("") &&
@@ -91,14 +98,18 @@ public class AddTreatmentsView extends JFrame
             return false;
     }
 
+
+    //get the string value entered to field
     public String getTreatmentNameText() {
         return treatmentNameTextField.getText();
     }
 
+    //get the string value entered to field
     public String getTreatmentDurationText() {
         return treatmentDurationTextField.getText();
     }
 
+    //get the string value entered to field
     public String getTreatmentPriceText() {
         return treatmentPriceTextField.getText();
     }

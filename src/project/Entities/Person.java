@@ -2,7 +2,7 @@ package project.Entities;
 import java.util.*;
 
 
-public abstract class Person {
+public abstract class Person { //Super Abstract Class
 
     private String lastName;
     private String firstName;

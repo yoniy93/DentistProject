@@ -1,7 +1,7 @@
 package project.Entities;
 
 
-public abstract class User extends Person {
+public abstract class User extends Person { //Super abstract class
     private String password;
     private String email;
     private String phoneNumber;
@@ -37,6 +37,7 @@ public abstract class User extends Person {
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
+
     @Override
     public String toString() {
         return super.toString();

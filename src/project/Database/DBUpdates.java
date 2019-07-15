@@ -5,6 +5,7 @@ import project.Entities.Doctor;
 import project.Entities.Patient;
 
 public class DBUpdates {
+
     DBInitializer dbInitializer=DBInitializer.getInstance();
 
     public void updatePatientDetails(Patient p){

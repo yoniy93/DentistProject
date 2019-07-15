@@ -9,12 +9,14 @@ public class DBInitializer {
 
     private DBInitializer () {}
 
+    //SingleTon Function
     public static DBInitializer getInstance(){
         if (instance==null)
             instance=new DBInitializer();
         return instance;
     }
 
+    //Connection to DataBase
     public Connection connect() {
         String url = Locations.getDatabasePath();
 
@@ -27,6 +29,7 @@ public class DBInitializer {
         return conn;
     }
 
+    //Function to create new DB
     public static void createNewDatabase() {
 
         String url = Locations.getDatabasePath();
@@ -43,6 +46,7 @@ public class DBInitializer {
         }
     }
 
+
     private static boolean isDBExists() {
         String s= Locations.getDatabasePath();
         String location = s.substring(s.lastIndexOf(':') + 1).trim();
@@ -50,11 +54,13 @@ public class DBInitializer {
         return file.exists();
     }
 
+    //Create new DB table
     private static void createTablesInDB() {
         createNewDatabase();
         createNewTables();
     }
 
+    //Check if DB is already exists or create new DB with basic data
     public static void loadDatabaseWithInitialData(){
         boolean isDBexists=isDBExists();
         createTablesInDB();
@@ -67,7 +73,7 @@ public class DBInitializer {
 
     public static void createNewTables() {
 
-        String url,sql,sql1,sql2,sql3,sql4;
+        String url,sql,sql2,sql3;
 
         url = Locations.getDatabasePath();
 
@@ -75,31 +81,26 @@ public class DBInitializer {
                 "lastname text NOT NULL, email text NOT NULL, weight double, height integer, birthdate date NOT NULL, userRole text," +
                 "yearOfExperiens integer, gender text, phoneNumber text NOT NULL);";
 
-        sql1 ="CREATE TABLE IF NOT EXISTS medical_equipment (id integer PRIMARY KEY NOT NULL, treatmentname text NOT NULL,"+
-                " expiredate date NOT NULL, quantity integer NOT NULL);";
-
         sql2="CREATE TABLE IF NOT EXISTS treatments ( id integer PRIMARY KEY NOT NULL, treatmentname text NOT NULL,"+
                 " durationmin integer NOT NULL, price double NOT NULL);";
 
         sql3="CREATE TABLE IF NOT EXISTS appointments (id integer PRIMARY KEY NOT NULL,treatmentID integer NOT NULL, appointmentDATE date NOT NULL,"+
                 " appointmentTIME time NOT NULL,clientID text NOT NULL, doctorID text NOT NULL);";
 
-        sql4="CREATE TABLE IF NOT EXISTS mediciens (id integer NOT NULL PRIMARY KEY,expiredate date NOT NULL," +
-                "quantity integer NOT NULL,medicinename text NOT NULL);";
-
         try (Connection conn = DriverManager.getConnection(url);
              Statement stmt = conn.createStatement()) {
 
             stmt.execute(sql);
-            stmt.execute(sql1);
             stmt.execute(sql2);
             stmt.execute(sql3);
-            stmt.execute(sql4);
+
 
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
     }
+
+    //Connect to DB and run sql query
     protected String connectAndExecute(String sql){
         try (Connection conn = this.connect();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {

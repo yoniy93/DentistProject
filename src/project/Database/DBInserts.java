@@ -1,16 +1,14 @@
 package project.Database;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
+
 
 public class DBInserts {
+    
     DBInitializer dbInitializer=DBInitializer.getInstance();
 
     public void insertInitialData(){
         initializeUsers();
         initializeTreatments();
-        initializeEquipments();
         initializeAppointments();
     }
 
@@ -32,12 +30,6 @@ public class DBInserts {
         insertTreatment(5, "שיננית", 30, 75);
     }
 
-    private void initializeEquipments(){
-        insertMedicalEquipment(1, "מזרק", "12-12-2020", 5);
-        insertMedicalEquipment(2, "מספריים", "12-12-2022", 5);
-        insertMedicalEquipment(3, "סכין", "12-12-2024", 10);
-        insertMedicalEquipment(4, "מנורה", "12-12-2024", 4);
-    }
 
     private void initializeAppointments(){
         insertAppointments(1,5,"17-07-2019","10:00", "4", "3");
@@ -63,13 +55,6 @@ public class DBInserts {
         insertAppointments(21,4,"12-07-2019","10:00", "5", "2");
     }
 
-    public String insertMedicalEquipment(int id,String name, String expiredate,int quantity){
-        String sql="INSERT INTO medical_equipment(id, treatmentname, expiredate, quantity)"+
-                " VALUES ('"+id+"', '"+name+"', '"+expiredate+"', '"+quantity+"');";
-        return dbInitializer.connectAndExecute(sql);
-
-    }
-
     public String insertTreatment(int id,String name, int duration, double price){
         String sql="INSERT INTO treatments(id, treatmentname, durationmin, price)"+"" +
                 " VALUES ('"+id+"', '"+name+"', '"+duration+"', '"+price+"');";
@@ -77,23 +62,12 @@ public class DBInserts {
     }
 
     public String insertAppointments(int id,int treatmentID,String date, String time, String clientid, String doctorid){
-//        SimpleDateFormat format=new SimpleDateFormat("dd-MM-yyyy");
-//        Date date_format;
-//        try {
-//            date_format=format.parse(date);
-//        } catch (ParseException e) {
-//            return "date error";
-//        }
+
         String sql="INSERT INTO appointments(id, treatmentID,appointmentDATE, appointmentTIME,clientID,doctorID)"+
                 " VALUES ('"+id+"', '"+treatmentID+"', '"+date+"', '"+time+"', '"+clientid+"', '"+doctorid+"');";
         return dbInitializer.connectAndExecute(sql);
     }
 
-    public String insertMedicines(int medicineid,String expiredate, int quantity, String name){
-        String sql="INSERT INTO mediciens(medicineid, expiredate, quantity,medicinename)"+
-                " VALUES ('"+medicineid+"', '"+expiredate+"', '"+quantity+"', '"+name+"');";
-        return dbInitializer.connectAndExecute(sql);
-    }
 
     public String insertForAdmin (String id, String pswd, String name, String lname, String email, String bdate, String gender,String phoneNumber ){
         String sql="INSERT INTO users (id, password, firstname, lastname, email, birthdate, userRole, gender,phoneNumber)"+
