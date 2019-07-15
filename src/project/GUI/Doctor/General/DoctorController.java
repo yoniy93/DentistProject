@@ -3,7 +3,7 @@ package project.GUI.Doctor.General;
 import project.Entities.Doctor;
 import project.GUI.Doctor.DoctorPersonalDetails.PersonalDetailsViewDoctor;
 import project.GUI.Doctor.PatientsHistory.PatientsHistoryView;
-import project.GUI.General.UserController;
+import project.GUI.User.UserController;
 
 import javax.swing.*;
 

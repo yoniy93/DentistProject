@@ -6,7 +6,7 @@ import project.GUI.Admin.AddTreatments.AddTreatmentsView;
 import project.GUI.Admin.Register.RegisterView;
 import project.GUI.Admin.UnRegister.UnRegisterView;
 import project.GUI.General.MessageWindow;
-import project.GUI.General.UserController;
+import project.GUI.User.UserController;
 import project.GUI.General.PersonalDetailsView;
 import javax.swing.*;
 

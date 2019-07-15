@@ -1,4 +1,4 @@
-package project.GUI.Clinic.Info;
+package project.GUI.Clinic;
 
 import project.Database.Locations;
 import project.GUI.General.CancelButton;
@@ -37,7 +37,7 @@ public class ClinicInfoView extends JFrame {
         addComponentsToFrame();
 
         setTitle("Information");
-        setBounds(200, 200, 800, 500);
+        setBounds(100, 100, 800, 500);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setResizable(false);
         setVisible(true);

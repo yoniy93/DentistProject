@@ -1,4 +1,4 @@
-package project.GUI.General;
+package project.GUI.User;
 
 import project.Database.Locations;
 

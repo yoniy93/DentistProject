@@ -1,6 +1,6 @@
 package project.GUI.Admin.General;
 
-import project.GUI.General.UserView;
+import project.GUI.User.UserView;
 import javax.swing.*;
 import java.awt.event.ActionListener;
 

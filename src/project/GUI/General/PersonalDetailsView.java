@@ -1,7 +1,6 @@
 package project.GUI.General;
 
 import project.Database.Locations;
-import project.Entities.Person;
 import project.Entities.User;
 
 import java.awt.Font;

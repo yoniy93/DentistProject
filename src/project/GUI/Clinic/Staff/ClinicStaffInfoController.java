@@ -1,43 +1,17 @@
 package project.GUI.Clinic.Staff;
 
-import project.Entities.Doctor;
-
-
 public class ClinicStaffInfoController
 {
 
     ClinicStaffInfoView clinicStaffInfoView;
     ClinicStaffInfoModel clinicStaffInfoModel;
 
-    public ClinicStaffInfoController()
-    {
-        clinicStaffInfoModel=new ClinicStaffInfoModel();
-        clinicStaffInfoView=new ClinicStaffInfoView();
-        clinicStaffInfoView.getDoctorJComboBox().setVisible(true);
-        addViewActionListeners();
+    public ClinicStaffInfoController() {
+        clinicStaffInfoModel = new ClinicStaffInfoModel();
+        clinicStaffInfoView = new ClinicStaffInfoView();
+
         clinicStaffInfoView.setDoctorList (clinicStaffInfoModel.getDoctorList());
-        clinicStaffInfoView.setVisible();
+
+        clinicStaffInfoView.setActions(e->clinicStaffInfoView.setSelectedDoctorInfo() , e->clinicStaffInfoView.dispose());
     }
-
-    private void addViewActionListeners() {
-        this.clinicStaffInfoView.getDoctorJComboBox().addActionListener(e-> doctorListAction());
-        clinicStaffInfoView.cancelButton.addActionListener(e -> clinicStaffInfoView.dispose());
-
-    }
-
-
-
-    private void doctorListAction() {
-        Doctor d = (Doctor) this.clinicStaffInfoView.getDoctorJComboBox().getSelectedItem();
-
-        if (d != null) {
-            clinicStaffInfoView.setInfoOfDoctor(d.getFirstName(),
-                                                d.getLastName(),
-                                                d.getGender(),
-                                                d.getPhoneNumber(),
-                                                d.getEmail(),
-                                                d.getYearsOfExp()) ;
-        }
-    }
-
 }

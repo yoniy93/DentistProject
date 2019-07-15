@@ -2,7 +2,7 @@ package project.GUI.Patient.General;
 
 import project.Entities.Patient;
 import project.Entities.Treatments;
-import project.GUI.General.UserController;
+import project.GUI.User.UserController;
 import project.GUI.Patient.Appointments.SetAnAppointmentView;
 import project.GUI.Patient.PersonalDetails.PersonalDetailsViewPatient;
 import project.GUI.Patient.Treatments.TreatmentsPricesView;
