@@ -10,7 +10,6 @@ public class PersonalDetailsViewDoctor extends PersonalDetailsView{
     private JLabel yearsOfExpLabel = new JLabel("Years of experience:");
     private JTextField yearsOfExpTextField = new JTextField();
 
-
     public PersonalDetailsViewDoctor() {
         setLocationAndSize();
         addComponentsToFrame();
@@ -47,5 +46,4 @@ public class PersonalDetailsViewDoctor extends PersonalDetailsView{
         getEditButton().addActionListener((edit));
         getCancelButton().addActionListener(cancel);
     }
-
 }
