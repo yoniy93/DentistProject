@@ -33,6 +33,11 @@ public class AdminModel {
         return dbInserts.insertTreatment(Id, Name,Duration, Price);
     }
 
+    public String deleteUser (String id) {
+        return new DBUpdates().deleteUserFromDB(id);
+    }
+
+    public Boolean isUserExists(String id) { return new DBQuerys().isUserExists(id); }
 
     public void UpdateAdmin() {
         DBUpdates databaseUpdates = new DBUpdates();

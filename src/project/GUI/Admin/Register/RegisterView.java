@@ -1,24 +1,16 @@
 package project.GUI.Admin.Register;
 import project.Database.Locations;
+import project.Entities.Doctor;
+import project.Entities.Patient;
 import project.GUI.General.CancelButton;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionListener;
 import java.util.Vector;
 
 public class RegisterView extends JFrame
 {
-
-    /*
-    NumberFormat longFormat = NumberFormat.getIntegerInstance();
-
-    NumberFormatter numberFormatter = new NumberFormatter(longFormat);
-    numberFormatter.setValueClass(Long.class); //optional, ensures you will always get a long value
-    numberFormatter.setAllowsInvalid(false); //this is the key!!
-    numberFormatter.setMinimum(0l); //Optional
-
-    JFormattedTextField field = new JFormattedTextField(numberFormatter);
-    */
 
     private ImageIcon imageForBG=new ImageIcon(Locations.getImagePath("register.png"));
     private JLabel backGround=new JLabel(imageForBG);
@@ -57,8 +49,8 @@ public class RegisterView extends JFrame
     private JRadioButton femaleRButton = new JRadioButton("Female");
     private ButtonGroup genderGroup = new ButtonGroup();
 
-    private JTextField lastnameTextField = new JTextField();
-    private JTextField firstnameTextField = new JTextField();
+    private JTextField lastNameTextField = new JTextField();
+    private JTextField firstNameTextField = new JTextField();
     private JTextField emailTextField = new JTextField();
     private JPasswordField passwordField  = new JPasswordField();
     private JTextField idTextFiled = new JTextField();
@@ -73,7 +65,7 @@ public class RegisterView extends JFrame
         setLayout(null);
         setLocationAndSize();
         addComponentsToFrame();
-        hideDoctorYearsOfExperiensButtoms();
+        hideDoctorYearsOfExperiensButtons();
 
         setTitle("Register New User");
         setBounds(300, 20, 800, 700);
@@ -96,16 +88,16 @@ public class RegisterView extends JFrame
         {
             yearVector.insertElementAt(max--,i);
         }
-    }
+    }//set values of date vectors
 
-    public void hidePatientWeightAndHeightButtoms(){
+    public void hidePatientWeightAndHeightButtons(){
         heightTextField.setEditable(false);
         heightTextField.setBackground(Color.lightGray);
         weightTextField.setEditable(false);
         weightTextField.setBackground(Color.lightGray);
     }
 
-    public void hideDoctorYearsOfExperiensButtoms(){
+    public void hideDoctorYearsOfExperiensButtons(){
         yearsOfExTextField.setEditable(false);
         yearsOfExTextField.setBackground(Color.lightGray);
 
@@ -140,8 +132,8 @@ public class RegisterView extends JFrame
         yearOfExpLabel.setBounds(60,540,150,50);
 
 
-        firstnameTextField.setBounds(170, 40, 150, 30);
-        lastnameTextField.setBounds(170, 80, 150, 30);
+        firstNameTextField.setBounds(170, 40, 150, 30);
+        lastNameTextField.setBounds(170, 80, 150, 30);
         idTextFiled.setBounds(170,120,150,30);
         phoneNumberTextField.setBounds(170, 160, 150, 30);
         emailTextField.setBounds(170, 200, 150, 30);
@@ -200,8 +192,8 @@ public class RegisterView extends JFrame
         add(patientRButton);
         patientRButton.setSelected(true);
 
-        add(lastnameTextField);
-        add(firstnameTextField);
+        add(lastNameTextField);
+        add(firstNameTextField);
         add(emailTextField);
         add(passwordField);
         add(idLabel);
@@ -225,53 +217,104 @@ public class RegisterView extends JFrame
 
     }
 
-
-    public ButtonGroup getRoleGroup() {
-        return roleGroup;
+    public void setActions(ActionListener addUser, ActionListener SetVisibleTextForDoctor,ActionListener SetVisibleTextForPatient, ActionListener cancel )
+    {
+        getAddUser().addActionListener(addUser);
+        getDoctor().addActionListener(SetVisibleTextForDoctor);
+        getPatient().addActionListener(SetVisibleTextForPatient);
+        getCancelButton().addActionListener(cancel);
     }
 
-    public void setRoleGroup(ButtonGroup roleGroup) {
-        this.roleGroup = roleGroup;
+    public void setVisibleDoctor()
+    {
+        yearsOfExTextField.setBackground(Color.WHITE);
+        yearsOfExTextField.setEditable(true);
+        hidePatientWeightAndHeightButtons();
     }
 
-    public ButtonGroup getGenderGroup() {
-        return genderGroup;
+    public void setVisiblePatient()
+    {
+        weightTextField.setEditable(true);
+        weightTextField.setBackground(Color.WHITE);
+        heightTextField.setEditable(true);
+        heightTextField.setBackground(Color.WHITE);
+        hideDoctorYearsOfExperiensButtons();
     }
 
-    public void setGenderGroup(ButtonGroup genderGroup) {
-        this.genderGroup = genderGroup;
+    public boolean allFieldsFilled()
+    {
+        if ( getIdText().equals("") || getPassword().equals("") || getFirstNameText().equals("") ||
+                getLastNameText().equals("")|| getEmailText().equals("")|| getDate().equals("") ||
+                (!getPatient().isSelected() && !getDoctor().isSelected()) ||
+                (!getFemale().isSelected() && !getMale().isSelected()) || getPhoneNumberText().equals("")) {
+            return false;
+        }
+        else {
+            if (getDoctor().isSelected())
+                return !getYearsOfExText().equals("");
+            else
+                return !getWeightText().equals("") && !getHeightText().equals("");
+        }
+    }
+    private String getPassword() {
+        return new String(passwordField.getPassword());
     }
 
-    public JTextField getLastnameTextField() {
-        return lastnameTextField;
+    private String getDate() {
+        int day = (Integer)getDayBox().getSelectedItem();
+        int month = (Integer)getMonthBox().getSelectedItem();
+        int year =(Integer)getYearBox().getSelectedItem();
+        return convertDateToString(day,month,year);
     }
 
-    public void setLastnameTextField(JTextField lastnameTextField) {
-        this.lastnameTextField = lastnameTextField;
+    private String convertDateToString (int day, int month, int year) {
+        String dayString=Integer.toString(day);
+        String monthString=Integer.toString(month);
+        if (day<10)
+            dayString="0"+dayString;
+        if (month<10)
+            monthString="0"+monthString;
+        return dayString+"-"+monthString+"-"+year;
     }
 
-    public JTextField getFirstnameTextField() {
-        return firstnameTextField;
+    private String convertGenderToString() {
+        String genderSelection;
+        if (getMale().isSelected())
+            genderSelection = "Male";
+        else
+            genderSelection = "Female";
+        return genderSelection;
     }
 
-    public void setFirstnameTextField(JTextField firstnameTextField) {
-        this.firstnameTextField = firstnameTextField;
+    public boolean isPatientSelected() {
+        if (getPatient().isSelected())
+            return true;
+        return  false;
+
     }
 
-    public JTextField getEmailTextField() {
-        return emailTextField;
+    public boolean isDoctorSelected()
+    {
+        if(getDoctor().isSelected())
+            return true;
+        return false;
+
     }
 
-    public void setEmailTextField(JTextField emailTextField) {
-        this.emailTextField = emailTextField;
+    public String getLastNameText() {
+        return lastNameTextField.getText();
     }
 
-    public JPasswordField getPasswordField() {
-        return passwordField;
+    public String getFirstNameText() {
+        return firstNameTextField.getText();
     }
 
-    public void setPasswordField(JPasswordField passwordField) {
-        this.passwordField = passwordField;
+    public String getEmailText() {
+        return emailTextField.getText();
+    }
+
+    public String getPasswordText() {
+        return getPassword();
     }
 
     public JComboBox getYearBox() {
@@ -284,6 +327,11 @@ public class RegisterView extends JFrame
 
     public JComboBox getDayBox() {
         return dayBox;
+    }
+
+    public String getDateOfBirthText()
+    {
+        return getDate();
     }
 
     public JRadioButton getDoctor() {
@@ -301,21 +349,25 @@ public class RegisterView extends JFrame
     public JRadioButton getFemale() {
         return femaleRButton;
     }
-
-    public JTextField getIdTextFiled() {
-        return idTextFiled;
+    public String getGender()
+    {
+        return convertGenderToString();
     }
 
-    public JTextField getHeightTextField() {
-        return heightTextField;
+    public String getIdText() {
+        return idTextFiled.getText();
     }
 
-    public JTextField getWeightTextField() {
-        return weightTextField;
+    public String getHeightText() {
+        return heightTextField.getText();
     }
 
-    public JTextField getYearsOfExTextField() {
-        return yearsOfExTextField;
+    public String getWeightText() {
+        return weightTextField.getText();
+    }
+
+    public String getYearsOfExText() {
+        return yearsOfExTextField.getText();
     }
 
     public JButton getAddUser() {
@@ -326,9 +378,10 @@ public class RegisterView extends JFrame
         return cancelButton;
     }
 
-    public JTextField getPhoneNumberTextField() {
-        return phoneNumberTextField;
+    public String getPhoneNumberText() {
+        return phoneNumberTextField.getText();
     }
+
 
 }
 

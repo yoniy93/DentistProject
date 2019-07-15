@@ -3,8 +3,8 @@ package project.GUI.Admin.General;
 import project.Entities.Admin;
 import project.Entities.Treatments;
 import project.GUI.Admin.AddTreatments.AddTreatmentsView;
-import project.GUI.Admin.Register.StartRegisterView;
-import project.GUI.Admin.UnRegister.StartUnRegister;
+import project.GUI.Admin.Register.RegisterView;
+import project.GUI.Admin.UnRegister.UnRegisterView;
 import project.GUI.General.MessageWindow;
 import project.GUI.General.PersonController;
 import project.GUI.General.PersonalDetailsView;
@@ -17,6 +17,8 @@ public class AdminController extends PersonController {
     private AdminView adminView;
     private PersonalDetailsView personalDetailsView;
     private AddTreatmentsView addTreatmentsView;
+    private RegisterView registerView;
+    private UnRegisterView unRegisterView;
 
     public AdminController(AdminModel adminM, AdminView adminV) {
         adminModel = adminM;
@@ -59,12 +61,75 @@ public class AdminController extends PersonController {
 
     private void registerAction() {
 
-        new StartRegisterView(adminModel.getAdmin());
+        registerView=new RegisterView();
+        registerView.setActions(e->addUserAction(),e->setVisibleForDoctor(),e->setVisibleForPatient(),e->registerView.dispose());
     }
 
+    public void addUserAction()
+    {
+        String msg_recieved="";
+        if(registerView.allFieldsFilled())
+        {
+            if(registerView.isPatientSelected())
+            {
+                msg_recieved=adminModel.dbInserts.insertForPatient(registerView.getIdText(),registerView.getPasswordText(),
+                        registerView.getFirstNameText(),registerView.getLastNameText(),
+                        registerView.getEmailText(), Double.parseDouble(registerView.getWeightText()),
+                        Integer.parseInt(registerView.getHeightText()),
+                        registerView.getDateOfBirthText(),registerView.getGender(),registerView.getPhoneNumberText());
+            }
+
+            else if(registerView.isDoctorSelected())
+            {
+                msg_recieved=adminModel.dbInserts.insertForDoctor(registerView.getIdText(),registerView.getPasswordText(),
+                        registerView.getFirstNameText(),registerView.getLastNameText(),
+                        registerView.getEmailText(),registerView.getDateOfBirthText(),
+                        registerView.getGender(),Integer.parseInt(registerView.getYearsOfExText()),registerView.getPhoneNumberText());
+            }
+
+            if (msg_recieved.equals("Sucssesfuly")) {
+                new MessageWindow(registerView, "New user created successfully");
+                registerView.dispose();
+            }
+            else new MessageWindow(registerView, "User already exists");
+
+
+        }
+        else
+            new MessageWindow(registerView,"Error: please fill all fields");
+    }
+
+    public void setVisibleForDoctor()
+    {
+        registerView.setVisibleDoctor();
+    }
+    public void setVisibleForPatient()
+    {
+        registerView.setVisiblePatient();
+    }
     private void unregisterAction() {
 
-        new StartUnRegister(adminModel.getAdmin());
+        unRegisterView=new UnRegisterView();
+        unRegisterView.setActions(e->unRegister(),e->unRegisterView.dispose());
+    }
+
+    public void unRegister()
+    {
+        String msg_recived;
+        String id = unRegisterView.getIdTextField();
+        if (!adminModel.isUserExists(id))
+            new MessageWindow(unRegisterView, "User doesnt exist");
+        else {
+            if (id.equals("1"))
+                new MessageWindow(unRegisterView, "Cannot delete Admin user");
+            else {
+                msg_recived = adminModel.deleteUser(id);
+                if (msg_recived.equals("Sucssesfuly")) {
+                    new MessageWindow(unRegisterView, "User has been deleted successfully");
+                    unRegisterView.dispose();
+                } else new MessageWindow(unRegisterView, msg_recived);
+            }
+        }
     }
 
     private void editPersonalDetailsAction() {

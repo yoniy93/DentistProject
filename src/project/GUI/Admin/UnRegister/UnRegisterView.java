@@ -5,6 +5,7 @@ import project.GUI.General.CancelButton;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionListener;
 
 public class UnRegisterView extends JFrame
 {
@@ -56,12 +57,18 @@ public class UnRegisterView extends JFrame
         return submit;
     }
 
-    public JTextField getIdTextField() {
-        return idTextField;
+    public String getIdTextField() {
+        return idTextField.getText();
     }
 
     public JButton getCancel() {
         return cancelButton;
+    }
+
+    public void setActions(ActionListener unRegister,ActionListener cancel)
+    {
+        getSubmit().addActionListener(unRegister);
+        getCancel().addActionListener(cancel);
     }
 
 }
