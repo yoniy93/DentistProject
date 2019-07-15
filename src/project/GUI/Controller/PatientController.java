@@ -50,7 +50,7 @@ public class PatientController extends UserController {
         tablePattern.setColumnIdentifiers(columsNames);
 
         appointmentTable.setModel(tablePattern);
-        DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
+        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         String strDate;
         for (Appointment x : patientModel.queryAppointmentsHistory()) {
             strDate = dateFormat.format(x.getTreatmentDate());

@@ -57,7 +57,7 @@ public class PatientsHistoryView extends JFrame{
 
         appointmentTable.setModel(tablePattern);
         List<Appointment> listAppointment=patientsHistoryController.getTreatmentHistory(id);
-        DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
+        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         String strDate;
         for (Appointment x : listAppointment) {
             strDate= dateFormat.format(x.getTreatmentDate());
