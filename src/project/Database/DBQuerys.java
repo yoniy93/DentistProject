@@ -200,7 +200,7 @@ public class DBQuerys{
 
         String timeNow = new SimpleDateFormat("HH:mm").format(new Date());
 
-        String sql="SELECT * FROM appointments WHERE clientID="+id+"AND appointmentTIME "+";";
+        String sql="SELECT * FROM appointments WHERE clientID="+id+";";
         try (Connection conn = dbInitializer.connect();
              PreparedStatement pstmt  = conn.prepareStatement(sql)) {
             ResultSet resultSet=pstmt.executeQuery();
