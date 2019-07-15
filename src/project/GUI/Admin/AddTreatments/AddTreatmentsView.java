@@ -3,7 +3,6 @@ package project.GUI.Admin.AddTreatments;
 import project.Database.Locations;
 import project.Entities.Treatments;
 import project.GUI.General.CancelButton;
-import project.GUI.General.MessageWindow;
 
 import javax.swing.*;
 import java.awt.*;
@@ -76,37 +75,32 @@ public class AddTreatmentsView extends JFrame
         getCancel().addActionListener(cancel);
     }
 
-    public Treatments addAction() {
+    public Boolean addAction() {
 
-        if (checkAllFields()) {
-            return new Treatments("0", getTreatmentNameTextField().getText(),
-                    Integer.parseInt(getTreatmentDurationTextField().getText()), Double.parseDouble(getTreatmentPriceTextField().getText()));
-        }
-
-        return null;
+        if (checkAllFields())
+           return true;
+        return false;
     }
     private boolean checkAllFields() {
 
-        if(!getTreatmentNameTextField().getText().equals("") &&
-           !getTreatmentDurationTextField().getText().equals("") &&
-           !getTreatmentPriceTextField().getText().equals(""))
+        if(!getTreatmentNameText().equals("") &&
+           !getTreatmentDurationText().equals("") &&
+           !getTreatmentPriceText().equals(""))
             return  true;
         else
             return false;
     }
 
-
-
-    private JTextField getTreatmentNameTextField() {
-        return treatmentNameTextField;
+    public String getTreatmentNameText() {
+        return treatmentNameTextField.getText();
     }
 
-    private JTextField getTreatmentDurationTextField() {
-        return treatmentDurationTextField;
+    public String getTreatmentDurationText() {
+        return treatmentDurationTextField.getText();
     }
 
-    private JTextField getTreatmentPriceTextField() {
-        return treatmentPriceTextField;
+    public String getTreatmentPriceText() {
+        return treatmentPriceTextField.getText();
     }
 
     private JButton getAddTreatment() {
