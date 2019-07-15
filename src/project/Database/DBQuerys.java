@@ -198,8 +198,6 @@ public class DBQuerys{
     public List<Appointment> getPatientAppointmentsHistory(String id){
         List<Appointment> appointments = new ArrayList<>(0);
 
-        String timeNow = new SimpleDateFormat("HH:mm").format(new Date());
-
         String sql="SELECT * FROM appointments WHERE clientID="+id+";";
         try (Connection conn = dbInitializer.connect();
              PreparedStatement pstmt  = conn.prepareStatement(sql)) {
