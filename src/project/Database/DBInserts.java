@@ -40,8 +40,8 @@ public class DBInserts {
     }
 
     private void initializeAppointments(){
-        insertAppointments(1,5,"17-07-2019","10:00", "4", "3");
-        insertAppointments(2,4,"17-07-2019","11:00", "4", "3");
+        insertAppointments(1,5,"11-07-2019","10:00", "4", "3");
+        insertAppointments(2,4,"10-07-2019","11:00", "4", "3");
         insertAppointments(3,2,"17-07-2019","12:00", "4", "3");
         insertAppointments(4,2,"17-07-2019","13:00", "4", "3");
         insertAppointments(5,2,"18-07-2019","08:00", "4", "3");

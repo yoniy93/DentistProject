@@ -5,8 +5,6 @@ import project.Entities.*;
 import java.sql.*;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.time.LocalTime;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -198,7 +196,7 @@ public class DBQuerys{
     public List<Appointment> getPatientAppointmentsHistory(String id){
         List<Appointment> appointments = new ArrayList<>(0);
 
-        String sql="SELECT * FROM appointments WHERE clientID="+id+";";
+        String sql="SELECT * FROM appointments WHERE clientID="+id+" AND appointmentDATE<date('now', 'local time');";
         try (Connection conn = dbInitializer.connect();
              PreparedStatement pstmt  = conn.prepareStatement(sql)) {
             ResultSet resultSet=pstmt.executeQuery();
