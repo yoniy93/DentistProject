@@ -1,4 +1,4 @@
-package project.GUI.Doctor.PatientsHistory;
+package project.GUI.View.Doctor;
 
 import project.Database.Locations;
 import project.GUI.General.CancelButton;

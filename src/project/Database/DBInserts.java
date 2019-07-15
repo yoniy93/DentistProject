@@ -10,7 +10,6 @@ public class DBInserts {
     public void insertInitialData(){
         initializeUsers();
         initializeTreatments();
-        initializeEquipments();
         initializeAppointments();
     }
 
@@ -30,13 +29,6 @@ public class DBInserts {
         insertTreatment(3, "גשר", 90, 150);
         insertTreatment(4, "הלבנה", 60, 69.9);
         insertTreatment(5, "שיננית", 30, 75);
-    }
-
-    private void initializeEquipments(){
-        insertMedicalEquipment(1, "מזרק", "2019-07-10", 5);
-        insertMedicalEquipment(2, "מספריים", "2019-07-10", 5);
-        insertMedicalEquipment(3, "סכין", "2019-07-10", 10);
-        insertMedicalEquipment(4, "מנורה", "2019-07-10", 4);
     }
 
     private void initializeAppointments(){
@@ -63,13 +55,6 @@ public class DBInserts {
         insertAppointments(21,4,"2019-07-22","10:00", "5", "2");
     }
 
-    public String insertMedicalEquipment(int id,String name, String expiredate,int quantity){
-        String sql="INSERT INTO medical_equipment(id, treatmentname, expiredate, quantity)"+
-                " VALUES ('"+id+"', '"+name+"', '"+expiredate+"', '"+quantity+"');";
-        return dbInitializer.connectAndExecute(sql);
-
-    }
-
     public String insertTreatment(int id,String name, int duration, double price){
         String sql="INSERT INTO treatments(id, treatmentname, durationmin, price)"+"" +
                 " VALUES ('"+id+"', '"+name+"', '"+duration+"', '"+price+"');";
@@ -79,12 +64,6 @@ public class DBInserts {
     public String insertAppointments(int id,int treatmentID,String date, String time, String clientid, String doctorid){
         String sql="INSERT INTO appointments(id, treatmentID,appointmentDATE, appointmentTIME,clientID,doctorID)"+
                 " VALUES ('"+id+"', '"+treatmentID+"', '"+date+"', '"+time+"', '"+clientid+"', '"+doctorid+"');";
-        return dbInitializer.connectAndExecute(sql);
-    }
-
-    public String insertMedicines(int medicineid,String expiredate, int quantity, String name){
-        String sql="INSERT INTO mediciens(medicineid, expiredate, quantity,medicinename)"+
-                " VALUES ('"+medicineid+"', '"+expiredate+"', '"+quantity+"', '"+name+"');";
         return dbInitializer.connectAndExecute(sql);
     }
 
@@ -105,5 +84,4 @@ public class DBInserts {
                 "VALUES ('"+id+"', '"+pswd+"', '"+name+"', '"+lname+"', '"+email+"', '"+bdate+"','D','"+yearofEx+"', '"+gender+"', '"+phoneNumber+"');";
         return dbInitializer.connectAndExecute(sql);
     }
-
 }

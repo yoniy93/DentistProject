@@ -4,12 +4,10 @@ import project.Entities.Appointment;
 import project.Entities.Doctor;
 import project.GUI.Model.DoctorModel;
 import project.GUI.View.Doctor.PersonalDetailsViewDoctor;
-import project.GUI.Doctor.PatientsHistory.PatientsHistoryView;
+import project.GUI.View.Doctor.PatientsHistoryView;
 import project.GUI.View.Doctor.DoctorView;
 
 import javax.swing.*;
-import java.sql.Time;
-import java.util.Date;
 import java.util.List;
 
 public class DoctorController extends UserController {

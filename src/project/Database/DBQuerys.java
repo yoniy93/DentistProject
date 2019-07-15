@@ -11,8 +11,7 @@ import java.util.List;
 
 public class DBQuerys{
 
-    DBInitializer dbInitializer=DBInitializer.getInstance();
-
+    DBInitializer dbInitializer = DBInitializer.getInstance();
 
     public Admin getAdminDetails (String id) {
         String sql = "SELECT * FROM users WHERE id="+id;
@@ -193,6 +192,7 @@ public class DBQuerys{
         }
         return null;
     }
+
 /*
     public List<Appointment> getPatientAppointmentsHistory(String id){
         List<Appointment> appointments = new ArrayList<>(0);
@@ -226,6 +226,7 @@ public class DBQuerys{
         return null;
     }
 */
+
     public List<Appointment> getPatientAppointments(String id){
         List<Appointment> appointments=new ArrayList<>(0);
         String sql="SELECT * FROM appointments WHERE clientID="+id+";";

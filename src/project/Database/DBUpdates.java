@@ -6,7 +6,7 @@ import project.Entities.Patient;
 
 public class DBUpdates {
 
-    DBInitializer dbInitializer=DBInitializer.getInstance();
+    DBInitializer dbInitializer = DBInitializer.getInstance();
 
     public void updatePatientDetails(Patient p){
         String sql= "UPDATE users SET password='"+p.getPassword()+"', firstname='"+p.getFirstName() +
