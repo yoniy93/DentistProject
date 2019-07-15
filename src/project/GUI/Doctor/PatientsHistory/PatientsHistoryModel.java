@@ -14,6 +14,6 @@ public class PatientsHistoryModel {
     }
 
     public List<Appointment> quertAllTreatmentsHistory(String patientId) {
-        return dbQuerys.getPatientAppointmentsHistory(patientId);
+        return dbQuerys.getPatientAppointments(patientId);
     }
 }

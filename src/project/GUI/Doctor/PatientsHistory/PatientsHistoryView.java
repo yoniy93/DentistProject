@@ -83,10 +83,10 @@ public class PatientsHistoryView extends JFrame{
 
     private void setLocationAndSize() {
 
-        patientJComboBox.setBounds(50, 100, 200, 50);
+        patientJComboBox.setBounds(50, 100, 200, 30);
 
         selectPatientLabel.setFont(new Font("Ariel", Font.BOLD, 14));
-        selectPatientLabel.setBounds(60,80,200,30);
+        selectPatientLabel.setBounds(60,60,150,15);
         jScrollPane.setBounds(100,190,500,150);
 
         cancelButton.setLocation(500,400,120,30);

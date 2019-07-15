@@ -3,9 +3,9 @@ import project.Entities.Admin;
 import project.Entities.Doctor;
 import project.Entities.Patient;
 import project.Entities.USER_TYPE;
-import project.GUI.Admin.General.StartAdminView;
-import project.GUI.Doctor.General.StartDoctorView;
-import project.GUI.Patient.General.StartPatientView;
+import project.GUI.Start.StartAdminView;
+import project.GUI.Start.StartDoctorView;
+import project.GUI.Start.StartPatientView;
 import project.Database.DBQuerys;
 
 import java.sql.SQLException;
