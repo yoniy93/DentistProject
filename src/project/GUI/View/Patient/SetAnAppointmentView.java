@@ -52,11 +52,13 @@ public class SetAnAppointmentView extends JFrame {
     private DatePicker datePicker = new DatePicker();
     private TimePicker timePicker = new TimePicker();
 
+    private Font font = new Font("Ariel",Font.BOLD,14);
 
     public SetAnAppointmentView(){
         setLayout(null);
 
         setLocationAndSize();
+        setFont();
         setDate();
         addComponentsToFrame();
         setDateSettings();
@@ -69,32 +71,24 @@ public class SetAnAppointmentView extends JFrame {
     }
 
     private void setLocationAndSize() {
-
-        treatmentLabel.setFont(new Font("Ariel", Font.BOLD, 14));
         treatmentLabel.setBounds(200,50,120, 30);
         treatmentComboBox.setBounds(330,50,100,30);
 
-        doctorLabel.setFont(new Font("Ariel", Font.BOLD, 14));
         doctorLabel.setBounds(200,100,120, 30);
         doctorComboBox.setBounds(330,100,100,30);
 
-        dateAndTimeLabel.setFont(new Font("Ariel", Font.BOLD, 14));
         dateAndTimeLabel.setBounds(200,160,150, 30);
-
         dateTimePickerPanel.setBounds(320,160,280,35);
         dateTimePickerPanel.setOpaque(false);
 
-        creditCardLabel.setFont(new Font("Ariel", Font.BOLD, 14));
         creditCardLabel.setBounds(170,220,90, 30);
         creditCardTextField.setBounds(270,220,220, 30);
 
-        validityLabel.setFont(new Font("Ariel", Font.BOLD, 14));
         validityLabel.setBounds(170,270,100, 30);
 
         monthComboBox.setBounds(270,270,100, 30);
         yearComboBox.setBounds(390,270,100, 30);
 
-        cvvLabel.setFont(new Font("Ariel", Font.BOLD, 14));
         cvvLabel.setBounds(170,320,100, 30);
         cvvTextField.setBounds(270,320,50,30);
 
@@ -132,6 +126,15 @@ public class SetAnAppointmentView extends JFrame {
         add(backGround);
     }
 
+    private void setFont(){
+        treatmentLabel.setFont(font);
+        doctorLabel.setFont(font);
+        dateAndTimeLabel.setFont(font);
+        creditCardLabel.setFont(font);
+        validityLabel.setFont(font);
+        cvvLabel.setFont(font);
+    }
+
     private void setDate() {
         for(int i=0;i<12; i++)
         {
@@ -162,7 +165,7 @@ public class SetAnAppointmentView extends JFrame {
         dateSettings.setVisiblePreviousYearButton(false);
         dateSettings.setFirstDayOfWeek(DayOfWeek.SUNDAY);
         dateSettings.setFormatForDatesCommonEra("yyyy-MM-dd");
-        dateSettings.setFormatForDatesBeforeCommonEra("dd-MM-uuuu");
+        dateSettings.setFormatForDatesBeforeCommonEra("uuuu-MM-dd");
     }
 
     private void setTimeSettings() {
