@@ -5,6 +5,8 @@ import project.Entities.*;
 import java.sql.*;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -193,7 +195,42 @@ public class DBQuerys{
         return null;
     }
 
-    public List<Appointment> getAllTreatmetsForUser(String id){
+    public List<Appointment> getPatientAppointmentsHistory(String id){
+        List<Appointment> appointments=new ArrayList<>(0);
+
+
+        String timeNow = LocalTime.now().toString();
+        System.out.println(timeNow);
+
+        String sql="SELECT * FROM appointments WHERE clientID="+id+";";
+        try (Connection conn = dbInitializer.connect();
+             PreparedStatement pstmt  = conn.prepareStatement(sql)) {
+            ResultSet resultSet=pstmt.executeQuery();
+            Appointment temp;
+            while (resultSet.next()){
+
+                SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy");
+                Date date = format.parse(resultSet.getString("appointmentDATE"));
+
+                SimpleDateFormat timeFormat = new SimpleDateFormat("HH:mm");
+                Time time = new java.sql.Time(timeFormat.parse(resultSet.getString("appointmentTIME")).getTime());
+                temp=new Appointment(resultSet.getString("id"),
+                        resultSet.getString("treatmentID"),
+                        date, time,
+                        resultSet.getString("clientID"),
+                        resultSet.getString("doctorID"));
+                appointments.add(temp);
+            }
+            return appointments;
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public List<Appointment> getPatientAppointments(String id){
         List<Appointment> appointments=new ArrayList<>(0);
         String sql="SELECT * FROM appointments WHERE clientID="+id+";";
         try (Connection conn = dbInitializer.connect();

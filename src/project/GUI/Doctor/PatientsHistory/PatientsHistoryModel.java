@@ -2,7 +2,6 @@ package project.GUI.Doctor.PatientsHistory;
 
 import project.Database.DBQuerys;
 import project.Entities.Appointment;
-import project.Entities.Patient;
 
 import java.util.List;
 
@@ -15,6 +14,6 @@ public class PatientsHistoryModel {
     }
 
     public List<Appointment> quertAllTreatmentsHistory(String patientId) {
-        return dbQuerys.getAllTreatmetsForUser(patientId);
+        return dbQuerys.getPatientAppointmentsHistory(patientId);
     }
 }
