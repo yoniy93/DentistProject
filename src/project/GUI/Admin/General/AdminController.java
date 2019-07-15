@@ -41,14 +41,12 @@ public class AdminController extends UserController {
 
     public void addTreatmentAction() {
         String msg_received;
-        Treatments treatments = addTreatmentsView.addAction();
-        if (treatments != null) {
-            treatments.setId(Integer.toString(adminModel.getAvailableId()) + 1);
-            msg_received = adminModel.InsertTreatment(Integer.parseInt(treatments.getId()),
-                    treatments.getName(),
-                    treatments.getDuration(),
-                    treatments.getPrice());
-            if (msg_received.equals("Successfully")) {
+        if (addTreatmentsView.addAction()) {
+            msg_received = adminModel.InsertTreatment((adminModel.getAvailableId())+1,
+                    addTreatmentsView.getTreatmentNameText(),
+                    Integer.parseInt(addTreatmentsView.getTreatmentDurationText()),
+                    Double.parseDouble(addTreatmentsView.getTreatmentPriceText()));
+            if (msg_received.equals("Sucssesfuly")) {
                 new MessageWindow(addTreatmentsView, "New Treatment Added successfully");
                 addTreatmentsView.dispose();
 
