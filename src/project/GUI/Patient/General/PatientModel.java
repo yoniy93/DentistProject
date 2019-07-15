@@ -3,6 +3,7 @@ package project.GUI.Patient.General;
 import project.Database.DBInserts;
 import project.Database.DBQuerys;
 import project.Database.DBUpdates;
+import project.Entities.Appointment;
 import project.Entities.Doctor;
 import project.Entities.Patient;
 import project.Entities.Treatments;
@@ -38,10 +39,23 @@ public class PatientModel {
         treatmentsList = dbQuerys.getTreatments();
         return treatmentsList;
     }
+    public List<Appointment> queryAppointmentsHistory() {
+        return dbQuerys.getPatientAppointments(patient.getId());
+    }
 
     public List<Doctor> getDoctorList() {
         doctorsList = dbQuerys.getDoctors();
         return doctorsList;
+    }
+
+    public String getTreatmentName(String id)
+    {
+        return  dbQuerys.getTreatmentName(id);
+    }
+
+    public String getDoctorName(String id)
+    {
+        return dbQuerys.getDoctorDetails(id).toString();
     }
 
     public void insertAppointment(int appointmentID,int treatmentID,String date, String time, String doctorid){
