@@ -37,12 +37,12 @@ public class ClinicStaffInfoView extends JFrame {
 
     private CancelButton cancelButton =new CancelButton();
 
-
     public ClinicStaffInfoView() {
         setLayout(null);
         setLocationAndSize();
         addComponentsToFrame();
         setFont();
+
         setTitle("Clinic Staff Information");
         setBounds(300, 300, 800, 500);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
@@ -114,7 +114,6 @@ public class ClinicStaffInfoView extends JFrame {
         phoneNumberValue.setOpaque(true);
         phoneNumberValue.setBorder(BorderFactory.createLineBorder(Color.BLACK, 2));
 
-
         genderLable.setHorizontalAlignment(SwingConstants.LEFT);
         genderLable.setOpaque(false);
         genderLable.setBounds(400,240, 200,30);
@@ -123,7 +122,6 @@ public class ClinicStaffInfoView extends JFrame {
         genderValue.setBackground(Color.WHITE);
         genderValue.setOpaque(true);
         genderValue.setBorder(BorderFactory.createLineBorder(Color.BLACK, 2));
-
 
         yeasOfExperienceLable.setHorizontalAlignment(SwingConstants.LEFT);
         yeasOfExperienceLable.setOpaque(false);
@@ -170,14 +168,15 @@ public class ClinicStaffInfoView extends JFrame {
         }
     }
 
-    public void setDoctorList(List<Doctor> values) {
+    public void setDoctorList(List<Doctor> doctorList) {
         this.doctorComboBox.removeAllItems();
-        values.forEach(doctor -> this.doctorComboBox.addItem(doctor));
+        doctorList.forEach(doctor -> this.doctorComboBox.addItem(doctor));
+        doctorComboBox.setSelectedIndex(-1);
     }
 
     public void setActions(ActionListener select, ActionListener cancel) {
         doctorComboBox.addActionListener(select);
-        cancelButton.addActionListener((cancel));
+        cancelButton.addActionListener(cancel);
     }
 
 }
