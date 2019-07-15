@@ -196,7 +196,7 @@ public class DBQuerys{
     public List<Appointment> getPatientAppointmentsHistory(String id){
         List<Appointment> appointments = new ArrayList<>(0);
 
-        String sql="SELECT * FROM appointments WHERE clientID="+id+" AND appointmentDATE<date('now', 'local time');";
+        String sql="SELECT * FROM appointments WHERE clientID="+id+" AND appointmentDATE<date('now');";
         try (Connection conn = dbInitializer.connect();
              PreparedStatement pstmt  = conn.prepareStatement(sql)) {
             ResultSet resultSet=pstmt.executeQuery();
