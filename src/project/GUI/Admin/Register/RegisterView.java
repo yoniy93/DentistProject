@@ -274,7 +274,7 @@ public class RegisterView extends JFrame
             dayString="0"+dayString;
         if (month<10)
             monthString="0"+monthString;
-        return dayString+"-"+monthString+"-"+year;
+        return year+"-"+monthString+"-"+dayString;
     }
 
     private String convertGenderToString() {

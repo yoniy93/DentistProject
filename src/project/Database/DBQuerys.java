@@ -19,7 +19,7 @@ public class DBQuerys{
              Statement stmt  = conn.createStatement();
              ResultSet rs    = stmt.executeQuery(sql)) {
 
-            SimpleDateFormat format=new SimpleDateFormat("dd-MM-yyyy");
+            SimpleDateFormat format=new SimpleDateFormat("yyyy-MM-dd");
             Date date=format.parse(rs.getString("birthdate"));
 
             return new Admin(id,rs.getString("password"),
@@ -38,7 +38,7 @@ public class DBQuerys{
              Statement stmt  = conn.createStatement();
              ResultSet rs    = stmt.executeQuery(sql)) {
 
-            SimpleDateFormat format=new SimpleDateFormat("dd-MM-yyyy");
+            SimpleDateFormat format=new SimpleDateFormat("yyyy-MM-dd");
             Date date=format.parse(rs.getString("birthdate"));
 
             return new Doctor(id,rs.getString("password"),
@@ -59,7 +59,7 @@ public class DBQuerys{
              Statement stmt  = conn.createStatement();
              ResultSet rs    = stmt.executeQuery(sql)) {
 
-            SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy");
+            SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
             Date date = format.parse(rs.getString("birthdate"));
 
             return new Patient(
@@ -110,7 +110,7 @@ public class DBQuerys{
                     return USER_TYPE.ADMIN;
                 case "D":
                     return USER_TYPE.DOCTOR;
-                case "StartPatientHistory":
+                case "P":
                     return USER_TYPE.PATIENT;
                 default:
                     return USER_TYPE.ERROR;
@@ -129,7 +129,7 @@ public class DBQuerys{
              PreparedStatement pstmt  = conn.prepareStatement(sql)) {
             ResultSet resultSet=pstmt.executeQuery();
             while (resultSet.next()){
-                SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy");
+                SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
                 Date date = format.parse(resultSet.getString("birthdate"));
                 doctors.add(new Doctor(resultSet.getString("id"),
                         resultSet.getString("password"),
@@ -201,7 +201,7 @@ public class DBQuerys{
              PreparedStatement pstmt  = conn.prepareStatement(sql)) {
             ResultSet resultSet=pstmt.executeQuery();
             Appointment temp;
-            SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy");
+            SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
             SimpleDateFormat timeFormat = new SimpleDateFormat("HH:mm");
             Date date;
             Time time;
@@ -232,7 +232,7 @@ public class DBQuerys{
              PreparedStatement pstmt  = conn.prepareStatement(sql)) {
             ResultSet resultSet=pstmt.executeQuery();
             Appointment temp;
-            SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy");
+            SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
             SimpleDateFormat timeFormat = new SimpleDateFormat("HH:mm");
             Date date;
             Time time;

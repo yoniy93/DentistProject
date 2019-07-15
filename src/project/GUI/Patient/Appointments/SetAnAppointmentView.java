@@ -161,7 +161,7 @@ public class SetAnAppointmentView extends JFrame {
         dateSettings.setVisibleNextYearButton(false);
         dateSettings.setVisiblePreviousYearButton(false);
         dateSettings.setFirstDayOfWeek(DayOfWeek.SUNDAY);
-        dateSettings.setFormatForDatesCommonEra("dd-MM-yyyy");
+        dateSettings.setFormatForDatesCommonEra("yyyy-MM-dd");
         dateSettings.setFormatForDatesBeforeCommonEra("dd-MM-uuuu");
     }
 
