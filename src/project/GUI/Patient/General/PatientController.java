@@ -27,17 +27,17 @@ public class PatientController extends PersonController{
 
     private void addViewActionListeners() {
         addActionsToPerson(patientView);
-        patientView.setActions(e->editDetailsAction(), e->setAnAppointmentAction(),e->viewTreatmentsAction());
+        patientView.setActions(e->openEditDetailsActionView(), e->openSetAnAppointmentView(),e->openTreatmentsPriceView());
     }
 
 
-    private void editDetailsAction() {
+    private void openEditDetailsActionView() {
         pDetailsView =  new PersonalDetailsViewPatient();
-        pDetailsView.setActions(e->editAction(), e-> pDetailsView.dispose());
+        pDetailsView.setActions(e->editDetailsAction(), e-> pDetailsView.dispose());
         pDetailsView.initializeFields(patientModel.getPatient());
     }
 
-    private void editAction() {
+    private void editDetailsAction() {
         Patient patient = patientModel.getPatient();
 
         patient.setFirstName(pDetailsView.getFirstNameText());
@@ -56,7 +56,7 @@ public class PatientController extends PersonController{
     }
 
 
-    private void setAnAppointmentAction() {
+    private void openSetAnAppointmentView() {
         this.setAnAppointmentView = new SetAnAppointmentView();
 
         setAnAppointmentView.setDoctorList (patientModel.getDoctorList());
@@ -90,7 +90,7 @@ public class PatientController extends PersonController{
     }
 
 
-    private void viewTreatmentsAction(){
+    private void openTreatmentsPriceView(){
         treatmentsPricesView = new TreatmentsPricesView();
         treatmentsPricesView.setTreatmentList(patientModel.getAllTreatments());
         treatmentsPricesView.setActions(e->treatmentListAction(),e->treatmentsPricesView.dispose());
