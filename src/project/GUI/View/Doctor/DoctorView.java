@@ -8,7 +8,6 @@ public class DoctorView extends UserView {
 
     private JButton patientsHistory = new JButton("Show Patients History");
 
-
     public DoctorView() {
         setLocationAndSize();
         addComponentsToFrame();
@@ -22,7 +21,6 @@ public class DoctorView extends UserView {
     }
 
     private void addComponentsToFrame() {
-
         add(patientsHistory);
         add(getBackGround());
     }

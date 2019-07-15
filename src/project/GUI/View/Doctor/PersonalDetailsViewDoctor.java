@@ -1,4 +1,5 @@
 package project.GUI.View.Doctor;
+
 import project.Entities.Doctor;
 import project.GUI.General.PersonalDetailsView;
 
