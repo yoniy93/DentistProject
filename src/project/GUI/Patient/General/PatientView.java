@@ -18,9 +18,9 @@ public class PatientView extends UserView {
 
     private void setLocationAndSize() {
         setAnAppointment.setBounds(100, 220, 230, 50);
-        setAnAppointment.setFont(this.getButtonFont());
+        setAnAppointment.setFont(getButtonFont());
         viewTreatments.setBounds(100,150,230,50);
-        viewTreatments.setFont(this.getButtonFont());
+        viewTreatments.setFont(getButtonFont());
         getBackGround().setBounds(0,0,800,600);
     }
 
