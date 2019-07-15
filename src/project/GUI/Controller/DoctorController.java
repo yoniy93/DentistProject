@@ -1,5 +1,6 @@
 package project.GUI.Controller;
 
+import project.Entities.Appointment;
 import project.Entities.Doctor;
 import project.GUI.Model.DoctorModel;
 import project.GUI.View.Doctor.PersonalDetailsViewDoctor;
@@ -7,6 +8,9 @@ import project.GUI.Doctor.PatientsHistory.PatientsHistoryView;
 import project.GUI.View.Doctor.DoctorView;
 
 import javax.swing.*;
+import java.sql.Time;
+import java.util.Date;
+import java.util.List;
 
 public class DoctorController extends UserController {
 
@@ -24,7 +28,7 @@ public class DoctorController extends UserController {
 
     private void addViewActionListeners() {
         addActionsToPerson(doctorView);
-        doctorView.setActions(e->openEditDetailsView(), e->showHistoryAction());
+        doctorView.setActions(e->openEditDetailsView(), e->openPatientHistoryView());
     }
 
     private void openEditDetailsView() {
@@ -53,7 +57,24 @@ public class DoctorController extends UserController {
         personalDetailsViewDoctor.dispose();
     }
 
-    private void showHistoryAction() {
+    private void openPatientHistoryView() {
         patientsHistoryView = new PatientsHistoryView();
+        patientsHistoryView.setPatientList(doctorModel.queryAllPatientsID());
+        patientsHistoryView.setActions(e->updateSelectedPatientTreatmentHistory(), e->patientsHistoryView.dispose());
+    }
+
+    private void updateSelectedPatientTreatmentHistory() {
+        List<Appointment> appointmentsList = doctorModel.getPatientAppointmentsList(patientsHistoryView.getSelectedID());
+
+        patientsHistoryView.updatePatientHistoryTable();
+
+        for (Appointment appointment : appointmentsList) {
+
+            patientsHistoryView.addRowToAppointmentsTable(
+                    doctorModel.getTreatmentName(appointment.getTreatmentID()),
+                    appointment.getTreatmentDate(),
+                    appointment.getTreatmentTime(),
+                    doctorModel.getDoctorName(appointment.getDoctorId()));
+        }
     }
 }

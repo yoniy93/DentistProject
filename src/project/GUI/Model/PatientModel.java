@@ -20,7 +20,6 @@ public class PatientModel {
     private List<Doctor> doctorsList;
     private List<Treatments> treatmentsList;
 
-
     public PatientModel(Patient patient) {
         this.patient = patient;
     }
@@ -39,6 +38,7 @@ public class PatientModel {
         treatmentsList = dbQuerys.getTreatments();
         return treatmentsList;
     }
+
     public List<Appointment> queryAppointmentsHistory() {
         return dbQuerys.getPatientAppointments(patient.getId());
     }
@@ -59,7 +59,6 @@ public class PatientModel {
     }
 
     public void insertAppointment(int appointmentID,int treatmentID,String date, String time, String doctorid){
-
         dbInserts.insertAppointments(appointmentID, treatmentID, date, time, patient.getId(), doctorid);
     }
 

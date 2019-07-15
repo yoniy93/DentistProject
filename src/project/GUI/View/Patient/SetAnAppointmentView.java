@@ -64,6 +64,7 @@ public class SetAnAppointmentView extends JFrame {
         setDateSettings();
         setTimeSettings();
 
+        setTitle("Set New Appointment: ");
         setBounds(0, 0, 800, 500);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setResizable(false);

@@ -29,17 +29,15 @@ public class PatientController extends UserController {
 
     private void addViewActionListeners() {
         addActionsToPerson(patientView);
-        patientView.setActions(e->openEditDetailsActionView(), e->openSetAnAppointmentView(),e->openTreatmentsPriceView(),e-> openViewAllAppointments());
+        patientView.setActions(e->openEditDetailsActionView(), e->openSetAnAppointmentView(),e->openTreatmentsPriceView(),e-> openPatientAppointmentsView());
     }
 
-    private void openViewAllAppointments()
-    {
-        patientAppointmentsView=new PatientAppointmentsView(updateTableDetails());
+    private void openPatientAppointmentsView() {
+        patientAppointmentsView = new PatientAppointmentsView(updateTableDetails());
         patientAppointmentsView.addActionListeners(e->patientAppointmentsView.dispose());
     }
 
     private JTable updateTableDetails(){
-
         JTable appointmentTable = new JTable();
         DefaultTableModel tablePattern = new DefaultTableModel();
         String columsNames[] = new String[] { "Treatment" ,"Date", "Time", "Doctor" };
@@ -52,12 +50,12 @@ public class PatientController extends UserController {
         appointmentTable.setModel(tablePattern);
         DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         String strDate;
-        for (Appointment x : patientModel.queryAppointmentsHistory()) {
-            strDate = dateFormat.format(x.getTreatmentDate());
-            tablePattern.addRow(new Object[] { patientModel.getTreatmentName(x.getTreatmentID()),
+        for (Appointment appointment : patientModel.queryAppointmentsHistory()) {
+            strDate = dateFormat.format(appointment.getTreatmentDate());
+            tablePattern.addRow(new Object[] { patientModel.getTreatmentName(appointment.getTreatmentID()),
                     strDate,
-                    x.getTreatmentTime(),
-                    patientModel.getDoctorName(x.getDoctorId())} );
+                    appointment.getTreatmentTime(),
+                    patientModel.getDoctorName(appointment.getDoctorId())} );
         }
         return appointmentTable;
     }

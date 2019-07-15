@@ -1,41 +1,37 @@
 package project.GUI.Doctor.PatientsHistory;
 
 import project.Database.Locations;
-import project.Entities.Appointment;
 import project.GUI.General.CancelButton;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
+import java.awt.event.ActionListener;
+import java.sql.Time;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 public class PatientsHistoryView extends JFrame{
 
-    private ImageIcon imageForBG=new ImageIcon(Locations.getImagePath("searchTreatments.png"));
-    private JLabel backGround=new JLabel(imageForBG);
-    private JComboBox<String> patientJComboBox = new JComboBox<String>();
+    private ImageIcon imageForBG = new ImageIcon(Locations.getImagePath("searchTreatments.png"));
+    private JLabel backGround = new JLabel(imageForBG);
+    private JComboBox<String> patientComboBox = new JComboBox<String>();
 
-    private JLabel selectPatientLabel =new JLabel("Select Patient ID:");
+    private JLabel selectPatientLabel = new JLabel("Select Patient ID:");
 
-    PatientsHistoryController patientsHistoryController = new PatientsHistoryController();
+    private JTable appointmentTable = new JTable();
+    private DefaultTableModel tablePattern = new DefaultTableModel();
+    private JScrollPane jScrollPane = new JScrollPane(appointmentTable);
+    private String columsNames[] = new String[] { "Treatment" ,"Date", "Time", "Doctor" };
 
-    JTable appointmentTable =new JTable();
-    DefaultTableModel tablePattern =new DefaultTableModel();
-    JScrollPane jScrollPane;
-    String columsNames[] = new String[] { "Treatment" ,"Date", "Time", "Doctor" };
-
-    CancelButton cancelButton=new CancelButton();
+    private CancelButton cancelButton = new CancelButton();
 
     public PatientsHistoryView() {
         setLayout(null);
-        getPatientJComboBox().setVisible(true);
-        setPatientList(patientsHistoryController.getPatientsList());
-        loadTable();
-        jScrollPane=new JScrollPane(appointmentTable);
         setLocationAndSize();
         addComponentsToFrame();
-        addActionListeners();
+        updatePatientHistoryTable();
 
         setTitle("Patients Treatments History:");
         setBounds(300, 20, 700, 500);
@@ -44,46 +40,8 @@ public class PatientsHistoryView extends JFrame{
         setVisible(true);
     }
 
-    private void loadTable(){
-        appointmentTable = updateTableDetails(getSelectedID());
-        appointmentTable.setFont(new Font("Ariel", Font.BOLD, 14));
-    }
-
-    private JTable updateTableDetails(String id){
-        tablePattern.setRowCount(0);
-        tablePattern.setColumnCount(0);
-
-        tablePattern.setColumnIdentifiers(columsNames);
-
-        appointmentTable.setModel(tablePattern);
-        List<Appointment> listAppointment=patientsHistoryController.getTreatmentHistory(id);
-        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-        String strDate;
-        for (Appointment x : listAppointment) {
-            strDate= dateFormat.format(x.getTreatmentDate());
-            tablePattern.addRow(new Object[] { getTreatmentName(x.getTreatmentID()),
-                    strDate,
-                    x.getTreatmentTime(),
-                    getDoctorName(x.getDoctorId())} );
-        }
-        return appointmentTable;
-    }
-
-    private String getTreatmentName(String id){
-        return patientsHistoryController.queryTreatmentName(id);
-    }
-
-    private String getDoctorName(String id){
-        return patientsHistoryController.queryDoctorName(id);
-    }
-
-    private String getSelectedID(){
-        return patientJComboBox.getSelectedItem().toString();
-    }
-
     private void setLocationAndSize() {
-
-        patientJComboBox.setBounds(50, 100, 200, 30);
+        patientComboBox.setBounds(50, 100, 200, 30);
 
         selectPatientLabel.setFont(new Font("Ariel", Font.BOLD, 14));
         selectPatientLabel.setBounds(60,60,150,15);
@@ -95,39 +53,40 @@ public class PatientsHistoryView extends JFrame{
 
     private void addComponentsToFrame(){
         add(jScrollPane);
-        add(patientJComboBox);
+        add(patientComboBox);
         add(selectPatientLabel);
         add(cancelButton);
         add(backGround);
     }
 
-    public JComboBox getPatientJComboBox() {
-        return patientJComboBox;
+    public void updatePatientHistoryTable(){
+        tablePattern.setRowCount(0);
+        tablePattern.setColumnCount(0);
+        tablePattern.setColumnIdentifiers(columsNames);
+
+        appointmentTable.setModel(tablePattern);
+        appointmentTable.setFont(new Font("Ariel", Font.BOLD, 14));
     }
 
-    public void setPatientList(List<String> values) {
-        this.patientJComboBox.removeAllItems();
-        values.forEach(x -> this.patientJComboBox.addItem(x));
+    public void addRowToAppointmentsTable(String treatmentName, Date appointmentDate, Time appointmentTime , String doctorName){
+        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        String dateStr = dateFormat.format(appointmentDate);
+
+        tablePattern.addRow(new Object[] {treatmentName, dateStr, appointmentTime, doctorName});
     }
 
-    private void addActionListeners() {
-        getCancel().addActionListener(e->cancelAction());
-        this.getPatientJComboBox().addActionListener(e-> updatePatientTreatmentHistory());
-        this.cancelButton.addActionListener(e -> this.dispose());
+    public String getSelectedID(){
+        return patientComboBox.getSelectedItem().toString();
     }
 
-    private void updatePatientTreatmentHistory() {
-        String patientId = patientJComboBox.getSelectedItem().toString();
-        updateTableDetails(patientId);
+    public void setPatientList(List<String> patientsList) {
+        patientComboBox.removeAllItems();
+        patientsList.forEach(patient -> patientComboBox.addItem(patient));
+        patientComboBox.setSelectedIndex(-1);
     }
 
-    private void cancelAction() {
-        this.dispose();
+    public void setActions(ActionListener select, ActionListener cancel){
+        patientComboBox.addActionListener((select));
+        cancelButton.addActionListener(cancel);
     }
-
-    public JButton getCancel() {
-        return cancelButton;
-    }
-
-
 }

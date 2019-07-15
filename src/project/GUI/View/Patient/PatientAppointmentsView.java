@@ -19,8 +19,7 @@ public class PatientAppointmentsView extends JFrame {
 
     private CancelButton cancelButton = new CancelButton();
 
-    public PatientAppointmentsView( JTable appointmentTable)
-    {
+    public PatientAppointmentsView( JTable appointmentTable) {
         setLayout(null);
         loadTable(appointmentTable);
         setLocationAndSize();

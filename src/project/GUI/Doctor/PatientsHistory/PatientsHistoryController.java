@@ -1,30 +1,25 @@
+/*
+
 package project.GUI.Doctor.PatientsHistory;
 
 import project.Entities.Appointment;
 
+import java.sql.Time;
+import java.util.Date;
 import java.util.List;
 
 public class PatientsHistoryController {
 
     private PatientsHistoryModel patientsHistoryModel;
+    private PatientsHistoryView patientsHistoryView;
 
     PatientsHistoryController(){
-       this.patientsHistoryModel=new PatientsHistoryModel();
+        this.patientsHistoryModel = new PatientsHistoryModel();
+        this.patientsHistoryView = new PatientsHistoryView();
+
+
     }
 
-    public List<String> getPatientsList(){
-        return patientsHistoryModel.queryAllPatientsID();
-    }
 
-    public List<Appointment> getTreatmentHistory(String patientId) {
-        return patientsHistoryModel.quertAllTreatmentsHistory(patientId);
-    }
-
-    public String queryTreatmentName(String id){
-        return patientsHistoryModel.dbQuerys.getTreatmentName(id);
-    }
-
-    public String queryDoctorName(String id){
-        return patientsHistoryModel.dbQuerys.getDoctorDetails(id).toString();
-    }
 }
+*/

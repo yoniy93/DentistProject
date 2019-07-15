@@ -33,13 +33,16 @@ public class TreatmentsPricesView extends JFrame {
         setLocationAndSize();
         setLablesFont();
         addComponentsToFrame();
+
         setTitle("Search Your Treatment: ");
+        setBounds(300, 100, 700, 500);
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setResizable(false);
         setVisible(true);
     }
 
     private void setLocationAndSize() {
-        this.setBounds(300, 100, 700, 500);
+        this.
         treatmentsComboBox.setBounds(400, 100, 200, 50);
 
         treatmentPrices.setBounds(300, 300, 100 , 30);
@@ -69,14 +72,15 @@ public class TreatmentsPricesView extends JFrame {
     }
 
     private void setLablesFont(){
-        treatmentPricesLable.setFont(getFont());
-        treatmentDurationLable.setFont(getFont());
-        treatmentDescriptionLable.setFont(getFont());
+        treatmentPricesLable.setFont(font);
+        treatmentDurationLable.setFont(font);
+        treatmentDescriptionLable.setFont(font);
     }
 
-    public void setTreatmentList(List<Treatments> values) {
-        this.treatmentsComboBox.removeAllItems();
-        values.forEach(treatment -> this.treatmentsComboBox.addItem(treatment));
+    public void setTreatmentList(List<Treatments> treatmentsList) {
+        treatmentsComboBox.removeAllItems();
+        treatmentsList.forEach(treatment -> treatmentsComboBox.addItem(treatment));
+        treatmentsComboBox.setSelectedIndex(-1);
     }
 
     public Treatments getTreatment() {
@@ -95,9 +99,5 @@ public class TreatmentsPricesView extends JFrame {
     public void setActions(ActionListener select, ActionListener cancel) {
         treatmentsComboBox.addActionListener(select);
         cancelButton.addActionListener((cancel));
-    }
-
-    public Font getFont() {
-        return font;
     }
 }
