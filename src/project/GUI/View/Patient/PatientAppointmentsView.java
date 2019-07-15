@@ -7,7 +7,6 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
 
-
 public class PatientAppointmentsView extends JFrame {
 
     private ImageIcon imageForBG = new ImageIcon(Locations.getImagePath("searchTreatments.png"));
