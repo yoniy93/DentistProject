@@ -221,6 +221,5 @@ public class SetAnAppointmentView extends JFrame {
 
         return (datePickerText == null || timePickerText == null || creditCardText.equals("") || monthIndex == -1 || yearIndex == -1 || cvvCardText.equals(""));
     }
-
 }
 
