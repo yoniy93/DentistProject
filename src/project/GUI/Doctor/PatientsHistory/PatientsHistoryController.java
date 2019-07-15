@@ -1,19 +1,15 @@
 package project.GUI.Doctor.PatientsHistory;
 
 import project.Entities.Appointment;
-import project.Entities.Patient;
 
 import java.util.List;
 
 public class PatientsHistoryController {
 
-    PatientsHistoryModel patientsHistoryModel;
-
+    private PatientsHistoryModel patientsHistoryModel;
 
     PatientsHistoryController(){
        this.patientsHistoryModel=new PatientsHistoryModel();
-
-
     }
 
     public List<String> getPatientsList(){

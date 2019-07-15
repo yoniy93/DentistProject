@@ -18,7 +18,7 @@ public class PatientsHistoryView extends JFrame{
 
     private JLabel selectPatientLabel =new JLabel("Select Patient ID:");
 
-    PatientsHistoryController patientsHistoryController=new PatientsHistoryController();
+    PatientsHistoryController patientsHistoryController = new PatientsHistoryController();
 
     JTable appointmentTable =new JTable();
     DefaultTableModel tablePattern =new DefaultTableModel();
@@ -45,7 +45,7 @@ public class PatientsHistoryView extends JFrame{
     }
 
     private void loadTable(){
-        appointmentTable=updateTableDetails(getSelectedID());
+        appointmentTable = updateTableDetails(getSelectedID());
         appointmentTable.setFont(new Font("Ariel", Font.BOLD, 14));
     }
 
