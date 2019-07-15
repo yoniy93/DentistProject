@@ -43,8 +43,8 @@ public class PatientController extends UserController {
 
     private JTable updateTableDetails(){
 
-        JTable appointmentTable =new JTable();
-        DefaultTableModel tablePattern =new DefaultTableModel();
+        JTable appointmentTable = new JTable();
+        DefaultTableModel tablePattern = new DefaultTableModel();
         String columsNames[] = new String[] { "Treatment" ,"Date", "Time", "Doctor" };
 
         tablePattern.setRowCount(0);
@@ -56,7 +56,7 @@ public class PatientController extends UserController {
         DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
         String strDate;
         for (Appointment x : patientModel.queryAppointmentsHistory()) {
-            strDate= dateFormat.format(x.getTreatmentDate());
+            strDate = dateFormat.format(x.getTreatmentDate());
             tablePattern.addRow(new Object[] { patientModel.getTreatmentName(x.getTreatmentID()),
                     strDate,
                     x.getTreatmentTime(),

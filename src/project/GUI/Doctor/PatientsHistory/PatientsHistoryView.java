@@ -10,7 +10,6 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.List;
 
-
 public class PatientsHistoryView extends JFrame{
 
     private ImageIcon imageForBG=new ImageIcon(Locations.getImagePath("searchTreatments.png"));
@@ -125,7 +124,6 @@ public class PatientsHistoryView extends JFrame{
     private void cancelAction() {
         this.dispose();
     }
-
 
     public JButton getCancel() {
         return cancelButton;
