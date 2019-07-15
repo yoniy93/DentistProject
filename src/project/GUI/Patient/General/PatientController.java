@@ -2,14 +2,14 @@ package project.GUI.Patient.General;
 
 import project.Entities.Patient;
 import project.Entities.Treatments;
-import project.GUI.General.PersonController;
+import project.GUI.General.UserController;
 import project.GUI.Patient.Appointments.SetAnAppointmentView;
 import project.GUI.Patient.PersonalDetails.PersonalDetailsViewPatient;
 import project.GUI.Patient.Treatments.TreatmentsPricesView;
 
 import javax.swing.*;
 
-public class PatientController extends PersonController{
+public class PatientController extends UserController {
 
     private PatientModel patientModel;
     private PatientView patientView;

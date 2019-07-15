@@ -1,10 +1,10 @@
 package project.GUI.Patient.General;
 
-import project.GUI.General.PersonView;
+import project.GUI.General.UserView;
 import javax.swing.*;
 import java.awt.event.ActionListener;
 
-public class PatientView extends PersonView {
+public class PatientView extends UserView {
 
     private JButton setAnAppointment = new JButton("Set An Appointment ");
     private JButton viewTreatments = new JButton("View Treatments");

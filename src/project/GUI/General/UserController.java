@@ -5,14 +5,14 @@ import project.GUI.Clinic.Staff.StartClinicStaffInfo;
 import project.GUI.Login.StartLoginView;
 import javax.swing.*;
 
-public abstract class PersonController {
+public abstract class UserController {
 
-    protected void addActionsToPerson(PersonView personView) {
-        personView.setActionsToPerson(e->logoutAction(personView), e->viewStaffInfoAction(), e->viewClinicInfoAction());
+    protected void addActionsToPerson(UserView userView) {
+        userView.setActionsToPerson(e->logoutAction(userView), e->viewStaffInfoAction(), e->viewClinicInfoAction());
     }
 
-    private void logoutAction(PersonView personView) {
-       personView.dispose();
+    private void logoutAction(UserView userView) {
+       userView.dispose();
        SwingUtilities.invokeLater(new Runnable() {
            public void run() {
                 new StartLoginView();

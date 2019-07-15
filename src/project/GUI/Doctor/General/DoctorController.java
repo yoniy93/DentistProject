@@ -3,19 +3,18 @@ package project.GUI.Doctor.General;
 import project.Entities.Doctor;
 import project.GUI.Doctor.DoctorPersonalDetails.PersonalDetailsViewDoctor;
 import project.GUI.Doctor.PatientsHistory.PatientsHistoryView;
-import project.GUI.General.PersonController;
+import project.GUI.General.UserController;
 
 import javax.swing.*;
 
-public class DoctorController extends PersonController {
+public class DoctorController extends UserController {
 
     private DoctorModel doctorModel;
     private DoctorView doctorView;
     private PersonalDetailsViewDoctor personalDetailsViewDoctor;
     private PatientsHistoryView patientsHistoryView;
 
-    public DoctorController(DoctorModel doctorM,DoctorView doctorV)
-    {
+    public DoctorController(DoctorModel doctorM,DoctorView doctorV) {
         doctorView = doctorV;
         doctorModel = doctorM;
 
@@ -24,14 +23,13 @@ public class DoctorController extends PersonController {
 
     private void addViewActionListeners() {
         addActionsToPerson(doctorView);
-        doctorView.setActions(e->editDetailsAction(),e -> showHistoryAction());
+        doctorView.setActions(e->openEditDetailsView(), e->showHistoryAction());
     }
 
-    private void editDetailsAction()
-    {
-        personalDetailsViewDoctor=new PersonalDetailsViewDoctor();
+    private void openEditDetailsView() {
+        personalDetailsViewDoctor = new PersonalDetailsViewDoctor();
         SetTextFieldsCurrentValues();
-        personalDetailsViewDoctor.setActions(e->editAction(), e-> personalDetailsViewDoctor.dispose());
+        personalDetailsViewDoctor.setActions(e->editAction(), e->personalDetailsViewDoctor.dispose());
     }
 
     private void SetTextFieldsCurrentValues() {
@@ -54,10 +52,7 @@ public class DoctorController extends PersonController {
         personalDetailsViewDoctor.dispose();
     }
 
-    private void showHistoryAction()
-    {
-        patientsHistoryView=new PatientsHistoryView();
+    private void showHistoryAction() {
+        patientsHistoryView = new PatientsHistoryView();
     }
-
-
 }

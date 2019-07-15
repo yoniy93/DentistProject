@@ -6,7 +6,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
 
-public abstract class PersonView extends JFrame {
+public abstract class UserView extends JFrame {
 
     private ImageIcon imageForBG=new ImageIcon(Locations.getImagePath("mainapp.png"));
     private JLabel backGround=new JLabel(imageForBG);
@@ -18,7 +18,7 @@ public abstract class PersonView extends JFrame {
 
     private Font buttonFont = new Font("Ariel",Font.BOLD,14);
 
-    protected PersonView(){
+    protected UserView(){
         setLayout(null);
         setLocationAndSize();
         addComponentsToFrame();

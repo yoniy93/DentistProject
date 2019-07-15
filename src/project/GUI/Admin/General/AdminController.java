@@ -6,12 +6,12 @@ import project.GUI.Admin.AddTreatments.AddTreatmentsView;
 import project.GUI.Admin.Register.RegisterView;
 import project.GUI.Admin.UnRegister.UnRegisterView;
 import project.GUI.General.MessageWindow;
-import project.GUI.General.PersonController;
+import project.GUI.General.UserController;
 import project.GUI.General.PersonalDetailsView;
 import javax.swing.*;
 
 
-public class AdminController extends PersonController {
+public class AdminController extends UserController {
 
     private AdminModel adminModel;
     private AdminView adminView;

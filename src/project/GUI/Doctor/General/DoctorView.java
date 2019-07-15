@@ -1,10 +1,10 @@
 package project.GUI.Doctor.General;
 
-import project.GUI.General.PersonView;
+import project.GUI.General.UserView;
 import javax.swing.*;
 import java.awt.event.ActionListener;
 
-public class DoctorView extends PersonView {
+public class DoctorView extends UserView {
 
     private JButton patientsHistory = new JButton("Show Patients History");
 

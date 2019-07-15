@@ -1,10 +1,10 @@
 package project.GUI.Admin.General;
 
-import project.GUI.General.PersonView;
+import project.GUI.General.UserView;
 import javax.swing.*;
 import java.awt.event.ActionListener;
 
-public class AdminView extends PersonView {
+public class AdminView extends UserView {
 
     private JButton registerButton = new JButton("Register new user ");
     private JButton unRegisterButton= new JButton("Unregister exciting user ");
