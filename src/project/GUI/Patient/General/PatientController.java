@@ -15,7 +15,7 @@ public class PatientController extends PersonController{
     private PatientView patientView;
     private SetAnAppointmentView setAnAppointmentView;
     private PersonalDetailsViewPatient pDetailsView;
-    TreatmentsPricesView treatmentsPricesView;
+    private TreatmentsPricesView treatmentsPricesView;
 
 
     public PatientController(PatientModel patientM, PatientView patientV) {
