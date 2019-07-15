@@ -1,7 +1,6 @@
 package project.GUI.Patient.PersonalDetails;
 
 import project.Entities.Patient;
-import project.Entities.Person;
 import project.GUI.General.PersonalDetailsView;
 import javax.swing .*;
 import java.awt.event.ActionListener;
@@ -58,7 +57,7 @@ public class PersonalDetailsViewPatient extends PersonalDetailsView {
     }
 
     public void initializeFields(Patient patient){
-        initializePersonFields(patient);
+        initializeUserFields(patient);
 
         setHeightTextField(Integer.toString(patient.getHeight()));
         setWeightTextFiled(Double.toString(patient.getWeight()));

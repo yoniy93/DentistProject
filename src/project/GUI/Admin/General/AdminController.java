@@ -1,7 +1,6 @@
 package project.GUI.Admin.General;
 
 import project.Entities.Admin;
-import project.Entities.Treatments;
 import project.GUI.Admin.AddTreatments.AddTreatmentsView;
 import project.GUI.Admin.Register.RegisterView;
 import project.GUI.Admin.UnRegister.UnRegisterView;
@@ -134,7 +133,7 @@ public class AdminController extends UserController {
 
         personalDetailsView=new PersonalDetailsView();
         personalDetailsView.setActions(e->editAction(), e-> personalDetailsView.dispose());
-        personalDetailsView.initializePersonFields(adminModel.getAdmin());
+        personalDetailsView.initializeUserFields(adminModel.getAdmin());
     }
 
     private void editAction() {

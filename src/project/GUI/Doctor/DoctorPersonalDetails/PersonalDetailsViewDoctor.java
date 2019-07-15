@@ -38,7 +38,7 @@ public class PersonalDetailsViewDoctor extends PersonalDetailsView{
     }
 
     public void initializeFields(Doctor doctor){
-        initializePersonFields(doctor);
+        initializeUserFields(doctor);
 
         setYearsOfExpText(Integer.toString(doctor.getYearsOfExp()));
     }

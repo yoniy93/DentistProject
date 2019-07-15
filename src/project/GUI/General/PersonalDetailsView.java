@@ -134,7 +134,7 @@ public class PersonalDetailsView extends JFrame {
         phoneNumberTextField.setText(phoneNumber);
     }
 
-    public void initializePersonFields(User user){
+    public void initializeUserFields(User user){
         setFirstNameTextField(user.getFirstName());
         setLastNameTextField(user.getLastName());
         setEmailTextField(user.getEmail());
