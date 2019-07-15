@@ -203,13 +203,14 @@ public class DBQuerys{
              PreparedStatement pstmt  = conn.prepareStatement(sql)) {
             ResultSet resultSet=pstmt.executeQuery();
             Appointment temp;
+            SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy");
+            SimpleDateFormat timeFormat = new SimpleDateFormat("HH:mm");
+            Date date;
+            Time time;
             while (resultSet.next()){
 
-                SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy");
-                Date date = format.parse(resultSet.getString("appointmentDATE"));
-
-                SimpleDateFormat timeFormat = new SimpleDateFormat("HH:mm");
-                Time time = new java.sql.Time(timeFormat.parse(resultSet.getString("appointmentTIME")).getTime());
+                date = format.parse(resultSet.getString("appointmentDATE"));
+                time = new java.sql.Time(timeFormat.parse(resultSet.getString("appointmentTIME")).getTime());
                 temp=new Appointment(resultSet.getString("id"),
                         resultSet.getString("treatmentID"),
                         date, time,
@@ -233,13 +234,13 @@ public class DBQuerys{
              PreparedStatement pstmt  = conn.prepareStatement(sql)) {
             ResultSet resultSet=pstmt.executeQuery();
             Appointment temp;
+            SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy");
+            SimpleDateFormat timeFormat = new SimpleDateFormat("HH:mm");
+            Date date;
+            Time time;
             while (resultSet.next()){
-
-                SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy");
-                Date date = format.parse(resultSet.getString("appointmentDATE"));
-
-                SimpleDateFormat timeFormat = new SimpleDateFormat("HH:mm");
-                Time time = new java.sql.Time(timeFormat.parse(resultSet.getString("appointmentTIME")).getTime());
+                date = format.parse(resultSet.getString("appointmentDATE"));
+                time = new java.sql.Time(timeFormat.parse(resultSet.getString("appointmentTIME")).getTime());
                 temp=new Appointment(resultSet.getString("id"),
                         resultSet.getString("treatmentID"),
                         date, time,
