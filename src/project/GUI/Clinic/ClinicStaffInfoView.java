@@ -1,4 +1,4 @@
-package project.GUI.Clinic.Staff;
+package project.GUI.Clinic;
 
 import project.Database.Locations;
 import project.Entities.Doctor;
