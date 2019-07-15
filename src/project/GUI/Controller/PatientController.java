@@ -3,11 +3,13 @@ package project.GUI.Controller;
 import project.Entities.Appointment;
 import project.Entities.Patient;
 import project.Entities.Treatments;
+
 import project.GUI.Model.PatientModel;
 import project.GUI.View.Patient.*;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
+
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 
@@ -31,6 +33,8 @@ public class PatientController extends UserController {
         addActionsToPerson(patientView);
         patientView.setActions(e->openEditDetailsActionView(), e->openSetAnAppointmentView(),e->openTreatmentsPriceView(),e-> openPatientAppointmentsView());
     }
+
+    //===========================================================================
 
     private void openPatientAppointmentsView() {
         patientAppointmentsView = new PatientAppointmentsView(updateTableDetails());
@@ -60,6 +64,8 @@ public class PatientController extends UserController {
         return appointmentTable;
     }
 
+    //===========================================================================
+
     private void openEditDetailsActionView() {
         pDetailsView =  new PersonalDetailsViewPatient();
         pDetailsView.setActions(e->editDetailsAction(), e-> pDetailsView.dispose());
@@ -84,6 +90,7 @@ public class PatientController extends UserController {
         pDetailsView.dispose();
     }
 
+    //===========================================================================
 
     private void openSetAnAppointmentView() {
         this.setAnAppointmentView = new SetAnAppointmentView();
@@ -118,6 +125,7 @@ public class PatientController extends UserController {
         }
     }
 
+    //===========================================================================
 
     private void openTreatmentsPriceView(){
         treatmentsPricesView = new TreatmentsPricesView();
@@ -132,4 +140,6 @@ public class PatientController extends UserController {
             treatmentsPricesView.setTreatmentInfo(Double.toString(treatment.getPrice()),Integer.toString(treatment.getDuration()),"None");
         }
     }
+
+    //===========================================================================
 }

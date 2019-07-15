@@ -3,10 +3,7 @@ package project.GUI.Controller;
 import project.Entities.Appointment;
 import project.Entities.Doctor;
 import project.GUI.Model.DoctorModel;
-import project.GUI.View.Doctor.PersonalDetailsViewDoctor;
-import project.GUI.View.Doctor.PatientsHistoryView;
-import project.GUI.View.Doctor.DoctorView;
-
+import project.GUI.View.Doctor.*;
 import javax.swing.*;
 import java.util.List;
 
@@ -29,6 +26,8 @@ public class DoctorController extends UserController {
         doctorView.setActions(e->openEditDetailsView(), e->openPatientHistoryView());
     }
 
+    //===========================================================================
+
     private void openEditDetailsView() {
         personalDetailsViewDoctor = new PersonalDetailsViewDoctor();
         SetTextFieldsCurrentValues();
@@ -40,7 +39,6 @@ public class DoctorController extends UserController {
     }
 
     private void editAction() {
-
         Doctor doctor = doctorModel.getDoctor();
 
         doctor.setFirstName(personalDetailsViewDoctor.getFirstNameText());
@@ -54,6 +52,8 @@ public class DoctorController extends UserController {
         JOptionPane.showMessageDialog( personalDetailsViewDoctor,  "Details Updated");
         personalDetailsViewDoctor.dispose();
     }
+
+    //===========================================================================
 
     private void openPatientHistoryView() {
         patientsHistoryView = new PatientsHistoryView();
@@ -75,4 +75,6 @@ public class DoctorController extends UserController {
                     doctorModel.getDoctorName(appointment.getDoctorId()));
         }
     }
+
+    //===========================================================================
 }

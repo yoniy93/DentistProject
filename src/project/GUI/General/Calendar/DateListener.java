@@ -5,7 +5,6 @@ import com.github.lgooddatepicker.optionalusertools.DateChangeListener;
 import com.github.lgooddatepicker.zinternaltools.DateChangeEvent;
 
 public class DateListener implements DateChangeListener {
-
     private TimePicker timePicker;
     private String doctorID;
 
@@ -15,7 +14,6 @@ public class DateListener implements DateChangeListener {
     }
 
     public void dateChanged(DateChangeEvent event) {
-
         if(event.getNewDate() != null){
             String date = convertDateToString(event.getNewDate().getDayOfMonth() , event.getNewDate().getMonthValue() , event.getNewDate().getYear());
             timePicker.getSettings().setVetoPolicy(new VetoPolicy(date, doctorID));

@@ -2,14 +2,11 @@ package project.GUI.Controller;
 
 import project.Entities.Admin;
 import project.GUI.Model.AdminModel;
-import project.GUI.View.Admin.AddTreatmentsView;
-import project.GUI.View.Admin.AdminView;
-import project.GUI.View.Admin.RegisterView;
-import project.GUI.View.Admin.UnRegisterView;
+import project.GUI.View.Admin.*;
 import project.GUI.General.MessageWindow;
 import project.GUI.General.PersonalDetailsView;
-import javax.swing.*;
 
+import javax.swing.*;
 
 public class AdminController extends UserController {
 
@@ -29,12 +26,12 @@ public class AdminController extends UserController {
 
     private void addViewActionListeners () {
         addActionsToPerson(adminView);
-        adminView.setActions(e->editPersonalDetailsAction(), e->registerAction(), e->unregisterAction(), e->newTreatments());
-
+        adminView.setActions(e->openEditPersonalDetailsView(), e->openRegisterView(), e->openUnregisterView(), e->openAddTreatmentsView());
     }
 
-    private void newTreatments() {
+    //===========================================================================
 
+    private void openAddTreatmentsView() {
         addTreatmentsView=new AddTreatmentsView();
         addTreatmentsView.setActions(e-> addTreatmentAction(), e->addTreatmentsView.dispose());
     }
@@ -57,14 +54,14 @@ public class AdminController extends UserController {
 
     }
 
-    private void registerAction() {
+    //===========================================================================
 
+    private void openRegisterView() {
         registerView=new RegisterView();
-        registerView.setActions(e->addUserAction(),e->setVisibleForDoctor(),e->setVisibleForPatient(),e->registerView.dispose());
+        registerView.setActions(e->registerUserAction(), e->setVisibleForDoctor(), e->setVisibleForPatient(), e->registerView.dispose());
     }
 
-    public void addUserAction()
-    {
+    public void registerUserAction() {
         String msg_recieved="";
         if(registerView.allFieldsFilled())
         {
@@ -101,18 +98,20 @@ public class AdminController extends UserController {
     {
         registerView.setVisibleDoctor();
     }
+
     public void setVisibleForPatient()
     {
         registerView.setVisiblePatient();
     }
-    private void unregisterAction() {
 
-        unRegisterView=new UnRegisterView();
-        unRegisterView.setActions(e->unRegister(),e->unRegisterView.dispose());
+    //===========================================================================
+
+    private void openUnregisterView() {
+        unRegisterView = new UnRegisterView();
+        unRegisterView.setActions(e->unRegisterAction(),e->unRegisterView.dispose());
     }
 
-    public void unRegister()
-    {
+    public void unRegisterAction() {
         String msg_recived;
         String id = unRegisterView.getIdTextField();
         if (!adminModel.isUserExists(id))
@@ -130,8 +129,9 @@ public class AdminController extends UserController {
         }
     }
 
-    private void editPersonalDetailsAction() {
+    //===========================================================================
 
+    private void openEditPersonalDetailsView() {
         personalDetailsView=new PersonalDetailsView();
         personalDetailsView.setActions(e->editAction(), e-> personalDetailsView.dispose());
         personalDetailsView.initializeUserFields(adminModel.getAdmin());
@@ -152,4 +152,6 @@ public class AdminController extends UserController {
 
         personalDetailsView.dispose();
     }
+
+    //===========================================================================
 }

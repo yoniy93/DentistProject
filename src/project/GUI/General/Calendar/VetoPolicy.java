@@ -8,8 +8,7 @@ import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
-public class VetoPolicy implements DateVetoPolicy, TimeVetoPolicy
-{
+public class VetoPolicy implements DateVetoPolicy, TimeVetoPolicy {
     private String date;
     private String doctorID;
 

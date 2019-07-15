@@ -7,9 +7,10 @@ public class MessageWindow {
 
     Component jframe;
     String message;
+
     public MessageWindow(Component jframe, String message) {
-        this.jframe=jframe;
-        this.message=message;
-        JOptionPane.showMessageDialog( jframe,  message);
+        this.jframe = jframe;
+        this.message = message;
+        JOptionPane.showMessageDialog(jframe, message);
     }
 }
