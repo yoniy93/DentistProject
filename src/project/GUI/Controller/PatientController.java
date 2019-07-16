@@ -13,6 +13,8 @@ import java.util.List;
 public class PatientController extends UserController {
 
     private PatientModel patientModel;
+
+    //all windows related to patient
     private PatientView patientView;
     private SetAnAppointmentView setAnAppointmentView;
     private PersonalDetailsViewPatient pDetailsView;
@@ -26,6 +28,7 @@ public class PatientController extends UserController {
         addViewActionListeners();
     }
 
+    //add action listener to main patient window
     private void addViewActionListeners() {
         addActionsToPerson(patientView);
         patientView.setActions(e->openEditDetailsActionView(), e->openSetAnAppointmentView(),e->openTreatmentsPriceView(),e-> openPatientAppointmentsView());
@@ -33,12 +36,13 @@ public class PatientController extends UserController {
 
     //===========================================================================
 
+    //open new sub-window of view all appointments and add action listener
     private void openPatientAppointmentsView() {
         patientAppointmentsView = new PatientAppointmentsView();
         patientAppointmentsView.setActions(e->patientAppointmentsView.dispose());
         updateSelectedPatientTreatmentHistory();
     }
-
+    //function that updated the table of appointments according to the DB
     private void updateSelectedPatientTreatmentHistory() {
         List<Appointment> appointmentsList = patientModel.getPatientAppointmentsList();
 
@@ -52,16 +56,17 @@ public class PatientController extends UserController {
     }
 
     //===========================================================================
-
+    //open new sub-window of edit personal details and add action listener
     private void openEditDetailsActionView() {
         pDetailsView =  new PersonalDetailsViewPatient();
         pDetailsView.setActions(e->editDetailsAction(), e-> pDetailsView.dispose());
         pDetailsView.initializeFields(patientModel.getPatient());
     }
-
+    //action of update personal details
     private void editDetailsAction() {
         Patient patient = patientModel.getPatient();
 
+        //set all updated fields
         patient.setFirstName(pDetailsView.getFirstNameText());
         patient.setLastName(pDetailsView.getLastNameText());
         patient.setEmail(pDetailsView.getEmailText());
@@ -70,7 +75,7 @@ public class PatientController extends UserController {
         patient.setWeight(Double.parseDouble(pDetailsView.getWeightText()));
         patient.setPhoneNumber(pDetailsView.getPhoneNumberText());
 
-        patientModel.UpdatePatient(patient);
+        patientModel.UpdatePatient(patient);//update information in DB
 
         JOptionPane.showMessageDialog( pDetailsView,  "Details Updated");
 
@@ -78,7 +83,7 @@ public class PatientController extends UserController {
     }
 
     //===========================================================================
-
+    //new sub-window of set new appointment and add action listener
     private void openSetAnAppointmentView() {
         setAnAppointmentView = new SetAnAppointmentView();
 
@@ -88,14 +93,14 @@ public class PatientController extends UserController {
         setAnAppointmentView.setVisible(true);
         setAnAppointmentView.setActions(e->selectDoctorAction(), e->insertAppointmentAction(), e->setAnAppointmentView.dispose());
     }
-
+    // action of select doctor and find the available appointments
     private void selectDoctorAction(){
         setAnAppointmentView.setDateListener(setAnAppointmentView.getDoctorID());
         setAnAppointmentView.clearDateAndTime();
     }
-
+    //insert new appointment details to DB
     private void insertAppointmentAction(){
-        if(setAnAppointmentView.haveEmptyTextFields()) {
+        if(setAnAppointmentView.haveEmptyTextFields()) {//check if all fields are filled
             JOptionPane.showMessageDialog(setAnAppointmentView, "Some Information Haven't Been Field Yet");
         }
         else {
@@ -105,7 +110,7 @@ public class PatientController extends UserController {
             String time = setAnAppointmentView.getTime();
             String doctorId = setAnAppointmentView.getDoctorID();
 
-            patientModel.insertAppointment(appointmentID, treatmentID, date, time, doctorId);
+            patientModel.insertAppointment(appointmentID, treatmentID, date, time, doctorId);//insert new appointment to DB
 
             JOptionPane.showMessageDialog(setAnAppointmentView, "Appointment has been Schedule");
             setAnAppointmentView.dispose();
@@ -113,13 +118,13 @@ public class PatientController extends UserController {
     }
 
     //===========================================================================
-
+    //new sub-window of view of all treatments that the clinic offers and add action listener
     private void openTreatmentsPriceView(){
         treatmentsPricesView = new TreatmentsPricesView();
-        treatmentsPricesView.setTreatmentList(patientModel.getAllTreatmentsList());
+        treatmentsPricesView.setTreatmentList(patientModel.getAllTreatmentsList());//get all treatments
         treatmentsPricesView.setActions(e->treatmentListAction(),e->treatmentsPricesView.dispose());
     }
-
+    //update the details in the window according to the treatment that picked
     private void treatmentListAction() {
         Treatments treatment = treatmentsPricesView.getTreatment();
 
