@@ -3,7 +3,9 @@ package project.GUI.View.Doctor;
 import project.GUI.View.UserView;
 import javax.swing.*;
 import java.awt.event.ActionListener;
-
+/*
+    main window that displays all the functionality of the Doctor
+ */
 public class DoctorView extends UserView {
 
     private JButton patientsHistory = new JButton("Show Patients History");

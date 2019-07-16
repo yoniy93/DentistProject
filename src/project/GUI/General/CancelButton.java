@@ -3,6 +3,7 @@ package project.GUI.General;
 import javax.swing.*;
 import java.awt.*;
 
+//class that creates and defines cancel button
 public class CancelButton extends JButton {
 
     public CancelButton( ){

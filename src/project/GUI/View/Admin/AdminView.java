@@ -4,6 +4,9 @@ import project.GUI.View.UserView;
 import javax.swing.*;
 import java.awt.event.ActionListener;
 
+/*
+    The main window displays all the functionality of the Admin
+ */
 public class AdminView extends UserView {
 
     private JButton registerButton = new JButton("Register new user ");

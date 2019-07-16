@@ -7,6 +7,10 @@ import java.awt.Font;
 import java.awt.event.ActionListener;
 import javax.swing.*;
 
+/*view class of edit personal details for user
+  user can see his current details and update them
+  if all the values entered correctly , the users details are update also in DB
+*/
 public class PersonalDetailsView extends JFrame {
 
     private ImageIcon imageForBG=new ImageIcon(Locations.getImagePath("personalDetails.png"));
@@ -119,8 +123,8 @@ public class PersonalDetailsView extends JFrame {
         firstnameTextField.setText(firstname);
     }
 
-    private void setLastNameTextField(String lastnaame) {
-        lastnameTextField.setText(lastnaame);
+    private void setLastNameTextField(String lastName) {
+        lastnameTextField.setText(lastName);
     }
 
     private void setEmailTextField(String Email) {
@@ -135,6 +139,8 @@ public class PersonalDetailsView extends JFrame {
         phoneNumberTextField.setText(phoneNumber);
     }
 
+
+    //set all fields with current details of user
     public void initializeUserFields(User user){
         setFirstNameTextField(user.getFirstName());
         setLastNameTextField(user.getLastName());
@@ -156,6 +162,7 @@ public class PersonalDetailsView extends JFrame {
         getCancelButton().addActionListener(cancel);
     }
 
+    //check if all fields are filled
     public boolean isAllFieldsFilled()
     {
         if(getFirstNameText().equals("")||getLastNameText().equals("")||getEmailText().equals("")||getPhoneNumberText().equals("")||getPasswordText().equals(""))

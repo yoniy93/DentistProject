@@ -12,7 +12,12 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
-
+/*
+    View class that shows all appointments history of selected user
+    Only Doctors have this option
+    The appointments table will change according to the selected user in the combo box
+    and according to the appointments in DB table
+ */
 public class PatientsHistoryView extends JFrame{
 
     private ImageIcon imageForBG = new ImageIcon(Locations.getImagePath("searchTreatments.png"));
@@ -60,6 +65,7 @@ public class PatientsHistoryView extends JFrame{
         add(backGround);
     }
 
+    //function that updates the values of the appointments history table according to the patient selected
     public void updatePatientHistoryTable(){
         tablePattern.setRowCount(0);
         tablePattern.setColumnCount(0);
@@ -79,6 +85,7 @@ public class PatientsHistoryView extends JFrame{
         return patientComboBox.getSelectedItem().toString();
     }
 
+    //set patients from appointments table in DB into combobox
     public void setPatientList(List<String> patientsList) {
         patientComboBox.removeAllItems();
         patientsList.forEach(patient -> patientComboBox.addItem(patient));

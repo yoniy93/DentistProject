@@ -3,6 +3,7 @@ package project.GUI.General;
 import javax.swing.*;
 import java.awt.*;
 
+
 public class MessageWindow {
 
     Component jframe;

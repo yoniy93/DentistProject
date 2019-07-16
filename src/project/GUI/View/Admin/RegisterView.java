@@ -6,13 +6,18 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
 import java.util.Vector;
+/*
+    This window enable to register new user (Patient/Doctor) to the system
+    Only admin can access this window
 
+ */
 public class RegisterView extends JFrame
 {
 
     private ImageIcon imageForBG=new ImageIcon(Locations.getImagePath("register.png"));
     private JLabel backGround=new JLabel(imageForBG);
 
+    //all fields that need to be filled in order to add new user
     private CancelButton cancelButton = new CancelButton();
     private JButton addUserButton = new JButton("Submit");
     private JLabel roleLabel = new JLabel( "What is the user's role?");
@@ -72,6 +77,7 @@ public class RegisterView extends JFrame
         setVisible(true);
     }
 
+    //set values of date vectors
     private void setDateOfBirth() {
         for(int i=0;i<32; i++)
         {
@@ -86,8 +92,9 @@ public class RegisterView extends JFrame
         {
             yearVector.insertElementAt(max--,i);
         }
-    }//set values of date vectors
+    }
 
+    //if the user added is doctor that height and weight fields does not have to be filled
     public void hidePatientWeightAndHeightButtons(){
         heightTextField.setEditable(false);
         heightTextField.setBackground(Color.lightGray);
