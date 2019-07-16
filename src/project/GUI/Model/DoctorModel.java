@@ -35,7 +35,7 @@ public class DoctorModel
     }
 
     public List<Appointment> getPatientAppointmentsList(String patientID) {
-        return dbQuerys.getPatientAppointments(patientID);
+        return dbQuerys.getPatientAppointmentsHistory(patientID);
     }
 
     public String getDoctorName(String doctorID){

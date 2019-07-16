@@ -8,6 +8,7 @@ import java.io.File;
 public class Main {
     public static void main(String[] args)
     {
+
         DBInitializer.loadDatabaseWithInitialData();
 
         SwingUtilities.invokeLater(new Runnable() {
