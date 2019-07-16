@@ -13,52 +13,60 @@ import static project.Entities.USER_TYPE.*;
 
 public class DBTest  {
 
-    static DBQuerys query;
-    static DBInserts inserts;
-    static Admin expectedAdmin;
-    static Doctor expectedDoctor;
-    static Patient expectedPatient;
-    static Appointment expectedAppointment;
-    static Treatments expectedTreatment;
+    static private DBQuerys dbQuery;
+    static private DBInserts dbInsert;
+    static private Admin expectedAdmin;
+    static private Doctor expectedDoctor;
+    static private Patient expectedPatient;
+    static private Appointment expectedAppointment;
+    static private Treatments expectedTreatment;
 
-    static String adminID;
-    static String doctorID;
-    static String patientID;
+    static private String adminID;
+    static private String doctorID;
+    static private String patientID;
 
+    static private String dateString = "2000-01-01";
+    static private int timeInt = 2020;
 
     @BeforeAll
     static void setUp() throws ParseException {
 
         DBInitializer.loadDatabaseWithInitialData();
-        query = new DBQuerys();
-        inserts = new DBInserts();
+        dbQuery = new DBQuerys();
+        dbInsert = new DBInserts();
 
-        int usersLastID = query.getLastId("users");
+        int usersLastID = dbQuery.getLastId("users");
         adminID = Integer.toString(++usersLastID);
         doctorID = Integer.toString(++usersLastID);
         patientID = Integer.toString(++usersLastID);
 
-        String appointmentsLastID = Integer.toString(query.getLastId("appointments") + 1) ;
-        String treatmentsLastID = Integer.toString(query.getLastId("treatments") + 1);
+        String appointmentsLastID = Integer.toString(dbQuery.getLastId("appointments") + 1) ;
+        String treatmentsLastID = Integer.toString(dbQuery.getLastId("treatments") + 1);
 
-        Date date = new SimpleDateFormat("dd-MM-yyyy").parse("01-01-2000");
-        Time time = new Time(2020);
+        Date date = new SimpleDateFormat("yyyy-MM-dd").parse(dateString);
+        Time time = new Time(timeInt);
 
+        System.out.println(date.toString());
         expectedAdmin = new Admin(adminID, "Password", "FirstName", "LastName", "Email@gmail.com", date, "male","0501234567");
-
         expectedDoctor = new Doctor(doctorID, "Password", "FirstName", "LastName", "Email@gmail.com", date,99 , "female","0501234567");
-
         expectedPatient = new Patient(patientID, "Password", "FirstName", "LastName", "Email@gmail.com",250.7 ,230 ,  date, "male","0501234567");
-
-        expectedAppointment = new Appointment(appointmentsLastID, treatmentsLastID,date, time,patientID, doctorID);
-
+        expectedAppointment = new Appointment(appointmentsLastID, treatmentsLastID,date, time, patientID, doctorID);
         expectedTreatment = new Treatments(treatmentsLastID, "TestTreatment", 60, 99,"None");
 
+        insertExpectedValues();
+    }
+
+    static private void insertExpectedValues(){
+        dbInsert.insertForAdmin(expectedAdmin.getId(),expectedAdmin.getPassword(),expectedAdmin.getFirstName(),expectedAdmin.getLastName(),expectedAdmin.getEmail(),dateString, expectedAdmin.getGender(),expectedAdmin.getPhoneNumber());
+        dbInsert.insertForDoctor(expectedDoctor.getId(),expectedDoctor.getPassword(),expectedDoctor.getFirstName(),expectedDoctor.getLastName(),expectedDoctor.getEmail(),dateString, expectedDoctor.getGender(), expectedDoctor.getYearsOfExp(), expectedDoctor.getPhoneNumber());
+        dbInsert.insertForPatient(expectedPatient.getId(),expectedPatient.getPassword(),expectedPatient.getFirstName(),expectedPatient.getLastName(),expectedPatient.getEmail(), expectedPatient.getWeight(), expectedPatient.getHeight(), dateString, expectedPatient.getGender(),expectedPatient.getPhoneNumber());
+        dbInsert.insertAppointments(Integer.parseInt(expectedAppointment.getAppointmentID()), Integer.parseInt(expectedAppointment.getTreatmentID()), dateString, Integer.toString(timeInt), expectedAppointment.getPatientId(), expectedAppointment.getDoctorId());
+        dbInsert.insertTreatment(Integer.parseInt(expectedTreatment.getId()),expectedTreatment.getName(),expectedTreatment.getDuration(),expectedTreatment.getPrice(),expectedTreatment.getDescription());
     }
 
     @Test
     void getAdminDetails() {
-        Admin actualAdmin = query.getAdminDetails(adminID);
+        Admin actualAdmin = dbQuery.getAdminDetails(adminID);
 
         assertEquals(expectedAdmin.getId(),actualAdmin.getId(), "Admin ID Not Equal");
         assertEquals(expectedAdmin.getPassword(),actualAdmin.getPassword(), "Admin Password Not Equal");
@@ -72,7 +80,7 @@ public class DBTest  {
 
     @Test
     void getDoctorDetails() {
-        Doctor actualDoctor = query.getDoctorDetails(doctorID);
+        Doctor actualDoctor = dbQuery.getDoctorDetails(doctorID);
 
         assertEquals(expectedDoctor.getId(),actualDoctor.getId(), "Doctor ID Not Equal");
         assertEquals(expectedDoctor.getPassword(),actualDoctor.getPassword(), "Doctor Password Not Equal");
@@ -87,7 +95,7 @@ public class DBTest  {
 
     @Test
     void getPatientDetails() {
-        Patient actualPatient = query.getPatientDetails(patientID);
+        Patient actualPatient = dbQuery.getPatientDetails(patientID);
 
         assertEquals(expectedPatient.getId(),actualPatient.getId(), "Patient ID Not Equal");
         assertEquals(expectedPatient.getPassword(),actualPatient.getPassword(), "Patient Password Not Equal");
@@ -103,28 +111,27 @@ public class DBTest  {
 
     @Test
     void isUserExists() {
-        assertEquals(true,query.isUserExists(adminID), "User ID Need To Be Exist");
-        assertEquals(false,query.isUserExists("-1"), "User ID Doesn't Need To Be Exist");
-
+        assertEquals(true,dbQuery.isUserExists(adminID), "User ID Need To Be Exist");
+        assertEquals(false,dbQuery.isUserExists("-1"), "User ID Doesn't Need To Be Exist");
     }
 
     @Test
     void isPasswordCorrect() {
-        assertEquals(true,query.isPasswordCorrect("1","1"), "Password Should Be Correct");
-        assertEquals(false,query.isPasswordCorrect("1","-5"), "Password Should Be Not Correct");
+        assertEquals(true,dbQuery.isPasswordCorrect("1","1"), "Password Should Be Correct");
+        assertEquals(false,dbQuery.isPasswordCorrect("1","-5"), "Password Should Be Not Correct");
     }
 
     @Test
     void getTypeOfUser() {
-        assertEquals(ADMIN,query.getTypeOfUser(adminID), "User Type Should Be Admin");
-        assertEquals(DOCTOR,query.getTypeOfUser(doctorID), "User Type Should Be Doctor");
-        assertEquals(PATIENT,query.getTypeOfUser(patientID), "User Type Should Be Patient");
+        assertEquals(ADMIN,dbQuery.getTypeOfUser(adminID), "User Type Should Be Admin");
+        assertEquals(DOCTOR,dbQuery.getTypeOfUser(doctorID), "User Type Should Be Doctor");
+        assertEquals(PATIENT,dbQuery.getTypeOfUser(patientID), "User Type Should Be Patient");
     }
 
     @Test
     void isAvailableTime(){
-        assertEquals(false,query.isAvailableTime(doctorID,"17-07-2019", "10:00"), "Time Should Not Be Avaliable");
-        assertEquals(true,query.isAvailableTime(doctorID,"20-07-2019", "10:00"), "Time Should Be Avaliable");
+        assertEquals(false,dbQuery.isAvailableTime(doctorID, "", "10:00"), "Time Should Not Be Avaliable");
+        assertEquals(true,dbQuery.isAvailableTime(doctorID,dateString, "10:00"), "Time Should Be Avaliable");
 
     }
 
