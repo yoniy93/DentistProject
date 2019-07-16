@@ -11,6 +11,8 @@ import javax.swing.*;
 public abstract class UserController {
 
     private UserModel userModel = UserModel.getInstance();
+
+    //windows related to all users
     private ClinicInfoView clinicInfoView;
     private ClinicStaffInfoView clinicStaffInfoView;
 
@@ -19,7 +21,7 @@ public abstract class UserController {
     }
 
     //===========================================================================
-
+    //open new login window
     private void openLoginView(UserView userView) {
        userView.dispose();
 
@@ -31,17 +33,17 @@ public abstract class UserController {
     }
 
     //===========================================================================
-
+    //open new sub-window of view of all the doctors and their details and add action listener
     private void openClinicStaffInfoView() {
         clinicStaffInfoView = new ClinicStaffInfoView();
 
-        clinicStaffInfoView.setDoctorList (userModel.getDoctorList());
+        clinicStaffInfoView.setDoctorList (userModel.getDoctorList());//add all doctors from DB to list
 
         clinicStaffInfoView.setActions(e->clinicStaffInfoView.setSelectedDoctorInfo() , e->clinicStaffInfoView.dispose());
     }
 
     //===========================================================================
-
+    //open new sub-window of view of clinic information and add action listener
     private void openClinicInfoView() {
         clinicInfoView = new ClinicInfoView();
         clinicInfoView.setActions(e -> clinicInfoView.dispose());
