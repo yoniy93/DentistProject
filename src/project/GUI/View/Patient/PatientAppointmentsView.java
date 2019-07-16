@@ -43,7 +43,7 @@ public class PatientAppointmentsView extends JFrame {
         headLine.setBounds(100,10,400,200);
         headLine.setFont(new Font("Ariel", Font.BOLD, 30));
 
-        jScrollPane.setBounds(100,200,500,150);
+        jScrollPane.setBounds(50,200,600,150);
         cancelButton.setLocation(500,400,120,30);
         backGround.setBounds(0,0,700,500);
     }
