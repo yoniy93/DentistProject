@@ -4,6 +4,7 @@ import project.Database.Locations;
 import project.GUI.General.CancelButton;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableColumnModel;
 import java.awt.*;
 import java.awt.event.ActionListener;
 import java.sql.Time;
@@ -63,7 +64,6 @@ public class PatientsHistoryView extends JFrame{
         tablePattern.setRowCount(0);
         tablePattern.setColumnCount(0);
         tablePattern.setColumnIdentifiers(columsNames);
-
         appointmentTable.setModel(tablePattern);
         appointmentTable.setFont(new Font("Ariel", Font.BOLD, 14));
     }
