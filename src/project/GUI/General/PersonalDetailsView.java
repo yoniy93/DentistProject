@@ -14,6 +14,7 @@ public class PersonalDetailsView extends JFrame {
 
     private JButton editButton = new JButton("Apply");
     private CancelButton cancelButton = new CancelButton();
+
     private JLabel firstnameLabel = new JLabel("First Name: ");
     private JLabel lastnameLabel = new JLabel( "Last Name: ");
     private JLabel emailLabel = new JLabel( "Email: ");
@@ -153,5 +154,12 @@ public class PersonalDetailsView extends JFrame {
     public void setActions(ActionListener edit, ActionListener cancel){
         getEditButton().addActionListener((edit));
         getCancelButton().addActionListener(cancel);
+    }
+
+    public boolean isAllFieldsFilled()
+    {
+        if(getFirstNameText().equals("")||getLastNameText().equals("")||getEmailText().equals("")||getPhoneNumberText().equals("")||getPasswordText().equals(""))
+            return false;
+        return true;
     }
 }

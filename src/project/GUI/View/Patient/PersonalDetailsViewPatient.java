@@ -67,4 +67,11 @@ public class PersonalDetailsViewPatient extends PersonalDetailsView {
         getEditButton().addActionListener((edit));
         getCancelButton().addActionListener(cancel);
     }
+
+    public boolean isHeightAndWeightFilled()
+    {
+        if(getHeightText().equals("")||getWeightText().equals(""))
+            return false;
+        return true;
+    }
 }

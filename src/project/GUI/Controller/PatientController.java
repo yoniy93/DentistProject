@@ -64,22 +64,25 @@ public class PatientController extends UserController {
     }
     //action of update personal details
     private void editDetailsAction() {
-        Patient patient = patientModel.getPatient();
+        if(pDetailsView.isHeightAndWeightFilled()&&pDetailsView.isAllFieldsFilled()) {
+            Patient patient = patientModel.getPatient();
 
-        //set all updated fields
-        patient.setFirstName(pDetailsView.getFirstNameText());
-        patient.setLastName(pDetailsView.getLastNameText());
-        patient.setEmail(pDetailsView.getEmailText());
-        patient.setPassword(pDetailsView.getPasswordText());
-        patient.setHeight(Integer.parseInt(pDetailsView.getHeightText()));
-        patient.setWeight(Double.parseDouble(pDetailsView.getWeightText()));
-        patient.setPhoneNumber(pDetailsView.getPhoneNumberText());
+            //set all updated fields
+            patient.setFirstName(pDetailsView.getFirstNameText());
+            patient.setLastName(pDetailsView.getLastNameText());
+            patient.setEmail(pDetailsView.getEmailText());
+            patient.setPassword(pDetailsView.getPasswordText());
+            patient.setHeight(Integer.parseInt(pDetailsView.getHeightText()));
+            patient.setWeight(Double.parseDouble(pDetailsView.getWeightText()));
+            patient.setPhoneNumber(pDetailsView.getPhoneNumberText());
 
-        patientModel.UpdatePatient(patient);//update information in DB
+            patientModel.UpdatePatient(patient);//update information in DB
 
-        JOptionPane.showMessageDialog( pDetailsView,  "Details Updated");
+            JOptionPane.showMessageDialog(pDetailsView, "Details Updated");
 
-        pDetailsView.dispose();
+            pDetailsView.dispose();
+        }
+        JOptionPane.showMessageDialog(pDetailsView, "Error: please fill all fields");
     }
 
     //===========================================================================

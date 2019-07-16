@@ -143,20 +143,25 @@ public class AdminController extends UserController {
     }
     //action edit personal details of admin
     private void editAction() {
-        Admin admin = adminModel.getAdmin();
+        if(personalDetailsView.isAllFieldsFilled())
+        {
+            Admin admin = adminModel.getAdmin();
 
-        //set all fields
-        admin.setFirstName(personalDetailsView.getFirstNameText());
-        admin.setLastName(personalDetailsView.getLastNameText());
-        admin.setEmail(personalDetailsView.getEmailText());
-        admin.setPassword(personalDetailsView.getPasswordText());
-        admin.setPhoneNumber(personalDetailsView.getPhoneNumberText());
+            //set all fields
+            admin.setFirstName(personalDetailsView.getFirstNameText());
+            admin.setLastName(personalDetailsView.getLastNameText());
+            admin.setEmail(personalDetailsView.getEmailText());
+            admin.setPassword(personalDetailsView.getPasswordText());
+            admin.setPhoneNumber(personalDetailsView.getPhoneNumberText());
 
-        adminModel.UpdateAdmin();//function that updates fields of admin in DB
+            adminModel.UpdateAdmin();//function that updates fields of admin in DB
 
-        JOptionPane.showMessageDialog( personalDetailsView,  "Details Updated");
+            JOptionPane.showMessageDialog(personalDetailsView, "Details Updated");
 
-        personalDetailsView.dispose();
+            personalDetailsView.dispose();
+        }
+        else
+            JOptionPane.showMessageDialog(personalDetailsView, "Error: please fill all fields");
     }
 
     //===========================================================================

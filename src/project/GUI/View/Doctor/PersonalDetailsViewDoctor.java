@@ -47,4 +47,10 @@ public class PersonalDetailsViewDoctor extends PersonalDetailsView{
         getEditButton().addActionListener((edit));
         getCancelButton().addActionListener(cancel);
     }
+    public boolean isYearsOfExFilled()
+    {
+        if(getYearsOfExpText().equals(""))
+            return false;
+        return true;
+    }
 }

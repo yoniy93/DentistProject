@@ -45,20 +45,23 @@ public class DoctorController extends UserController {
 
     //action of update details
     private void editAction() {
-        Doctor doctor = doctorModel.getDoctor();
+        if(personalDetailsViewDoctor.isAllFieldsFilled()&&personalDetailsViewDoctor.isYearsOfExFilled()) {
+            Doctor doctor = doctorModel.getDoctor();
 
-        //set all new values
-        doctor.setFirstName(personalDetailsViewDoctor.getFirstNameText());
-        doctor.setLastName(personalDetailsViewDoctor.getLastNameText());
-        doctor.setEmail(personalDetailsViewDoctor.getEmailText());
-        doctor.setPassword(personalDetailsViewDoctor.getPasswordText());
-        doctor.setYearsOfEx(Integer.parseInt(personalDetailsViewDoctor.getYearsOfExpText()));
-        doctor.setPhoneNumber(personalDetailsViewDoctor.getPhoneNumberText());
+            //set all new values
+            doctor.setFirstName(personalDetailsViewDoctor.getFirstNameText());
+            doctor.setLastName(personalDetailsViewDoctor.getLastNameText());
+            doctor.setEmail(personalDetailsViewDoctor.getEmailText());
+            doctor.setPassword(personalDetailsViewDoctor.getPasswordText());
+            doctor.setYearsOfEx(Integer.parseInt(personalDetailsViewDoctor.getYearsOfExpText()));
+            doctor.setPhoneNumber(personalDetailsViewDoctor.getPhoneNumberText());
 
-        doctorModel.UpdateDoctor(doctor);//update fields of current doctor in DB
+            doctorModel.UpdateDoctor(doctor);//update fields of current doctor in DB
 
-        JOptionPane.showMessageDialog( personalDetailsViewDoctor,  "Details Updated");
-        personalDetailsViewDoctor.dispose();
+            JOptionPane.showMessageDialog(personalDetailsViewDoctor, "Details Updated");
+            personalDetailsViewDoctor.dispose();
+        }
+        JOptionPane.showMessageDialog(personalDetailsViewDoctor, "Error: please fill all fields");
     }
 
     //===========================================================================
