@@ -1,5 +1,9 @@
 package project.GUI.Login;
 
+import project.GUI.Login.Interfaces.Controller;
+import project.GUI.Login.Interfaces.Model;
+import project.GUI.Login.Interfaces.View;
+
 public class StartLoginView {
 
     public StartLoginView(){

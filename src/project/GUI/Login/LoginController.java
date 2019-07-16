@@ -1,10 +1,13 @@
 package project.GUI.Login;
 
+import project.GUI.Login.Interfaces.Controller;
+import project.GUI.Login.Interfaces.Model;
+import project.GUI.Login.Interfaces.View;
+
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.sql.SQLException;
 import java.util.Observable;
-import java.util.Observer;
 
 public class LoginController implements Controller {
 

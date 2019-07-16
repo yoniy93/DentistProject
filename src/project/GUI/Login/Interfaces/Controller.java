@@ -1,4 +1,4 @@
-package project.GUI.Login;
+package project.GUI.Login.Interfaces;
 
 import java.util.Observer;
 

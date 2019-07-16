@@ -1,6 +1,7 @@
 package project.GUI.Login;
 
 import project.Database.Locations;
+import project.GUI.Login.Interfaces.View;
 
 import javax.swing.*;
 import java.awt.*;
