@@ -32,8 +32,6 @@ public class DBInserts {
         insertTreatment(6, "Dentures", 40, 80,"Dentures are prosthetic devices replacing lost teeth");
         insertTreatment(7, "Root Canals", 30, 50,"Root canals treat diseases or absessed teeth");
         insertTreatment(8, "Extractions", 55, 74.9,"A severely damaged tooth may need to be extracted. Permanent teeth may also need to be removed for orthodontic treatment");
-
-
     }
 
     private void initializeAppointments(){

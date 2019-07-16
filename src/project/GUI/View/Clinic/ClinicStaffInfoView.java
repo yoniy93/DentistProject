@@ -2,7 +2,8 @@ package project.GUI.View.Clinic;
 
 import project.Database.Locations;
 import project.Entities.Doctor;
-import project.GUI.General.CancelButton;
+import project.GUI.View.ExitButton;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
@@ -13,6 +14,9 @@ public class ClinicStaffInfoView extends JFrame {
     private JLabel backGround = new JLabel(imageForBG);
 
     private JComboBox<Doctor> doctorComboBox = new JComboBox<Doctor>();
+
+    private JLabel selectLable = new JLabel("Select Doctor:");
+
     private JLabel genderLable = new JLabel("Gender:");
     private JLabel genderValue = new JLabel();
 
@@ -33,9 +37,9 @@ public class ClinicStaffInfoView extends JFrame {
 
     private JLabel clinicNameLable = new JLabel( "<HTML><U>Doctors Info:</U></HTML>");
 
-    private Font font = new Font("Ariel",Font.PLAIN,14);
+    private Font font = new Font("Ariel",Font.BOLD,14);
 
-    private CancelButton cancelButton =new CancelButton();
+    private ExitButton exitButton =new ExitButton();
 
     public ClinicStaffInfoView() {
         setLayout(null);
@@ -44,13 +48,15 @@ public class ClinicStaffInfoView extends JFrame {
         setFont();
 
         setTitle("Clinic Staff Information");
-        setBounds(300, 300, 800, 500);
+        setBounds(500, 150, 800, 500);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setResizable(false);
         setVisible(true);
     }
 
     private void setFont(){
+        selectLable .setFont(font);
+
         firstNameLable.setFont(font);
         firstNameValue.setFont(font);
 
@@ -76,7 +82,9 @@ public class ClinicStaffInfoView extends JFrame {
         clinicNameLable.setHorizontalAlignment(SwingConstants.CENTER);
         clinicNameLable.setBounds(300, 10, 200, 80);
 
-        doctorComboBox.setBounds(130, 80, 200, 50);
+        selectLable.setBounds(130,70,200,50);
+
+        doctorComboBox.setBounds(130, 100, 200, 50);
 
         firstNameLable.setHorizontalAlignment(SwingConstants.LEFT);
         firstNameLable.setOpaque(false);
@@ -132,11 +140,12 @@ public class ClinicStaffInfoView extends JFrame {
         yeasOfExperienceValue.setOpaque(true);
         yeasOfExperienceValue.setBorder(BorderFactory.createLineBorder(Color.BLACK, 2));
 
-        cancelButton.setLocation(650,400,120,30);
+        exitButton.setLocation(650,400,120,30);
         backGround.setBounds(0,0,800,500);
     }
 
     private void addComponentsToFrame() {
+        add(selectLable);
         add(doctorComboBox);
         add(clinicNameLable);
         add(firstNameLable);
@@ -151,7 +160,7 @@ public class ClinicStaffInfoView extends JFrame {
         add(emailValue);
         add(yeasOfExperienceLable);
         add(yeasOfExperienceValue);
-        add(cancelButton);
+        add(exitButton);
         add(backGround);
     }
 
@@ -176,7 +185,7 @@ public class ClinicStaffInfoView extends JFrame {
 
     public void setActions(ActionListener select, ActionListener cancel) {
         doctorComboBox.addActionListener(select);
-        cancelButton.addActionListener(cancel);
+        exitButton.addActionListener(cancel);
     }
 
 }

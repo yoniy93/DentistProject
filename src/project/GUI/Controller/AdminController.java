@@ -3,8 +3,8 @@ package project.GUI.Controller;
 import project.Entities.Admin;
 import project.GUI.Model.AdminModel;
 import project.GUI.View.Admin.*;
-import project.GUI.General.MessageWindow;
-import project.GUI.General.PersonalDetailsView;
+import project.GUI.View.Admin.MessageWindow;
+import project.GUI.View.PersonalDetailsView;
 
 import javax.swing.*;
 

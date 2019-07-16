@@ -1,7 +1,7 @@
 package project.GUI.View.Patient;
 
 import project.Database.Locations;
-import project.GUI.General.CancelButton;
+import project.GUI.View.ExitButton;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
@@ -17,14 +17,14 @@ public class PatientAppointmentsView extends JFrame {
     private ImageIcon imageForBG = new ImageIcon(Locations.getImagePath("searchTreatments.png"));
     private JLabel backGround = new JLabel(imageForBG);
 
-    private JLabel headLine = new JLabel("Your Appointments");
+    private JLabel headLine = new JLabel("Your Appointments:");
 
     private JTable appointmentTable = new JTable();
     private DefaultTableModel tablePattern = new DefaultTableModel();
     private JScrollPane jScrollPane = new JScrollPane(appointmentTable);
     private String columsNames[] = new String[] { "Treatment" ,"Date", "Time", "Doctor" };
 
-    private CancelButton cancelButton = new CancelButton();
+    private ExitButton exitButton = new ExitButton();
 
     public PatientAppointmentsView() {
         setLayout(null);
@@ -33,25 +33,25 @@ public class PatientAppointmentsView extends JFrame {
         initializePatientAppointmentsTable();
 
         setTitle("Your Appointments History");
-        setBounds(300, 20, 700, 500);
+        setBounds(550, 150, 700, 500);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setResizable(false);
         setVisible(true);
     }
 
     private void setLocationAndSize() {
-        headLine.setBounds(100,10,400,200);
+        headLine.setBounds(50,10,400,200);
         headLine.setFont(new Font("Ariel", Font.BOLD, 30));
 
-        jScrollPane.setBounds(50,200,600,150);
-        cancelButton.setLocation(500,400,120,30);
+        jScrollPane.setBounds(50,150,600,150);
+        exitButton.setLocation(500,400,120,30);
         backGround.setBounds(0,0,700,500);
     }
 
     private void addComponentsToFrame() {
         add(jScrollPane);
         add(headLine);
-        add(cancelButton);
+        add(exitButton);
         add(backGround);
     }
 
@@ -72,6 +72,6 @@ public class PatientAppointmentsView extends JFrame {
     }
 
     public void setActions(ActionListener cancel){
-        cancelButton.addActionListener(cancel);
+        exitButton.addActionListener(cancel);
     }
 }

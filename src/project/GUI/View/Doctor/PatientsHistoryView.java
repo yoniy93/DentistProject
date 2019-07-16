@@ -1,10 +1,9 @@
 package project.GUI.View.Doctor;
 
 import project.Database.Locations;
-import project.GUI.General.CancelButton;
+import project.GUI.View.ExitButton;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
-import javax.swing.table.TableColumnModel;
 import java.awt.*;
 import java.awt.event.ActionListener;
 import java.sql.Time;
@@ -31,7 +30,7 @@ public class PatientsHistoryView extends JFrame{
     private JScrollPane jScrollPane = new JScrollPane(appointmentTable);
     private String columsNames[] = new String[] { "Treatment" ,"Date", "Time", "Doctor" };
 
-    private CancelButton cancelButton = new CancelButton();
+    private ExitButton exitButton = new ExitButton();
 
     public PatientsHistoryView() {
         setLayout(null);
@@ -40,7 +39,7 @@ public class PatientsHistoryView extends JFrame{
         updatePatientHistoryTable();
 
         setTitle("Patients Treatments History:");
-        setBounds(300, 20, 700, 500);
+        setBounds(550, 150, 700, 500);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setResizable(false);
         setVisible(true);
@@ -53,7 +52,7 @@ public class PatientsHistoryView extends JFrame{
         selectPatientLabel.setBounds(60,60,150,15);
         jScrollPane.setBounds(50,190,600,150);
 
-        cancelButton.setLocation(500,400,120,30);
+        exitButton.setLocation(500,400,120,30);
         backGround.setBounds(0,0,700,500);
     }
 
@@ -61,7 +60,7 @@ public class PatientsHistoryView extends JFrame{
         add(jScrollPane);
         add(patientComboBox);
         add(selectPatientLabel);
-        add(cancelButton);
+        add(exitButton);
         add(backGround);
     }
 
@@ -94,6 +93,6 @@ public class PatientsHistoryView extends JFrame{
 
     public void setActions(ActionListener select, ActionListener cancel){
         patientComboBox.addActionListener((select));
-        cancelButton.addActionListener(cancel);
+        exitButton.addActionListener(cancel);
     }
 }

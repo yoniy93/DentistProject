@@ -3,17 +3,15 @@ package project.GUI.View.Patient;
 import com.github.lgooddatepicker.components.*;
 import project.Database.Locations;
 import project.Entities.Doctor;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
 import java.util.List;
 import java.util.Vector;
-
 import project.Entities.Treatments;
-import project.GUI.General.Calendar.DateListener;
-import project.GUI.General.Calendar.VetoPolicy;
-import project.GUI.General.CancelButton;
+import project.GUI.Controller.Calender.DateListener;
+import project.GUI.Controller.Calender.VetoPolicy;
+import project.GUI.View.ExitButton;
 
 import static com.github.lgooddatepicker.components.TimePickerSettings.TimeIncrement.OneHour;
 
@@ -26,14 +24,15 @@ public class SetAnAppointmentView extends JFrame {
     private JLabel backGround = new JLabel(imageForBG);
 
     private JButton setAppointmentButton = new JButton("Set An Appointment");
-    private CancelButton cancelButton = new CancelButton();
+    private ExitButton exitButton = new ExitButton();
 
     private JLabel doctorLabel = new JLabel("Select Doctor:");
     private JLabel treatmentLabel = new JLabel("Select Treatment:");
     private JLabel dateAndTimeLabel = new JLabel("Select Date & time:");
-    private JLabel creditCardLabel = new JLabel("Credit Card");
+    private JLabel creditCardLabel = new JLabel("Credit Card:");
     private JLabel validityLabel = new JLabel("Validity:");
     private JLabel cvvLabel = new JLabel("CVV:");
+
 
     private JTextField creditCardTextField = new JTextField("");
     private JTextField cvvTextField = new JTextField("");
@@ -65,24 +64,24 @@ public class SetAnAppointmentView extends JFrame {
         setTimeSettings();
 
         setTitle("Set New Appointment: ");
-        setBounds(0, 0, 800, 500);
+        setBounds(500, 150, 800, 500);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setResizable(false);
         setVisible(true);
     }
 
     private void setLocationAndSize() {
-        treatmentLabel.setBounds(200,50,120, 30);
+        treatmentLabel.setBounds(170,50,150, 30);
         treatmentComboBox.setBounds(330,50,100,30);
 
-        doctorLabel.setBounds(200,100,120, 30);
+        doctorLabel.setBounds(170,100,150, 30);
         doctorComboBox.setBounds(330,100,100,30);
 
-        dateAndTimeLabel.setBounds(200,160,150, 30);
+        dateAndTimeLabel.setBounds(170,160,150, 30);
         dateTimePickerPanel.setBounds(320,160,280,35);
         dateTimePickerPanel.setOpaque(false);
 
-        creditCardLabel.setBounds(170,220,90, 30);
+        creditCardLabel.setBounds(170,220,150, 30);
         creditCardTextField.setBounds(270,220,220, 30);
 
         validityLabel.setBounds(170,270,100, 30);
@@ -93,7 +92,9 @@ public class SetAnAppointmentView extends JFrame {
         cvvLabel.setBounds(170,320,100, 30);
         cvvTextField.setBounds(270,320,50,30);
 
-        setAppointmentButton.setBounds(270,400,150,30);
+        setAppointmentButton.setBounds(150,400,150,30);
+
+        exitButton.setBounds(450,400,150,30);
 
         backGround.setBounds(0,0,800,500);
     }
@@ -120,6 +121,8 @@ public class SetAnAppointmentView extends JFrame {
 
         add(dateAndTimeLabel);
 
+        add(exitButton);
+
         dateTimePickerPanel.add(datePicker);
         dateTimePickerPanel.add(timePicker);
         add(dateTimePickerPanel);
@@ -137,13 +140,11 @@ public class SetAnAppointmentView extends JFrame {
     }
 
     private void setDate() {
-        for(int i=0;i<12; i++)
-        {
+        for(int i=0;i<12; i++) {
             monthVector.insertElementAt(i+1,i);
         }
         int min=2019;
-        for (int i=0; i<=100; i++)
-        {
+        for (int i=0; i<=100; i++) {
             yearVector.insertElementAt(min++,i);
         }
     }
@@ -197,7 +198,7 @@ public class SetAnAppointmentView extends JFrame {
     public void setActions(ActionListener select, ActionListener insert ,ActionListener cancel) {
         doctorComboBox.addActionListener(select);
         setAppointmentButton.addActionListener(insert);
-        cancelButton.addActionListener((cancel));
+        exitButton.addActionListener((cancel));
     }
 
     public void setDateListener(String doctorID){

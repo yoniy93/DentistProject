@@ -1,7 +1,7 @@
 package project.GUI.View.Admin;
 
 import project.Database.Locations;
-import project.GUI.General.CancelButton;
+import project.GUI.View.ExitButton;
 
 import javax.swing.*;
 import java.awt.*;
@@ -15,7 +15,7 @@ public class UnRegisterView extends JFrame
     private JButton submit = new JButton("Submit");
     private JTextField idTextField = new JTextField();
     private JLabel idLabel = new JLabel("Enter id of user :");
-    CancelButton cancelButton =new CancelButton();
+    ExitButton exitButton =new ExitButton();
 
     public UnRegisterView()
     {
@@ -24,7 +24,7 @@ public class UnRegisterView extends JFrame
         addComponentsToFrame();
 
         setTitle("Unregister a user");
-        setBounds(300, 100, 450, 200);
+        setBounds(700, 300, 450, 200);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setResizable(false);
         setVisible(true);
@@ -39,7 +39,7 @@ public class UnRegisterView extends JFrame
 
         submit.setBounds(100,100,120,30);
         submit.setFont(new Font("Ariel",Font.BOLD, 12));
-        cancelButton.setLocation(240,100,120,30);
+        exitButton.setLocation(240,100,120,30);
 
         backGround.setBounds(0,0,450,200);
     }
@@ -49,7 +49,7 @@ public class UnRegisterView extends JFrame
         add(idLabel);
         add(idTextField);
         add(submit);
-        add(cancelButton);
+        add(exitButton);
         add(backGround);
     }
 
@@ -62,7 +62,7 @@ public class UnRegisterView extends JFrame
     }
 
     public JButton getCancel() {
-        return cancelButton;
+        return exitButton;
     }
 
     public void setActions(ActionListener unRegister,ActionListener cancel)

@@ -2,7 +2,7 @@ package project.GUI.View.Patient;
 
 import project.Database.Locations;
 import project.Entities.Treatments;
-import project.GUI.General.CancelButton;
+import project.GUI.View.ExitButton;
 
 import javax.swing.*;
 import java.awt.*;
@@ -26,7 +26,7 @@ public class TreatmentsPricesView extends JFrame {
 
     private Font font = new Font("Ariel",Font.BOLD,14);
 
-    CancelButton cancelButton = new CancelButton();
+    ExitButton exitButton = new ExitButton();
 
     public TreatmentsPricesView() {
         setLayout(null);
@@ -35,7 +35,7 @@ public class TreatmentsPricesView extends JFrame {
         addComponentsToFrame();
 
         setTitle("Search Your Treatment: ");
-        setBounds(300, 100, 700, 500);
+        setBounds(550, 150, 700, 500);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setResizable(false);
         setVisible(true);
@@ -54,7 +54,7 @@ public class TreatmentsPricesView extends JFrame {
         treatmentDuration.setBounds(550, 300,100,30);
         treatmentDurationLable.setBounds(430,300,150,30);
 
-        cancelButton.setLocation(500,400,120,30);
+        exitButton.setLocation(500,400,120,30);
 
         backGround.setBounds(0,0,700,500);
     }
@@ -67,7 +67,7 @@ public class TreatmentsPricesView extends JFrame {
         this.add(treatmentPricesLable);
         this.add(treatmentsComboBox);
         this.add(treatmentPrices);
-        this.add(cancelButton);
+        this.add(exitButton);
         this.add(backGround);
     }
 
@@ -98,6 +98,6 @@ public class TreatmentsPricesView extends JFrame {
 
     public void setActions(ActionListener select, ActionListener cancel) {
         treatmentsComboBox.addActionListener(select);
-        cancelButton.addActionListener((cancel));
+        exitButton.addActionListener((cancel));
     }
 }

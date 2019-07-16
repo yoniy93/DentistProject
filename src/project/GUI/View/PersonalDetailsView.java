@@ -1,4 +1,4 @@
-package project.GUI.General;
+package project.GUI.View;
 
 import project.Database.Locations;
 import project.Entities.User;
@@ -17,7 +17,7 @@ public class PersonalDetailsView extends JFrame {
     private JLabel backGround =new JLabel(imageForBG);
 
     private JButton editButton = new JButton("Apply");
-    private CancelButton cancelButton = new CancelButton();
+    private ExitButton exitButton = new ExitButton();
 
     private JLabel firstnameLabel = new JLabel("First Name: ");
     private JLabel lastnameLabel = new JLabel( "Last Name: ");
@@ -39,7 +39,7 @@ public class PersonalDetailsView extends JFrame {
         addComponentsToFrame();
 
         setTitle("Edit Personal Details");
-        setBounds(300, 100, 400, 400);
+        setBounds(700, 200, 400, 400);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setResizable(false);
         setVisible(true);
@@ -49,7 +49,7 @@ public class PersonalDetailsView extends JFrame {
         editButton.setFont(new Font("Ariel",Font.BOLD, 12));
         editButton.setBounds(80, 320, 100, 30);
 
-        cancelButton.setLocation(220,320,100,30);
+        exitButton.setLocation(220,320,100,30);
 
         firstnameLabel.setFont(getButtonFont());
         firstnameLabel.setBounds(60, 40, 100, 30);
@@ -77,7 +77,7 @@ public class PersonalDetailsView extends JFrame {
 
     private void addComponentsToFrame() {
         add(editButton);
-        add(cancelButton);
+        add(exitButton);
         add(firstnameLabel);
         add(lastnameLabel);
         add(emailLabel);
@@ -95,8 +95,8 @@ public class PersonalDetailsView extends JFrame {
         return editButton;
     }
 
-    protected CancelButton getCancelButton() {
-        return cancelButton;
+    protected ExitButton getExitButton() {
+        return exitButton;
     }
 
     public String getFirstNameText() {
@@ -159,7 +159,7 @@ public class PersonalDetailsView extends JFrame {
 
     public void setActions(ActionListener edit, ActionListener cancel){
         getEditButton().addActionListener((edit));
-        getCancelButton().addActionListener(cancel);
+        getExitButton().addActionListener(cancel);
     }
 
     //check if all fields are filled

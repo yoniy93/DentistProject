@@ -7,8 +7,8 @@ import java.awt.event.ActionListener;
 public class PatientView extends UserView {
 
     private JButton setAnAppointment = new JButton("Set An Appointment ");
-    private JButton viewTreatments = new JButton("View Treatments");
-    private JButton viewAllAppointments=new JButton("View All Appointments");
+    private JButton viewTreatments = new JButton("View Treatments Info");
+    private JButton viewAllAppointments=new JButton("View My Appointments");
 
     public PatientView() {
         setLocationAndSize();

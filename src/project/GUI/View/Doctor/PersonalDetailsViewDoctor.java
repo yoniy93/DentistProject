@@ -1,7 +1,7 @@
 package project.GUI.View.Doctor;
 
 import project.Entities.Doctor;
-import project.GUI.General.PersonalDetailsView;
+import project.GUI.View.PersonalDetailsView;
 
 import javax.swing.*;
 import java.awt.event.ActionListener;
@@ -45,7 +45,7 @@ public class PersonalDetailsViewDoctor extends PersonalDetailsView{
 
     public void setActions(ActionListener edit, ActionListener cancel){
         getEditButton().addActionListener((edit));
-        getCancelButton().addActionListener(cancel);
+        getExitButton().addActionListener(cancel);
     }
     public boolean isYearsOfExFilled()
     {

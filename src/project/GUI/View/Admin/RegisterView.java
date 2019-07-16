@@ -1,24 +1,18 @@
 package project.GUI.View.Admin;
 import project.Database.Locations;
-import project.GUI.General.CancelButton;
-
+import project.GUI.View.ExitButton;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
 import java.util.Vector;
-/*
-    This window enable to register new user (Patient/Doctor) to the system
-    Only admin can access this window
 
- */
 public class RegisterView extends JFrame
 {
 
     private ImageIcon imageForBG=new ImageIcon(Locations.getImagePath("register.png"));
     private JLabel backGround=new JLabel(imageForBG);
 
-    //all fields that need to be filled in order to add new user
-    private CancelButton cancelButton = new CancelButton();
+    private ExitButton ExitButton = new ExitButton();
     private JButton addUserButton = new JButton("Submit");
     private JLabel roleLabel = new JLabel( "What is the user's role?");
     private JLabel firstNameLabel = new JLabel("First Name: ");
@@ -71,13 +65,12 @@ public class RegisterView extends JFrame
         hideDoctorYearsOfExperiensButtons();
 
         setTitle("Register New User");
-        setBounds(300, 20, 800, 700);
+        setBounds(500, 100, 800, 700);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setResizable(false);
         setVisible(true);
     }
 
-    //set values of date vectors
     private void setDateOfBirth() {
         for(int i=0;i<32; i++)
         {
@@ -92,19 +85,21 @@ public class RegisterView extends JFrame
         {
             yearVector.insertElementAt(max--,i);
         }
-    }
+    }//set values of date vectors
 
-    //if the user added is doctor that height and weight fields does not have to be filled
     public void hidePatientWeightAndHeightButtons(){
         heightTextField.setEditable(false);
         heightTextField.setBackground(Color.lightGray);
         weightTextField.setEditable(false);
         weightTextField.setBackground(Color.lightGray);
+        heightTextField.setText("");
+        weightTextField.setText("");
     }
 
     public void hideDoctorYearsOfExperiensButtons(){
         yearsOfExTextField.setEditable(false);
         yearsOfExTextField.setBackground(Color.lightGray);
+        yearsOfExTextField.setText("");
 
     }
 
@@ -163,7 +158,7 @@ public class RegisterView extends JFrame
 
         addUserButton.setBounds(200,600,120,30);
         addUserButton.setFont(new Font("Ariel",Font.BOLD, 12));
-        cancelButton.setLocation(400,600,120,30);
+        ExitButton.setLocation(400,600,120,30);
 
         backGround.setBounds(0,0,800,700);
 
@@ -216,7 +211,7 @@ public class RegisterView extends JFrame
         dayBox.setSelectedIndex(0);
         add(monthBox);
         monthBox.setSelectedIndex(0);
-        add(cancelButton);
+        add(ExitButton);
 
         add(backGround);
 
@@ -227,7 +222,7 @@ public class RegisterView extends JFrame
         getAddUser().addActionListener(addUser);
         getDoctor().addActionListener(SetVisibleTextForDoctor);
         getPatient().addActionListener(SetVisibleTextForPatient);
-        getCancelButton().addActionListener(cancel);
+        getExitButton().addActionListener(cancel);
     }
 
     public void setVisibleDoctor()
@@ -379,8 +374,8 @@ public class RegisterView extends JFrame
         return addUserButton;
     }
 
-    public CancelButton getCancelButton() {
-        return cancelButton;
+    public ExitButton getExitButton() {
+        return ExitButton;
     }
 
     public String getPhoneNumberText() {

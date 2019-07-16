@@ -1,4 +1,4 @@
-package project.GUI.General;
+package project.GUI.View.Admin;
 
 import javax.swing.*;
 import java.awt.*;

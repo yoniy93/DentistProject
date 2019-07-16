@@ -1,12 +1,11 @@
-package project.GUI.General;
+package project.GUI.View;
 
 import javax.swing.*;
 import java.awt.*;
 
-//class that creates and defines cancel button
-public class CancelButton extends JButton {
+public class ExitButton extends JButton {
 
-    public CancelButton( ){
+    public ExitButton( ){
         setText("Cancel");
     }
 

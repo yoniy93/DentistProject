@@ -1,7 +1,7 @@
 package project.GUI.View.Patient;
 
 import project.Entities.Patient;
-import project.GUI.General.PersonalDetailsView;
+import project.GUI.View.PersonalDetailsView;
 import javax.swing .*;
 import java.awt.event.ActionListener;
 
@@ -65,7 +65,7 @@ public class PersonalDetailsViewPatient extends PersonalDetailsView {
 
     public void setActions(ActionListener edit, ActionListener cancel){
         getEditButton().addActionListener((edit));
-        getCancelButton().addActionListener(cancel);
+        getExitButton().addActionListener(cancel);
     }
 
     public boolean isHeightAndWeightFilled()

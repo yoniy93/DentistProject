@@ -1,7 +1,7 @@
 package project.GUI.View.Admin;
 
 import project.Database.Locations;
-import project.GUI.General.CancelButton;
+import project.GUI.View.ExitButton;
 
 import javax.swing.*;
 import java.awt.*;
@@ -30,7 +30,7 @@ public class AddTreatmentsView extends JFrame
 
 
     private JButton addTreatment=new JButton("Submit");
-    CancelButton cancelButton=new CancelButton();
+    ExitButton exitButton =new ExitButton();
 
     public AddTreatmentsView() {
 
@@ -39,7 +39,7 @@ public class AddTreatmentsView extends JFrame
         addComponentsToFrame();
 
         setTitle("Add New Treatment:");
-        setBounds(300, 20, 700, 500);
+        setBounds(550, 150, 700, 500);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setResizable(false);
         setVisible(true);
@@ -65,7 +65,7 @@ public class AddTreatmentsView extends JFrame
 
         addTreatment.setBounds(150,400,120,30);
         addTreatment.setFont(new Font("Ariel",Font.BOLD, 12));
-        cancelButton.setLocation(400,400,120,30);
+        exitButton.setLocation(400,400,120,30);
         backGround.setBounds(0,0,700,500);
     }
 
@@ -79,7 +79,7 @@ public class AddTreatmentsView extends JFrame
 
         add(treatmentPrice);
         add(treatmentPriceTextField);
-        add(cancelButton);
+        add(exitButton);
         add(addTreatment);
         add(backGround);
 
@@ -138,7 +138,7 @@ public class AddTreatmentsView extends JFrame
     }
 
     private  JButton getCancel() {
-        return cancelButton;
+        return exitButton;
     }
 
 
