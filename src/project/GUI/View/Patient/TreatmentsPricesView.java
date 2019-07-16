@@ -22,7 +22,8 @@ public class TreatmentsPricesView extends JFrame {
 
     private JLabel treatmentPrices = new JLabel();
     private JLabel treatmentDuration = new JLabel();
-    private JLabel treatmentDescription= new JLabel();
+    private JTextArea treatmentDescription= new JTextArea();
+
 
     private Font font = new Font("Ariel",Font.BOLD,14);
 
@@ -43,16 +44,31 @@ public class TreatmentsPricesView extends JFrame {
 
     private void setLocationAndSize() {
         this.
-        treatmentsComboBox.setBounds(400, 100, 200, 50);
+        treatmentsComboBox.setBounds(450, 100, 200, 50);
 
-        treatmentPrices.setBounds(300, 300, 100 , 30);
-        treatmentPricesLable.setBounds(250,300,100,30);
+        treatmentPrices.setBounds(150, 300, 50 , 30);
+        treatmentPricesLable.setBounds(100,300,100,30);
+        treatmentPrices.setBackground(Color.WHITE);
+        treatmentPrices.setOpaque(true);
+        treatmentPrices.setHorizontalAlignment(JTextField.CENTER);
+        treatmentPrices.setBorder(BorderFactory.createLineBorder(Color.BLACK, 2));
 
-        treatmentDescription.setBounds(450,250, 200,30);
-        treatmentDescriptionLable.setBounds(350 , 250, 100,30);
+        treatmentDescription.setBounds(200,350, 400,40);
+        treatmentDescriptionLable.setBounds(100 , 350, 200,30);
+        treatmentDescription.setBackground(Color.WHITE);
+        treatmentDescription.setOpaque(true);
 
-        treatmentDuration.setBounds(550, 300,100,30);
-        treatmentDurationLable.setBounds(430,300,150,30);
+        treatmentDescription.setBorder(BorderFactory.createLineBorder(Color.BLACK, 2));
+
+        treatmentDuration.setBounds(430, 300,50,30);
+        treatmentDuration.setOpaque(true);
+        treatmentDuration.setHorizontalAlignment(JTextField.CENTER);
+        treatmentDurationLable.setBounds(300,300,150,30);
+        treatmentDuration.setBackground(Color.WHITE);
+        treatmentDuration.setBorder(BorderFactory.createLineBorder(Color.BLACK, 2));
+
+
+
 
         exitButton.setLocation(500,400,120,30);
 
