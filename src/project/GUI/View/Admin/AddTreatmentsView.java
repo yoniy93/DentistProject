@@ -17,10 +17,17 @@ public class AddTreatmentsView extends JFrame
     private JLabel treatmentName=new JLabel(" Name:");
     private JLabel treatmentDuration=new JLabel("Duration:");
     private JLabel treatmentPrice=new JLabel("Price:");
+    private JLabel treatmentDescription=new JLabel("Description:");
+
 
     private JTextField treatmentNameTextField=new JTextField(); //field to enter name of treatment
     private JTextField treatmentDurationTextField=new JTextField();//field to enter duration of treatment
     private JTextField treatmentPriceTextField=new JTextField();//field to enter price of treatment
+
+
+
+    private JTextField treatmentDescriptionTextField=new JTextField();//field to enter description of treatment
+
 
     private JButton addTreatment=new JButton("Submit");
     CancelButton cancelButton=new CancelButton();
@@ -41,20 +48,24 @@ public class AddTreatmentsView extends JFrame
     private void setLocationAndSize() {
 
         treatmentName.setFont(new Font("Tahoma", Font.BOLD, 14));
-        treatmentName.setBounds(60,80,100,30);
-        treatmentNameTextField.setBounds(160, 80, 100, 30);
+        treatmentName.setBounds(60,100,100,30);
+        treatmentNameTextField.setBounds(160, 100, 150, 30);
 
         treatmentDuration.setFont(new Font("Tahoma", Font.BOLD, 14));
-        treatmentDuration.setBounds(60,120,100,30);
-        treatmentDurationTextField.setBounds(160,120,100,30);
+        treatmentDuration.setBounds(60,150,100,30);
+        treatmentDurationTextField.setBounds(160,150,150,30);
 
         treatmentPrice.setFont(new Font("Tahoma", Font.BOLD, 14));
-        treatmentPrice.setBounds(60,160,100,30);
-        treatmentPriceTextField.setBounds(160, 160, 100, 30);
+        treatmentPrice.setBounds(60,200,100,30);
+        treatmentPriceTextField.setBounds(160, 200, 150, 30);
 
-        addTreatment.setBounds(150,250,120,30);
+        treatmentDescription.setFont(new Font("Tahoma", Font.BOLD, 14));
+        treatmentDescription.setBounds(60,250,100,30);
+        treatmentDescriptionTextField.setBounds(160,250,400,60);
+
+        addTreatment.setBounds(150,400,120,30);
         addTreatment.setFont(new Font("Ariel",Font.BOLD, 12));
-        cancelButton.setLocation(310,250,120,30);
+        cancelButton.setLocation(400,400,120,30);
         backGround.setBounds(0,0,700,500);
     }
 
@@ -63,6 +74,8 @@ public class AddTreatmentsView extends JFrame
         add(treatmentNameTextField);
         add(treatmentDuration);
         add(treatmentDurationTextField);
+        add(treatmentDescription);
+        add(treatmentDescriptionTextField);
 
         add(treatmentPrice);
         add(treatmentPriceTextField);
@@ -91,7 +104,8 @@ public class AddTreatmentsView extends JFrame
 
         if(!getTreatmentNameText().equals("") &&
            !getTreatmentDurationText().equals("") &&
-           !getTreatmentPriceText().equals(""))
+           !getTreatmentPriceText().equals("") &&
+           !getTreatmentDescriptionText().equals(""))
             return  true;
         else
             return false;
@@ -111,6 +125,12 @@ public class AddTreatmentsView extends JFrame
     //get the string value entered to field
     public String getTreatmentPriceText() {
         return treatmentPriceTextField.getText();
+    }
+
+    //get the string value entered to field
+
+    public String getTreatmentDescriptionText() {
+        return treatmentDescriptionTextField.getText();
     }
 
     private JButton getAddTreatment() {

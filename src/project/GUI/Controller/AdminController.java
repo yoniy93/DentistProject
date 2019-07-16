@@ -44,7 +44,8 @@ public class AdminController extends UserController {
             msg_received = adminModel.InsertTreatment((adminModel.getAvailableId())+1,
                     addTreatmentsView.getTreatmentNameText(),
                     Integer.parseInt(addTreatmentsView.getTreatmentDurationText()),
-                    Double.parseDouble(addTreatmentsView.getTreatmentPriceText()));//insert treatment to DB
+                    Double.parseDouble(addTreatmentsView.getTreatmentPriceText()),
+                    addTreatmentsView.getTreatmentDescriptionText());//insert treatment to DB
             if (msg_received.equals("Sucssesfuly")) {//if DB insertion succeeded
                 new MessageWindow(addTreatmentsView, "New Treatment Added successfully");
                 addTreatmentsView.dispose();

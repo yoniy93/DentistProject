@@ -28,9 +28,9 @@ public class AdminModel {
         return dbQuerys.getLastId("treatments");
     }
 
-    public String InsertTreatment(int Id, String Name , int Duration, double Price)
+    public String InsertTreatment(int Id, String Name , int Duration, double Price, String description)
     {
-        return dbInserts.insertTreatment(Id, Name,Duration, Price);
+        return dbInserts.insertTreatment(Id, Name,Duration, Price, description);
     }
 
     public String deleteUser (String id) {

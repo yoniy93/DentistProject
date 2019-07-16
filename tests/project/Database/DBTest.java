@@ -33,7 +33,7 @@ public class DBTest  {
         Date patientBirthDate = new SimpleDateFormat("dd-MM-yyyy").parse("13-05-1993");
         expectedPatient = new Patient("4", "1", "Yonatan", "Yardeni", "yoni@gmail.com", 60.5, 178, patientBirthDate, "male","0547690740");
 
-        expectedTreatment = new Treatments("2", "סתימה", 60, 99);
+        expectedTreatment = new Treatments("2", "סתימה", 60, 99,"bla");
     }
 
     @Test

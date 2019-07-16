@@ -24,14 +24,14 @@ public class DBInserts {
     }
 
     private void initializeTreatments(){
-        insertTreatment(1, "Braces", 45, 59.9);
-        insertTreatment(2, "Fillngs and Repairs", 60, 99);
-        insertTreatment(3, "Bridges and Implants", 90, 150);
-        insertTreatment(4, "Teeth Whitening", 50, 69.9);
-        insertTreatment(5, "Crowns and Caps", 50, 75);
-        insertTreatment(6, "Dentures", 40, 80);
-        insertTreatment(7, "Root Canals", 30, 50);
-        insertTreatment(8, "Extractions", 55, 74.9);
+        insertTreatment(1, "Braces", 45, 59.9, "A dental brace is a device used to correct the alignment of teeth and bite-related problems");
+        insertTreatment(2, "Fillngs and Repairs", 60, 99,"Dental fillings and repairs use restorative materials used to repair teeth which have been compromised due to cavities or trauma");
+        insertTreatment(3, "Bridges and Implants", 90, 150,"Bridges and implants are two ways to replace a missing tooth or teeth");
+        insertTreatment(4, "Teeth Whitening", 50, 69.9,"Teeth naturally darken with age, however staining may be caused by various foods and beverages such as coffee, tea and berries, some drugs such as tetracycline, smoking, or a trauma to a tooth");
+        insertTreatment(5, "Crowns and Caps", 50, 75,"A crown or cap is a cover that fits over a tooth that has been damaged by decay, broken, badly stained or mis-shaped");
+        insertTreatment(6, "Dentures", 40, 80,"Dentures are prosthetic devices replacing lost teeth");
+        insertTreatment(7, "Root Canals", 30, 50,"Root canals treat diseases or absessed teeth");
+        insertTreatment(8, "Extractions", 55, 74.9,"A severely damaged tooth may need to be extracted. Permanent teeth may also need to be removed for orthodontic treatment");
 
 
     }
@@ -60,9 +60,9 @@ public class DBInserts {
         insertAppointments(21,5,"2019-07-22","10:00", "5", "2");
     }
 
-    public String insertTreatment(int id,String name, int duration, double price){
-        String sql="INSERT INTO treatments(id, treatmentname, durationmin, price)"+"" +
-                " VALUES ('"+id+"', '"+name+"', '"+duration+"', '"+price+"');";
+    public String insertTreatment(int id,String name, int duration, double price, String description){
+        String sql="INSERT INTO treatments(id, treatmentname, durationmin, price, description)"+"" +
+                " VALUES ('"+id+"', '"+name+"', '"+duration+"', '"+price+"', '"+description+"');";
         return dbInitializer.connectAndExecute(sql);
     }
 

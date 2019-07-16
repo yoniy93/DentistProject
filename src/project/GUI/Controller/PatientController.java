@@ -132,7 +132,7 @@ public class PatientController extends UserController {
         Treatments treatment = treatmentsPricesView.getTreatment();
 
         if (treatment != null) {
-            treatmentsPricesView.setTreatmentInfo(Double.toString(treatment.getPrice()),Integer.toString(treatment.getDuration()),"None");
+            treatmentsPricesView.setTreatmentInfo(Double.toString(treatment.getPrice()),Integer.toString(treatment.getDuration()),treatment.getDescription());
         }
     }
 

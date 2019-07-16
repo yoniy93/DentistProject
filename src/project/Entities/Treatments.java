@@ -6,12 +6,21 @@ public class Treatments {
     private int duration;
     private String id;
     private double price;
+    String description;
 
-    public Treatments(String id, String name, int duration, double price){
+    public Treatments(String id, String name, int duration, double price, String description){
         setId(id);
         setDuration(duration);
         setName(name);
         setPrice(price);
+        setDescription(description);
+    }
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public void setPrice(double price) {

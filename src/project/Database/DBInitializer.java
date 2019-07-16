@@ -82,7 +82,7 @@ public class DBInitializer {
                 "yearOfExperiens integer, gender text, phoneNumber text NOT NULL);";
 
         sql2="CREATE TABLE IF NOT EXISTS treatments ( id integer PRIMARY KEY NOT NULL, treatmentname text NOT NULL,"+
-                " durationmin integer NOT NULL, price double NOT NULL);";
+                " durationmin integer NOT NULL, price double NOT NULL, description text);";
 
         sql3="CREATE TABLE IF NOT EXISTS appointments (id integer PRIMARY KEY NOT NULL,treatmentID integer NOT NULL, appointmentDATE date NOT NULL,"+
                 " appointmentTIME time NOT NULL,clientID text NOT NULL, doctorID text NOT NULL);";
