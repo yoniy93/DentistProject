@@ -8,10 +8,7 @@ import project.GUI.Model.PatientModel;
 import project.GUI.View.Patient.*;
 
 import javax.swing.*;
-import javax.swing.table.DefaultTableModel;
-
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
+import java.util.List;
 
 public class PatientController extends UserController {
 
@@ -37,31 +34,21 @@ public class PatientController extends UserController {
     //===========================================================================
 
     private void openPatientAppointmentsView() {
-        patientAppointmentsView = new PatientAppointmentsView(updateTableDetails());
-        patientAppointmentsView.addActionListeners(e->patientAppointmentsView.dispose());
+        patientAppointmentsView = new PatientAppointmentsView();
+        patientAppointmentsView.setActions(e->patientAppointmentsView.dispose());
+        updateSelectedPatientTreatmentHistory();
     }
 
-    private JTable updateTableDetails(){
-        JTable appointmentTable = new JTable();
-        DefaultTableModel tablePattern = new DefaultTableModel();
-        String columsNames[] = new String[] { "Treatment" ,"Date", "Time", "Doctor" };
+    private void updateSelectedPatientTreatmentHistory() {
+        List<Appointment> appointmentsList = patientModel.getPatientAppointmentsList();
 
-        tablePattern.setRowCount(0);
-        tablePattern.setColumnCount(0);
-
-        tablePattern.setColumnIdentifiers(columsNames);
-
-        appointmentTable.setModel(tablePattern);
-        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-        String strDate;
-        for (Appointment appointment : patientModel.queryAppointmentsHistory()) {
-            strDate = dateFormat.format(appointment.getTreatmentDate());
-            tablePattern.addRow(new Object[] { patientModel.getTreatmentName(appointment.getTreatmentID()),
-                    strDate,
+        for (Appointment appointment : appointmentsList) {
+            patientAppointmentsView.addRowToAppointmentsTable(
+                    patientModel.getTreatmentName(appointment.getTreatmentID()),
+                    appointment.getTreatmentDate(),
                     appointment.getTreatmentTime(),
-                    patientModel.getDoctorName(appointment.getDoctorId())} );
+                    patientModel.getDoctorName(appointment.getDoctorId()));
         }
-        return appointmentTable;
     }
 
     //===========================================================================
@@ -93,10 +80,10 @@ public class PatientController extends UserController {
     //===========================================================================
 
     private void openSetAnAppointmentView() {
-        this.setAnAppointmentView = new SetAnAppointmentView();
+        setAnAppointmentView = new SetAnAppointmentView();
 
-        setAnAppointmentView.setDoctorList (patientModel.getDoctorList());
-        setAnAppointmentView.setTreatmentList (patientModel.getTreatmentList());
+        setAnAppointmentView.setDoctorList (patientModel.getAllDoctorList());
+        setAnAppointmentView.setTreatmentList (patientModel.getAllTreatmentsList());
 
         setAnAppointmentView.setVisible(true);
         setAnAppointmentView.setActions(e->selectDoctorAction(), e->insertAppointmentAction(), e->setAnAppointmentView.dispose());
@@ -129,7 +116,7 @@ public class PatientController extends UserController {
 
     private void openTreatmentsPriceView(){
         treatmentsPricesView = new TreatmentsPricesView();
-        treatmentsPricesView.setTreatmentList(patientModel.getAllTreatments());
+        treatmentsPricesView.setTreatmentList(patientModel.getAllTreatmentsList());
         treatmentsPricesView.setActions(e->treatmentListAction(),e->treatmentsPricesView.dispose());
     }
 

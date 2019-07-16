@@ -30,7 +30,7 @@ public class DoctorModel
         databaseUpdates.updateDoctorDetails(d);
     }
 
-    public List<String> queryAllPatientsID(){
+    public List<String> getAllPatientsIDList(){
         return dbQuerys.getAllPatientsID();
     }
 

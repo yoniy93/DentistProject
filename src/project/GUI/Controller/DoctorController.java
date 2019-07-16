@@ -57,7 +57,7 @@ public class DoctorController extends UserController {
 
     private void openPatientHistoryView() {
         patientsHistoryView = new PatientsHistoryView();
-        patientsHistoryView.setPatientList(doctorModel.queryAllPatientsID());
+        patientsHistoryView.setPatientList(doctorModel.getAllPatientsIDList());
         patientsHistoryView.setActions(e->updateSelectedPatientTreatmentHistory(), e->patientsHistoryView.dispose());
     }
 

@@ -16,9 +16,7 @@ public class PatientModel {
 
     private DBQuerys dbQuerys = new DBQuerys();
     private DBInserts dbInserts = new DBInserts();
-
-    private List<Doctor> doctorsList;
-    private List<Treatments> treatmentsList;
+    private DBUpdates dbUpdates = new DBUpdates();
 
     public PatientModel(Patient patient) {
         this.patient = patient;
@@ -29,32 +27,27 @@ public class PatientModel {
     }
 
     public void UpdatePatient(Patient patient) {
-        DBUpdates databaseUpdates = new DBUpdates();
-        databaseUpdates.updatePatientDetails(patient);
+        dbUpdates.updatePatientDetails(patient);
         this.patient = patient;
     }
 
-    public List<Treatments> getTreatmentList() {
-        treatmentsList = dbQuerys.getTreatments();
-        return treatmentsList;
+    public List<Treatments> getAllTreatmentsList() {
+        return dbQuerys.getTreatments();
     }
 
-    public List<Appointment> queryAppointmentsHistory() {
+    public List<Appointment> getPatientAppointmentsList() {
         return dbQuerys.getPatientAppointments(patient.getId());
     }
 
-    public List<Doctor> getDoctorList() {
-        doctorsList = dbQuerys.getDoctors();
-        return doctorsList;
+    public List<Doctor> getAllDoctorList() {
+        return dbQuerys.getDoctors();
     }
 
-    public String getTreatmentName(String id)
-    {
+    public String getTreatmentName(String id) {
         return  dbQuerys.getTreatmentName(id);
     }
 
-    public String getDoctorName(String id)
-    {
+    public String getDoctorName(String id) {
         return dbQuerys.getDoctorDetails(id).toString();
     }
 
@@ -64,10 +57,5 @@ public class PatientModel {
 
     public int getLastAppointmentID(){
         return dbQuerys.getLastId("appointments");
-    }
-
-    public List<Treatments> getAllTreatments(){
-        treatmentsList = dbQuerys.getTreatments();
-        return treatmentsList;
     }
 }
