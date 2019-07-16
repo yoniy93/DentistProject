@@ -9,7 +9,9 @@ import java.util.List;
 
 public class DoctorController extends UserController {
 
+
     private DoctorModel doctorModel;
+    //all windows related to Doctor user
     private DoctorView doctorView;
     private PersonalDetailsViewDoctor personalDetailsViewDoctor;
     private PatientsHistoryView patientsHistoryView;
@@ -21,6 +23,7 @@ public class DoctorController extends UserController {
         addViewActionListeners();
     }
 
+    //add action listener to Doctor main window
     private void addViewActionListeners() {
         addActionsToPerson(doctorView);
         doctorView.setActions(e->openEditDetailsView(), e->openPatientHistoryView());
@@ -28,19 +31,23 @@ public class DoctorController extends UserController {
 
     //===========================================================================
 
+    //open new sub-window of edit personal details and add action listener
     private void openEditDetailsView() {
         personalDetailsViewDoctor = new PersonalDetailsViewDoctor();
         SetTextFieldsCurrentValues();
         personalDetailsViewDoctor.setActions(e->editAction(), e->personalDetailsViewDoctor.dispose());
     }
 
+    //initialize value of editable fields of window
     private void SetTextFieldsCurrentValues() {
         personalDetailsViewDoctor.initializeFields(doctorModel.getDoctor());
     }
 
+    //action of update details
     private void editAction() {
         Doctor doctor = doctorModel.getDoctor();
 
+        //set all new values
         doctor.setFirstName(personalDetailsViewDoctor.getFirstNameText());
         doctor.setLastName(personalDetailsViewDoctor.getLastNameText());
         doctor.setEmail(personalDetailsViewDoctor.getEmailText());
@@ -48,7 +55,8 @@ public class DoctorController extends UserController {
         doctor.setYearsOfEx(Integer.parseInt(personalDetailsViewDoctor.getYearsOfExpText()));
         doctor.setPhoneNumber(personalDetailsViewDoctor.getPhoneNumberText());
 
-        doctorModel.UpdateDoctor(doctor);
+        doctorModel.UpdateDoctor(doctor);//update fields of current doctor in DB
+
         JOptionPane.showMessageDialog( personalDetailsViewDoctor,  "Details Updated");
         personalDetailsViewDoctor.dispose();
     }
