@@ -45,7 +45,7 @@ public class PatientsHistoryView extends JFrame{
 
         selectPatientLabel.setFont(new Font("Ariel", Font.BOLD, 14));
         selectPatientLabel.setBounds(60,60,150,15);
-        jScrollPane.setBounds(100,190,500,150);
+        jScrollPane.setBounds(50,190,600,150);
 
         cancelButton.setLocation(500,400,120,30);
         backGround.setBounds(0,0,700,500);

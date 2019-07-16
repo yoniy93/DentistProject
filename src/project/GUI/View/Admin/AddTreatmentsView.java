@@ -75,7 +75,7 @@ public class AddTreatmentsView extends JFrame
     //set action listener to window
     public void setActions(ActionListener add,ActionListener cancel) {
         getAddTreatment().addActionListener(add); //action listener to add button
-        getCancel().addActionListener(cancel); //action listener to cancl button
+        getCancel().addActionListener(cancel); //action listener to cancel button
     }
 
 
