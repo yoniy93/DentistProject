@@ -1,9 +1,5 @@
 package project.Database;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
 public class DBInserts {
     DBInitializer dbInitializer=DBInitializer.getInstance();
 
