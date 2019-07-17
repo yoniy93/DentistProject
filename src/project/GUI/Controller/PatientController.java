@@ -4,6 +4,7 @@ import project.Entities.Appointment;
 import project.Entities.Patient;
 import project.Entities.Treatments;
 
+import project.GUI.Login.Interfaces.Controller;
 import project.GUI.Model.PatientModel;
 import project.GUI.View.Admin.MessageWindow;
 import project.GUI.View.Patient.*;
@@ -11,7 +12,7 @@ import project.GUI.View.Patient.*;
 import javax.swing.*;
 import java.util.List;
 
-public class PatientController extends UserController {
+public class PatientController extends UserController  {
 
     private PatientModel patientModel;
 
@@ -31,7 +32,7 @@ public class PatientController extends UserController {
 
     //add action listener to main patient window
     private void addViewActionListeners() {
-        addActionsToPerson(patientView);
+        setActionListener(patientView);
         patientView.setActions(e->openEditDetailsActionView(), e->openSetAnAppointmentView(),e->openTreatmentsPriceView(),e-> openPatientAppointmentsView());
     }
 
@@ -137,6 +138,8 @@ public class PatientController extends UserController {
             treatmentsPricesView.setTreatmentInfo(Double.toString(treatment.getPrice()),Integer.toString(treatment.getDuration()),treatment.getDescription());
         }
     }
+
+
 
     //===========================================================================
 }

@@ -27,7 +27,7 @@ public class AdminController extends UserController {
     }
     //add action listener to main window
     private void addViewActionListeners () {
-        addActionsToPerson(adminView);
+        setActionListener(adminView);
         adminView.setActions(e->openEditPersonalDetailsView(), e->openRegisterView(), e->openUnregisterView(), e->openAddTreatmentsView());
     }
 

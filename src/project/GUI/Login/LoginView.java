@@ -15,15 +15,18 @@ public class LoginView extends Observable implements View {
 
     private JFrame loginFrame = new JFrame();
     private ImageIcon imageForBG=new ImageIcon(Locations.getImagePath("login.png"));
+
     private JLabel backGround=new JLabel(imageForBG);
     private JLabel userLabel = new JLabel("ID:");
     private JLabel passwordLabel = new JLabel("PASSWORD:");
     private JLabel notLoginMessage =new JLabel("Not register? Click");
     private JLabel clickHereLabel =new JLabel("<HTML><U>here</U></HTML>");
     private JLabel copyrights = new JLabel("© all rights reserved");
+
     private Font labelFont = new Font("Ariel",Font.BOLD,14);
     private Font msgFont = new Font("Ariel",Font.BOLD,11);
     private Font copyrightsFont = new Font("Ariel",Font.PLAIN,9);
+
     private JTextField userTextField = new JTextField();
     private JPasswordField passwordField = new JPasswordField();
     private JButton loginButton = new JButton("Login");

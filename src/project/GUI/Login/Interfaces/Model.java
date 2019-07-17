@@ -1,5 +1,9 @@
 package project.GUI.Login.Interfaces;
 
-public interface Model {
+
+public interface Model  {
+
+
+
 
 }

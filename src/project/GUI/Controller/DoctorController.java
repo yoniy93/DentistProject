@@ -26,7 +26,7 @@ public class DoctorController extends UserController {
 
     //add action listener to Doctor main window
     private void addViewActionListeners() {
-        addActionsToPerson(doctorView);
+        setActionListener(doctorView);
         doctorView.setActions(e->openEditDetailsView(), e->openPatientHistoryView());
     }
 
