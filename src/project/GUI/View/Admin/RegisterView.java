@@ -1,15 +1,12 @@
 package project.GUI.View.Admin;
 import project.Database.Locations;
 import project.GUI.View.ExitButton;
-import project.GUI.View.JDoubleTextField;
 import project.GUI.View.JNumberTextField;
 import project.GUI.View.JStringTextField;
 
 import javax.swing.*;
-import javax.swing.text.NumberFormatter;
 import java.awt.*;
 import java.awt.event.ActionListener;
-import java.text.NumberFormat;
 import java.util.Vector;
 
 public class RegisterView extends JFrame {
@@ -55,8 +52,8 @@ public class RegisterView extends JFrame {
     private JTextField emailTextField = new JTextField();
     private JPasswordField passwordField  = new JPasswordField();
     private JNumberTextField idTextFiled = new JNumberTextField();
-    private JDoubleTextField heightTextField = new JDoubleTextField();
-    private JDoubleTextField weightTextField = new JDoubleTextField();
+    private JNumberTextField heightTextField = new JNumberTextField();
+    private JNumberTextField weightTextField = new JNumberTextField();
     private JNumberTextField yearsOfExTextField = new JNumberTextField();
     private JNumberTextField phoneNumberTextField=new JNumberTextField();
 

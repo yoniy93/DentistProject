@@ -1,20 +1,18 @@
 package project.GUI.View.Patient;
 
 import project.Entities.Patient;
-import project.GUI.View.JDoubleTextField;
+import project.GUI.View.JNumberTextField;
 import project.GUI.View.PersonalDetailsView;
 import javax.swing .*;
-import javax.swing.text.NumberFormatter;
 import java.awt.event.ActionListener;
-import java.text.NumberFormat;
 
 public class PersonalDetailsViewPatient extends PersonalDetailsView {
 
     private JLabel heightLabel = new JLabel("Height: ");
     private JLabel weightLabel = new JLabel("Weight: ");
 
-    private JDoubleTextField heightTextField = new JDoubleTextField();
-    private JDoubleTextField weightTextFiled = new JDoubleTextField();
+    private JNumberTextField heightTextField = new JNumberTextField();
+    private JNumberTextField weightTextFiled = new JNumberTextField();
 
     public PersonalDetailsViewPatient() {
         setLocationAndSize();
