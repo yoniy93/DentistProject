@@ -8,7 +8,7 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.sql.SQLException;
 import java.util.Observable;
-import java.util.Observer;
+
 /*
     Controller between LogIn Model and LogIn View
  */
