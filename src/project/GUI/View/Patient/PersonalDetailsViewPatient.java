@@ -1,6 +1,7 @@
 package project.GUI.View.Patient;
 
 import project.Entities.Patient;
+import project.GUI.View.JDoubleTextField;
 import project.GUI.View.PersonalDetailsView;
 import javax.swing .*;
 import javax.swing.text.NumberFormatter;
@@ -12,8 +13,8 @@ public class PersonalDetailsViewPatient extends PersonalDetailsView {
     private JLabel heightLabel = new JLabel("Height: ");
     private JLabel weightLabel = new JLabel("Weight: ");
 
-    private JTextField heightTextField = new JTextField();
-    private JTextField weightTextFiled = new JTextField();
+    private JDoubleTextField heightTextField = new JDoubleTextField();
+    private JDoubleTextField weightTextFiled = new JDoubleTextField();
 
     public PersonalDetailsViewPatient() {
         setLocationAndSize();
@@ -61,7 +62,7 @@ public class PersonalDetailsViewPatient extends PersonalDetailsView {
     public void initializeFields(Patient patient){
         initializeUserFields(patient);
 
-        setHeightTextField(Integer.toString(patient.getHeight()));
+        setHeightTextField(Double.toString(patient.getHeight()));
         setWeightTextFiled(Double.toString(patient.getWeight()));
     }
 

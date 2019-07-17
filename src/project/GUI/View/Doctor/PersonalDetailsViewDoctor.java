@@ -1,6 +1,7 @@
 package project.GUI.View.Doctor;
 
 import project.Entities.Doctor;
+import project.GUI.View.JNumberTextField;
 import project.GUI.View.PersonalDetailsView;
 
 import javax.swing.*;
@@ -9,7 +10,7 @@ import java.awt.event.ActionListener;
 public class PersonalDetailsViewDoctor extends PersonalDetailsView{
 
     private JLabel yearsOfExpLabel = new JLabel("Years of experience:");
-    private JTextField yearsOfExpTextField = new JTextField();
+    private JNumberTextField yearsOfExpTextField = new JNumberTextField();
 
     public PersonalDetailsViewDoctor() {
         setLocationAndSize();
