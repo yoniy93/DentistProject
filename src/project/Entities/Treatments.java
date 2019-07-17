@@ -6,7 +6,7 @@ public class Treatments {
     private int duration;
     private String id;
     private double price;
-    String description;
+    private String description;
 
     public Treatments(String id, String name, int duration, double price, String description){
         setId(id);

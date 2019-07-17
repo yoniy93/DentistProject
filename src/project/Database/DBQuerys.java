@@ -184,7 +184,7 @@ public class DBQuerys{
                 treatments.add(new Treatments(resultSet.getString("id"),
                         resultSet.getString("treatmentname"),
                         resultSet.getInt("durationmin"),
-                        resultSet.getInt("price"),
+                        resultSet.getDouble("price"),
                         resultSet.getString("description")));
             }
             return treatments;

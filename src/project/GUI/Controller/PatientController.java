@@ -73,7 +73,7 @@ public class PatientController extends UserController  {
             patient.setLastName(pDetailsView.getLastNameText());
             patient.setEmail(pDetailsView.getEmailText());
             patient.setPassword(pDetailsView.getPasswordText());
-            patient.setHeight(Integer.parseInt(pDetailsView.getHeightText()));
+            patient.setHeight(Double.parseDouble(pDetailsView.getHeightText()));
             patient.setWeight(Double.parseDouble(pDetailsView.getWeightText()));
             patient.setPhoneNumber(pDetailsView.getPhoneNumberText());
 
