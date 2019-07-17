@@ -23,11 +23,12 @@ public class DBTest  {
     static private Appointment expectedAppointment;
     static private Treatments expectedTreatment;
 
+    static private int userID;
     static private String adminID;
     static private String doctorID;
     static private String patientID;
-    static private String appointmentID;
-    static private String treatmentID;
+    static private int appointmentID;
+    static private int treatmentID;
 
     static private String dateString = "2000-01-01";
     static private String timeString = "20:00";
@@ -36,7 +37,6 @@ public class DBTest  {
 
     @BeforeAll
     static void setUp() throws ParseException {
-
         DBInitializer.loadDatabaseWithInitialData();
         dbQuery = new DBQuerys();
         dbInsert = new DBInserts();
@@ -51,13 +51,13 @@ public class DBTest  {
     }
 
     static private void setExpectedValues() throws ParseException {
-        int usersLastID = dbQuery.getLastId("users");
-        adminID = Integer.toString(++usersLastID);
-        doctorID = Integer.toString(++usersLastID);
-        patientID = Integer.toString(++usersLastID);
+        userID = dbQuery.getLastId("users");
+        adminID = Integer.toString(++userID);
+        doctorID = Integer.toString(++userID);
+        patientID = Integer.toString(++userID);
 
-        appointmentID = Integer.toString(dbQuery.getLastId("appointments") + 1) ;
-        treatmentID = Integer.toString(dbQuery.getLastId("treatments") + 1);
+        appointmentID = dbQuery.getLastId("appointments") + 1;
+        treatmentID = dbQuery.getLastId("treatments") +1 ;
 
         Date date = new SimpleDateFormat("yyyy-MM-dd").parse(dateString);
         Time time = new Time(timeInt);
@@ -65,8 +65,8 @@ public class DBTest  {
         expectedAdmin = new Admin(adminID, "Password", "FirstName", "LastName", "Email@gmail.com", date, "male","0501234567");
         expectedDoctor = new Doctor(doctorID, "Password", "FirstName", "LastName", "Email@gmail.com", date,99 , "female","0501234567");
         expectedPatient = new Patient(patientID, "Password", "FirstName", "LastName", "Email@gmail.com",250.7 ,230 ,  date, "male","0501234567");
-        expectedAppointment = new Appointment(appointmentID, treatmentID,date, time, patientID, doctorID);
-        expectedTreatment = new Treatments(treatmentID, "TestTreatment", 60, 99,"None");
+        expectedAppointment = new Appointment(Integer.toString(appointmentID), Integer.toString(treatmentID),date, time, patientID, doctorID);
+        expectedTreatment = new Treatments(Integer.toString(treatmentID), "TestTreatment", 60, 99,"None");
 
     }
 
@@ -84,8 +84,8 @@ public class DBTest  {
         dbUpdates.deleteUserFromDB(adminID);
         dbUpdates.deleteUserFromDB(doctorID);
         dbUpdates.deleteUserFromDB(patientID);
-        dbUpdates.deleteAppointmentFromDB(appointmentID);
-        dbUpdates.deleteTreatmentFromDB(treatmentID);
+        dbUpdates.deleteAppointmentFromDB(Integer.toString(appointmentID));
+        dbUpdates.deleteTreatmentFromDB(Integer.toString(treatmentID));
     }
 
 
@@ -162,12 +162,9 @@ public class DBTest  {
 
     @Test
     void getLastID(){
-        /*
-        int actualLastidAppointments = query.getLastId("appointments");
+        assertEquals(userID, dbQuery.getLastId("users"), "Users id not right");
+        assertEquals(appointmentID, dbQuery.getLastId("appointments"), "Appointment id not right");
+        assertEquals(treatmentID, dbQuery.getLastId("treatments"), "Treatments id not right");
 
-         inserts.insertAppointments(actualLastidAppointments + 1,4,"2019-07-21","09:00", "5", "2");
-
-        assertEquals(actualLastidAppointments +1, query.getLastId("appointments"), "Appointment id not right");
-        */
     }
 }
