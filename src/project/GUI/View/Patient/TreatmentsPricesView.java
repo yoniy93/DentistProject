@@ -23,10 +23,9 @@ public class TreatmentsPricesView extends JFrame {
 
     private JLabel treatmentPrices = new JLabel();
     private JLabel treatmentDuration = new JLabel();
-    private JTextArea treatmentDescription= new JTextArea();
-    private JScrollPane jScrollPane=new JScrollPane(treatmentDescription);
+    private JTextArea treatmentDescription = new JTextArea();
+    private JScrollPane jScrollPane = new JScrollPane(treatmentDescription);
     Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
-
 
     private Font font = new Font("Ariel",Font.BOLD,14);
 
