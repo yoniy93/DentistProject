@@ -5,7 +5,6 @@ import project.Entities.Doctor;
 import project.GUI.Model.DoctorModel;
 import project.GUI.View.Admin.MessageWindow;
 import project.GUI.View.Doctor.*;
-import javax.swing.*;
 import java.util.List;
 
 public class DoctorController extends UserController {

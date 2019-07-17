@@ -4,12 +4,10 @@ import project.Entities.Appointment;
 import project.Entities.Patient;
 import project.Entities.Treatments;
 
-import project.GUI.Login.Interfaces.Controller;
 import project.GUI.Model.PatientModel;
 import project.GUI.View.Admin.MessageWindow;
 import project.GUI.View.Patient.*;
 
-import javax.swing.*;
 import java.util.List;
 
 public class PatientController extends UserController  {
