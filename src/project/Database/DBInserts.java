@@ -16,11 +16,11 @@ public class DBInserts {
     private void initializeUsers(){
         insertForAdmin("1", "1", "Admin", "Admin", "admin@gmail.com", "1993-07-100", "male","0547690760");
 
-        insertForDoctor("2", "1", "Amit", "Aflalo", "amit@gmail.com", "1994-07-10", "female", 3,"0547690750");
-        insertForDoctor("3", "1", "Dor", "Dadon", "dor123@gmail.com", "1992-07-01", "female", 3,"0547872750");
+        insertForDoctor("319020111", "123456", "Amit", "Aflalo", "amit@gmail.com", "1994-07-10", "female", 3,"0547690750");
+        insertForDoctor("312656366", "123456", "Dor", "Dadon", "dor123@gmail.com", "1992-07-01", "female", 3,"0547872750");
 
-        insertForPatient("4", "1", "Yonatan", "Yardeni", "yoni@gmail.com", 60.5, 178, "1990-10-10", "male","0547690740");
-        insertForPatient("5", "1", "Ofir", "Gan", "offirgan@gmail.com", 56.5, 170, "2991-11-10", "male","0547690730");
+        insertForPatient("302208178", "123456", "Yonatan", "Yardeni", "yoniy93@gmail.com", 80.2, 182, "1993-05-13", "male","0547690740");
+        insertForPatient("3", "1", "Ofir", "Gan", "offirgan@gmail.com", 56.5, 170, "2991-11-10", "male","0547690730");
     }
 
     private void initializeTreatments(){
