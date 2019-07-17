@@ -2,6 +2,7 @@ package project.GUI.View.Admin;
 
 import project.Database.Locations;
 import project.GUI.View.ExitButton;
+import project.GUI.View.JNumberTextField;
 
 import javax.swing.*;
 import java.awt.*;
@@ -13,7 +14,7 @@ public class UnRegisterView extends JFrame
     private JLabel backGround=new JLabel(imageForBG);
 
     private JButton submit = new JButton("Submit");
-    private JTextField idTextField = new JTextField();
+    private JNumberTextField idTextField = new JNumberTextField();
     private JLabel idLabel = new JLabel("Enter id of user :");
     ExitButton exitButton =new ExitButton();
     Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();

@@ -27,9 +27,9 @@ public class PersonalDetailsView extends JFrame {
     private JLabel phoneNumber=new JLabel("Phone: ");
     private JLabel passwordLabel = new JLabel("Password: ");
 
-    private JTextField phoneNumberTextField=new JTextField();
-    private JTextField firstnameTextField = new JTextField();
-    private JTextField lastnameTextField = new JTextField();
+    private JNumberTextField phoneNumberTextField=new JNumberTextField();
+    private JStringTextField firstnameTextField = new JStringTextField();
+    private JStringTextField lastnameTextField = new JStringTextField();
     private JTextField emailTextField = new JTextField();
     private JPasswordField passwordField  = new JPasswordField();
 
