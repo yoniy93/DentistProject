@@ -88,7 +88,6 @@ public class DBTest  {
         dbUpdates.deleteTreatmentFromDB(Integer.toString(treatmentID));
     }
 
-
     @Test
     void getAdminDetails() {
         Admin actualAdmin = dbQuery.getAdminDetails(adminID);
