@@ -32,4 +32,14 @@ public class DBUpdates {
         String sql="DELETE FROM users WHERE id='"+id+"';";
         return dbInitializer.connectAndExecute(sql);
     }
+
+    public String deleteAppointmentFromDB(String id) {
+        String sql="DELETE FROM appointments WHERE id='"+id+"';";
+        return dbInitializer.connectAndExecute(sql);
+    }
+
+    public String deleteTreatmentFromDB(String id) {
+        String sql="DELETE FROM treatments WHERE id='"+id+"';";
+        return dbInitializer.connectAndExecute(sql);
+    }
 }

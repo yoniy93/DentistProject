@@ -15,6 +15,8 @@ public class DBTest  {
 
     static private DBQuerys dbQuery;
     static private DBInserts dbInsert;
+    static private DBUpdates dbUpdates;
+
     static private Admin expectedAdmin;
     static private Doctor expectedDoctor;
     static private Patient expectedPatient;
@@ -24,9 +26,13 @@ public class DBTest  {
     static private String adminID;
     static private String doctorID;
     static private String patientID;
+    static private String appointmentID;
+    static private String treatmentID;
 
     static private String dateString = "2000-01-01";
-    static private int timeInt = 2020;
+    static private String timeString = "20:00";
+    static private int timeInt = 2000;
+    static private String  timeStringDifferent = "17:00";
 
     @BeforeAll
     static void setUp() throws ParseException {
@@ -35,34 +41,53 @@ public class DBTest  {
         dbQuery = new DBQuerys();
         dbInsert = new DBInserts();
 
+        setExpectedValues();
+        insertExpectedValues();
+    }
+
+    @AfterAll
+    static void tearDown() {
+        deleteExpectedValues();
+    }
+
+    static private void setExpectedValues() throws ParseException {
         int usersLastID = dbQuery.getLastId("users");
         adminID = Integer.toString(++usersLastID);
         doctorID = Integer.toString(++usersLastID);
         patientID = Integer.toString(++usersLastID);
 
-        String appointmentsLastID = Integer.toString(dbQuery.getLastId("appointments") + 1) ;
-        String treatmentsLastID = Integer.toString(dbQuery.getLastId("treatments") + 1);
+        appointmentID = Integer.toString(dbQuery.getLastId("appointments") + 1) ;
+        treatmentID = Integer.toString(dbQuery.getLastId("treatments") + 1);
 
         Date date = new SimpleDateFormat("yyyy-MM-dd").parse(dateString);
         Time time = new Time(timeInt);
 
-        System.out.println(date.toString());
         expectedAdmin = new Admin(adminID, "Password", "FirstName", "LastName", "Email@gmail.com", date, "male","0501234567");
         expectedDoctor = new Doctor(doctorID, "Password", "FirstName", "LastName", "Email@gmail.com", date,99 , "female","0501234567");
         expectedPatient = new Patient(patientID, "Password", "FirstName", "LastName", "Email@gmail.com",250.7 ,230 ,  date, "male","0501234567");
-        expectedAppointment = new Appointment(appointmentsLastID, treatmentsLastID,date, time, patientID, doctorID);
-        expectedTreatment = new Treatments(treatmentsLastID, "TestTreatment", 60, 99,"None");
+        expectedAppointment = new Appointment(appointmentID, treatmentID,date, time, patientID, doctorID);
+        expectedTreatment = new Treatments(treatmentID, "TestTreatment", 60, 99,"None");
 
-        insertExpectedValues();
     }
 
     static private void insertExpectedValues(){
         dbInsert.insertForAdmin(expectedAdmin.getId(),expectedAdmin.getPassword(),expectedAdmin.getFirstName(),expectedAdmin.getLastName(),expectedAdmin.getEmail(),dateString, expectedAdmin.getGender(),expectedAdmin.getPhoneNumber());
         dbInsert.insertForDoctor(expectedDoctor.getId(),expectedDoctor.getPassword(),expectedDoctor.getFirstName(),expectedDoctor.getLastName(),expectedDoctor.getEmail(),dateString, expectedDoctor.getGender(), expectedDoctor.getYearsOfExp(), expectedDoctor.getPhoneNumber());
         dbInsert.insertForPatient(expectedPatient.getId(),expectedPatient.getPassword(),expectedPatient.getFirstName(),expectedPatient.getLastName(),expectedPatient.getEmail(), expectedPatient.getWeight(), expectedPatient.getHeight(), dateString, expectedPatient.getGender(),expectedPatient.getPhoneNumber());
-        dbInsert.insertAppointments(Integer.parseInt(expectedAppointment.getAppointmentID()), Integer.parseInt(expectedAppointment.getTreatmentID()), dateString, Integer.toString(timeInt), expectedAppointment.getPatientId(), expectedAppointment.getDoctorId());
+        dbInsert.insertAppointments(Integer.parseInt(expectedAppointment.getAppointmentID()), Integer.parseInt(expectedAppointment.getTreatmentID()), dateString, timeString, expectedAppointment.getPatientId(), expectedAppointment.getDoctorId());
         dbInsert.insertTreatment(Integer.parseInt(expectedTreatment.getId()),expectedTreatment.getName(),expectedTreatment.getDuration(),expectedTreatment.getPrice(),expectedTreatment.getDescription());
     }
+
+    static private void deleteExpectedValues(){
+        dbUpdates = new DBUpdates();
+
+        dbUpdates.deleteUserFromDB(adminID);
+        dbUpdates.deleteUserFromDB(doctorID);
+        dbUpdates.deleteUserFromDB(patientID);
+        dbUpdates.deleteAppointmentFromDB(appointmentID);
+        dbUpdates.deleteTreatmentFromDB(treatmentID);
+    }
+
 
     @Test
     void getAdminDetails() {
@@ -130,8 +155,8 @@ public class DBTest  {
 
     @Test
     void isAvailableTime(){
-        assertEquals(false,dbQuery.isAvailableTime(doctorID, "", "10:00"), "Time Should Not Be Avaliable");
-        assertEquals(true,dbQuery.isAvailableTime(doctorID,dateString, "10:00"), "Time Should Be Avaliable");
+        assertEquals(false,dbQuery.isAvailableTime(doctorID, dateString, timeString), "Time Should Not Be Avaliable");
+        assertEquals(true,dbQuery.isAvailableTime(doctorID,dateString, timeStringDifferent), "Time Should Be Avaliable");
 
     }
 
