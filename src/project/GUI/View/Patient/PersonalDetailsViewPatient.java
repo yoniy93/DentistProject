@@ -3,7 +3,9 @@ package project.GUI.View.Patient;
 import project.Entities.Patient;
 import project.GUI.View.PersonalDetailsView;
 import javax.swing .*;
+import javax.swing.text.NumberFormatter;
 import java.awt.event.ActionListener;
+import java.text.NumberFormat;
 
 public class PersonalDetailsViewPatient extends PersonalDetailsView {
 

@@ -8,7 +8,7 @@ import project.GUI.View.UserView;
 import javax.swing.*;
 
 
-public abstract class UserController {
+public abstract class UserController  {
 
     private UserModel userModel = UserModel.getInstance();
 
@@ -16,7 +16,7 @@ public abstract class UserController {
     private ClinicInfoView clinicInfoView;
     private ClinicStaffInfoView clinicStaffInfoView;
 
-    protected void addActionsToPerson(UserView userView) {
+    protected void setActionListener(UserView userView) {
         userView.setActionsToPerson(e->openLoginView(userView), e->openClinicStaffInfoView(), e->openClinicInfoView());
     }
 

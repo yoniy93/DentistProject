@@ -8,8 +8,12 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.sql.SQLException;
 import java.util.Observable;
+import java.util.Observer;
+/*
+    Controller between LogIn Model and LogIn View
+ */
 
-public class LoginController implements Controller {
+public class LoginController implements  Controller  {
 
     private LoginModel loginM;
     private LoginView loginV ;
@@ -21,6 +25,7 @@ public class LoginController implements Controller {
         addViewActionListeners();
     }
 
+    //add action listeners to LOGIN window
     public void addViewActionListeners() {
         MouseAdapter click = new MouseAdapter(){
             @Override
@@ -32,6 +37,7 @@ public class LoginController implements Controller {
 
         loginV.setActions(e->showPasswordAction(), e-> loginAction(), e->clearAction(),click);
     }
+
 
     public void loginAction() {
         loginV.checkLogin();
@@ -47,7 +53,7 @@ public class LoginController implements Controller {
 
     @Override
     public void update(Observable observable, Object isGrunted) {
-        if(observable instanceof LoginView) {
+        if(observable instanceof LoginView) {//LogIn view needs to check if the details entered are correct according to the DB.
             try {
                 loginM.CheckLogin(loginV.getUser(), loginV.getPassword());
             } catch (SQLException e) {
@@ -55,7 +61,7 @@ public class LoginController implements Controller {
             }
         }
         else{
-            if (observable instanceof LoginModel)
+            if (observable instanceof LoginModel)//LogIn model returns an answer to the LogIn view
             {
                 if ((boolean) isGrunted) {
                     loginV.closeFrame();

@@ -6,9 +6,7 @@ import java.awt.*;
 import java.awt.event.ActionListener;
 import java.util.Vector;
 
-public class RegisterView extends JFrame
-{
-
+public class RegisterView extends JFrame {
     private ImageIcon imageForBG=new ImageIcon(Locations.getImagePath("register.png"));
     private JLabel backGround=new JLabel(imageForBG);
 
@@ -55,6 +53,7 @@ public class RegisterView extends JFrame
     private JTextField weightTextField = new JTextField();
     private JTextField yearsOfExTextField = new JTextField();
     private JTextField phoneNumberTextField=new JTextField();
+    Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
 
 
     public RegisterView() {
@@ -65,7 +64,7 @@ public class RegisterView extends JFrame
         hideDoctorYearsOfExperiensButtons();
 
         setTitle("Register New User");
-        setBounds(500, 100, 800, 700);
+        setBounds(dim.width/2-this.getSize().width/2-400, dim.height/2-this.getSize().height/2-350, 800, 700);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setResizable(false);
         setVisible(true);
@@ -100,12 +99,10 @@ public class RegisterView extends JFrame
         yearsOfExTextField.setEditable(false);
         yearsOfExTextField.setBackground(Color.lightGray);
         yearsOfExTextField.setText("");
-
     }
 
 
-    private void setLocationAndSize()
-    {
+    private void setLocationAndSize() {
         firstNameLabel.setFont(new Font("Ariel", Font.BOLD, 14));
         firstNameLabel.setBounds(60, 40, 100, 30);
 
@@ -161,10 +158,7 @@ public class RegisterView extends JFrame
         ExitButton.setLocation(400,600,120,30);
 
         backGround.setBounds(0,0,800,700);
-
     }
-
-
 
     private void addComponentsToFrame() {
 

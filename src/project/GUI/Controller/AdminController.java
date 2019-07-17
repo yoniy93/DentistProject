@@ -10,7 +10,6 @@ import javax.swing.*;
 
 public class AdminController extends UserController {
 
-
     private AdminModel adminModel;
     //all views related to Admin user
     private AdminView adminView;
@@ -27,7 +26,7 @@ public class AdminController extends UserController {
     }
     //add action listener to main window
     private void addViewActionListeners () {
-        addActionsToPerson(adminView);
+        setActionListener(adminView);
         adminView.setActions(e->openEditPersonalDetailsView(), e->openRegisterView(), e->openUnregisterView(), e->openAddTreatmentsView());
     }
 
@@ -47,14 +46,13 @@ public class AdminController extends UserController {
                     Double.parseDouble(addTreatmentsView.getTreatmentPriceText()),
                     addTreatmentsView.getTreatmentDescriptionText());//insert treatment to DB
             if (msg_received.equals("Sucssesfuly")) {//if DB insertion succeeded
-                new MessageWindow(addTreatmentsView, "New Treatment Added successfully");
+                new MessageWindow(addTreatmentsView, "New Treatment Added Successfully");
                 addTreatmentsView.dispose();
 
-            } else new MessageWindow(addTreatmentsView, "ID IS ALREADY EXISTS IN OUR SYSTEM");//if DB insertion didnt succeed
+            } else new MessageWindow(addTreatmentsView, "ID is already exsits is our system");//if DB insertion didnt succeed
         } else {
             new MessageWindow(addTreatmentsView, "Error: please fill all fields");//missing details
         }
-
     }
 
     //===========================================================================

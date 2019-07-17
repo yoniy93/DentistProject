@@ -3,9 +3,11 @@ package project.GUI.View;
 import project.Database.Locations;
 import project.Entities.User;
 
-import java.awt.Font;
+import java.awt.*;
 import java.awt.event.ActionListener;
+import java.text.NumberFormat;
 import javax.swing.*;
+import javax.swing.text.NumberFormatter;
 
 /*view class of edit personal details for user
   user can see his current details and update them
@@ -32,6 +34,7 @@ public class PersonalDetailsView extends JFrame {
     private JPasswordField passwordField  = new JPasswordField();
 
     private Font buttonFont = new Font("Ariel",Font.PLAIN,14);
+    Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
 
     public PersonalDetailsView() {
         setLayout(null);
@@ -39,7 +42,8 @@ public class PersonalDetailsView extends JFrame {
         addComponentsToFrame();
 
         setTitle("Edit Personal Details");
-        setBounds(700, 200, 400, 400);
+        setBounds(dim.width/2-this.getSize().width/2-200, dim.height/2-this.getSize().height/2-200, 400, 400);
+
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setResizable(false);
         setVisible(true);

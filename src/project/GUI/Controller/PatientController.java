@@ -4,13 +4,15 @@ import project.Entities.Appointment;
 import project.Entities.Patient;
 import project.Entities.Treatments;
 
+import project.GUI.Login.Interfaces.Controller;
 import project.GUI.Model.PatientModel;
+import project.GUI.View.Admin.MessageWindow;
 import project.GUI.View.Patient.*;
 
 import javax.swing.*;
 import java.util.List;
 
-public class PatientController extends UserController {
+public class PatientController extends UserController  {
 
     private PatientModel patientModel;
 
@@ -30,7 +32,7 @@ public class PatientController extends UserController {
 
     //add action listener to main patient window
     private void addViewActionListeners() {
-        addActionsToPerson(patientView);
+        setActionListener(patientView);
         patientView.setActions(e->openEditDetailsActionView(), e->openSetAnAppointmentView(),e->openTreatmentsPriceView(),e-> openPatientAppointmentsView());
     }
 
@@ -53,6 +55,7 @@ public class PatientController extends UserController {
                     appointment.getTreatmentTime(),
                     patientModel.getDoctorName(appointment.getDoctorId()));
         }
+        patientAppointmentsView.setColWidth();
     }
 
     //===========================================================================
@@ -78,11 +81,11 @@ public class PatientController extends UserController {
 
             patientModel.UpdatePatient(patient);//update information in DB
 
-            JOptionPane.showMessageDialog(pDetailsView, "Details Updated");
+            new MessageWindow(pDetailsView, "Details Updated");
 
             pDetailsView.dispose();
         }
-        JOptionPane.showMessageDialog(pDetailsView, "Error: please fill all fields");
+        else new MessageWindow(pDetailsView, "Error: please fill all fields");
     }
 
     //===========================================================================
@@ -96,15 +99,17 @@ public class PatientController extends UserController {
         setAnAppointmentView.setVisible(true);
         setAnAppointmentView.setActions(e->selectDoctorAction(), e->insertAppointmentAction(), e->setAnAppointmentView.dispose());
     }
+
     // action of select doctor and find the available appointments
     private void selectDoctorAction(){
         setAnAppointmentView.setDateListener(setAnAppointmentView.getDoctorID());
         setAnAppointmentView.clearDateAndTime();
     }
+
     //insert new appointment details to DB
     private void insertAppointmentAction(){
         if(setAnAppointmentView.haveEmptyTextFields()) {//check if all fields are filled
-            JOptionPane.showMessageDialog(setAnAppointmentView, "Some Information Haven't Been Field Yet");
+            new MessageWindow(setAnAppointmentView, "Some Information Haven't Been Field Yet");
         }
         else {
             int appointmentID = patientModel.getLastAppointmentID() + 1;
@@ -115,7 +120,7 @@ public class PatientController extends UserController {
 
             patientModel.insertAppointment(appointmentID, treatmentID, date, time, doctorId);//insert new appointment to DB
 
-            JOptionPane.showMessageDialog(setAnAppointmentView, "Appointment has been Schedule");
+            new MessageWindow(setAnAppointmentView, "Appointment has been Schedule");
             setAnAppointmentView.dispose();
         }
     }
@@ -135,6 +140,8 @@ public class PatientController extends UserController {
             treatmentsPricesView.setTreatmentInfo(Double.toString(treatment.getPrice()),Integer.toString(treatment.getDuration()),treatment.getDescription());
         }
     }
+
+
 
     //===========================================================================
 }

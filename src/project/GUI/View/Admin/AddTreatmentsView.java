@@ -24,7 +24,7 @@ public class AddTreatmentsView extends JFrame
     private JTextField treatmentDurationTextField=new JTextField();//field to enter duration of treatment
     private JTextField treatmentPriceTextField=new JTextField();//field to enter price of treatment
 
-
+    Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
 
     private JTextField treatmentDescriptionTextField=new JTextField();//field to enter description of treatment
 
@@ -39,7 +39,7 @@ public class AddTreatmentsView extends JFrame
         addComponentsToFrame();
 
         setTitle("Add New Treatment:");
-        setBounds(550, 150, 700, 500);
+        setBounds(dim.width/2-this.getSize().width/2-350, dim.height/2-this.getSize().height/2-250, 700, 500);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setResizable(false);
         setVisible(true);

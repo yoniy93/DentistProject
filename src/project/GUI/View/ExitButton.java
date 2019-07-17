@@ -6,7 +6,7 @@ import java.awt.*;
 public class ExitButton extends JButton {
 
     public ExitButton( ){
-        setText("Cancel");
+        setText("Exit");
     }
 
     public void setLocation(int x, int y, int w, int h) {

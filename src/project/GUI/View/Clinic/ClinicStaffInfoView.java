@@ -38,6 +38,8 @@ public class ClinicStaffInfoView extends JFrame {
     private JLabel clinicNameLable = new JLabel( "<HTML><U>Doctors Info:</U></HTML>");
 
     private Font font = new Font("Ariel",Font.BOLD,14);
+    Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
+
 
     private ExitButton exitButton =new ExitButton();
 
@@ -48,7 +50,7 @@ public class ClinicStaffInfoView extends JFrame {
         setFont();
 
         setTitle("Clinic Staff Information");
-        setBounds(500, 150, 800, 500);
+        setBounds(dim.width/2-this.getSize().width/2-400, dim.height/2-this.getSize().height/2-250, 800, 500);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setResizable(false);
         setVisible(true);
@@ -82,9 +84,9 @@ public class ClinicStaffInfoView extends JFrame {
         clinicNameLable.setHorizontalAlignment(SwingConstants.CENTER);
         clinicNameLable.setBounds(300, 10, 200, 80);
 
-        selectLable.setBounds(130,70,200,50);
+        selectLable.setBounds(130,60,200,30);
 
-        doctorComboBox.setBounds(130, 100, 200, 50);
+        doctorComboBox.setBounds(130, 100, 200, 30);
 
         firstNameLable.setHorizontalAlignment(SwingConstants.LEFT);
         firstNameLable.setOpaque(false);
@@ -93,7 +95,7 @@ public class ClinicStaffInfoView extends JFrame {
         firstNameValue.setHorizontalAlignment(SwingConstants.CENTER);
         firstNameValue.setBackground(Color.WHITE);
         firstNameValue.setOpaque(true);
-        firstNameValue.setBorder(BorderFactory.createLineBorder(Color.BLACK, 2));
+        firstNameValue.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1));
 
         lastNameLable.setHorizontalAlignment(SwingConstants.LEFT);
         lastNameLable.setOpaque(false);
@@ -102,7 +104,7 @@ public class ClinicStaffInfoView extends JFrame {
         lastNameValue.setHorizontalAlignment(SwingConstants.CENTER);
         lastNameValue.setBackground(Color.WHITE);
         lastNameValue.setOpaque(true);
-        lastNameValue.setBorder(BorderFactory.createLineBorder(Color.BLACK, 2));
+        lastNameValue.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1));
 
         emailLable.setHorizontalAlignment(SwingConstants.LEFT);
         emailLable.setOpaque(false);
@@ -111,7 +113,7 @@ public class ClinicStaffInfoView extends JFrame {
         emailValue.setHorizontalAlignment(SwingConstants.CENTER);
         emailValue.setOpaque(true);
         emailValue.setBackground(Color.WHITE);
-        emailValue.setBorder(BorderFactory.createLineBorder(Color.BLACK, 2));
+        emailValue.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1));
 
         phoneNumberLable.setHorizontalAlignment(SwingConstants.LEFT);
         phoneNumberLable.setOpaque(false);
@@ -120,7 +122,7 @@ public class ClinicStaffInfoView extends JFrame {
         phoneNumberValue.setBounds(550,200,200,30);
         phoneNumberValue.setBackground(Color.WHITE);
         phoneNumberValue.setOpaque(true);
-        phoneNumberValue.setBorder(BorderFactory.createLineBorder(Color.BLACK, 2));
+        phoneNumberValue.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1));
 
         genderLable.setHorizontalAlignment(SwingConstants.LEFT);
         genderLable.setOpaque(false);
@@ -129,7 +131,7 @@ public class ClinicStaffInfoView extends JFrame {
         genderValue.setHorizontalAlignment(SwingConstants.CENTER);
         genderValue.setBackground(Color.WHITE);
         genderValue.setOpaque(true);
-        genderValue.setBorder(BorderFactory.createLineBorder(Color.BLACK, 2));
+        genderValue.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1));
 
         yeasOfExperienceLable.setHorizontalAlignment(SwingConstants.LEFT);
         yeasOfExperienceLable.setOpaque(false);
@@ -138,7 +140,7 @@ public class ClinicStaffInfoView extends JFrame {
         yeasOfExperienceValue.setHorizontalAlignment(SwingConstants.CENTER);
         yeasOfExperienceValue.setBackground(Color.WHITE);
         yeasOfExperienceValue.setOpaque(true);
-        yeasOfExperienceValue.setBorder(BorderFactory.createLineBorder(Color.BLACK, 2));
+        yeasOfExperienceValue.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1));
 
         exitButton.setLocation(650,400,120,30);
         backGround.setBounds(0,0,800,500);
