@@ -2,6 +2,8 @@ package project.GUI.View.Admin;
 
 import project.Database.Locations;
 import project.GUI.View.ExitButton;
+import project.GUI.View.JNumberTextField;
+import project.GUI.View.JStringTextField;
 
 import javax.swing.*;
 import java.awt.*;
@@ -20,9 +22,9 @@ public class AddTreatmentsView extends JFrame
     private JLabel treatmentDescription=new JLabel("Description:");
 
 
-    private JTextField treatmentNameTextField=new JTextField(); //field to enter name of treatment
-    private JTextField treatmentDurationTextField=new JTextField();//field to enter duration of treatment
-    private JTextField treatmentPriceTextField=new JTextField();//field to enter price of treatment
+    private JStringTextField treatmentNameTextField=new JStringTextField(); //field to enter name of treatment
+    private JNumberTextField treatmentDurationTextField=new JNumberTextField();//field to enter duration of treatment
+    private JNumberTextField treatmentPriceTextField=new JNumberTextField();//field to enter price of treatment
 
     Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
 

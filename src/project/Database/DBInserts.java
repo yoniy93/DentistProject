@@ -55,7 +55,7 @@ public class DBInserts {
     }
 
     public String insertTreatment(int id,String name, int duration, double price, String description){
-        String sql="INSERT INTO treatments(id, treatmentname, durationmin, price, description)"+"" +
+        String sql="INSERT INTO treatments(id, treatmentname, durationmin, price, description)" +
                 " VALUES ('"+id+"', '"+name+"', '"+duration+"', '"+price+"', '"+description+"');";
         return dbInitializer.connectAndExecute(sql);
     }
