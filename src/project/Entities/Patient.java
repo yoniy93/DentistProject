@@ -3,10 +3,10 @@ import java.util.*;
 
 public class Patient extends User {
 
-    private int height;
+    private double height;
     private double weight;
 
-    public Patient(String id, String password, String firstname, String lastname, String email, double weight, int height, Date dateOfBirth, String gender,String phoneNumber)
+    public Patient(String id, String password, String firstname, String lastname, String email, double weight, double height, Date dateOfBirth, String gender,String phoneNumber)
     {
         this.setUserRole(USER_TYPE.PATIENT);
         this.setId(id);
@@ -29,11 +29,11 @@ public class Patient extends User {
         this.weight = weight;
     }
 
-    public int getHeight() {
+    public double getHeight() {
         return height;
     }
 
-    public void setHeight(int height) {
+    public void setHeight(double height) {
         this.height = height;
     }
     @Override

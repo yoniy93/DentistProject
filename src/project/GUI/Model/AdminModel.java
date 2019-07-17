@@ -50,7 +50,7 @@ public class AdminModel {
         return msg;
     }
 
-    public String insertForPatient(String id, String pswd, String name, String lname, String email, double wieght, int height, String bdate, String gender,String phoneNumber)
+    public String insertForPatient(String id, String pswd, String name, String lname, String email, double wieght, double height, String bdate, String gender,String phoneNumber)
     {
         String msg=dbInserts.insertForPatient(id,pswd,name,lname,email,wieght,height,bdate,gender,phoneNumber);
         return msg;

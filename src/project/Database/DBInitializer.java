@@ -78,7 +78,7 @@ public class DBInitializer {
         url = Locations.getDatabasePath();
 
         sql = "CREATE TABLE IF NOT EXISTS users (id text PRIMARY KEY, password text NOT NULL, firstname text NOT NULL," +
-                "lastname text NOT NULL, email text NOT NULL, weight double, height integer, birthdate date NOT NULL, userRole text," +
+                "lastname text NOT NULL, email text NOT NULL, weight double, height double, birthdate date NOT NULL, userRole text," +
                 "yearOfExperiens integer, gender text, phoneNumber text NOT NULL);";
 
         sql2="CREATE TABLE IF NOT EXISTS treatments ( id integer PRIMARY KEY NOT NULL, treatmentname text NOT NULL,"+

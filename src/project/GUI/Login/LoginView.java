@@ -2,6 +2,7 @@ package project.GUI.Login;
 
 import project.Database.Locations;
 import project.GUI.Login.Interfaces.View;
+import project.GUI.View.JNumberTextField;
 
 import javax.swing.*;
 import java.awt.*;
@@ -27,7 +28,7 @@ public class LoginView extends Observable implements View {
     private Font msgFont = new Font("Ariel",Font.BOLD,11);
     private Font copyrightsFont = new Font("Ariel",Font.PLAIN,9);
 
-    private JTextField userTextField = new JTextField();
+    private JNumberTextField userTextField = new JNumberTextField();
     private JPasswordField passwordField = new JPasswordField();
     private JButton loginButton = new JButton("Login");
     private JButton clearButton = new JButton("Clear");

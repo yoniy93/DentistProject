@@ -65,7 +65,7 @@ public class DBQuerys{
             return new Patient(
                     id, rs.getString("password"), rs.getString("firstname"),
                     rs.getString("lastname"), rs.getString("email"),
-                    rs.getDouble("weight"), rs.getInt("height"),
+                    rs.getDouble("weight"), rs.getDouble("height"),
                     date, rs.getString("gender"),
                     rs.getString("phoneNumber"));
 

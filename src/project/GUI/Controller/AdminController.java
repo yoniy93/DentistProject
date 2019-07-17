@@ -72,7 +72,7 @@ public class AdminController extends UserController {
                 msg_recieved=adminModel.insertForPatient(registerView.getIdText(),registerView.getPasswordText(),
                         registerView.getFirstNameText(),registerView.getLastNameText(),
                         registerView.getEmailText(), Double.parseDouble(registerView.getWeightText()),
-                        Integer.parseInt(registerView.getHeightText()),
+                        Double.parseDouble(registerView.getHeightText()),
                         registerView.getDateOfBirthText(),registerView.getGender(),registerView.getPhoneNumberText());
             }
 
