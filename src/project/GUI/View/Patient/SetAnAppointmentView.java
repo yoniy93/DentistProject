@@ -12,6 +12,7 @@ import project.Entities.Treatments;
 import project.GUI.Controller.Calender.DateListener;
 import project.GUI.Controller.Calender.VetoPolicy;
 import project.GUI.View.ExitButton;
+import project.GUI.View.JNumberTextField;
 
 import static com.github.lgooddatepicker.components.TimePickerSettings.TimeIncrement.OneHour;
 
@@ -33,8 +34,8 @@ public class SetAnAppointmentView extends JFrame {
     private JLabel validityLabel = new JLabel("Validity:");
     private JLabel cvvLabel = new JLabel("CVV:");
 
-    private JTextField creditCardTextField = new JTextField("");
-    private JTextField cvvTextField = new JTextField("");
+    private JNumberTextField creditCardTextField = new JNumberTextField();
+    private JNumberTextField cvvTextField = new JNumberTextField();
 
     private Vector yearVector = new Vector(100);
     private Vector monthVector = new Vector(12) ;
