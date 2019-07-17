@@ -10,7 +10,6 @@ import java.util.List;
 
 public class DoctorController extends UserController {
 
-
     private DoctorModel doctorModel;
     //all windows related to Doctor user
     private DoctorView doctorView;

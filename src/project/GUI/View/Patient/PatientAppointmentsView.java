@@ -26,6 +26,7 @@ public class PatientAppointmentsView extends JFrame {
     private String columsNames[] = new String[] { "Treatment" ,"Date", "Time", "Doctor" };
 
     TableColumnModel columnModel = appointmentTable.getColumnModel();
+    Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
 
     private ExitButton exitButton = new ExitButton();
 
@@ -36,7 +37,7 @@ public class PatientAppointmentsView extends JFrame {
         initializePatientAppointmentsTable();
 
         setTitle("Your Appointments History");
-        setBounds(550, 150, 700, 500);
+        setBounds(dim.width/2-this.getSize().width/2-350, dim.height/2-this.getSize().height/2-250, 700, 500);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setResizable(false);
         setVisible(true);

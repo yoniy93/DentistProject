@@ -99,11 +99,13 @@ public class PatientController extends UserController  {
         setAnAppointmentView.setVisible(true);
         setAnAppointmentView.setActions(e->selectDoctorAction(), e->insertAppointmentAction(), e->setAnAppointmentView.dispose());
     }
+
     // action of select doctor and find the available appointments
     private void selectDoctorAction(){
         setAnAppointmentView.setDateListener(setAnAppointmentView.getDoctorID());
         setAnAppointmentView.clearDateAndTime();
     }
+
     //insert new appointment details to DB
     private void insertAppointmentAction(){
         if(setAnAppointmentView.haveEmptyTextFields()) {//check if all fields are filled

@@ -38,6 +38,8 @@ public class ClinicStaffInfoView extends JFrame {
     private JLabel clinicNameLable = new JLabel( "<HTML><U>Doctors Info:</U></HTML>");
 
     private Font font = new Font("Ariel",Font.BOLD,14);
+    Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
+
 
     private ExitButton exitButton =new ExitButton();
 
@@ -48,7 +50,7 @@ public class ClinicStaffInfoView extends JFrame {
         setFont();
 
         setTitle("Clinic Staff Information");
-        setBounds(500, 150, 800, 500);
+        setBounds(dim.width/2-this.getSize().width/2-400, dim.height/2-this.getSize().height/2-250, 800, 500);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setResizable(false);
         setVisible(true);
@@ -82,9 +84,9 @@ public class ClinicStaffInfoView extends JFrame {
         clinicNameLable.setHorizontalAlignment(SwingConstants.CENTER);
         clinicNameLable.setBounds(300, 10, 200, 80);
 
-        selectLable.setBounds(130,70,200,50);
+        selectLable.setBounds(130,60,200,30);
 
-        doctorComboBox.setBounds(130, 100, 200, 50);
+        doctorComboBox.setBounds(130, 100, 200, 30);
 
         firstNameLable.setHorizontalAlignment(SwingConstants.LEFT);
         firstNameLable.setOpaque(false);

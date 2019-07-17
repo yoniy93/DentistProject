@@ -10,7 +10,6 @@ import javax.swing.*;
 
 public class AdminController extends UserController {
 
-
     private AdminModel adminModel;
     //all views related to Admin user
     private AdminView adminView;
@@ -54,7 +53,6 @@ public class AdminController extends UserController {
         } else {
             new MessageWindow(addTreatmentsView, "Error: please fill all fields");//missing details
         }
-
     }
 
     //===========================================================================

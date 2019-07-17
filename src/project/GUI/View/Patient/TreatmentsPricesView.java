@@ -25,6 +25,7 @@ public class TreatmentsPricesView extends JFrame {
     private JLabel treatmentDuration = new JLabel();
     private JTextArea treatmentDescription= new JTextArea();
     private JScrollPane jScrollPane=new JScrollPane(treatmentDescription);
+    Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
 
 
     private Font font = new Font("Ariel",Font.BOLD,14);
@@ -38,15 +39,15 @@ public class TreatmentsPricesView extends JFrame {
         addComponentsToFrame();
 
         setTitle("Search Your Treatment: ");
-        setBounds(550, 150, 700, 500);
+        setBounds(dim.width/2-this.getSize().width/2-350, dim.height/2-this.getSize().height/2-250, 700, 500);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setResizable(false);
         setVisible(true);
     }
 
     private void setLocationAndSize() {
-        treatmentsComboBox.setBounds(450, 130, 200, 50);
-        selectLable.setBounds(450,100,200,50);
+        treatmentsComboBox.setBounds(450, 130, 200, 30);
+        selectLable.setBounds(450,90,200,50);
 
         treatmentPrices.setBounds(150, 300, 50 , 30);
         treatmentPricesLable.setBounds(100,300,100,30);
@@ -55,7 +56,7 @@ public class TreatmentsPricesView extends JFrame {
         treatmentPrices.setHorizontalAlignment(JTextField.CENTER);
         treatmentPrices.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1));
 
-        jScrollPane.setBounds(200,350, 450,60);
+        jScrollPane.setBounds(200,350, 450,50);
         treatmentDescriptionLable.setBounds(100 , 350, 200,30);
         jScrollPane.setBackground(Color.WHITE);
         jScrollPane.setOpaque(true);
@@ -68,7 +69,7 @@ public class TreatmentsPricesView extends JFrame {
         treatmentDuration.setBackground(Color.WHITE);
         treatmentDuration.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1));
 
-        exitButton.setLocation(500,430,120,30);
+        exitButton.setLocation(500,410,120,30);
 
         backGround.setBounds(0,0,700,500);
     }

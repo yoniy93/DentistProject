@@ -16,6 +16,7 @@ public class UnRegisterView extends JFrame
     private JTextField idTextField = new JTextField();
     private JLabel idLabel = new JLabel("Enter id of user :");
     ExitButton exitButton =new ExitButton();
+    Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
 
     public UnRegisterView()
     {
@@ -24,7 +25,7 @@ public class UnRegisterView extends JFrame
         addComponentsToFrame();
 
         setTitle("Unregister a user");
-        setBounds(700, 300, 450, 200);
+        setBounds(dim.width/2-this.getSize().width/2-225, dim.height/2-this.getSize().height/2-100, 450, 200);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setResizable(false);
         setVisible(true);

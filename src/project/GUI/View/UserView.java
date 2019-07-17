@@ -17,13 +17,14 @@ public abstract class UserView extends JFrame {
     private JButton viewClinicDetails = new JButton("View Clinic Information ");
 
     private Font buttonFont = new Font("Ariel",Font.BOLD,14);
+    Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
 
     protected UserView(){
         setLayout(null);
         setLocationAndSize();
         addComponentsToFrame();
 
-        setBounds(500, 100, 800, 600);
+        setBounds(dim.width/2-this.getSize().width/2-400, dim.height/2-this.getSize().height/2-300, 800, 600);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setResizable(false);
         setVisible(true);

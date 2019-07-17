@@ -33,7 +33,6 @@ public class SetAnAppointmentView extends JFrame {
     private JLabel validityLabel = new JLabel("Validity:");
     private JLabel cvvLabel = new JLabel("CVV:");
 
-
     private JTextField creditCardTextField = new JTextField("");
     private JTextField cvvTextField = new JTextField("");
 
@@ -52,7 +51,7 @@ public class SetAnAppointmentView extends JFrame {
     private TimePicker timePicker = new TimePicker();
 
     private Font font = new Font("Ariel",Font.BOLD,14);
-
+    Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
     public SetAnAppointmentView(){
         setLayout(null);
 
@@ -64,7 +63,7 @@ public class SetAnAppointmentView extends JFrame {
         setTimeSettings();
 
         setTitle("Set New Appointment: ");
-        setBounds(500, 150, 800, 500);
+        setBounds(dim.width/2-this.getSize().width/2-400, dim.height/2-this.getSize().height/2-250, 800, 500);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setResizable(false);
         setVisible(true);

@@ -10,6 +10,8 @@ public class ClinicInfoView extends JFrame {
 
     private ImageIcon imageForBG=new ImageIcon(Locations.getImagePath("clinicInfo.png"));
     private JLabel backGround=new JLabel(imageForBG);
+    Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
+
 
     private String[][] tableData = {
             {" Days:", "Hours:"},
@@ -37,7 +39,7 @@ public class ClinicInfoView extends JFrame {
         addComponentsToFrame();
 
         setTitle("Information");
-        setBounds(500, 150, 800, 500);
+        setBounds(dim.width/2-this.getSize().width/2-400, dim.height/2-this.getSize().height/2-250, 800, 500);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setResizable(false);
         setVisible(true);
