@@ -93,7 +93,7 @@ public class ClinicStaffInfoView extends JFrame {
         firstNameValue.setHorizontalAlignment(SwingConstants.CENTER);
         firstNameValue.setBackground(Color.WHITE);
         firstNameValue.setOpaque(true);
-        firstNameValue.setBorder(BorderFactory.createLineBorder(Color.BLACK, 2));
+        firstNameValue.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1));
 
         lastNameLable.setHorizontalAlignment(SwingConstants.LEFT);
         lastNameLable.setOpaque(false);
@@ -102,7 +102,7 @@ public class ClinicStaffInfoView extends JFrame {
         lastNameValue.setHorizontalAlignment(SwingConstants.CENTER);
         lastNameValue.setBackground(Color.WHITE);
         lastNameValue.setOpaque(true);
-        lastNameValue.setBorder(BorderFactory.createLineBorder(Color.BLACK, 2));
+        lastNameValue.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1));
 
         emailLable.setHorizontalAlignment(SwingConstants.LEFT);
         emailLable.setOpaque(false);
@@ -111,7 +111,7 @@ public class ClinicStaffInfoView extends JFrame {
         emailValue.setHorizontalAlignment(SwingConstants.CENTER);
         emailValue.setOpaque(true);
         emailValue.setBackground(Color.WHITE);
-        emailValue.setBorder(BorderFactory.createLineBorder(Color.BLACK, 2));
+        emailValue.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1));
 
         phoneNumberLable.setHorizontalAlignment(SwingConstants.LEFT);
         phoneNumberLable.setOpaque(false);
@@ -120,7 +120,7 @@ public class ClinicStaffInfoView extends JFrame {
         phoneNumberValue.setBounds(550,200,200,30);
         phoneNumberValue.setBackground(Color.WHITE);
         phoneNumberValue.setOpaque(true);
-        phoneNumberValue.setBorder(BorderFactory.createLineBorder(Color.BLACK, 2));
+        phoneNumberValue.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1));
 
         genderLable.setHorizontalAlignment(SwingConstants.LEFT);
         genderLable.setOpaque(false);
@@ -129,7 +129,7 @@ public class ClinicStaffInfoView extends JFrame {
         genderValue.setHorizontalAlignment(SwingConstants.CENTER);
         genderValue.setBackground(Color.WHITE);
         genderValue.setOpaque(true);
-        genderValue.setBorder(BorderFactory.createLineBorder(Color.BLACK, 2));
+        genderValue.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1));
 
         yeasOfExperienceLable.setHorizontalAlignment(SwingConstants.LEFT);
         yeasOfExperienceLable.setOpaque(false);
@@ -138,7 +138,7 @@ public class ClinicStaffInfoView extends JFrame {
         yeasOfExperienceValue.setHorizontalAlignment(SwingConstants.CENTER);
         yeasOfExperienceValue.setBackground(Color.WHITE);
         yeasOfExperienceValue.setOpaque(true);
-        yeasOfExperienceValue.setBorder(BorderFactory.createLineBorder(Color.BLACK, 2));
+        yeasOfExperienceValue.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1));
 
         exitButton.setLocation(650,400,120,30);
         backGround.setBounds(0,0,800,500);

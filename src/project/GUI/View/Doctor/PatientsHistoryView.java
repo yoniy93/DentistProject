@@ -4,6 +4,7 @@ import project.Database.Locations;
 import project.GUI.View.ExitButton;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableColumnModel;
 import java.awt.*;
 import java.awt.event.ActionListener;
 import java.sql.Time;
@@ -30,6 +31,8 @@ public class PatientsHistoryView extends JFrame{
     private JScrollPane jScrollPane = new JScrollPane(appointmentTable);
     private String columsNames[] = new String[] { "Treatment" ,"Date", "Time", "Doctor" };
 
+    TableColumnModel columnModel = appointmentTable.getColumnModel();
+
     private ExitButton exitButton = new ExitButton();
 
     public PatientsHistoryView() {
@@ -43,6 +46,13 @@ public class PatientsHistoryView extends JFrame{
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setResizable(false);
         setVisible(true);
+    }
+
+    public void setColWidth(){
+        columnModel.getColumn(0).setPreferredWidth(200);
+        columnModel.getColumn(1).setPreferredWidth(150);
+        columnModel.getColumn(2).setPreferredWidth(125);
+        columnModel.getColumn(3).setPreferredWidth(125);
     }
 
     private void setLocationAndSize() {

@@ -47,10 +47,10 @@ public class AdminController extends UserController {
                     Double.parseDouble(addTreatmentsView.getTreatmentPriceText()),
                     addTreatmentsView.getTreatmentDescriptionText());//insert treatment to DB
             if (msg_received.equals("Sucssesfuly")) {//if DB insertion succeeded
-                new MessageWindow(addTreatmentsView, "New Treatment Added successfully");
+                new MessageWindow(addTreatmentsView, "New Treatment Added Successfully");
                 addTreatmentsView.dispose();
 
-            } else new MessageWindow(addTreatmentsView, "ID IS ALREADY EXISTS IN OUR SYSTEM");//if DB insertion didnt succeed
+            } else new MessageWindow(addTreatmentsView, "ID is already exsits is our system");//if DB insertion didnt succeed
         } else {
             new MessageWindow(addTreatmentsView, "Error: please fill all fields");//missing details
         }

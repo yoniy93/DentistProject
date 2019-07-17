@@ -16,6 +16,7 @@ public class TreatmentsPricesView extends JFrame {
 
     private JComboBox<Treatments> treatmentsComboBox = new JComboBox<Treatments>();
 
+    private JLabel selectLable = new JLabel("Select Treatment:");
     private JLabel treatmentPricesLable = new JLabel("Price:");
     private JLabel treatmentDurationLable = new JLabel("Duration (min):");
     private JLabel treatmentDescriptionLable = new JLabel("Description:");
@@ -23,6 +24,7 @@ public class TreatmentsPricesView extends JFrame {
     private JLabel treatmentPrices = new JLabel();
     private JLabel treatmentDuration = new JLabel();
     private JTextArea treatmentDescription= new JTextArea();
+    private JScrollPane jScrollPane=new JScrollPane(treatmentDescription);
 
 
     private Font font = new Font("Ariel",Font.BOLD,14);
@@ -43,40 +45,37 @@ public class TreatmentsPricesView extends JFrame {
     }
 
     private void setLocationAndSize() {
-        this.
-        treatmentsComboBox.setBounds(450, 100, 200, 50);
+        treatmentsComboBox.setBounds(450, 130, 200, 50);
+        selectLable.setBounds(450,100,200,50);
 
         treatmentPrices.setBounds(150, 300, 50 , 30);
         treatmentPricesLable.setBounds(100,300,100,30);
         treatmentPrices.setBackground(Color.WHITE);
         treatmentPrices.setOpaque(true);
         treatmentPrices.setHorizontalAlignment(JTextField.CENTER);
-        treatmentPrices.setBorder(BorderFactory.createLineBorder(Color.BLACK, 2));
+        treatmentPrices.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1));
 
-        treatmentDescription.setBounds(200,350, 400,40);
+        jScrollPane.setBounds(200,350, 450,60);
         treatmentDescriptionLable.setBounds(100 , 350, 200,30);
-        treatmentDescription.setBackground(Color.WHITE);
-        treatmentDescription.setOpaque(true);
-
-        treatmentDescription.setBorder(BorderFactory.createLineBorder(Color.BLACK, 2));
+        jScrollPane.setBackground(Color.WHITE);
+        jScrollPane.setOpaque(true);
+        jScrollPane.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1));
 
         treatmentDuration.setBounds(430, 300,50,30);
         treatmentDuration.setOpaque(true);
         treatmentDuration.setHorizontalAlignment(JTextField.CENTER);
         treatmentDurationLable.setBounds(300,300,150,30);
         treatmentDuration.setBackground(Color.WHITE);
-        treatmentDuration.setBorder(BorderFactory.createLineBorder(Color.BLACK, 2));
+        treatmentDuration.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1));
 
-
-
-
-        exitButton.setLocation(500,400,120,30);
+        exitButton.setLocation(500,430,120,30);
 
         backGround.setBounds(0,0,700,500);
     }
 
     private void addComponentsToFrame() {
-        this.add(treatmentDescription);
+        this.add(selectLable);
+        this.add(jScrollPane);
         this.add(treatmentDescriptionLable);
         this.add(treatmentDuration);
         this.add(treatmentDurationLable);
@@ -91,6 +90,7 @@ public class TreatmentsPricesView extends JFrame {
         treatmentPricesLable.setFont(font);
         treatmentDurationLable.setFont(font);
         treatmentDescriptionLable.setFont(font);
+        selectLable.setFont(font);
     }
 
     public void setTreatmentList(List<Treatments> treatmentsList) {
@@ -110,6 +110,7 @@ public class TreatmentsPricesView extends JFrame {
         treatmentDuration.setText(duration);
         treatmentDescription.setFont(getFont());
         treatmentDescription.setText(description);
+        //jScrollPane=new JScrollPane(treatmentDescription);
     }
 
     public void setActions(ActionListener select, ActionListener cancel) {

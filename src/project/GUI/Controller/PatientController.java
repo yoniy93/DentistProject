@@ -5,6 +5,7 @@ import project.Entities.Patient;
 import project.Entities.Treatments;
 
 import project.GUI.Model.PatientModel;
+import project.GUI.View.Admin.MessageWindow;
 import project.GUI.View.Patient.*;
 
 import javax.swing.*;
@@ -53,6 +54,7 @@ public class PatientController extends UserController {
                     appointment.getTreatmentTime(),
                     patientModel.getDoctorName(appointment.getDoctorId()));
         }
+        patientAppointmentsView.setColWidth();
     }
 
     //===========================================================================
@@ -78,11 +80,11 @@ public class PatientController extends UserController {
 
             patientModel.UpdatePatient(patient);//update information in DB
 
-            JOptionPane.showMessageDialog(pDetailsView, "Details Updated");
+            new MessageWindow(pDetailsView, "Details Updated");
 
             pDetailsView.dispose();
         }
-        JOptionPane.showMessageDialog(pDetailsView, "Error: please fill all fields");
+        else new MessageWindow(pDetailsView, "Error: please fill all fields");
     }
 
     //===========================================================================
@@ -104,7 +106,7 @@ public class PatientController extends UserController {
     //insert new appointment details to DB
     private void insertAppointmentAction(){
         if(setAnAppointmentView.haveEmptyTextFields()) {//check if all fields are filled
-            JOptionPane.showMessageDialog(setAnAppointmentView, "Some Information Haven't Been Field Yet");
+            new MessageWindow(setAnAppointmentView, "Some Information Haven't Been Field Yet");
         }
         else {
             int appointmentID = patientModel.getLastAppointmentID() + 1;
@@ -115,7 +117,7 @@ public class PatientController extends UserController {
 
             patientModel.insertAppointment(appointmentID, treatmentID, date, time, doctorId);//insert new appointment to DB
 
-            JOptionPane.showMessageDialog(setAnAppointmentView, "Appointment has been Schedule");
+            new MessageWindow(setAnAppointmentView, "Appointment has been Schedule");
             setAnAppointmentView.dispose();
         }
     }

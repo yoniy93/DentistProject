@@ -5,6 +5,7 @@ import project.GUI.View.ExitButton;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableColumnModel;
 import java.awt.*;
 import java.awt.event.ActionListener;
 import java.sql.Time;
@@ -23,6 +24,8 @@ public class PatientAppointmentsView extends JFrame {
     private DefaultTableModel tablePattern = new DefaultTableModel();
     private JScrollPane jScrollPane = new JScrollPane(appointmentTable);
     private String columsNames[] = new String[] { "Treatment" ,"Date", "Time", "Doctor" };
+
+    TableColumnModel columnModel = appointmentTable.getColumnModel();
 
     private ExitButton exitButton = new ExitButton();
 
@@ -44,6 +47,7 @@ public class PatientAppointmentsView extends JFrame {
         headLine.setFont(new Font("Ariel", Font.BOLD, 30));
 
         jScrollPane.setBounds(50,150,600,150);
+
         exitButton.setLocation(500,400,120,30);
         backGround.setBounds(0,0,700,500);
     }
@@ -53,6 +57,13 @@ public class PatientAppointmentsView extends JFrame {
         add(headLine);
         add(exitButton);
         add(backGround);
+    }
+
+    public void setColWidth(){
+        columnModel.getColumn(0).setPreferredWidth(200);
+        columnModel.getColumn(1).setPreferredWidth(150);
+        columnModel.getColumn(2).setPreferredWidth(125);
+        columnModel.getColumn(3).setPreferredWidth(125);
     }
 
     private void initializePatientAppointmentsTable(){

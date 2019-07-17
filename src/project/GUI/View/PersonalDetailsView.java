@@ -5,7 +5,9 @@ import project.Entities.User;
 
 import java.awt.Font;
 import java.awt.event.ActionListener;
+import java.text.NumberFormat;
 import javax.swing.*;
+import javax.swing.text.NumberFormatter;
 
 /*view class of edit personal details for user
   user can see his current details and update them

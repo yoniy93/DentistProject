@@ -70,7 +70,7 @@ public class ClinicInfoView extends JFrame {
         hoursTable.setBackground(Color.WHITE);
         hoursTable.getColumnModel().getColumn(0).setPreferredWidth(120);
         hoursTable.getColumnModel().getColumn(1).setPreferredWidth(150);
-        hoursTable.setBorder(BorderFactory.createLineBorder(Color.BLACK, 2));
+        hoursTable.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1));
 
 
         address.setHorizontalAlignment(SwingConstants.LEFT);
@@ -78,14 +78,14 @@ public class ClinicInfoView extends JFrame {
         address.setOpaque(true);
         address.setBackground(Color.WHITE);
         address.setBounds(580,125,190,30);
-        address.setBorder(BorderFactory.createLineBorder(Color.BLACK, 2));
+        address.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1));
 
         phone1.setHorizontalAlignment(SwingConstants.LEFT);
         phone1.setFont(new Font("Ariel", Font.BOLD, 18));
         phone1.setOpaque(true);
         phone1.setBackground(Color.WHITE);
         phone1.setBounds(220,305,150,30);
-        phone1.setBorder(BorderFactory.createLineBorder(Color.BLACK, 2));
+        phone1.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1));
 
         exitButton.setLocation(610,400,120,30);
         backGround.setBounds(0,0,800,500);
